@@ -1,0 +1,374 @@
+[0.285s] DEBUG:colcon:Command line arguments: ['/usr/bin/colcon', 'build', '--symlink-install', '--packages-select', 'ur5_description', 'ur5_controller', 'ur5_moveit', 'hello_moveit']
+[0.285s] DEBUG:colcon:Parsed command line arguments: Namespace(log_base=None, log_level=None, verb_name='build', build_base='build', install_base='install', merge_install=False, symlink_install=True, test_result_base=None, continue_on_error=False, executor='parallel', parallel_workers=4, event_handlers=None, ignore_user_meta=False, metas=['./colcon.meta'], base_paths=['.'], packages_ignore=None, packages_ignore_regex=None, paths=None, packages_up_to=None, packages_up_to_regex=None, packages_above=None, packages_above_and_dependencies=None, packages_above_depth=None, packages_select_by_dep=None, packages_skip_by_dep=None, packages_skip_up_to=None, packages_select_build_failed=False, packages_skip_build_finished=False, packages_select_test_failures=False, packages_skip_test_passed=False, packages_select=['ur5_description', 'ur5_controller', 'ur5_moveit', 'hello_moveit'], packages_skip=None, packages_select_regex=None, packages_skip_regex=None, packages_start=None, packages_end=None, allow_overriding=[], cmake_args=None, cmake_target=None, cmake_target_skip_unavailable=False, cmake_clean_cache=False, cmake_clean_first=False, cmake_force_configure=False, ament_cmake_args=None, catkin_cmake_args=None, catkin_skip_building_tests=False, mixin_files=None, mixin=None, verb_parser=<colcon_mixin.mixin.mixin_argument.MixinArgumentDecorator object at 0x71fa8b2b9b20>, verb_extension=<colcon_core.verb.build.BuildVerb object at 0x71fa8b2b9820>, main=<bound method BuildVerb.main of <colcon_core.verb.build.BuildVerb object at 0x71fa8b2b9820>>, mixin_verb=('build',))
+[0.379s] Level 1:colcon.colcon_core.package_discovery:discover_packages(colcon_meta) check parameters
+[0.380s] Level 1:colcon.colcon_core.package_discovery:discover_packages(recursive) check parameters
+[0.380s] Level 1:colcon.colcon_core.package_discovery:discover_packages(ignore) check parameters
+[0.380s] Level 1:colcon.colcon_core.package_discovery:discover_packages(path) check parameters
+[0.380s] Level 1:colcon.colcon_core.package_discovery:discover_packages(colcon_meta) discover
+[0.380s] Level 1:colcon.colcon_core.package_discovery:discover_packages(recursive) discover
+[0.380s] INFO:colcon.colcon_core.package_discovery:Crawling recursively for packages in '/home/beingar/ros2_jazzy_ws'
+[0.381s] Level 1:colcon.colcon_core.package_identification:_identify(.) by extensions ['ignore', 'ignore_ament_install']
+[0.381s] Level 1:colcon.colcon_core.package_identification:_identify(.) by extension 'ignore'
+[0.381s] Level 1:colcon.colcon_core.package_identification:_identify(.) by extension 'ignore_ament_install'
+[0.381s] Level 1:colcon.colcon_core.package_identification:_identify(.) by extensions ['colcon_pkg']
+[0.381s] Level 1:colcon.colcon_core.package_identification:_identify(.) by extension 'colcon_pkg'
+[0.381s] Level 1:colcon.colcon_core.package_identification:_identify(.) by extensions ['colcon_meta']
+[0.381s] Level 1:colcon.colcon_core.package_identification:_identify(.) by extension 'colcon_meta'
+[0.381s] Level 1:colcon.colcon_core.package_identification:_identify(.) by extensions ['ros']
+[0.381s] Level 1:colcon.colcon_core.package_identification:_identify(.) by extension 'ros'
+[0.439s] Level 1:colcon.colcon_core.package_identification:_identify(.) by extensions ['cmake', 'python']
+[0.439s] Level 1:colcon.colcon_core.package_identification:_identify(.) by extension 'cmake'
+[0.439s] Level 1:colcon.colcon_core.package_identification:_identify(.) by extension 'python'
+[0.439s] Level 1:colcon.colcon_core.package_identification:_identify(.) by extensions ['python_setup_py']
+[0.440s] Level 1:colcon.colcon_core.package_identification:_identify(.) by extension 'python_setup_py'
+[0.440s] Level 1:colcon.colcon_core.package_identification:_identify(build) by extensions ['ignore', 'ignore_ament_install']
+[0.440s] Level 1:colcon.colcon_core.package_identification:_identify(build) by extension 'ignore'
+[0.440s] Level 1:colcon.colcon_core.package_identification:_identify(build) ignored
+[0.440s] Level 1:colcon.colcon_core.package_identification:_identify(install) by extensions ['ignore', 'ignore_ament_install']
+[0.441s] Level 1:colcon.colcon_core.package_identification:_identify(install) by extension 'ignore'
+[0.441s] Level 1:colcon.colcon_core.package_identification:_identify(install) ignored
+[0.441s] Level 1:colcon.colcon_core.package_identification:_identify(log) by extensions ['ignore', 'ignore_ament_install']
+[0.441s] Level 1:colcon.colcon_core.package_identification:_identify(log) by extension 'ignore'
+[0.441s] Level 1:colcon.colcon_core.package_identification:_identify(log) ignored
+[0.441s] Level 1:colcon.colcon_core.package_identification:_identify(src) by extensions ['ignore', 'ignore_ament_install']
+[0.441s] Level 1:colcon.colcon_core.package_identification:_identify(src) by extension 'ignore'
+[0.441s] Level 1:colcon.colcon_core.package_identification:_identify(src) by extension 'ignore_ament_install'
+[0.442s] Level 1:colcon.colcon_core.package_identification:_identify(src) by extensions ['colcon_pkg']
+[0.442s] Level 1:colcon.colcon_core.package_identification:_identify(src) by extension 'colcon_pkg'
+[0.442s] Level 1:colcon.colcon_core.package_identification:_identify(src) by extensions ['colcon_meta']
+[0.442s] Level 1:colcon.colcon_core.package_identification:_identify(src) by extension 'colcon_meta'
+[0.442s] Level 1:colcon.colcon_core.package_identification:_identify(src) by extensions ['ros']
+[0.442s] Level 1:colcon.colcon_core.package_identification:_identify(src) by extension 'ros'
+[0.442s] Level 1:colcon.colcon_core.package_identification:_identify(src) by extensions ['cmake', 'python']
+[0.442s] Level 1:colcon.colcon_core.package_identification:_identify(src) by extension 'cmake'
+[0.442s] Level 1:colcon.colcon_core.package_identification:_identify(src) by extension 'python'
+[0.442s] Level 1:colcon.colcon_core.package_identification:_identify(src) by extensions ['python_setup_py']
+[0.443s] Level 1:colcon.colcon_core.package_identification:_identify(src) by extension 'python_setup_py'
+[0.443s] Level 1:colcon.colcon_core.package_identification:_identify(src/ur5_ws) by extensions ['ignore', 'ignore_ament_install']
+[0.443s] Level 1:colcon.colcon_core.package_identification:_identify(src/ur5_ws) by extension 'ignore'
+[0.443s] Level 1:colcon.colcon_core.package_identification:_identify(src/ur5_ws) by extension 'ignore_ament_install'
+[0.444s] Level 1:colcon.colcon_core.package_identification:_identify(src/ur5_ws) by extensions ['colcon_pkg']
+[0.444s] Level 1:colcon.colcon_core.package_identification:_identify(src/ur5_ws) by extension 'colcon_pkg'
+[0.444s] Level 1:colcon.colcon_core.package_identification:_identify(src/ur5_ws) by extensions ['colcon_meta']
+[0.444s] Level 1:colcon.colcon_core.package_identification:_identify(src/ur5_ws) by extension 'colcon_meta'
+[0.444s] Level 1:colcon.colcon_core.package_identification:_identify(src/ur5_ws) by extensions ['ros']
+[0.444s] Level 1:colcon.colcon_core.package_identification:_identify(src/ur5_ws) by extension 'ros'
+[0.444s] Level 1:colcon.colcon_core.package_identification:_identify(src/ur5_ws) by extensions ['cmake', 'python']
+[0.445s] Level 1:colcon.colcon_core.package_identification:_identify(src/ur5_ws) by extension 'cmake'
+[0.445s] Level 1:colcon.colcon_core.package_identification:_identify(src/ur5_ws) by extension 'python'
+[0.445s] Level 1:colcon.colcon_core.package_identification:_identify(src/ur5_ws) by extensions ['python_setup_py']
+[0.445s] Level 1:colcon.colcon_core.package_identification:_identify(src/ur5_ws) by extension 'python_setup_py'
+[0.445s] Level 1:colcon.colcon_core.package_identification:_identify(src/ur5_ws/src) by extensions ['ignore', 'ignore_ament_install']
+[0.446s] Level 1:colcon.colcon_core.package_identification:_identify(src/ur5_ws/src) by extension 'ignore'
+[0.446s] Level 1:colcon.colcon_core.package_identification:_identify(src/ur5_ws/src) by extension 'ignore_ament_install'
+[0.446s] Level 1:colcon.colcon_core.package_identification:_identify(src/ur5_ws/src) by extensions ['colcon_pkg']
+[0.446s] Level 1:colcon.colcon_core.package_identification:_identify(src/ur5_ws/src) by extension 'colcon_pkg'
+[0.446s] Level 1:colcon.colcon_core.package_identification:_identify(src/ur5_ws/src) by extensions ['colcon_meta']
+[0.446s] Level 1:colcon.colcon_core.package_identification:_identify(src/ur5_ws/src) by extension 'colcon_meta'
+[0.446s] Level 1:colcon.colcon_core.package_identification:_identify(src/ur5_ws/src) by extensions ['ros']
+[0.446s] Level 1:colcon.colcon_core.package_identification:_identify(src/ur5_ws/src) by extension 'ros'
+[0.447s] Level 1:colcon.colcon_core.package_identification:_identify(src/ur5_ws/src) by extensions ['cmake', 'python']
+[0.447s] Level 1:colcon.colcon_core.package_identification:_identify(src/ur5_ws/src) by extension 'cmake'
+[0.447s] Level 1:colcon.colcon_core.package_identification:_identify(src/ur5_ws/src) by extension 'python'
+[0.447s] Level 1:colcon.colcon_core.package_identification:_identify(src/ur5_ws/src) by extensions ['python_setup_py']
+[0.447s] Level 1:colcon.colcon_core.package_identification:_identify(src/ur5_ws/src) by extension 'python_setup_py'
+[0.447s] Level 1:colcon.colcon_core.package_identification:_identify(src/ur5_ws/src/hello_moveit) by extensions ['ignore', 'ignore_ament_install']
+[0.447s] Level 1:colcon.colcon_core.package_identification:_identify(src/ur5_ws/src/hello_moveit) by extension 'ignore'
+[0.447s] Level 1:colcon.colcon_core.package_identification:_identify(src/ur5_ws/src/hello_moveit) by extension 'ignore_ament_install'
+[0.448s] Level 1:colcon.colcon_core.package_identification:_identify(src/ur5_ws/src/hello_moveit) by extensions ['colcon_pkg']
+[0.448s] Level 1:colcon.colcon_core.package_identification:_identify(src/ur5_ws/src/hello_moveit) by extension 'colcon_pkg'
+[0.448s] Level 1:colcon.colcon_core.package_identification:_identify(src/ur5_ws/src/hello_moveit) by extensions ['colcon_meta']
+[0.448s] Level 1:colcon.colcon_core.package_identification:_identify(src/ur5_ws/src/hello_moveit) by extension 'colcon_meta'
+[0.448s] Level 1:colcon.colcon_core.package_identification:_identify(src/ur5_ws/src/hello_moveit) by extensions ['ros']
+[0.448s] Level 1:colcon.colcon_core.package_identification:_identify(src/ur5_ws/src/hello_moveit) by extension 'ros'
+[0.453s] DEBUG:colcon.colcon_core.package_identification:Package 'src/ur5_ws/src/hello_moveit' with type 'ros.ament_cmake' and name 'hello_moveit'
+[0.453s] Level 1:colcon.colcon_core.package_identification:_identify(src/ur5_ws/src/ur5_controller) by extensions ['ignore', 'ignore_ament_install']
+[0.453s] Level 1:colcon.colcon_core.package_identification:_identify(src/ur5_ws/src/ur5_controller) by extension 'ignore'
+[0.454s] Level 1:colcon.colcon_core.package_identification:_identify(src/ur5_ws/src/ur5_controller) by extension 'ignore_ament_install'
+[0.454s] Level 1:colcon.colcon_core.package_identification:_identify(src/ur5_ws/src/ur5_controller) by extensions ['colcon_pkg']
+[0.454s] Level 1:colcon.colcon_core.package_identification:_identify(src/ur5_ws/src/ur5_controller) by extension 'colcon_pkg'
+[0.454s] Level 1:colcon.colcon_core.package_identification:_identify(src/ur5_ws/src/ur5_controller) by extensions ['colcon_meta']
+[0.454s] Level 1:colcon.colcon_core.package_identification:_identify(src/ur5_ws/src/ur5_controller) by extension 'colcon_meta'
+[0.454s] Level 1:colcon.colcon_core.package_identification:_identify(src/ur5_ws/src/ur5_controller) by extensions ['ros']
+[0.454s] Level 1:colcon.colcon_core.package_identification:_identify(src/ur5_ws/src/ur5_controller) by extension 'ros'
+[0.456s] DEBUG:colcon.colcon_core.package_identification:Package 'src/ur5_ws/src/ur5_controller' with type 'ros.ament_cmake' and name 'ur5_controller'
+[0.456s] Level 1:colcon.colcon_core.package_identification:_identify(src/ur5_ws/src/ur5_description) by extensions ['ignore', 'ignore_ament_install']
+[0.456s] Level 1:colcon.colcon_core.package_identification:_identify(src/ur5_ws/src/ur5_description) by extension 'ignore'
+[0.456s] Level 1:colcon.colcon_core.package_identification:_identify(src/ur5_ws/src/ur5_description) by extension 'ignore_ament_install'
+[0.457s] Level 1:colcon.colcon_core.package_identification:_identify(src/ur5_ws/src/ur5_description) by extensions ['colcon_pkg']
+[0.457s] Level 1:colcon.colcon_core.package_identification:_identify(src/ur5_ws/src/ur5_description) by extension 'colcon_pkg'
+[0.457s] Level 1:colcon.colcon_core.package_identification:_identify(src/ur5_ws/src/ur5_description) by extensions ['colcon_meta']
+[0.457s] Level 1:colcon.colcon_core.package_identification:_identify(src/ur5_ws/src/ur5_description) by extension 'colcon_meta'
+[0.457s] Level 1:colcon.colcon_core.package_identification:_identify(src/ur5_ws/src/ur5_description) by extensions ['ros']
+[0.457s] Level 1:colcon.colcon_core.package_identification:_identify(src/ur5_ws/src/ur5_description) by extension 'ros'
+[0.458s] DEBUG:colcon.colcon_core.package_identification:Package 'src/ur5_ws/src/ur5_description' with type 'ros.ament_cmake' and name 'ur5_description'
+[0.458s] Level 1:colcon.colcon_core.package_identification:_identify(src/ur5_ws/src/ur5_moveit) by extensions ['ignore', 'ignore_ament_install']
+[0.458s] Level 1:colcon.colcon_core.package_identification:_identify(src/ur5_ws/src/ur5_moveit) by extension 'ignore'
+[0.459s] Level 1:colcon.colcon_core.package_identification:_identify(src/ur5_ws/src/ur5_moveit) by extension 'ignore_ament_install'
+[0.459s] Level 1:colcon.colcon_core.package_identification:_identify(src/ur5_ws/src/ur5_moveit) by extensions ['colcon_pkg']
+[0.459s] Level 1:colcon.colcon_core.package_identification:_identify(src/ur5_ws/src/ur5_moveit) by extension 'colcon_pkg'
+[0.459s] Level 1:colcon.colcon_core.package_identification:_identify(src/ur5_ws/src/ur5_moveit) by extensions ['colcon_meta']
+[0.459s] Level 1:colcon.colcon_core.package_identification:_identify(src/ur5_ws/src/ur5_moveit) by extension 'colcon_meta'
+[0.459s] Level 1:colcon.colcon_core.package_identification:_identify(src/ur5_ws/src/ur5_moveit) by extensions ['ros']
+[0.459s] Level 1:colcon.colcon_core.package_identification:_identify(src/ur5_ws/src/ur5_moveit) by extension 'ros'
+[0.461s] DEBUG:colcon.colcon_core.package_identification:Package 'src/ur5_ws/src/ur5_moveit' with type 'ros.ament_cmake' and name 'ur5_moveit'
+[0.461s] Level 1:colcon.colcon_core.package_identification:_identify(src/ur5e-moveit2-pick-place) by extensions ['ignore', 'ignore_ament_install']
+[0.461s] Level 1:colcon.colcon_core.package_identification:_identify(src/ur5e-moveit2-pick-place) by extension 'ignore'
+[0.462s] Level 1:colcon.colcon_core.package_identification:_identify(src/ur5e-moveit2-pick-place) by extension 'ignore_ament_install'
+[0.462s] Level 1:colcon.colcon_core.package_identification:_identify(src/ur5e-moveit2-pick-place) by extensions ['colcon_pkg']
+[0.462s] Level 1:colcon.colcon_core.package_identification:_identify(src/ur5e-moveit2-pick-place) by extension 'colcon_pkg'
+[0.462s] Level 1:colcon.colcon_core.package_identification:_identify(src/ur5e-moveit2-pick-place) by extensions ['colcon_meta']
+[0.462s] Level 1:colcon.colcon_core.package_identification:_identify(src/ur5e-moveit2-pick-place) by extension 'colcon_meta'
+[0.462s] Level 1:colcon.colcon_core.package_identification:_identify(src/ur5e-moveit2-pick-place) by extensions ['ros']
+[0.462s] Level 1:colcon.colcon_core.package_identification:_identify(src/ur5e-moveit2-pick-place) by extension 'ros'
+[0.465s] DEBUG:colcon.colcon_core.package_identification:Package 'src/ur5e-moveit2-pick-place' with type 'ros.ament_python' and name 'hri_manipulation'
+[0.465s] Level 1:colcon.colcon_core.package_discovery:discover_packages(recursive) using defaults
+[0.465s] Level 1:colcon.colcon_core.package_discovery:discover_packages(ignore) discover
+[0.465s] Level 1:colcon.colcon_core.package_discovery:discover_packages(ignore) using defaults
+[0.465s] Level 1:colcon.colcon_core.package_discovery:discover_packages(path) discover
+[0.465s] Level 1:colcon.colcon_core.package_discovery:discover_packages(path) using defaults
+[0.517s] INFO:colcon.colcon_core.package_selection:Skipping not selected package 'hri_manipulation' in 'src/ur5e-moveit2-pick-place'
+[0.518s] Level 1:colcon.colcon_core.package_discovery:discover_packages(prefix_path) check parameters
+[0.518s] Level 1:colcon.colcon_core.package_discovery:discover_packages(prefix_path) discover
+[0.521s] DEBUG:colcon.colcon_installed_package_information.package_discovery:Found 1 installed packages in /home/beingar/ros2_jazzy_ws/install
+[0.527s] DEBUG:colcon.colcon_installed_package_information.package_discovery:Found 443 installed packages in /opt/ros/jazzy
+[0.532s] Level 1:colcon.colcon_core.package_discovery:discover_packages(prefix_path) using defaults
+[0.669s] Level 5:colcon.colcon_core.verb:set package 'hello_moveit' build argument 'cmake_args' from command line to 'None'
+[0.669s] Level 5:colcon.colcon_core.verb:set package 'hello_moveit' build argument 'cmake_target' from command line to 'None'
+[0.669s] Level 5:colcon.colcon_core.verb:set package 'hello_moveit' build argument 'cmake_target_skip_unavailable' from command line to 'False'
+[0.669s] Level 5:colcon.colcon_core.verb:set package 'hello_moveit' build argument 'cmake_clean_cache' from command line to 'False'
+[0.669s] Level 5:colcon.colcon_core.verb:set package 'hello_moveit' build argument 'cmake_clean_first' from command line to 'False'
+[0.669s] Level 5:colcon.colcon_core.verb:set package 'hello_moveit' build argument 'cmake_force_configure' from command line to 'False'
+[0.669s] Level 5:colcon.colcon_core.verb:set package 'hello_moveit' build argument 'ament_cmake_args' from command line to 'None'
+[0.669s] Level 5:colcon.colcon_core.verb:set package 'hello_moveit' build argument 'catkin_cmake_args' from command line to 'None'
+[0.669s] Level 5:colcon.colcon_core.verb:set package 'hello_moveit' build argument 'catkin_skip_building_tests' from command line to 'False'
+[0.669s] DEBUG:colcon.colcon_core.verb:Building package 'hello_moveit' with the following arguments: {'ament_cmake_args': None, 'build_base': '/home/beingar/ros2_jazzy_ws/build/hello_moveit', 'catkin_cmake_args': None, 'catkin_skip_building_tests': False, 'cmake_args': None, 'cmake_clean_cache': False, 'cmake_clean_first': False, 'cmake_force_configure': False, 'cmake_target': None, 'cmake_target_skip_unavailable': False, 'install_base': '/home/beingar/ros2_jazzy_ws/install/hello_moveit', 'merge_install': False, 'path': '/home/beingar/ros2_jazzy_ws/src/ur5_ws/src/hello_moveit', 'symlink_install': True, 'test_result_base': None}
+[0.670s] Level 5:colcon.colcon_core.verb:set package 'ur5_controller' build argument 'cmake_args' from command line to 'None'
+[0.670s] Level 5:colcon.colcon_core.verb:set package 'ur5_controller' build argument 'cmake_target' from command line to 'None'
+[0.670s] Level 5:colcon.colcon_core.verb:set package 'ur5_controller' build argument 'cmake_target_skip_unavailable' from command line to 'False'
+[0.670s] Level 5:colcon.colcon_core.verb:set package 'ur5_controller' build argument 'cmake_clean_cache' from command line to 'False'
+[0.670s] Level 5:colcon.colcon_core.verb:set package 'ur5_controller' build argument 'cmake_clean_first' from command line to 'False'
+[0.670s] Level 5:colcon.colcon_core.verb:set package 'ur5_controller' build argument 'cmake_force_configure' from command line to 'False'
+[0.670s] Level 5:colcon.colcon_core.verb:set package 'ur5_controller' build argument 'ament_cmake_args' from command line to 'None'
+[0.670s] Level 5:colcon.colcon_core.verb:set package 'ur5_controller' build argument 'catkin_cmake_args' from command line to 'None'
+[0.670s] Level 5:colcon.colcon_core.verb:set package 'ur5_controller' build argument 'catkin_skip_building_tests' from command line to 'False'
+[0.670s] DEBUG:colcon.colcon_core.verb:Building package 'ur5_controller' with the following arguments: {'ament_cmake_args': None, 'build_base': '/home/beingar/ros2_jazzy_ws/build/ur5_controller', 'catkin_cmake_args': None, 'catkin_skip_building_tests': False, 'cmake_args': None, 'cmake_clean_cache': False, 'cmake_clean_first': False, 'cmake_force_configure': False, 'cmake_target': None, 'cmake_target_skip_unavailable': False, 'install_base': '/home/beingar/ros2_jazzy_ws/install/ur5_controller', 'merge_install': False, 'path': '/home/beingar/ros2_jazzy_ws/src/ur5_ws/src/ur5_controller', 'symlink_install': True, 'test_result_base': None}
+[0.671s] Level 5:colcon.colcon_core.verb:set package 'ur5_description' build argument 'cmake_args' from command line to 'None'
+[0.671s] Level 5:colcon.colcon_core.verb:set package 'ur5_description' build argument 'cmake_target' from command line to 'None'
+[0.671s] Level 5:colcon.colcon_core.verb:set package 'ur5_description' build argument 'cmake_target_skip_unavailable' from command line to 'False'
+[0.671s] Level 5:colcon.colcon_core.verb:set package 'ur5_description' build argument 'cmake_clean_cache' from command line to 'False'
+[0.671s] Level 5:colcon.colcon_core.verb:set package 'ur5_description' build argument 'cmake_clean_first' from command line to 'False'
+[0.671s] Level 5:colcon.colcon_core.verb:set package 'ur5_description' build argument 'cmake_force_configure' from command line to 'False'
+[0.671s] Level 5:colcon.colcon_core.verb:set package 'ur5_description' build argument 'ament_cmake_args' from command line to 'None'
+[0.671s] Level 5:colcon.colcon_core.verb:set package 'ur5_description' build argument 'catkin_cmake_args' from command line to 'None'
+[0.671s] Level 5:colcon.colcon_core.verb:set package 'ur5_description' build argument 'catkin_skip_building_tests' from command line to 'False'
+[0.671s] DEBUG:colcon.colcon_core.verb:Building package 'ur5_description' with the following arguments: {'ament_cmake_args': None, 'build_base': '/home/beingar/ros2_jazzy_ws/build/ur5_description', 'catkin_cmake_args': None, 'catkin_skip_building_tests': False, 'cmake_args': None, 'cmake_clean_cache': False, 'cmake_clean_first': False, 'cmake_force_configure': False, 'cmake_target': None, 'cmake_target_skip_unavailable': False, 'install_base': '/home/beingar/ros2_jazzy_ws/install/ur5_description', 'merge_install': False, 'path': '/home/beingar/ros2_jazzy_ws/src/ur5_ws/src/ur5_description', 'symlink_install': True, 'test_result_base': None}
+[0.671s] Level 5:colcon.colcon_core.verb:set package 'ur5_moveit' build argument 'cmake_args' from command line to 'None'
+[0.671s] Level 5:colcon.colcon_core.verb:set package 'ur5_moveit' build argument 'cmake_target' from command line to 'None'
+[0.672s] Level 5:colcon.colcon_core.verb:set package 'ur5_moveit' build argument 'cmake_target_skip_unavailable' from command line to 'False'
+[0.672s] Level 5:colcon.colcon_core.verb:set package 'ur5_moveit' build argument 'cmake_clean_cache' from command line to 'False'
+[0.672s] Level 5:colcon.colcon_core.verb:set package 'ur5_moveit' build argument 'cmake_clean_first' from command line to 'False'
+[0.672s] Level 5:colcon.colcon_core.verb:set package 'ur5_moveit' build argument 'cmake_force_configure' from command line to 'False'
+[0.672s] Level 5:colcon.colcon_core.verb:set package 'ur5_moveit' build argument 'ament_cmake_args' from command line to 'None'
+[0.672s] Level 5:colcon.colcon_core.verb:set package 'ur5_moveit' build argument 'catkin_cmake_args' from command line to 'None'
+[0.672s] Level 5:colcon.colcon_core.verb:set package 'ur5_moveit' build argument 'catkin_skip_building_tests' from command line to 'False'
+[0.672s] DEBUG:colcon.colcon_core.verb:Building package 'ur5_moveit' with the following arguments: {'ament_cmake_args': None, 'build_base': '/home/beingar/ros2_jazzy_ws/build/ur5_moveit', 'catkin_cmake_args': None, 'catkin_skip_building_tests': False, 'cmake_args': None, 'cmake_clean_cache': False, 'cmake_clean_first': False, 'cmake_force_configure': False, 'cmake_target': None, 'cmake_target_skip_unavailable': False, 'install_base': '/home/beingar/ros2_jazzy_ws/install/ur5_moveit', 'merge_install': False, 'path': '/home/beingar/ros2_jazzy_ws/src/ur5_ws/src/ur5_moveit', 'symlink_install': True, 'test_result_base': None}
+[0.672s] INFO:colcon.colcon_core.executor:Executing jobs using 'parallel' executor
+[0.673s] DEBUG:colcon.colcon_parallel_executor.executor.parallel:run_until_complete
+[0.674s] INFO:colcon.colcon_ros.task.ament_cmake.build:Building ROS package in '/home/beingar/ros2_jazzy_ws/src/ur5_ws/src/hello_moveit' with build type 'ament_cmake'
+[0.674s] INFO:colcon.colcon_cmake.task.cmake.build:Building CMake package in '/home/beingar/ros2_jazzy_ws/src/ur5_ws/src/hello_moveit'
+[0.678s] INFO:colcon.colcon_core.plugin_system:Skipping extension 'colcon_core.shell.bat': Not used on non-Windows systems
+[0.678s] INFO:colcon.colcon_core.shell:Skip shell extension 'powershell' for command environment: Not usable outside of PowerShell
+[0.678s] DEBUG:colcon.colcon_core.shell:Skip shell extension 'dsv' for command environment
+[0.688s] INFO:colcon.colcon_ros.task.ament_cmake.build:Building ROS package in '/home/beingar/ros2_jazzy_ws/src/ur5_ws/src/ur5_controller' with build type 'ament_cmake'
+[0.688s] INFO:colcon.colcon_cmake.task.cmake.build:Building CMake package in '/home/beingar/ros2_jazzy_ws/src/ur5_ws/src/ur5_controller'
+[0.688s] INFO:colcon.colcon_core.shell:Skip shell extension 'powershell' for command environment: Not usable outside of PowerShell
+[0.688s] DEBUG:colcon.colcon_core.shell:Skip shell extension 'dsv' for command environment
+[0.697s] INFO:colcon.colcon_ros.task.ament_cmake.build:Building ROS package in '/home/beingar/ros2_jazzy_ws/src/ur5_ws/src/ur5_description' with build type 'ament_cmake'
+[0.698s] INFO:colcon.colcon_cmake.task.cmake.build:Building CMake package in '/home/beingar/ros2_jazzy_ws/src/ur5_ws/src/ur5_description'
+[0.698s] INFO:colcon.colcon_core.shell:Skip shell extension 'powershell' for command environment: Not usable outside of PowerShell
+[0.698s] DEBUG:colcon.colcon_core.shell:Skip shell extension 'dsv' for command environment
+[0.708s] INFO:colcon.colcon_ros.task.ament_cmake.build:Building ROS package in '/home/beingar/ros2_jazzy_ws/src/ur5_ws/src/ur5_moveit' with build type 'ament_cmake'
+[0.709s] INFO:colcon.colcon_cmake.task.cmake.build:Building CMake package in '/home/beingar/ros2_jazzy_ws/src/ur5_ws/src/ur5_moveit'
+[0.709s] INFO:colcon.colcon_core.shell:Skip shell extension 'powershell' for command environment: Not usable outside of PowerShell
+[0.709s] DEBUG:colcon.colcon_core.shell:Skip shell extension 'dsv' for command environment
+[0.730s] DEBUG:colcon.colcon_core.event_handler.log_command:Invoking command in '/home/beingar/ros2_jazzy_ws/build/hello_moveit': CMAKE_PREFIX_PATH=${CMAKE_PREFIX_PATH}:/home/beingar/ros2_jazzy_ws/install/hri_manipulation:/opt/ros/jazzy DEBUGINFOD_URLS=https://debuginfod.ubuntu.com /usr/bin/cmake /home/beingar/ros2_jazzy_ws/src/ur5_ws/src/hello_moveit -DAMENT_CMAKE_SYMLINK_INSTALL=1 -DCMAKE_INSTALL_PREFIX=/home/beingar/ros2_jazzy_ws/install/hello_moveit
+[0.746s] DEBUG:colcon.colcon_core.event_handler.log_command:Invoking command in '/home/beingar/ros2_jazzy_ws/build/ur5_controller': CMAKE_PREFIX_PATH=${CMAKE_PREFIX_PATH}:/home/beingar/ros2_jazzy_ws/install/hri_manipulation:/opt/ros/jazzy DEBUGINFOD_URLS=https://debuginfod.ubuntu.com /usr/bin/cmake /home/beingar/ros2_jazzy_ws/src/ur5_ws/src/ur5_controller -DAMENT_CMAKE_SYMLINK_INSTALL=1 -DCMAKE_INSTALL_PREFIX=/home/beingar/ros2_jazzy_ws/install/ur5_controller
+[0.749s] DEBUG:colcon.colcon_core.event_handler.log_command:Invoking command in '/home/beingar/ros2_jazzy_ws/build/ur5_description': CMAKE_PREFIX_PATH=${CMAKE_PREFIX_PATH}:/home/beingar/ros2_jazzy_ws/install/hri_manipulation:/opt/ros/jazzy DEBUGINFOD_URLS=https://debuginfod.ubuntu.com /usr/bin/cmake /home/beingar/ros2_jazzy_ws/src/ur5_ws/src/ur5_description -DAMENT_CMAKE_SYMLINK_INSTALL=1 -DCMAKE_INSTALL_PREFIX=/home/beingar/ros2_jazzy_ws/install/ur5_description
+[0.845s] DEBUG:colcon.colcon_core.event_handler.log_command:Invoking command in '/home/beingar/ros2_jazzy_ws/build/ur5_moveit': CMAKE_PREFIX_PATH=${CMAKE_PREFIX_PATH}:/home/beingar/ros2_jazzy_ws/install/hri_manipulation:/opt/ros/jazzy DEBUGINFOD_URLS=https://debuginfod.ubuntu.com /usr/bin/cmake /home/beingar/ros2_jazzy_ws/src/ur5_ws/src/ur5_moveit -DAMENT_CMAKE_SYMLINK_INSTALL=1 -DCMAKE_INSTALL_PREFIX=/home/beingar/ros2_jazzy_ws/install/ur5_moveit
+[8.962s] DEBUG:colcon.colcon_core.event_handler.log_command:Invoked command in '/home/beingar/ros2_jazzy_ws/build/ur5_description' returned '0': CMAKE_PREFIX_PATH=${CMAKE_PREFIX_PATH}:/home/beingar/ros2_jazzy_ws/install/hri_manipulation:/opt/ros/jazzy DEBUGINFOD_URLS=https://debuginfod.ubuntu.com /usr/bin/cmake /home/beingar/ros2_jazzy_ws/src/ur5_ws/src/ur5_description -DAMENT_CMAKE_SYMLINK_INSTALL=1 -DCMAKE_INSTALL_PREFIX=/home/beingar/ros2_jazzy_ws/install/ur5_description
+[8.970s] DEBUG:colcon.colcon_core.event_handler.log_command:Invoking command in '/home/beingar/ros2_jazzy_ws/build/ur5_description': CMAKE_PREFIX_PATH=${CMAKE_PREFIX_PATH}:/home/beingar/ros2_jazzy_ws/install/hri_manipulation:/opt/ros/jazzy DEBUGINFOD_URLS=https://debuginfod.ubuntu.com /usr/bin/cmake --build /home/beingar/ros2_jazzy_ws/build/ur5_description -- -j4 -l4
+[8.977s] DEBUG:colcon.colcon_core.event_handler.log_command:Invoked command in '/home/beingar/ros2_jazzy_ws/build/ur5_controller' returned '0': CMAKE_PREFIX_PATH=${CMAKE_PREFIX_PATH}:/home/beingar/ros2_jazzy_ws/install/hri_manipulation:/opt/ros/jazzy DEBUGINFOD_URLS=https://debuginfod.ubuntu.com /usr/bin/cmake /home/beingar/ros2_jazzy_ws/src/ur5_ws/src/ur5_controller -DAMENT_CMAKE_SYMLINK_INSTALL=1 -DCMAKE_INSTALL_PREFIX=/home/beingar/ros2_jazzy_ws/install/ur5_controller
+[8.987s] DEBUG:colcon.colcon_core.event_handler.log_command:Invoking command in '/home/beingar/ros2_jazzy_ws/build/ur5_controller': CMAKE_PREFIX_PATH=${CMAKE_PREFIX_PATH}:/home/beingar/ros2_jazzy_ws/install/hri_manipulation:/opt/ros/jazzy DEBUGINFOD_URLS=https://debuginfod.ubuntu.com /usr/bin/cmake --build /home/beingar/ros2_jazzy_ws/build/ur5_controller -- -j4 -l4
+[8.989s] DEBUG:colcon.colcon_core.event_handler.log_command:Invoked command in '/home/beingar/ros2_jazzy_ws/build/ur5_moveit' returned '0': CMAKE_PREFIX_PATH=${CMAKE_PREFIX_PATH}:/home/beingar/ros2_jazzy_ws/install/hri_manipulation:/opt/ros/jazzy DEBUGINFOD_URLS=https://debuginfod.ubuntu.com /usr/bin/cmake /home/beingar/ros2_jazzy_ws/src/ur5_ws/src/ur5_moveit -DAMENT_CMAKE_SYMLINK_INSTALL=1 -DCMAKE_INSTALL_PREFIX=/home/beingar/ros2_jazzy_ws/install/ur5_moveit
+[8.997s] DEBUG:colcon.colcon_core.event_handler.log_command:Invoking command in '/home/beingar/ros2_jazzy_ws/build/ur5_moveit': CMAKE_PREFIX_PATH=${CMAKE_PREFIX_PATH}:/home/beingar/ros2_jazzy_ws/install/hri_manipulation:/opt/ros/jazzy DEBUGINFOD_URLS=https://debuginfod.ubuntu.com /usr/bin/cmake --build /home/beingar/ros2_jazzy_ws/build/ur5_moveit -- -j4 -l4
+[9.183s] DEBUG:colcon.colcon_core.event_handler.log_command:Invoked command in '/home/beingar/ros2_jazzy_ws/build/ur5_description' returned '0': CMAKE_PREFIX_PATH=${CMAKE_PREFIX_PATH}:/home/beingar/ros2_jazzy_ws/install/hri_manipulation:/opt/ros/jazzy DEBUGINFOD_URLS=https://debuginfod.ubuntu.com /usr/bin/cmake --build /home/beingar/ros2_jazzy_ws/build/ur5_description -- -j4 -l4
+[9.213s] DEBUG:colcon.colcon_core.event_handler.log_command:Invoking command in '/home/beingar/ros2_jazzy_ws/build/ur5_description': CMAKE_PREFIX_PATH=${CMAKE_PREFIX_PATH}:/home/beingar/ros2_jazzy_ws/install/hri_manipulation:/opt/ros/jazzy DEBUGINFOD_URLS=https://debuginfod.ubuntu.com /usr/bin/cmake --install /home/beingar/ros2_jazzy_ws/build/ur5_description
+[9.217s] DEBUG:colcon.colcon_core.event_handler.log_command:Invoked command in '/home/beingar/ros2_jazzy_ws/build/ur5_moveit' returned '0': CMAKE_PREFIX_PATH=${CMAKE_PREFIX_PATH}:/home/beingar/ros2_jazzy_ws/install/hri_manipulation:/opt/ros/jazzy DEBUGINFOD_URLS=https://debuginfod.ubuntu.com /usr/bin/cmake --build /home/beingar/ros2_jazzy_ws/build/ur5_moveit -- -j4 -l4
+[9.221s] DEBUG:colcon.colcon_core.event_handler.log_command:Invoking command in '/home/beingar/ros2_jazzy_ws/build/ur5_moveit': CMAKE_PREFIX_PATH=${CMAKE_PREFIX_PATH}:/home/beingar/ros2_jazzy_ws/install/hri_manipulation:/opt/ros/jazzy DEBUGINFOD_URLS=https://debuginfod.ubuntu.com /usr/bin/cmake --install /home/beingar/ros2_jazzy_ws/build/ur5_moveit
+[9.224s] DEBUG:colcon.colcon_core.event_handler.log_command:Invoked command in '/home/beingar/ros2_jazzy_ws/build/ur5_controller' returned '0': CMAKE_PREFIX_PATH=${CMAKE_PREFIX_PATH}:/home/beingar/ros2_jazzy_ws/install/hri_manipulation:/opt/ros/jazzy DEBUGINFOD_URLS=https://debuginfod.ubuntu.com /usr/bin/cmake --build /home/beingar/ros2_jazzy_ws/build/ur5_controller -- -j4 -l4
+[9.229s] DEBUG:colcon.colcon_core.event_handler.log_command:Invoking command in '/home/beingar/ros2_jazzy_ws/build/ur5_controller': CMAKE_PREFIX_PATH=${CMAKE_PREFIX_PATH}:/home/beingar/ros2_jazzy_ws/install/hri_manipulation:/opt/ros/jazzy DEBUGINFOD_URLS=https://debuginfod.ubuntu.com /usr/bin/cmake --install /home/beingar/ros2_jazzy_ws/build/ur5_controller
+[9.794s] Level 1:colcon.colcon_core.environment:create_environment_scripts_only(ur5_controller)
+[9.796s] DEBUG:colcon.colcon_core.event_handler.log_command:Invoked command in '/home/beingar/ros2_jazzy_ws/build/ur5_controller' returned '0': CMAKE_PREFIX_PATH=${CMAKE_PREFIX_PATH}:/home/beingar/ros2_jazzy_ws/install/hri_manipulation:/opt/ros/jazzy DEBUGINFOD_URLS=https://debuginfod.ubuntu.com /usr/bin/cmake --install /home/beingar/ros2_jazzy_ws/build/ur5_controller
+[9.808s] Level 1:colcon.colcon_core.environment:checking '/home/beingar/ros2_jazzy_ws/install/ur5_controller' for CMake module files
+[9.810s] Level 1:colcon.colcon_core.environment:checking '/home/beingar/ros2_jazzy_ws/install/ur5_controller' for CMake config files
+[9.811s] Level 1:colcon.colcon_core.shell:create_environment_hook('ur5_controller', 'cmake_prefix_path')
+[9.812s] INFO:colcon.colcon_core.shell:Creating environment hook '/home/beingar/ros2_jazzy_ws/install/ur5_controller/share/ur5_controller/hook/cmake_prefix_path.ps1'
+[9.815s] INFO:colcon.colcon_core.shell:Creating environment descriptor '/home/beingar/ros2_jazzy_ws/install/ur5_controller/share/ur5_controller/hook/cmake_prefix_path.dsv'
+[9.817s] INFO:colcon.colcon_core.shell:Creating environment hook '/home/beingar/ros2_jazzy_ws/install/ur5_controller/share/ur5_controller/hook/cmake_prefix_path.sh'
+[9.820s] Level 1:colcon.colcon_core.environment:checking '/home/beingar/ros2_jazzy_ws/install/ur5_controller/bin'
+[9.820s] Level 1:colcon.colcon_core.environment:checking '/home/beingar/ros2_jazzy_ws/install/ur5_controller/lib/pkgconfig/ur5_controller.pc'
+[9.821s] Level 1:colcon.colcon_core.environment:checking '/home/beingar/ros2_jazzy_ws/install/ur5_controller/lib/python3.12/site-packages'
+[9.823s] Level 1:colcon.colcon_core.environment:checking '/home/beingar/ros2_jazzy_ws/install/ur5_controller/bin'
+[9.823s] INFO:colcon.colcon_core.shell:Creating package script '/home/beingar/ros2_jazzy_ws/install/ur5_controller/share/ur5_controller/package.ps1'
+[9.826s] INFO:colcon.colcon_core.shell:Creating package descriptor '/home/beingar/ros2_jazzy_ws/install/ur5_controller/share/ur5_controller/package.dsv'
+[9.828s] INFO:colcon.colcon_core.shell:Creating package script '/home/beingar/ros2_jazzy_ws/install/ur5_controller/share/ur5_controller/package.sh'
+[9.829s] INFO:colcon.colcon_core.shell:Creating package script '/home/beingar/ros2_jazzy_ws/install/ur5_controller/share/ur5_controller/package.bash'
+[9.832s] INFO:colcon.colcon_core.shell:Creating package script '/home/beingar/ros2_jazzy_ws/install/ur5_controller/share/ur5_controller/package.zsh'
+[9.836s] Level 1:colcon.colcon_core.environment:create_file_with_runtime_dependencies(/home/beingar/ros2_jazzy_ws/install/ur5_controller/share/colcon-core/packages/ur5_controller)
+[9.839s] Level 1:colcon.colcon_core.environment:create_environment_scripts_only(ur5_controller)
+[9.839s] Level 1:colcon.colcon_core.environment:checking '/home/beingar/ros2_jazzy_ws/install/ur5_controller' for CMake module files
+[9.842s] Level 1:colcon.colcon_core.environment:checking '/home/beingar/ros2_jazzy_ws/install/ur5_controller' for CMake config files
+[9.843s] Level 1:colcon.colcon_core.shell:create_environment_hook('ur5_controller', 'cmake_prefix_path')
+[9.843s] INFO:colcon.colcon_core.shell:Creating environment hook '/home/beingar/ros2_jazzy_ws/install/ur5_controller/share/ur5_controller/hook/cmake_prefix_path.ps1'
+[9.845s] INFO:colcon.colcon_core.shell:Creating environment descriptor '/home/beingar/ros2_jazzy_ws/install/ur5_controller/share/ur5_controller/hook/cmake_prefix_path.dsv'
+[9.846s] INFO:colcon.colcon_core.shell:Creating environment hook '/home/beingar/ros2_jazzy_ws/install/ur5_controller/share/ur5_controller/hook/cmake_prefix_path.sh'
+[9.849s] Level 1:colcon.colcon_core.environment:checking '/home/beingar/ros2_jazzy_ws/install/ur5_controller/bin'
+[9.850s] Level 1:colcon.colcon_core.environment:checking '/home/beingar/ros2_jazzy_ws/install/ur5_controller/lib/pkgconfig/ur5_controller.pc'
+[9.851s] Level 1:colcon.colcon_core.environment:checking '/home/beingar/ros2_jazzy_ws/install/ur5_controller/lib/python3.12/site-packages'
+[9.852s] Level 1:colcon.colcon_core.environment:checking '/home/beingar/ros2_jazzy_ws/install/ur5_controller/bin'
+[9.853s] INFO:colcon.colcon_core.shell:Creating package script '/home/beingar/ros2_jazzy_ws/install/ur5_controller/share/ur5_controller/package.ps1'
+[9.855s] INFO:colcon.colcon_core.shell:Creating package descriptor '/home/beingar/ros2_jazzy_ws/install/ur5_controller/share/ur5_controller/package.dsv'
+[9.858s] INFO:colcon.colcon_core.shell:Creating package script '/home/beingar/ros2_jazzy_ws/install/ur5_controller/share/ur5_controller/package.sh'
+[9.860s] INFO:colcon.colcon_core.shell:Creating package script '/home/beingar/ros2_jazzy_ws/install/ur5_controller/share/ur5_controller/package.bash'
+[9.862s] INFO:colcon.colcon_core.shell:Creating package script '/home/beingar/ros2_jazzy_ws/install/ur5_controller/share/ur5_controller/package.zsh'
+[9.863s] Level 1:colcon.colcon_core.environment:create_file_with_runtime_dependencies(/home/beingar/ros2_jazzy_ws/install/ur5_controller/share/colcon-core/packages/ur5_controller)
+[10.066s] Level 1:colcon.colcon_core.environment:create_environment_scripts_only(ur5_moveit)
+[10.067s] Level 1:colcon.colcon_core.environment:checking '/home/beingar/ros2_jazzy_ws/install/ur5_moveit' for CMake module files
+[10.069s] DEBUG:colcon.colcon_core.event_handler.log_command:Invoked command in '/home/beingar/ros2_jazzy_ws/build/ur5_moveit' returned '0': CMAKE_PREFIX_PATH=${CMAKE_PREFIX_PATH}:/home/beingar/ros2_jazzy_ws/install/hri_manipulation:/opt/ros/jazzy DEBUGINFOD_URLS=https://debuginfod.ubuntu.com /usr/bin/cmake --install /home/beingar/ros2_jazzy_ws/build/ur5_moveit
+[10.070s] Level 1:colcon.colcon_core.environment:checking '/home/beingar/ros2_jazzy_ws/install/ur5_moveit' for CMake config files
+[10.071s] Level 1:colcon.colcon_core.shell:create_environment_hook('ur5_moveit', 'cmake_prefix_path')
+[10.072s] INFO:colcon.colcon_core.shell:Creating environment hook '/home/beingar/ros2_jazzy_ws/install/ur5_moveit/share/ur5_moveit/hook/cmake_prefix_path.ps1'
+[10.073s] INFO:colcon.colcon_core.shell:Creating environment descriptor '/home/beingar/ros2_jazzy_ws/install/ur5_moveit/share/ur5_moveit/hook/cmake_prefix_path.dsv'
+[10.074s] INFO:colcon.colcon_core.shell:Creating environment hook '/home/beingar/ros2_jazzy_ws/install/ur5_moveit/share/ur5_moveit/hook/cmake_prefix_path.sh'
+[10.076s] Level 1:colcon.colcon_core.environment:checking '/home/beingar/ros2_jazzy_ws/install/ur5_moveit/bin'
+[10.076s] Level 1:colcon.colcon_core.environment:checking '/home/beingar/ros2_jazzy_ws/install/ur5_moveit/lib/pkgconfig/ur5_moveit.pc'
+[10.077s] Level 1:colcon.colcon_core.environment:checking '/home/beingar/ros2_jazzy_ws/install/ur5_moveit/lib/python3.12/site-packages'
+[10.078s] Level 1:colcon.colcon_core.environment:checking '/home/beingar/ros2_jazzy_ws/install/ur5_moveit/bin'
+[10.078s] INFO:colcon.colcon_core.shell:Creating package script '/home/beingar/ros2_jazzy_ws/install/ur5_moveit/share/ur5_moveit/package.ps1'
+[10.080s] INFO:colcon.colcon_core.shell:Creating package descriptor '/home/beingar/ros2_jazzy_ws/install/ur5_moveit/share/ur5_moveit/package.dsv'
+[10.082s] INFO:colcon.colcon_core.shell:Creating package script '/home/beingar/ros2_jazzy_ws/install/ur5_moveit/share/ur5_moveit/package.sh'
+[10.083s] INFO:colcon.colcon_core.shell:Creating package script '/home/beingar/ros2_jazzy_ws/install/ur5_moveit/share/ur5_moveit/package.bash'
+[10.084s] INFO:colcon.colcon_core.shell:Creating package script '/home/beingar/ros2_jazzy_ws/install/ur5_moveit/share/ur5_moveit/package.zsh'
+[10.084s] Level 1:colcon.colcon_core.environment:create_file_with_runtime_dependencies(/home/beingar/ros2_jazzy_ws/install/ur5_moveit/share/colcon-core/packages/ur5_moveit)
+[10.085s] Level 1:colcon.colcon_core.environment:create_environment_scripts_only(ur5_moveit)
+[10.086s] Level 1:colcon.colcon_core.environment:checking '/home/beingar/ros2_jazzy_ws/install/ur5_moveit' for CMake module files
+[10.087s] Level 1:colcon.colcon_core.environment:checking '/home/beingar/ros2_jazzy_ws/install/ur5_moveit' for CMake config files
+[10.088s] Level 1:colcon.colcon_core.shell:create_environment_hook('ur5_moveit', 'cmake_prefix_path')
+[10.089s] INFO:colcon.colcon_core.shell:Creating environment hook '/home/beingar/ros2_jazzy_ws/install/ur5_moveit/share/ur5_moveit/hook/cmake_prefix_path.ps1'
+[10.090s] INFO:colcon.colcon_core.shell:Creating environment descriptor '/home/beingar/ros2_jazzy_ws/install/ur5_moveit/share/ur5_moveit/hook/cmake_prefix_path.dsv'
+[10.091s] INFO:colcon.colcon_core.shell:Creating environment hook '/home/beingar/ros2_jazzy_ws/install/ur5_moveit/share/ur5_moveit/hook/cmake_prefix_path.sh'
+[10.093s] Level 1:colcon.colcon_core.environment:checking '/home/beingar/ros2_jazzy_ws/install/ur5_moveit/bin'
+[10.093s] Level 1:colcon.colcon_core.environment:checking '/home/beingar/ros2_jazzy_ws/install/ur5_moveit/lib/pkgconfig/ur5_moveit.pc'
+[10.094s] Level 1:colcon.colcon_core.environment:checking '/home/beingar/ros2_jazzy_ws/install/ur5_moveit/lib/python3.12/site-packages'
+[10.096s] Level 1:colcon.colcon_core.environment:checking '/home/beingar/ros2_jazzy_ws/install/ur5_moveit/bin'
+[10.096s] INFO:colcon.colcon_core.shell:Creating package script '/home/beingar/ros2_jazzy_ws/install/ur5_moveit/share/ur5_moveit/package.ps1'
+[10.099s] INFO:colcon.colcon_core.shell:Creating package descriptor '/home/beingar/ros2_jazzy_ws/install/ur5_moveit/share/ur5_moveit/package.dsv'
+[10.101s] INFO:colcon.colcon_core.shell:Creating package script '/home/beingar/ros2_jazzy_ws/install/ur5_moveit/share/ur5_moveit/package.sh'
+[10.102s] INFO:colcon.colcon_core.shell:Creating package script '/home/beingar/ros2_jazzy_ws/install/ur5_moveit/share/ur5_moveit/package.bash'
+[10.103s] INFO:colcon.colcon_core.shell:Creating package script '/home/beingar/ros2_jazzy_ws/install/ur5_moveit/share/ur5_moveit/package.zsh'
+[10.104s] Level 1:colcon.colcon_core.environment:create_file_with_runtime_dependencies(/home/beingar/ros2_jazzy_ws/install/ur5_moveit/share/colcon-core/packages/ur5_moveit)
+[10.902s] Level 1:colcon.colcon_core.environment:create_environment_scripts_only(ur5_description)
+[10.903s] Level 1:colcon.colcon_core.environment:checking '/home/beingar/ros2_jazzy_ws/install/ur5_description' for CMake module files
+[10.904s] DEBUG:colcon.colcon_core.event_handler.log_command:Invoked command in '/home/beingar/ros2_jazzy_ws/build/ur5_description' returned '0': CMAKE_PREFIX_PATH=${CMAKE_PREFIX_PATH}:/home/beingar/ros2_jazzy_ws/install/hri_manipulation:/opt/ros/jazzy DEBUGINFOD_URLS=https://debuginfod.ubuntu.com /usr/bin/cmake --install /home/beingar/ros2_jazzy_ws/build/ur5_description
+[10.907s] Level 1:colcon.colcon_core.environment:checking '/home/beingar/ros2_jazzy_ws/install/ur5_description' for CMake config files
+[10.910s] Level 1:colcon.colcon_core.shell:create_environment_hook('ur5_description', 'cmake_prefix_path')
+[10.910s] INFO:colcon.colcon_core.shell:Creating environment hook '/home/beingar/ros2_jazzy_ws/install/ur5_description/share/ur5_description/hook/cmake_prefix_path.ps1'
+[10.912s] INFO:colcon.colcon_core.shell:Creating environment descriptor '/home/beingar/ros2_jazzy_ws/install/ur5_description/share/ur5_description/hook/cmake_prefix_path.dsv'
+[10.913s] INFO:colcon.colcon_core.shell:Creating environment hook '/home/beingar/ros2_jazzy_ws/install/ur5_description/share/ur5_description/hook/cmake_prefix_path.sh'
+[10.916s] Level 1:colcon.colcon_core.environment:checking '/home/beingar/ros2_jazzy_ws/install/ur5_description/bin'
+[10.917s] Level 1:colcon.colcon_core.environment:checking '/home/beingar/ros2_jazzy_ws/install/ur5_description/lib/pkgconfig/ur5_description.pc'
+[10.918s] Level 1:colcon.colcon_core.environment:checking '/home/beingar/ros2_jazzy_ws/install/ur5_description/lib/python3.12/site-packages'
+[10.920s] Level 1:colcon.colcon_core.environment:checking '/home/beingar/ros2_jazzy_ws/install/ur5_description/bin'
+[10.921s] INFO:colcon.colcon_core.shell:Creating package script '/home/beingar/ros2_jazzy_ws/install/ur5_description/share/ur5_description/package.ps1'
+[10.924s] INFO:colcon.colcon_core.shell:Creating package descriptor '/home/beingar/ros2_jazzy_ws/install/ur5_description/share/ur5_description/package.dsv'
+[10.926s] INFO:colcon.colcon_core.shell:Creating package script '/home/beingar/ros2_jazzy_ws/install/ur5_description/share/ur5_description/package.sh'
+[10.928s] INFO:colcon.colcon_core.shell:Creating package script '/home/beingar/ros2_jazzy_ws/install/ur5_description/share/ur5_description/package.bash'
+[10.929s] INFO:colcon.colcon_core.shell:Creating package script '/home/beingar/ros2_jazzy_ws/install/ur5_description/share/ur5_description/package.zsh'
+[10.930s] Level 1:colcon.colcon_core.environment:create_file_with_runtime_dependencies(/home/beingar/ros2_jazzy_ws/install/ur5_description/share/colcon-core/packages/ur5_description)
+[10.932s] Level 1:colcon.colcon_core.environment:create_environment_scripts_only(ur5_description)
+[10.933s] Level 1:colcon.colcon_core.environment:checking '/home/beingar/ros2_jazzy_ws/install/ur5_description' for CMake module files
+[10.936s] Level 1:colcon.colcon_core.environment:checking '/home/beingar/ros2_jazzy_ws/install/ur5_description' for CMake config files
+[10.939s] Level 1:colcon.colcon_core.shell:create_environment_hook('ur5_description', 'cmake_prefix_path')
+[10.940s] INFO:colcon.colcon_core.shell:Creating environment hook '/home/beingar/ros2_jazzy_ws/install/ur5_description/share/ur5_description/hook/cmake_prefix_path.ps1'
+[10.941s] INFO:colcon.colcon_core.shell:Creating environment descriptor '/home/beingar/ros2_jazzy_ws/install/ur5_description/share/ur5_description/hook/cmake_prefix_path.dsv'
+[10.942s] INFO:colcon.colcon_core.shell:Creating environment hook '/home/beingar/ros2_jazzy_ws/install/ur5_description/share/ur5_description/hook/cmake_prefix_path.sh'
+[10.944s] Level 1:colcon.colcon_core.environment:checking '/home/beingar/ros2_jazzy_ws/install/ur5_description/bin'
+[10.944s] Level 1:colcon.colcon_core.environment:checking '/home/beingar/ros2_jazzy_ws/install/ur5_description/lib/pkgconfig/ur5_description.pc'
+[10.945s] Level 1:colcon.colcon_core.environment:checking '/home/beingar/ros2_jazzy_ws/install/ur5_description/lib/python3.12/site-packages'
+[10.946s] Level 1:colcon.colcon_core.environment:checking '/home/beingar/ros2_jazzy_ws/install/ur5_description/bin'
+[10.947s] INFO:colcon.colcon_core.shell:Creating package script '/home/beingar/ros2_jazzy_ws/install/ur5_description/share/ur5_description/package.ps1'
+[10.949s] INFO:colcon.colcon_core.shell:Creating package descriptor '/home/beingar/ros2_jazzy_ws/install/ur5_description/share/ur5_description/package.dsv'
+[10.952s] INFO:colcon.colcon_core.shell:Creating package script '/home/beingar/ros2_jazzy_ws/install/ur5_description/share/ur5_description/package.sh'
+[10.954s] INFO:colcon.colcon_core.shell:Creating package script '/home/beingar/ros2_jazzy_ws/install/ur5_description/share/ur5_description/package.bash'
+[10.956s] INFO:colcon.colcon_core.shell:Creating package script '/home/beingar/ros2_jazzy_ws/install/ur5_description/share/ur5_description/package.zsh'
+[10.957s] Level 1:colcon.colcon_core.environment:create_file_with_runtime_dependencies(/home/beingar/ros2_jazzy_ws/install/ur5_description/share/colcon-core/packages/ur5_description)
+[20.047s] DEBUG:colcon.colcon_core.event_handler.log_command:Invoked command in '/home/beingar/ros2_jazzy_ws/build/hello_moveit' returned '0': CMAKE_PREFIX_PATH=${CMAKE_PREFIX_PATH}:/home/beingar/ros2_jazzy_ws/install/hri_manipulation:/opt/ros/jazzy DEBUGINFOD_URLS=https://debuginfod.ubuntu.com /usr/bin/cmake /home/beingar/ros2_jazzy_ws/src/ur5_ws/src/hello_moveit -DAMENT_CMAKE_SYMLINK_INSTALL=1 -DCMAKE_INSTALL_PREFIX=/home/beingar/ros2_jazzy_ws/install/hello_moveit
+[20.050s] DEBUG:colcon.colcon_core.event_handler.log_command:Invoking command in '/home/beingar/ros2_jazzy_ws/build/hello_moveit': CMAKE_PREFIX_PATH=${CMAKE_PREFIX_PATH}:/home/beingar/ros2_jazzy_ws/install/hri_manipulation:/opt/ros/jazzy DEBUGINFOD_URLS=https://debuginfod.ubuntu.com /usr/bin/cmake --build /home/beingar/ros2_jazzy_ws/build/hello_moveit -- -j4 -l4
+[48.506s] DEBUG:colcon.colcon_core.event_handler.log_command:Invoked command in '/home/beingar/ros2_jazzy_ws/build/hello_moveit' returned '0': CMAKE_PREFIX_PATH=${CMAKE_PREFIX_PATH}:/home/beingar/ros2_jazzy_ws/install/hri_manipulation:/opt/ros/jazzy DEBUGINFOD_URLS=https://debuginfod.ubuntu.com /usr/bin/cmake --build /home/beingar/ros2_jazzy_ws/build/hello_moveit -- -j4 -l4
+[48.509s] DEBUG:colcon.colcon_core.event_handler.log_command:Invoking command in '/home/beingar/ros2_jazzy_ws/build/hello_moveit': CMAKE_PREFIX_PATH=${CMAKE_PREFIX_PATH}:/home/beingar/ros2_jazzy_ws/install/hri_manipulation:/opt/ros/jazzy DEBUGINFOD_URLS=https://debuginfod.ubuntu.com /usr/bin/cmake --install /home/beingar/ros2_jazzy_ws/build/hello_moveit
+[48.886s] Level 1:colcon.colcon_core.environment:create_environment_scripts_only(hello_moveit)
+[48.886s] Level 1:colcon.colcon_core.environment:checking '/home/beingar/ros2_jazzy_ws/install/hello_moveit' for CMake module files
+[48.887s] DEBUG:colcon.colcon_core.event_handler.log_command:Invoked command in '/home/beingar/ros2_jazzy_ws/build/hello_moveit' returned '0': CMAKE_PREFIX_PATH=${CMAKE_PREFIX_PATH}:/home/beingar/ros2_jazzy_ws/install/hri_manipulation:/opt/ros/jazzy DEBUGINFOD_URLS=https://debuginfod.ubuntu.com /usr/bin/cmake --install /home/beingar/ros2_jazzy_ws/build/hello_moveit
+[48.888s] Level 1:colcon.colcon_core.environment:checking '/home/beingar/ros2_jazzy_ws/install/hello_moveit' for CMake config files
+[48.889s] Level 1:colcon.colcon_core.shell:create_environment_hook('hello_moveit', 'cmake_prefix_path')
+[48.889s] INFO:colcon.colcon_core.shell:Creating environment hook '/home/beingar/ros2_jazzy_ws/install/hello_moveit/share/hello_moveit/hook/cmake_prefix_path.ps1'
+[48.890s] INFO:colcon.colcon_core.shell:Creating environment descriptor '/home/beingar/ros2_jazzy_ws/install/hello_moveit/share/hello_moveit/hook/cmake_prefix_path.dsv'
+[48.890s] INFO:colcon.colcon_core.shell:Creating environment hook '/home/beingar/ros2_jazzy_ws/install/hello_moveit/share/hello_moveit/hook/cmake_prefix_path.sh'
+[48.891s] Level 1:colcon.colcon_core.environment:checking '/home/beingar/ros2_jazzy_ws/install/hello_moveit/lib'
+[48.892s] Level 1:colcon.colcon_core.environment:checking '/home/beingar/ros2_jazzy_ws/install/hello_moveit/bin'
+[48.892s] Level 1:colcon.colcon_core.environment:checking '/home/beingar/ros2_jazzy_ws/install/hello_moveit/lib/pkgconfig/hello_moveit.pc'
+[48.892s] Level 1:colcon.colcon_core.environment:checking '/home/beingar/ros2_jazzy_ws/install/hello_moveit/lib/python3.12/site-packages'
+[48.893s] Level 1:colcon.colcon_core.environment:checking '/home/beingar/ros2_jazzy_ws/install/hello_moveit/bin'
+[48.894s] INFO:colcon.colcon_core.shell:Creating package script '/home/beingar/ros2_jazzy_ws/install/hello_moveit/share/hello_moveit/package.ps1'
+[48.895s] INFO:colcon.colcon_core.shell:Creating package descriptor '/home/beingar/ros2_jazzy_ws/install/hello_moveit/share/hello_moveit/package.dsv'
+[48.896s] INFO:colcon.colcon_core.shell:Creating package script '/home/beingar/ros2_jazzy_ws/install/hello_moveit/share/hello_moveit/package.sh'
+[48.897s] INFO:colcon.colcon_core.shell:Creating package script '/home/beingar/ros2_jazzy_ws/install/hello_moveit/share/hello_moveit/package.bash'
+[48.898s] INFO:colcon.colcon_core.shell:Creating package script '/home/beingar/ros2_jazzy_ws/install/hello_moveit/share/hello_moveit/package.zsh'
+[48.899s] Level 1:colcon.colcon_core.environment:create_file_with_runtime_dependencies(/home/beingar/ros2_jazzy_ws/install/hello_moveit/share/colcon-core/packages/hello_moveit)
+[48.900s] Level 1:colcon.colcon_core.environment:create_environment_scripts_only(hello_moveit)
+[48.900s] Level 1:colcon.colcon_core.environment:checking '/home/beingar/ros2_jazzy_ws/install/hello_moveit' for CMake module files
+[48.901s] Level 1:colcon.colcon_core.environment:checking '/home/beingar/ros2_jazzy_ws/install/hello_moveit' for CMake config files
+[48.902s] Level 1:colcon.colcon_core.shell:create_environment_hook('hello_moveit', 'cmake_prefix_path')
+[48.902s] INFO:colcon.colcon_core.shell:Creating environment hook '/home/beingar/ros2_jazzy_ws/install/hello_moveit/share/hello_moveit/hook/cmake_prefix_path.ps1'
+[48.903s] INFO:colcon.colcon_core.shell:Creating environment descriptor '/home/beingar/ros2_jazzy_ws/install/hello_moveit/share/hello_moveit/hook/cmake_prefix_path.dsv'
+[48.903s] INFO:colcon.colcon_core.shell:Creating environment hook '/home/beingar/ros2_jazzy_ws/install/hello_moveit/share/hello_moveit/hook/cmake_prefix_path.sh'
+[48.904s] Level 1:colcon.colcon_core.environment:checking '/home/beingar/ros2_jazzy_ws/install/hello_moveit/lib'
+[48.905s] Level 1:colcon.colcon_core.environment:checking '/home/beingar/ros2_jazzy_ws/install/hello_moveit/bin'
+[48.905s] Level 1:colcon.colcon_core.environment:checking '/home/beingar/ros2_jazzy_ws/install/hello_moveit/lib/pkgconfig/hello_moveit.pc'
+[48.905s] Level 1:colcon.colcon_core.environment:checking '/home/beingar/ros2_jazzy_ws/install/hello_moveit/lib/python3.12/site-packages'
+[48.906s] Level 1:colcon.colcon_core.environment:checking '/home/beingar/ros2_jazzy_ws/install/hello_moveit/bin'
+[48.906s] INFO:colcon.colcon_core.shell:Creating package script '/home/beingar/ros2_jazzy_ws/install/hello_moveit/share/hello_moveit/package.ps1'
+[48.907s] INFO:colcon.colcon_core.shell:Creating package descriptor '/home/beingar/ros2_jazzy_ws/install/hello_moveit/share/hello_moveit/package.dsv'
+[48.908s] INFO:colcon.colcon_core.shell:Creating package script '/home/beingar/ros2_jazzy_ws/install/hello_moveit/share/hello_moveit/package.sh'
+[48.909s] INFO:colcon.colcon_core.shell:Creating package script '/home/beingar/ros2_jazzy_ws/install/hello_moveit/share/hello_moveit/package.bash'
+[48.909s] INFO:colcon.colcon_core.shell:Creating package script '/home/beingar/ros2_jazzy_ws/install/hello_moveit/share/hello_moveit/package.zsh'
+[48.910s] Level 1:colcon.colcon_core.environment:create_file_with_runtime_dependencies(/home/beingar/ros2_jazzy_ws/install/hello_moveit/share/colcon-core/packages/hello_moveit)
+[48.912s] DEBUG:colcon.colcon_parallel_executor.executor.parallel:closing loop
+[48.912s] DEBUG:colcon.colcon_parallel_executor.executor.parallel:loop closed
+[48.913s] DEBUG:colcon.colcon_parallel_executor.executor.parallel:run_until_complete finished with '0'
+[48.913s] DEBUG:colcon.colcon_core.event_reactor:joining thread
+[48.925s] INFO:colcon.colcon_core.plugin_system:Skipping extension 'colcon_notification.desktop_notification.terminal_notifier': Not used on non-Darwin systems
+[48.925s] INFO:colcon.colcon_core.plugin_system:Skipping extension 'colcon_notification.desktop_notification.win32': Not used on non-Windows systems
+[48.925s] INFO:colcon.colcon_notification.desktop_notification:Sending desktop notification using 'notify2'
+[48.953s] DEBUG:colcon.colcon_core.event_reactor:joined thread
+[48.954s] INFO:colcon.colcon_core.shell:Creating prefix script '/home/beingar/ros2_jazzy_ws/install/local_setup.ps1'
+[48.957s] INFO:colcon.colcon_core.shell:Creating prefix util module '/home/beingar/ros2_jazzy_ws/install/_local_setup_util_ps1.py'
+[48.960s] INFO:colcon.colcon_core.shell:Creating prefix chain script '/home/beingar/ros2_jazzy_ws/install/setup.ps1'
+[48.965s] INFO:colcon.colcon_core.shell:Creating prefix script '/home/beingar/ros2_jazzy_ws/install/local_setup.sh'
+[48.966s] INFO:colcon.colcon_core.shell:Creating prefix util module '/home/beingar/ros2_jazzy_ws/install/_local_setup_util_sh.py'
+[48.968s] INFO:colcon.colcon_core.shell:Creating prefix chain script '/home/beingar/ros2_jazzy_ws/install/setup.sh'
+[48.972s] INFO:colcon.colcon_core.shell:Creating prefix script '/home/beingar/ros2_jazzy_ws/install/local_setup.bash'
+[48.974s] INFO:colcon.colcon_core.shell:Creating prefix chain script '/home/beingar/ros2_jazzy_ws/install/setup.bash'
+[48.976s] INFO:colcon.colcon_core.shell:Creating prefix script '/home/beingar/ros2_jazzy_ws/install/local_setup.zsh'
+[48.977s] INFO:colcon.colcon_core.shell:Creating prefix chain script '/home/beingar/ros2_jazzy_ws/install/setup.zsh'

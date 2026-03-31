@@ -1,0 +1,58 @@
+[0.135s] Invoking command in '/home/beingar/ros2_jazzy_ws/build/ur5_moveit': CMAKE_PREFIX_PATH=${CMAKE_PREFIX_PATH}:/home/beingar/ros2_jazzy_ws/install/hri_manipulation:/opt/ros/jazzy DEBUGINFOD_URLS=https://debuginfod.ubuntu.com /usr/bin/cmake /home/beingar/ros2_jazzy_ws/src/ur5_ws/src/ur5_moveit -DAMENT_CMAKE_SYMLINK_INSTALL=1 -DCMAKE_INSTALL_PREFIX=/home/beingar/ros2_jazzy_ws/install/ur5_moveit
+[1.629s] -- The C compiler identification is GNU 13.3.0
+[2.984s] -- The CXX compiler identification is GNU 13.3.0
+[3.131s] -- Detecting C compiler ABI info
+[3.549s] -- Detecting C compiler ABI info - done
+[3.591s] -- Check for working C compiler: /usr/bin/cc - skipped
+[3.592s] -- Detecting C compile features
+[3.593s] -- Detecting C compile features - done
+[3.645s] -- Detecting CXX compiler ABI info
+[4.007s] -- Detecting CXX compiler ABI info - done
+[4.058s] -- Check for working CXX compiler: /usr/bin/c++ - skipped
+[4.059s] -- Detecting CXX compile features
+[4.062s] -- Detecting CXX compile features - done
+[4.633s] -- Found ament_cmake: 2.5.5 (/opt/ros/jazzy/share/ament_cmake/cmake)
+[5.738s] -- Found Python3: /usr/bin/python3 (found version "3.12.3") found components: Interpreter 
+[6.211s] -- Override CMake install command with custom implementation using symlinks instead of copying resources
+[6.993s] -- Found ament_lint_auto: 0.17.4 (/opt/ros/jazzy/share/ament_lint_auto/cmake)
+[8.052s] -- Added test 'flake8' to check Python code syntax and style conventions
+[8.053s] -- Configured 'flake8' exclude dirs and/or files: 
+[8.075s] -- Added test 'lint_cmake' to check CMake code style
+[8.101s] -- Added test 'pep257' to check Python code against some of the docstring style conventions in PEP 257
+[8.141s] -- Added test 'xmllint' to check XML markup files
+[8.197s] -- Configuring done (7.8s)
+[8.228s] -- Generating done (0.0s)
+[8.235s] -- Build files have been written to: /home/beingar/ros2_jazzy_ws/build/ur5_moveit
+[8.279s] Invoked command in '/home/beingar/ros2_jazzy_ws/build/ur5_moveit' returned '0': CMAKE_PREFIX_PATH=${CMAKE_PREFIX_PATH}:/home/beingar/ros2_jazzy_ws/install/hri_manipulation:/opt/ros/jazzy DEBUGINFOD_URLS=https://debuginfod.ubuntu.com /usr/bin/cmake /home/beingar/ros2_jazzy_ws/src/ur5_ws/src/ur5_moveit -DAMENT_CMAKE_SYMLINK_INSTALL=1 -DCMAKE_INSTALL_PREFIX=/home/beingar/ros2_jazzy_ws/install/ur5_moveit
+[8.287s] Invoking command in '/home/beingar/ros2_jazzy_ws/build/ur5_moveit': CMAKE_PREFIX_PATH=${CMAKE_PREFIX_PATH}:/home/beingar/ros2_jazzy_ws/install/hri_manipulation:/opt/ros/jazzy DEBUGINFOD_URLS=https://debuginfod.ubuntu.com /usr/bin/cmake --build /home/beingar/ros2_jazzy_ws/build/ur5_moveit -- -j4 -l4
+[8.507s] Invoked command in '/home/beingar/ros2_jazzy_ws/build/ur5_moveit' returned '0': CMAKE_PREFIX_PATH=${CMAKE_PREFIX_PATH}:/home/beingar/ros2_jazzy_ws/install/hri_manipulation:/opt/ros/jazzy DEBUGINFOD_URLS=https://debuginfod.ubuntu.com /usr/bin/cmake --build /home/beingar/ros2_jazzy_ws/build/ur5_moveit -- -j4 -l4
+[8.512s] Invoking command in '/home/beingar/ros2_jazzy_ws/build/ur5_moveit': CMAKE_PREFIX_PATH=${CMAKE_PREFIX_PATH}:/home/beingar/ros2_jazzy_ws/install/hri_manipulation:/opt/ros/jazzy DEBUGINFOD_URLS=https://debuginfod.ubuntu.com /usr/bin/cmake --install /home/beingar/ros2_jazzy_ws/build/ur5_moveit
+[8.546s] -- Install configuration: ""
+[8.548s] -- Execute custom install script
+[8.549s] -- Symlinking: /home/beingar/ros2_jazzy_ws/install/ur5_moveit/share/ur5_moveit/launch/moveit.launch.py
+[8.586s] -- Symlinking: /home/beingar/ros2_jazzy_ws/install/ur5_moveit/share/ur5_moveit/launch/simulated_robot.launch.py
+[8.624s] -- Symlinking: /home/beingar/ros2_jazzy_ws/install/ur5_moveit/share/ur5_moveit/config/controller_setting.yaml
+[8.657s] -- Symlinking: /home/beingar/ros2_jazzy_ws/install/ur5_moveit/share/ur5_moveit/config/initial_positions.yaml
+[8.692s] -- Symlinking: /home/beingar/ros2_jazzy_ws/install/ur5_moveit/share/ur5_moveit/config/joint_limits.yaml
+[8.729s] -- Symlinking: /home/beingar/ros2_jazzy_ws/install/ur5_moveit/share/ur5_moveit/config/kinematics.yaml
+[8.763s] -- Symlinking: /home/beingar/ros2_jazzy_ws/install/ur5_moveit/share/ur5_moveit/config/moveit.rviz
+[8.796s] -- Symlinking: /home/beingar/ros2_jazzy_ws/install/ur5_moveit/share/ur5_moveit/config/moveit_controllers.yaml
+[8.831s] -- Symlinking: /home/beingar/ros2_jazzy_ws/install/ur5_moveit/share/ur5_moveit/config/pilz_cartesian_limits.yaml
+[8.863s] -- Symlinking: /home/beingar/ros2_jazzy_ws/install/ur5_moveit/share/ur5_moveit/config/ros2_controllers.yaml
+[8.897s] -- Symlinking: /home/beingar/ros2_jazzy_ws/install/ur5_moveit/share/ur5_moveit/config/ur5_robot.srdf
+[8.930s] -- Symlinking: /home/beingar/ros2_jazzy_ws/install/ur5_moveit/share/ament_index/resource_index/package_run_dependencies/ur5_moveit
+[8.963s] -- Symlinking: /home/beingar/ros2_jazzy_ws/install/ur5_moveit/share/ament_index/resource_index/parent_prefix_path/ur5_moveit
+[8.997s] -- Symlinking: /home/beingar/ros2_jazzy_ws/install/ur5_moveit/share/ur5_moveit/environment/ament_prefix_path.sh
+[9.030s] -- Symlinking: /home/beingar/ros2_jazzy_ws/install/ur5_moveit/share/ur5_moveit/environment/ament_prefix_path.dsv
+[9.062s] -- Symlinking: /home/beingar/ros2_jazzy_ws/install/ur5_moveit/share/ur5_moveit/environment/path.sh
+[9.094s] -- Symlinking: /home/beingar/ros2_jazzy_ws/install/ur5_moveit/share/ur5_moveit/environment/path.dsv
+[9.121s] -- Symlinking: /home/beingar/ros2_jazzy_ws/install/ur5_moveit/share/ur5_moveit/local_setup.bash
+[9.149s] -- Symlinking: /home/beingar/ros2_jazzy_ws/install/ur5_moveit/share/ur5_moveit/local_setup.sh
+[9.172s] -- Symlinking: /home/beingar/ros2_jazzy_ws/install/ur5_moveit/share/ur5_moveit/local_setup.zsh
+[9.199s] -- Symlinking: /home/beingar/ros2_jazzy_ws/install/ur5_moveit/share/ur5_moveit/local_setup.dsv
+[9.225s] -- Symlinking: /home/beingar/ros2_jazzy_ws/install/ur5_moveit/share/ur5_moveit/package.dsv
+[9.250s] -- Symlinking: /home/beingar/ros2_jazzy_ws/install/ur5_moveit/share/ament_index/resource_index/packages/ur5_moveit
+[9.275s] -- Symlinking: /home/beingar/ros2_jazzy_ws/install/ur5_moveit/share/ur5_moveit/cmake/ur5_moveitConfig.cmake
+[9.301s] -- Symlinking: /home/beingar/ros2_jazzy_ws/install/ur5_moveit/share/ur5_moveit/cmake/ur5_moveitConfig-version.cmake
+[9.328s] -- Symlinking: /home/beingar/ros2_jazzy_ws/install/ur5_moveit/share/ur5_moveit/package.xml
+[9.359s] Invoked command in '/home/beingar/ros2_jazzy_ws/build/ur5_moveit' returned '0': CMAKE_PREFIX_PATH=${CMAKE_PREFIX_PATH}:/home/beingar/ros2_jazzy_ws/install/hri_manipulation:/opt/ros/jazzy DEBUGINFOD_URLS=https://debuginfod.ubuntu.com /usr/bin/cmake --install /home/beingar/ros2_jazzy_ws/build/ur5_moveit

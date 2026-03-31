@@ -1,0 +1,773 @@
+[0.000000] (-) TimerEvent: {}
+[0.000896] (-) JobUnselected: {'identifier': 'hri_manipulation'}
+[0.000959] (hello_moveit) JobQueued: {'identifier': 'hello_moveit', 'dependencies': OrderedDict()}
+[0.001001] (ur5_controller) JobQueued: {'identifier': 'ur5_controller', 'dependencies': OrderedDict()}
+[0.001031] (ur5_description) JobQueued: {'identifier': 'ur5_description', 'dependencies': OrderedDict()}
+[0.001058] (ur5_moveit) JobQueued: {'identifier': 'ur5_moveit', 'dependencies': OrderedDict()}
+[0.001086] (hello_moveit) JobStarted: {'identifier': 'hello_moveit'}
+[0.014494] (ur5_controller) JobStarted: {'identifier': 'ur5_controller'}
+[0.026188] (ur5_description) JobStarted: {'identifier': 'ur5_description'}
+[0.035087] (ur5_moveit) JobStarted: {'identifier': 'ur5_moveit'}
+[0.050838] (hello_moveit) JobProgress: {'identifier': 'hello_moveit', 'progress': 'cmake'}
+[0.051931] (hello_moveit) Command: {'cmd': ['/usr/bin/cmake', '/home/beingar/ros2_jazzy_ws/src/ur5_ws/src/hello_moveit', '-DAMENT_CMAKE_SYMLINK_INSTALL=1', '-DCMAKE_INSTALL_PREFIX=/home/beingar/ros2_jazzy_ws/install/hello_moveit'], 'cwd': '/home/beingar/ros2_jazzy_ws/build/hello_moveit', 'env': OrderedDict({'GJS_DEBUG_TOPICS': 'JS ERROR;JS LOG', 'XDG_ACTIVATION_TOKEN': 'gnome-shell/Terminator/2312-7-beingar-HP-ProBook-650-G2_TIME24389819', 'LESSOPEN': '| /usr/bin/lesspipe %s', 'GZ_SIM_RESOURCE_PATH': '/opt/ros/jazzy/share', 'USER': 'beingar', 'GZ_CONFIG_PATH': '/opt/ros/jazzy/opt/gz_sim_vendor/share/gz:/opt/ros/jazzy/opt/sdformat_vendor/share/gz:/opt/ros/jazzy/opt/gz_gui_vendor/share/gz:/opt/ros/jazzy/opt/gz_transport_vendor/share/gz:/opt/ros/jazzy/opt/gz_rendering_vendor/share/gz:/opt/ros/jazzy/opt/gz_plugin_vendor/share/gz:/opt/ros/jazzy/opt/gz_fuel_tools_vendor/share/gz:/opt/ros/jazzy/opt/gz_msgs_vendor/share/gz:/opt/ros/jazzy/opt/gz_common_vendor/share/gz', 'XDG_SESSION_TYPE': 'wayland', 'CLUTTER_DISABLE_MIPMAPPED_TEXT': '1', 'SHLVL': '1', 'LD_LIBRARY_PATH': '/opt/ros/jazzy/opt/gz_sim_vendor/lib:/opt/ros/jazzy/opt/gz_sensors_vendor/lib:/opt/ros/jazzy/opt/gz_physics_vendor/lib:/opt/ros/jazzy/opt/sdformat_vendor/lib:/opt/ros/jazzy/opt/rviz_ogre_vendor/lib:/opt/ros/jazzy/lib/x86_64-linux-gnu:/opt/ros/jazzy/opt/gz_gui_vendor/lib:/opt/ros/jazzy/opt/gz_transport_vendor/lib:/opt/ros/jazzy/opt/gz_rendering_vendor/lib:/opt/ros/jazzy/opt/gz_plugin_vendor/lib:/opt/ros/jazzy/opt/gz_fuel_tools_vendor/lib:/opt/ros/jazzy/opt/gz_msgs_vendor/lib:/opt/ros/jazzy/opt/gz_common_vendor/lib:/opt/ros/jazzy/opt/gz_math_vendor/lib:/opt/ros/jazzy/opt/gz_utils_vendor/lib:/opt/ros/jazzy/opt/gz_tools_vendor/lib:/opt/ros/jazzy/opt/gz_ogre_next_vendor/lib:/opt/ros/jazzy/opt/gz_dartsim_vendor/lib:/opt/ros/jazzy/opt/gz_cmake_vendor/lib:/opt/ros/jazzy/lib', 'HOME': '/home/beingar', 'OLDPWD': '/home/beingar/ros2_jazzy_ws/src/ur5_ws/src', 'DESKTOP_SESSION': 'ubuntu', 'GIO_LAUNCHED_DESKTOP_FILE': '/usr/share/applications/terminator.desktop', 'ROS_PYTHON_VERSION': '3', 'GNOME_SHELL_SESSION_MODE': 'ubuntu', 'GTK_MODULES': 'gail:atk-bridge', 'MANAGERPID': '2037', 'SYSTEMD_EXEC_PID': '2312', 'GSM_SKIP_SSH_AGENT_WORKAROUND': 'true', 'DBUS_SESSION_BUS_ADDRESS': 'unix:path=/run/user/1000/bus', 'COLORTERM': 'truecolor', 'TERMINATOR_DBUS_NAME': 'net.tenshu.Terminator25ef4b219e3b005583550f2b0f9f990c3', 'GIO_LAUNCHED_DESKTOP_FILE_PID': '9188', 'DEBUGINFOD_URLS': 'https://debuginfod.ubuntu.com', 'IM_CONFIG_PHASE': '1', 'WAYLAND_DISPLAY': 'wayland-0', 'COLCON_PREFIX_PATH': '/home/beingar/ros2_jazzy_ws/install', 'ROS_DISTRO': 'jazzy', 'LOGNAME': 'beingar', 'JOURNAL_STREAM': '9:17243', '_': '/usr/bin/colcon', 'ROS_VERSION': '2', 'MEMORY_PRESSURE_WATCH': '/sys/fs/cgroup/user.slice/user-1000.slice/user@1000.service/session.slice/org.gnome.Shell@wayland.service/memory.pressure', 'XDG_SESSION_CLASS': 'user', 'USERNAME': 'beingar', 'TERM': 'xterm-256color', 'GNOME_DESKTOP_SESSION_ID': 'this-is-deprecated', 'PATH': '/opt/ros/jazzy/opt/gz_msgs_vendor/bin:/opt/ros/jazzy/opt/gz_tools_vendor/bin:/opt/ros/jazzy/opt/gz_ogre_next_vendor/bin:/opt/ros/jazzy/bin:/home/beingar/.local/bin:/usr/local/sbin:/usr/local/bin:/usr/sbin:/usr/bin:/sbin:/bin:/usr/games:/usr/local/games:/snap/bin:/snap/bin', 'SESSION_MANAGER': 'local/beingar-HP-ProBook-650-G2:@/tmp/.ICE-unix/2266,unix/beingar-HP-ProBook-650-G2:/tmp/.ICE-unix/2266', 'INVOCATION_ID': 'b926e553db25418ea4a9131805ffff6c', 'XDG_MENU_PREFIX': 'gnome-', 'GNOME_SETUP_DISPLAY': ':1', 'XDG_RUNTIME_DIR': '/run/user/1000', 'DISPLAY': ':0', 'TERMINATOR_DBUS_PATH': '/net/tenshu/Terminator2', 'LANG': 'fr_FR.UTF-8', 'XDG_CURRENT_DESKTOP': 'ubuntu:GNOME', 'XMODIFIERS': '@im=ibus', 'XDG_SESSION_DESKTOP': 'ubuntu', 'XAUTHORITY': '/run/user/1000/.mutter-Xwaylandauth.2KLUM3', 'LS_COLORS': 'rs=0:di=01;34:ln=01;36:mh=00:pi=40;33:so=01;35:do=01;35:bd=40;33;01:cd=40;33;01:or=40;31;01:mi=00:su=37;41:sg=30;43:ca=00:tw=30;42:ow=34;42:st=37;44:ex=01;32:*.tar=01;31:*.tgz=01;31:*.arc=01;31:*.arj=01;31:*.taz=01;31:*.lha=01;31:*.lz4=01;31:*.lzh=01;31:*.lzma=01;31:*.tlz=01;31:*.txz=01;31:*.tzo=01;31:*.t7z=01;31:*.zip=01;31:*.z=01;31:*.dz=01;31:*.gz=01;31:*.lrz=01;31:*.lz=01;31:*.lzo=01;31:*.xz=01;31:*.zst=01;31:*.tzst=01;31:*.bz2=01;31:*.bz=01;31:*.tbz=01;31:*.tbz2=01;31:*.tz=01;31:*.deb=01;31:*.rpm=01;31:*.jar=01;31:*.war=01;31:*.ear=01;31:*.sar=01;31:*.rar=01;31:*.alz=01;31:*.ace=01;31:*.zoo=01;31:*.cpio=01;31:*.7z=01;31:*.rz=01;31:*.cab=01;31:*.wim=01;31:*.swm=01;31:*.dwm=01;31:*.esd=01;31:*.avif=01;35:*.jpg=01;35:*.jpeg=01;35:*.mjpg=01;35:*.mjpeg=01;35:*.gif=01;35:*.bmp=01;35:*.pbm=01;35:*.pgm=01;35:*.ppm=01;35:*.tga=01;35:*.xbm=01;35:*.xpm=01;35:*.tif=01;35:*.tiff=01;35:*.png=01;35:*.svg=01;35:*.svgz=01;35:*.mng=01;35:*.pcx=01;35:*.mov=01;35:*.mpg=01;35:*.mpeg=01;35:*.m2v=01;35:*.mkv=01;35:*.webm=01;35:*.webp=01;35:*.ogm=01;35:*.mp4=01;35:*.m4v=01;35:*.mp4v=01;35:*.vob=01;35:*.qt=01;35:*.nuv=01;35:*.wmv=01;35:*.asf=01;35:*.rm=01;35:*.rmvb=01;35:*.flc=01;35:*.avi=01;35:*.fli=01;35:*.flv=01;35:*.gl=01;35:*.dl=01;35:*.xcf=01;35:*.xwd=01;35:*.yuv=01;35:*.cgm=01;35:*.emf=01;35:*.ogv=01;35:*.ogx=01;35:*.aac=00;36:*.au=00;36:*.flac=00;36:*.m4a=00;36:*.mid=00;36:*.midi=00;36:*.mka=00;36:*.mp3=00;36:*.mpc=00;36:*.ogg=00;36:*.ra=00;36:*.wav=00;36:*.oga=00;36:*.opus=00;36:*.spx=00;36:*.xspf=00;36:*~=00;90:*#=00;90:*.bak=00;90:*.crdownload=00;90:*.dpkg-dist=00;90:*.dpkg-new=00;90:*.dpkg-old=00;90:*.dpkg-tmp=00;90:*.old=00;90:*.orig=00;90:*.part=00;90:*.rej=00;90:*.rpmnew=00;90:*.rpmorig=00;90:*.rpmsave=00;90:*.swp=00;90:*.tmp=00;90:*.ucf-dist=00;90:*.ucf-new=00;90:*.ucf-old=00;90:', 'SSH_AUTH_SOCK': '/run/user/1000/keyring/ssh', 'AMENT_PREFIX_PATH': '/home/beingar/ros2_jazzy_ws/install/hri_manipulation:/opt/ros/jazzy', 'SHELL': '/bin/bash', 'TERMINATOR_UUID': 'urn:uuid:f96c641a-8bd9-44ec-89db-d184424d96b8', 'QT_ACCESSIBILITY': '1', 'GDMSESSION': 'ubuntu', 'LESSCLOSE': '/usr/bin/lesspipe %s %s', 'GJS_DEBUG_OUTPUT': 'stderr', 'ROS_AUTOMATIC_DISCOVERY_RANGE': 'SUBNET', 'QT_IM_MODULE': 'ibus', 'PWD': '/home/beingar/ros2_jazzy_ws/build/hello_moveit', 'XDG_CONFIG_DIRS': '/etc/xdg/xdg-ubuntu:/etc/xdg', 'XDG_DATA_DIRS': '/usr/share/ubuntu:/usr/share/gnome:/usr/local/share/:/usr/share/:/var/lib/snapd/desktop', 'PYTHONPATH': '/home/beingar/ros2_jazzy_ws/build/hri_manipulation:/home/beingar/ros2_jazzy_ws/install/hri_manipulation/lib/python3.12/site-packages:/opt/ros/jazzy/lib/python3.12/site-packages', 'COLCON': '1', 'MEMORY_PRESSURE_WRITE': 'c29tZSAyMDAwMDAgMjAwMDAwMAA=', 'VTE_VERSION': '7600', 'CMAKE_PREFIX_PATH': '/opt/ros/jazzy/opt/gz_sim_vendor:/opt/ros/jazzy/opt/gz_sensors_vendor:/opt/ros/jazzy/opt/gz_physics_vendor:/opt/ros/jazzy/opt/sdformat_vendor:/opt/ros/jazzy/opt/gz_gui_vendor:/opt/ros/jazzy/opt/gz_transport_vendor:/opt/ros/jazzy/opt/gz_rendering_vendor:/opt/ros/jazzy/opt/gz_plugin_vendor:/opt/ros/jazzy/opt/gz_fuel_tools_vendor:/opt/ros/jazzy/opt/gz_msgs_vendor:/opt/ros/jazzy/opt/gz_common_vendor:/opt/ros/jazzy/opt/gz_math_vendor:/opt/ros/jazzy/opt/gz_utils_vendor:/opt/ros/jazzy/opt/gz_tools_vendor:/opt/ros/jazzy/opt/gz_ogre_next_vendor:/opt/ros/jazzy/opt/gz_dartsim_vendor:/opt/ros/jazzy/opt/gz_cmake_vendor:/home/beingar/ros2_jazzy_ws/install/hri_manipulation:/opt/ros/jazzy'}), 'shell': False}
+[0.067483] (ur5_controller) JobProgress: {'identifier': 'ur5_controller', 'progress': 'cmake'}
+[0.068870] (ur5_controller) Command: {'cmd': ['/usr/bin/cmake', '/home/beingar/ros2_jazzy_ws/src/ur5_ws/src/ur5_controller', '-DAMENT_CMAKE_SYMLINK_INSTALL=1', '-DCMAKE_INSTALL_PREFIX=/home/beingar/ros2_jazzy_ws/install/ur5_controller'], 'cwd': '/home/beingar/ros2_jazzy_ws/build/ur5_controller', 'env': OrderedDict({'GJS_DEBUG_TOPICS': 'JS ERROR;JS LOG', 'XDG_ACTIVATION_TOKEN': 'gnome-shell/Terminator/2312-7-beingar-HP-ProBook-650-G2_TIME24389819', 'LESSOPEN': '| /usr/bin/lesspipe %s', 'GZ_SIM_RESOURCE_PATH': '/opt/ros/jazzy/share', 'USER': 'beingar', 'GZ_CONFIG_PATH': '/opt/ros/jazzy/opt/gz_sim_vendor/share/gz:/opt/ros/jazzy/opt/sdformat_vendor/share/gz:/opt/ros/jazzy/opt/gz_gui_vendor/share/gz:/opt/ros/jazzy/opt/gz_transport_vendor/share/gz:/opt/ros/jazzy/opt/gz_rendering_vendor/share/gz:/opt/ros/jazzy/opt/gz_plugin_vendor/share/gz:/opt/ros/jazzy/opt/gz_fuel_tools_vendor/share/gz:/opt/ros/jazzy/opt/gz_msgs_vendor/share/gz:/opt/ros/jazzy/opt/gz_common_vendor/share/gz', 'XDG_SESSION_TYPE': 'wayland', 'CLUTTER_DISABLE_MIPMAPPED_TEXT': '1', 'SHLVL': '1', 'LD_LIBRARY_PATH': '/opt/ros/jazzy/opt/gz_sim_vendor/lib:/opt/ros/jazzy/opt/gz_sensors_vendor/lib:/opt/ros/jazzy/opt/gz_physics_vendor/lib:/opt/ros/jazzy/opt/sdformat_vendor/lib:/opt/ros/jazzy/opt/rviz_ogre_vendor/lib:/opt/ros/jazzy/lib/x86_64-linux-gnu:/opt/ros/jazzy/opt/gz_gui_vendor/lib:/opt/ros/jazzy/opt/gz_transport_vendor/lib:/opt/ros/jazzy/opt/gz_rendering_vendor/lib:/opt/ros/jazzy/opt/gz_plugin_vendor/lib:/opt/ros/jazzy/opt/gz_fuel_tools_vendor/lib:/opt/ros/jazzy/opt/gz_msgs_vendor/lib:/opt/ros/jazzy/opt/gz_common_vendor/lib:/opt/ros/jazzy/opt/gz_math_vendor/lib:/opt/ros/jazzy/opt/gz_utils_vendor/lib:/opt/ros/jazzy/opt/gz_tools_vendor/lib:/opt/ros/jazzy/opt/gz_ogre_next_vendor/lib:/opt/ros/jazzy/opt/gz_dartsim_vendor/lib:/opt/ros/jazzy/opt/gz_cmake_vendor/lib:/opt/ros/jazzy/lib', 'HOME': '/home/beingar', 'OLDPWD': '/home/beingar/ros2_jazzy_ws/src/ur5_ws/src', 'DESKTOP_SESSION': 'ubuntu', 'GIO_LAUNCHED_DESKTOP_FILE': '/usr/share/applications/terminator.desktop', 'ROS_PYTHON_VERSION': '3', 'GNOME_SHELL_SESSION_MODE': 'ubuntu', 'GTK_MODULES': 'gail:atk-bridge', 'MANAGERPID': '2037', 'SYSTEMD_EXEC_PID': '2312', 'GSM_SKIP_SSH_AGENT_WORKAROUND': 'true', 'DBUS_SESSION_BUS_ADDRESS': 'unix:path=/run/user/1000/bus', 'COLORTERM': 'truecolor', 'TERMINATOR_DBUS_NAME': 'net.tenshu.Terminator25ef4b219e3b005583550f2b0f9f990c3', 'GIO_LAUNCHED_DESKTOP_FILE_PID': '9188', 'DEBUGINFOD_URLS': 'https://debuginfod.ubuntu.com', 'IM_CONFIG_PHASE': '1', 'WAYLAND_DISPLAY': 'wayland-0', 'COLCON_PREFIX_PATH': '/home/beingar/ros2_jazzy_ws/install', 'ROS_DISTRO': 'jazzy', 'LOGNAME': 'beingar', 'JOURNAL_STREAM': '9:17243', '_': '/usr/bin/colcon', 'ROS_VERSION': '2', 'MEMORY_PRESSURE_WATCH': '/sys/fs/cgroup/user.slice/user-1000.slice/user@1000.service/session.slice/org.gnome.Shell@wayland.service/memory.pressure', 'XDG_SESSION_CLASS': 'user', 'USERNAME': 'beingar', 'TERM': 'xterm-256color', 'GNOME_DESKTOP_SESSION_ID': 'this-is-deprecated', 'PATH': '/opt/ros/jazzy/opt/gz_msgs_vendor/bin:/opt/ros/jazzy/opt/gz_tools_vendor/bin:/opt/ros/jazzy/opt/gz_ogre_next_vendor/bin:/opt/ros/jazzy/bin:/home/beingar/.local/bin:/usr/local/sbin:/usr/local/bin:/usr/sbin:/usr/bin:/sbin:/bin:/usr/games:/usr/local/games:/snap/bin:/snap/bin', 'SESSION_MANAGER': 'local/beingar-HP-ProBook-650-G2:@/tmp/.ICE-unix/2266,unix/beingar-HP-ProBook-650-G2:/tmp/.ICE-unix/2266', 'INVOCATION_ID': 'b926e553db25418ea4a9131805ffff6c', 'XDG_MENU_PREFIX': 'gnome-', 'GNOME_SETUP_DISPLAY': ':1', 'XDG_RUNTIME_DIR': '/run/user/1000', 'DISPLAY': ':0', 'TERMINATOR_DBUS_PATH': '/net/tenshu/Terminator2', 'LANG': 'fr_FR.UTF-8', 'XDG_CURRENT_DESKTOP': 'ubuntu:GNOME', 'XMODIFIERS': '@im=ibus', 'XDG_SESSION_DESKTOP': 'ubuntu', 'XAUTHORITY': '/run/user/1000/.mutter-Xwaylandauth.2KLUM3', 'LS_COLORS': 'rs=0:di=01;34:ln=01;36:mh=00:pi=40;33:so=01;35:do=01;35:bd=40;33;01:cd=40;33;01:or=40;31;01:mi=00:su=37;41:sg=30;43:ca=00:tw=30;42:ow=34;42:st=37;44:ex=01;32:*.tar=01;31:*.tgz=01;31:*.arc=01;31:*.arj=01;31:*.taz=01;31:*.lha=01;31:*.lz4=01;31:*.lzh=01;31:*.lzma=01;31:*.tlz=01;31:*.txz=01;31:*.tzo=01;31:*.t7z=01;31:*.zip=01;31:*.z=01;31:*.dz=01;31:*.gz=01;31:*.lrz=01;31:*.lz=01;31:*.lzo=01;31:*.xz=01;31:*.zst=01;31:*.tzst=01;31:*.bz2=01;31:*.bz=01;31:*.tbz=01;31:*.tbz2=01;31:*.tz=01;31:*.deb=01;31:*.rpm=01;31:*.jar=01;31:*.war=01;31:*.ear=01;31:*.sar=01;31:*.rar=01;31:*.alz=01;31:*.ace=01;31:*.zoo=01;31:*.cpio=01;31:*.7z=01;31:*.rz=01;31:*.cab=01;31:*.wim=01;31:*.swm=01;31:*.dwm=01;31:*.esd=01;31:*.avif=01;35:*.jpg=01;35:*.jpeg=01;35:*.mjpg=01;35:*.mjpeg=01;35:*.gif=01;35:*.bmp=01;35:*.pbm=01;35:*.pgm=01;35:*.ppm=01;35:*.tga=01;35:*.xbm=01;35:*.xpm=01;35:*.tif=01;35:*.tiff=01;35:*.png=01;35:*.svg=01;35:*.svgz=01;35:*.mng=01;35:*.pcx=01;35:*.mov=01;35:*.mpg=01;35:*.mpeg=01;35:*.m2v=01;35:*.mkv=01;35:*.webm=01;35:*.webp=01;35:*.ogm=01;35:*.mp4=01;35:*.m4v=01;35:*.mp4v=01;35:*.vob=01;35:*.qt=01;35:*.nuv=01;35:*.wmv=01;35:*.asf=01;35:*.rm=01;35:*.rmvb=01;35:*.flc=01;35:*.avi=01;35:*.fli=01;35:*.flv=01;35:*.gl=01;35:*.dl=01;35:*.xcf=01;35:*.xwd=01;35:*.yuv=01;35:*.cgm=01;35:*.emf=01;35:*.ogv=01;35:*.ogx=01;35:*.aac=00;36:*.au=00;36:*.flac=00;36:*.m4a=00;36:*.mid=00;36:*.midi=00;36:*.mka=00;36:*.mp3=00;36:*.mpc=00;36:*.ogg=00;36:*.ra=00;36:*.wav=00;36:*.oga=00;36:*.opus=00;36:*.spx=00;36:*.xspf=00;36:*~=00;90:*#=00;90:*.bak=00;90:*.crdownload=00;90:*.dpkg-dist=00;90:*.dpkg-new=00;90:*.dpkg-old=00;90:*.dpkg-tmp=00;90:*.old=00;90:*.orig=00;90:*.part=00;90:*.rej=00;90:*.rpmnew=00;90:*.rpmorig=00;90:*.rpmsave=00;90:*.swp=00;90:*.tmp=00;90:*.ucf-dist=00;90:*.ucf-new=00;90:*.ucf-old=00;90:', 'SSH_AUTH_SOCK': '/run/user/1000/keyring/ssh', 'AMENT_PREFIX_PATH': '/home/beingar/ros2_jazzy_ws/install/hri_manipulation:/opt/ros/jazzy', 'SHELL': '/bin/bash', 'TERMINATOR_UUID': 'urn:uuid:f96c641a-8bd9-44ec-89db-d184424d96b8', 'QT_ACCESSIBILITY': '1', 'GDMSESSION': 'ubuntu', 'LESSCLOSE': '/usr/bin/lesspipe %s %s', 'GJS_DEBUG_OUTPUT': 'stderr', 'ROS_AUTOMATIC_DISCOVERY_RANGE': 'SUBNET', 'QT_IM_MODULE': 'ibus', 'PWD': '/home/beingar/ros2_jazzy_ws/build/ur5_controller', 'XDG_CONFIG_DIRS': '/etc/xdg/xdg-ubuntu:/etc/xdg', 'XDG_DATA_DIRS': '/usr/share/ubuntu:/usr/share/gnome:/usr/local/share/:/usr/share/:/var/lib/snapd/desktop', 'PYTHONPATH': '/home/beingar/ros2_jazzy_ws/build/hri_manipulation:/home/beingar/ros2_jazzy_ws/install/hri_manipulation/lib/python3.12/site-packages:/opt/ros/jazzy/lib/python3.12/site-packages', 'COLCON': '1', 'MEMORY_PRESSURE_WRITE': 'c29tZSAyMDAwMDAgMjAwMDAwMAA=', 'VTE_VERSION': '7600', 'CMAKE_PREFIX_PATH': '/opt/ros/jazzy/opt/gz_sim_vendor:/opt/ros/jazzy/opt/gz_sensors_vendor:/opt/ros/jazzy/opt/gz_physics_vendor:/opt/ros/jazzy/opt/sdformat_vendor:/opt/ros/jazzy/opt/gz_gui_vendor:/opt/ros/jazzy/opt/gz_transport_vendor:/opt/ros/jazzy/opt/gz_rendering_vendor:/opt/ros/jazzy/opt/gz_plugin_vendor:/opt/ros/jazzy/opt/gz_fuel_tools_vendor:/opt/ros/jazzy/opt/gz_msgs_vendor:/opt/ros/jazzy/opt/gz_common_vendor:/opt/ros/jazzy/opt/gz_math_vendor:/opt/ros/jazzy/opt/gz_utils_vendor:/opt/ros/jazzy/opt/gz_tools_vendor:/opt/ros/jazzy/opt/gz_ogre_next_vendor:/opt/ros/jazzy/opt/gz_dartsim_vendor:/opt/ros/jazzy/opt/gz_cmake_vendor:/home/beingar/ros2_jazzy_ws/install/hri_manipulation:/opt/ros/jazzy'}), 'shell': False}
+[0.072484] (ur5_description) JobProgress: {'identifier': 'ur5_description', 'progress': 'cmake'}
+[0.073598] (ur5_description) Command: {'cmd': ['/usr/bin/cmake', '/home/beingar/ros2_jazzy_ws/src/ur5_ws/src/ur5_description', '-DAMENT_CMAKE_SYMLINK_INSTALL=1', '-DCMAKE_INSTALL_PREFIX=/home/beingar/ros2_jazzy_ws/install/ur5_description'], 'cwd': '/home/beingar/ros2_jazzy_ws/build/ur5_description', 'env': OrderedDict({'GJS_DEBUG_TOPICS': 'JS ERROR;JS LOG', 'XDG_ACTIVATION_TOKEN': 'gnome-shell/Terminator/2312-7-beingar-HP-ProBook-650-G2_TIME24389819', 'LESSOPEN': '| /usr/bin/lesspipe %s', 'GZ_SIM_RESOURCE_PATH': '/opt/ros/jazzy/share', 'USER': 'beingar', 'GZ_CONFIG_PATH': '/opt/ros/jazzy/opt/gz_sim_vendor/share/gz:/opt/ros/jazzy/opt/sdformat_vendor/share/gz:/opt/ros/jazzy/opt/gz_gui_vendor/share/gz:/opt/ros/jazzy/opt/gz_transport_vendor/share/gz:/opt/ros/jazzy/opt/gz_rendering_vendor/share/gz:/opt/ros/jazzy/opt/gz_plugin_vendor/share/gz:/opt/ros/jazzy/opt/gz_fuel_tools_vendor/share/gz:/opt/ros/jazzy/opt/gz_msgs_vendor/share/gz:/opt/ros/jazzy/opt/gz_common_vendor/share/gz', 'XDG_SESSION_TYPE': 'wayland', 'CLUTTER_DISABLE_MIPMAPPED_TEXT': '1', 'SHLVL': '1', 'LD_LIBRARY_PATH': '/opt/ros/jazzy/opt/gz_sim_vendor/lib:/opt/ros/jazzy/opt/gz_sensors_vendor/lib:/opt/ros/jazzy/opt/gz_physics_vendor/lib:/opt/ros/jazzy/opt/sdformat_vendor/lib:/opt/ros/jazzy/opt/rviz_ogre_vendor/lib:/opt/ros/jazzy/lib/x86_64-linux-gnu:/opt/ros/jazzy/opt/gz_gui_vendor/lib:/opt/ros/jazzy/opt/gz_transport_vendor/lib:/opt/ros/jazzy/opt/gz_rendering_vendor/lib:/opt/ros/jazzy/opt/gz_plugin_vendor/lib:/opt/ros/jazzy/opt/gz_fuel_tools_vendor/lib:/opt/ros/jazzy/opt/gz_msgs_vendor/lib:/opt/ros/jazzy/opt/gz_common_vendor/lib:/opt/ros/jazzy/opt/gz_math_vendor/lib:/opt/ros/jazzy/opt/gz_utils_vendor/lib:/opt/ros/jazzy/opt/gz_tools_vendor/lib:/opt/ros/jazzy/opt/gz_ogre_next_vendor/lib:/opt/ros/jazzy/opt/gz_dartsim_vendor/lib:/opt/ros/jazzy/opt/gz_cmake_vendor/lib:/opt/ros/jazzy/lib', 'HOME': '/home/beingar', 'OLDPWD': '/home/beingar/ros2_jazzy_ws/src/ur5_ws/src', 'DESKTOP_SESSION': 'ubuntu', 'GIO_LAUNCHED_DESKTOP_FILE': '/usr/share/applications/terminator.desktop', 'ROS_PYTHON_VERSION': '3', 'GNOME_SHELL_SESSION_MODE': 'ubuntu', 'GTK_MODULES': 'gail:atk-bridge', 'MANAGERPID': '2037', 'SYSTEMD_EXEC_PID': '2312', 'GSM_SKIP_SSH_AGENT_WORKAROUND': 'true', 'DBUS_SESSION_BUS_ADDRESS': 'unix:path=/run/user/1000/bus', 'COLORTERM': 'truecolor', 'TERMINATOR_DBUS_NAME': 'net.tenshu.Terminator25ef4b219e3b005583550f2b0f9f990c3', 'GIO_LAUNCHED_DESKTOP_FILE_PID': '9188', 'DEBUGINFOD_URLS': 'https://debuginfod.ubuntu.com', 'IM_CONFIG_PHASE': '1', 'WAYLAND_DISPLAY': 'wayland-0', 'COLCON_PREFIX_PATH': '/home/beingar/ros2_jazzy_ws/install', 'ROS_DISTRO': 'jazzy', 'LOGNAME': 'beingar', 'JOURNAL_STREAM': '9:17243', '_': '/usr/bin/colcon', 'ROS_VERSION': '2', 'MEMORY_PRESSURE_WATCH': '/sys/fs/cgroup/user.slice/user-1000.slice/user@1000.service/session.slice/org.gnome.Shell@wayland.service/memory.pressure', 'XDG_SESSION_CLASS': 'user', 'USERNAME': 'beingar', 'TERM': 'xterm-256color', 'GNOME_DESKTOP_SESSION_ID': 'this-is-deprecated', 'PATH': '/opt/ros/jazzy/opt/gz_msgs_vendor/bin:/opt/ros/jazzy/opt/gz_tools_vendor/bin:/opt/ros/jazzy/opt/gz_ogre_next_vendor/bin:/opt/ros/jazzy/bin:/home/beingar/.local/bin:/usr/local/sbin:/usr/local/bin:/usr/sbin:/usr/bin:/sbin:/bin:/usr/games:/usr/local/games:/snap/bin:/snap/bin', 'SESSION_MANAGER': 'local/beingar-HP-ProBook-650-G2:@/tmp/.ICE-unix/2266,unix/beingar-HP-ProBook-650-G2:/tmp/.ICE-unix/2266', 'INVOCATION_ID': 'b926e553db25418ea4a9131805ffff6c', 'XDG_MENU_PREFIX': 'gnome-', 'GNOME_SETUP_DISPLAY': ':1', 'XDG_RUNTIME_DIR': '/run/user/1000', 'DISPLAY': ':0', 'TERMINATOR_DBUS_PATH': '/net/tenshu/Terminator2', 'LANG': 'fr_FR.UTF-8', 'XDG_CURRENT_DESKTOP': 'ubuntu:GNOME', 'XMODIFIERS': '@im=ibus', 'XDG_SESSION_DESKTOP': 'ubuntu', 'XAUTHORITY': '/run/user/1000/.mutter-Xwaylandauth.2KLUM3', 'LS_COLORS': 'rs=0:di=01;34:ln=01;36:mh=00:pi=40;33:so=01;35:do=01;35:bd=40;33;01:cd=40;33;01:or=40;31;01:mi=00:su=37;41:sg=30;43:ca=00:tw=30;42:ow=34;42:st=37;44:ex=01;32:*.tar=01;31:*.tgz=01;31:*.arc=01;31:*.arj=01;31:*.taz=01;31:*.lha=01;31:*.lz4=01;31:*.lzh=01;31:*.lzma=01;31:*.tlz=01;31:*.txz=01;31:*.tzo=01;31:*.t7z=01;31:*.zip=01;31:*.z=01;31:*.dz=01;31:*.gz=01;31:*.lrz=01;31:*.lz=01;31:*.lzo=01;31:*.xz=01;31:*.zst=01;31:*.tzst=01;31:*.bz2=01;31:*.bz=01;31:*.tbz=01;31:*.tbz2=01;31:*.tz=01;31:*.deb=01;31:*.rpm=01;31:*.jar=01;31:*.war=01;31:*.ear=01;31:*.sar=01;31:*.rar=01;31:*.alz=01;31:*.ace=01;31:*.zoo=01;31:*.cpio=01;31:*.7z=01;31:*.rz=01;31:*.cab=01;31:*.wim=01;31:*.swm=01;31:*.dwm=01;31:*.esd=01;31:*.avif=01;35:*.jpg=01;35:*.jpeg=01;35:*.mjpg=01;35:*.mjpeg=01;35:*.gif=01;35:*.bmp=01;35:*.pbm=01;35:*.pgm=01;35:*.ppm=01;35:*.tga=01;35:*.xbm=01;35:*.xpm=01;35:*.tif=01;35:*.tiff=01;35:*.png=01;35:*.svg=01;35:*.svgz=01;35:*.mng=01;35:*.pcx=01;35:*.mov=01;35:*.mpg=01;35:*.mpeg=01;35:*.m2v=01;35:*.mkv=01;35:*.webm=01;35:*.webp=01;35:*.ogm=01;35:*.mp4=01;35:*.m4v=01;35:*.mp4v=01;35:*.vob=01;35:*.qt=01;35:*.nuv=01;35:*.wmv=01;35:*.asf=01;35:*.rm=01;35:*.rmvb=01;35:*.flc=01;35:*.avi=01;35:*.fli=01;35:*.flv=01;35:*.gl=01;35:*.dl=01;35:*.xcf=01;35:*.xwd=01;35:*.yuv=01;35:*.cgm=01;35:*.emf=01;35:*.ogv=01;35:*.ogx=01;35:*.aac=00;36:*.au=00;36:*.flac=00;36:*.m4a=00;36:*.mid=00;36:*.midi=00;36:*.mka=00;36:*.mp3=00;36:*.mpc=00;36:*.ogg=00;36:*.ra=00;36:*.wav=00;36:*.oga=00;36:*.opus=00;36:*.spx=00;36:*.xspf=00;36:*~=00;90:*#=00;90:*.bak=00;90:*.crdownload=00;90:*.dpkg-dist=00;90:*.dpkg-new=00;90:*.dpkg-old=00;90:*.dpkg-tmp=00;90:*.old=00;90:*.orig=00;90:*.part=00;90:*.rej=00;90:*.rpmnew=00;90:*.rpmorig=00;90:*.rpmsave=00;90:*.swp=00;90:*.tmp=00;90:*.ucf-dist=00;90:*.ucf-new=00;90:*.ucf-old=00;90:', 'SSH_AUTH_SOCK': '/run/user/1000/keyring/ssh', 'AMENT_PREFIX_PATH': '/home/beingar/ros2_jazzy_ws/install/hri_manipulation:/opt/ros/jazzy', 'SHELL': '/bin/bash', 'TERMINATOR_UUID': 'urn:uuid:f96c641a-8bd9-44ec-89db-d184424d96b8', 'QT_ACCESSIBILITY': '1', 'GDMSESSION': 'ubuntu', 'LESSCLOSE': '/usr/bin/lesspipe %s %s', 'GJS_DEBUG_OUTPUT': 'stderr', 'ROS_AUTOMATIC_DISCOVERY_RANGE': 'SUBNET', 'QT_IM_MODULE': 'ibus', 'PWD': '/home/beingar/ros2_jazzy_ws/build/ur5_description', 'XDG_CONFIG_DIRS': '/etc/xdg/xdg-ubuntu:/etc/xdg', 'XDG_DATA_DIRS': '/usr/share/ubuntu:/usr/share/gnome:/usr/local/share/:/usr/share/:/var/lib/snapd/desktop', 'PYTHONPATH': '/home/beingar/ros2_jazzy_ws/build/hri_manipulation:/home/beingar/ros2_jazzy_ws/install/hri_manipulation/lib/python3.12/site-packages:/opt/ros/jazzy/lib/python3.12/site-packages', 'COLCON': '1', 'MEMORY_PRESSURE_WRITE': 'c29tZSAyMDAwMDAgMjAwMDAwMAA=', 'VTE_VERSION': '7600', 'CMAKE_PREFIX_PATH': '/opt/ros/jazzy/opt/gz_sim_vendor:/opt/ros/jazzy/opt/gz_sensors_vendor:/opt/ros/jazzy/opt/gz_physics_vendor:/opt/ros/jazzy/opt/sdformat_vendor:/opt/ros/jazzy/opt/gz_gui_vendor:/opt/ros/jazzy/opt/gz_transport_vendor:/opt/ros/jazzy/opt/gz_rendering_vendor:/opt/ros/jazzy/opt/gz_plugin_vendor:/opt/ros/jazzy/opt/gz_fuel_tools_vendor:/opt/ros/jazzy/opt/gz_msgs_vendor:/opt/ros/jazzy/opt/gz_common_vendor:/opt/ros/jazzy/opt/gz_math_vendor:/opt/ros/jazzy/opt/gz_utils_vendor:/opt/ros/jazzy/opt/gz_tools_vendor:/opt/ros/jazzy/opt/gz_ogre_next_vendor:/opt/ros/jazzy/opt/gz_dartsim_vendor:/opt/ros/jazzy/opt/gz_cmake_vendor:/home/beingar/ros2_jazzy_ws/install/hri_manipulation:/opt/ros/jazzy'}), 'shell': False}
+[0.099358] (-) TimerEvent: {}
+[0.161698] (ur5_moveit) JobProgress: {'identifier': 'ur5_moveit', 'progress': 'cmake'}
+[0.163959] (ur5_moveit) Command: {'cmd': ['/usr/bin/cmake', '/home/beingar/ros2_jazzy_ws/src/ur5_ws/src/ur5_moveit', '-DAMENT_CMAKE_SYMLINK_INSTALL=1', '-DCMAKE_INSTALL_PREFIX=/home/beingar/ros2_jazzy_ws/install/ur5_moveit'], 'cwd': '/home/beingar/ros2_jazzy_ws/build/ur5_moveit', 'env': OrderedDict({'GJS_DEBUG_TOPICS': 'JS ERROR;JS LOG', 'XDG_ACTIVATION_TOKEN': 'gnome-shell/Terminator/2312-7-beingar-HP-ProBook-650-G2_TIME24389819', 'LESSOPEN': '| /usr/bin/lesspipe %s', 'GZ_SIM_RESOURCE_PATH': '/opt/ros/jazzy/share', 'USER': 'beingar', 'GZ_CONFIG_PATH': '/opt/ros/jazzy/opt/gz_sim_vendor/share/gz:/opt/ros/jazzy/opt/sdformat_vendor/share/gz:/opt/ros/jazzy/opt/gz_gui_vendor/share/gz:/opt/ros/jazzy/opt/gz_transport_vendor/share/gz:/opt/ros/jazzy/opt/gz_rendering_vendor/share/gz:/opt/ros/jazzy/opt/gz_plugin_vendor/share/gz:/opt/ros/jazzy/opt/gz_fuel_tools_vendor/share/gz:/opt/ros/jazzy/opt/gz_msgs_vendor/share/gz:/opt/ros/jazzy/opt/gz_common_vendor/share/gz', 'XDG_SESSION_TYPE': 'wayland', 'CLUTTER_DISABLE_MIPMAPPED_TEXT': '1', 'SHLVL': '1', 'LD_LIBRARY_PATH': '/opt/ros/jazzy/opt/gz_sim_vendor/lib:/opt/ros/jazzy/opt/gz_sensors_vendor/lib:/opt/ros/jazzy/opt/gz_physics_vendor/lib:/opt/ros/jazzy/opt/sdformat_vendor/lib:/opt/ros/jazzy/opt/rviz_ogre_vendor/lib:/opt/ros/jazzy/lib/x86_64-linux-gnu:/opt/ros/jazzy/opt/gz_gui_vendor/lib:/opt/ros/jazzy/opt/gz_transport_vendor/lib:/opt/ros/jazzy/opt/gz_rendering_vendor/lib:/opt/ros/jazzy/opt/gz_plugin_vendor/lib:/opt/ros/jazzy/opt/gz_fuel_tools_vendor/lib:/opt/ros/jazzy/opt/gz_msgs_vendor/lib:/opt/ros/jazzy/opt/gz_common_vendor/lib:/opt/ros/jazzy/opt/gz_math_vendor/lib:/opt/ros/jazzy/opt/gz_utils_vendor/lib:/opt/ros/jazzy/opt/gz_tools_vendor/lib:/opt/ros/jazzy/opt/gz_ogre_next_vendor/lib:/opt/ros/jazzy/opt/gz_dartsim_vendor/lib:/opt/ros/jazzy/opt/gz_cmake_vendor/lib:/opt/ros/jazzy/lib', 'HOME': '/home/beingar', 'OLDPWD': '/home/beingar/ros2_jazzy_ws/src/ur5_ws/src', 'DESKTOP_SESSION': 'ubuntu', 'GIO_LAUNCHED_DESKTOP_FILE': '/usr/share/applications/terminator.desktop', 'ROS_PYTHON_VERSION': '3', 'GNOME_SHELL_SESSION_MODE': 'ubuntu', 'GTK_MODULES': 'gail:atk-bridge', 'MANAGERPID': '2037', 'SYSTEMD_EXEC_PID': '2312', 'GSM_SKIP_SSH_AGENT_WORKAROUND': 'true', 'DBUS_SESSION_BUS_ADDRESS': 'unix:path=/run/user/1000/bus', 'COLORTERM': 'truecolor', 'TERMINATOR_DBUS_NAME': 'net.tenshu.Terminator25ef4b219e3b005583550f2b0f9f990c3', 'GIO_LAUNCHED_DESKTOP_FILE_PID': '9188', 'DEBUGINFOD_URLS': 'https://debuginfod.ubuntu.com', 'IM_CONFIG_PHASE': '1', 'WAYLAND_DISPLAY': 'wayland-0', 'COLCON_PREFIX_PATH': '/home/beingar/ros2_jazzy_ws/install', 'ROS_DISTRO': 'jazzy', 'LOGNAME': 'beingar', 'JOURNAL_STREAM': '9:17243', '_': '/usr/bin/colcon', 'ROS_VERSION': '2', 'MEMORY_PRESSURE_WATCH': '/sys/fs/cgroup/user.slice/user-1000.slice/user@1000.service/session.slice/org.gnome.Shell@wayland.service/memory.pressure', 'XDG_SESSION_CLASS': 'user', 'USERNAME': 'beingar', 'TERM': 'xterm-256color', 'GNOME_DESKTOP_SESSION_ID': 'this-is-deprecated', 'PATH': '/opt/ros/jazzy/opt/gz_msgs_vendor/bin:/opt/ros/jazzy/opt/gz_tools_vendor/bin:/opt/ros/jazzy/opt/gz_ogre_next_vendor/bin:/opt/ros/jazzy/bin:/home/beingar/.local/bin:/usr/local/sbin:/usr/local/bin:/usr/sbin:/usr/bin:/sbin:/bin:/usr/games:/usr/local/games:/snap/bin:/snap/bin', 'SESSION_MANAGER': 'local/beingar-HP-ProBook-650-G2:@/tmp/.ICE-unix/2266,unix/beingar-HP-ProBook-650-G2:/tmp/.ICE-unix/2266', 'INVOCATION_ID': 'b926e553db25418ea4a9131805ffff6c', 'XDG_MENU_PREFIX': 'gnome-', 'GNOME_SETUP_DISPLAY': ':1', 'XDG_RUNTIME_DIR': '/run/user/1000', 'DISPLAY': ':0', 'TERMINATOR_DBUS_PATH': '/net/tenshu/Terminator2', 'LANG': 'fr_FR.UTF-8', 'XDG_CURRENT_DESKTOP': 'ubuntu:GNOME', 'XMODIFIERS': '@im=ibus', 'XDG_SESSION_DESKTOP': 'ubuntu', 'XAUTHORITY': '/run/user/1000/.mutter-Xwaylandauth.2KLUM3', 'LS_COLORS': 'rs=0:di=01;34:ln=01;36:mh=00:pi=40;33:so=01;35:do=01;35:bd=40;33;01:cd=40;33;01:or=40;31;01:mi=00:su=37;41:sg=30;43:ca=00:tw=30;42:ow=34;42:st=37;44:ex=01;32:*.tar=01;31:*.tgz=01;31:*.arc=01;31:*.arj=01;31:*.taz=01;31:*.lha=01;31:*.lz4=01;31:*.lzh=01;31:*.lzma=01;31:*.tlz=01;31:*.txz=01;31:*.tzo=01;31:*.t7z=01;31:*.zip=01;31:*.z=01;31:*.dz=01;31:*.gz=01;31:*.lrz=01;31:*.lz=01;31:*.lzo=01;31:*.xz=01;31:*.zst=01;31:*.tzst=01;31:*.bz2=01;31:*.bz=01;31:*.tbz=01;31:*.tbz2=01;31:*.tz=01;31:*.deb=01;31:*.rpm=01;31:*.jar=01;31:*.war=01;31:*.ear=01;31:*.sar=01;31:*.rar=01;31:*.alz=01;31:*.ace=01;31:*.zoo=01;31:*.cpio=01;31:*.7z=01;31:*.rz=01;31:*.cab=01;31:*.wim=01;31:*.swm=01;31:*.dwm=01;31:*.esd=01;31:*.avif=01;35:*.jpg=01;35:*.jpeg=01;35:*.mjpg=01;35:*.mjpeg=01;35:*.gif=01;35:*.bmp=01;35:*.pbm=01;35:*.pgm=01;35:*.ppm=01;35:*.tga=01;35:*.xbm=01;35:*.xpm=01;35:*.tif=01;35:*.tiff=01;35:*.png=01;35:*.svg=01;35:*.svgz=01;35:*.mng=01;35:*.pcx=01;35:*.mov=01;35:*.mpg=01;35:*.mpeg=01;35:*.m2v=01;35:*.mkv=01;35:*.webm=01;35:*.webp=01;35:*.ogm=01;35:*.mp4=01;35:*.m4v=01;35:*.mp4v=01;35:*.vob=01;35:*.qt=01;35:*.nuv=01;35:*.wmv=01;35:*.asf=01;35:*.rm=01;35:*.rmvb=01;35:*.flc=01;35:*.avi=01;35:*.fli=01;35:*.flv=01;35:*.gl=01;35:*.dl=01;35:*.xcf=01;35:*.xwd=01;35:*.yuv=01;35:*.cgm=01;35:*.emf=01;35:*.ogv=01;35:*.ogx=01;35:*.aac=00;36:*.au=00;36:*.flac=00;36:*.m4a=00;36:*.mid=00;36:*.midi=00;36:*.mka=00;36:*.mp3=00;36:*.mpc=00;36:*.ogg=00;36:*.ra=00;36:*.wav=00;36:*.oga=00;36:*.opus=00;36:*.spx=00;36:*.xspf=00;36:*~=00;90:*#=00;90:*.bak=00;90:*.crdownload=00;90:*.dpkg-dist=00;90:*.dpkg-new=00;90:*.dpkg-old=00;90:*.dpkg-tmp=00;90:*.old=00;90:*.orig=00;90:*.part=00;90:*.rej=00;90:*.rpmnew=00;90:*.rpmorig=00;90:*.rpmsave=00;90:*.swp=00;90:*.tmp=00;90:*.ucf-dist=00;90:*.ucf-new=00;90:*.ucf-old=00;90:', 'SSH_AUTH_SOCK': '/run/user/1000/keyring/ssh', 'AMENT_PREFIX_PATH': '/home/beingar/ros2_jazzy_ws/install/hri_manipulation:/opt/ros/jazzy', 'SHELL': '/bin/bash', 'TERMINATOR_UUID': 'urn:uuid:f96c641a-8bd9-44ec-89db-d184424d96b8', 'QT_ACCESSIBILITY': '1', 'GDMSESSION': 'ubuntu', 'LESSCLOSE': '/usr/bin/lesspipe %s %s', 'GJS_DEBUG_OUTPUT': 'stderr', 'ROS_AUTOMATIC_DISCOVERY_RANGE': 'SUBNET', 'QT_IM_MODULE': 'ibus', 'PWD': '/home/beingar/ros2_jazzy_ws/build/ur5_moveit', 'XDG_CONFIG_DIRS': '/etc/xdg/xdg-ubuntu:/etc/xdg', 'XDG_DATA_DIRS': '/usr/share/ubuntu:/usr/share/gnome:/usr/local/share/:/usr/share/:/var/lib/snapd/desktop', 'PYTHONPATH': '/home/beingar/ros2_jazzy_ws/build/hri_manipulation:/home/beingar/ros2_jazzy_ws/install/hri_manipulation/lib/python3.12/site-packages:/opt/ros/jazzy/lib/python3.12/site-packages', 'COLCON': '1', 'MEMORY_PRESSURE_WRITE': 'c29tZSAyMDAwMDAgMjAwMDAwMAA=', 'VTE_VERSION': '7600', 'CMAKE_PREFIX_PATH': '/opt/ros/jazzy/opt/gz_sim_vendor:/opt/ros/jazzy/opt/gz_sensors_vendor:/opt/ros/jazzy/opt/gz_physics_vendor:/opt/ros/jazzy/opt/sdformat_vendor:/opt/ros/jazzy/opt/gz_gui_vendor:/opt/ros/jazzy/opt/gz_transport_vendor:/opt/ros/jazzy/opt/gz_rendering_vendor:/opt/ros/jazzy/opt/gz_plugin_vendor:/opt/ros/jazzy/opt/gz_fuel_tools_vendor:/opt/ros/jazzy/opt/gz_msgs_vendor:/opt/ros/jazzy/opt/gz_common_vendor:/opt/ros/jazzy/opt/gz_math_vendor:/opt/ros/jazzy/opt/gz_utils_vendor:/opt/ros/jazzy/opt/gz_tools_vendor:/opt/ros/jazzy/opt/gz_ogre_next_vendor:/opt/ros/jazzy/opt/gz_dartsim_vendor:/opt/ros/jazzy/opt/gz_cmake_vendor:/home/beingar/ros2_jazzy_ws/install/hri_manipulation:/opt/ros/jazzy'}), 'shell': False}
+[0.199522] (-) TimerEvent: {}
+[0.300203] (-) TimerEvent: {}
+[0.400797] (-) TimerEvent: {}
+[0.501340] (-) TimerEvent: {}
+[0.601933] (-) TimerEvent: {}
+[0.702578] (-) TimerEvent: {}
+[0.805599] (-) TimerEvent: {}
+[0.906453] (-) TimerEvent: {}
+[1.009329] (-) TimerEvent: {}
+[1.110113] (-) TimerEvent: {}
+[1.210889] (-) TimerEvent: {}
+[1.311671] (-) TimerEvent: {}
+[1.412354] (-) TimerEvent: {}
+[1.513689] (-) TimerEvent: {}
+[1.615446] (-) TimerEvent: {}
+[1.652549] (hello_moveit) StdoutLine: {'line': b'-- The C compiler identification is GNU 13.3.0\n'}
+[1.657281] (ur5_description) StdoutLine: {'line': b'-- The C compiler identification is GNU 13.3.0\n'}
+[1.664333] (ur5_moveit) StdoutLine: {'line': b'-- The C compiler identification is GNU 13.3.0\n'}
+[1.676397] (ur5_controller) StdoutLine: {'line': b'-- The C compiler identification is GNU 13.3.0\n'}
+[1.715895] (-) TimerEvent: {}
+[1.816754] (-) TimerEvent: {}
+[1.917356] (-) TimerEvent: {}
+[2.018140] (-) TimerEvent: {}
+[2.118905] (-) TimerEvent: {}
+[2.219616] (-) TimerEvent: {}
+[2.322284] (-) TimerEvent: {}
+[2.423205] (-) TimerEvent: {}
+[2.524302] (-) TimerEvent: {}
+[2.627301] (-) TimerEvent: {}
+[2.728503] (-) TimerEvent: {}
+[2.835907] (-) TimerEvent: {}
+[2.943300] (-) TimerEvent: {}
+[3.001648] (ur5_description) StdoutLine: {'line': b'-- The CXX compiler identification is GNU 13.3.0\n'}
+[3.014064] (hello_moveit) StdoutLine: {'line': b'-- The CXX compiler identification is GNU 13.3.0\n'}
+[3.018703] (ur5_controller) StdoutLine: {'line': b'-- The CXX compiler identification is GNU 13.3.0\n'}
+[3.019277] (ur5_moveit) StdoutLine: {'line': b'-- The CXX compiler identification is GNU 13.3.0\n'}
+[3.043405] (-) TimerEvent: {}
+[3.143785] (-) TimerEvent: {}
+[3.166244] (ur5_moveit) StdoutLine: {'line': b'-- Detecting C compiler ABI info\n'}
+[3.166756] (ur5_description) StdoutLine: {'line': b'-- Detecting C compiler ABI info\n'}
+[3.167057] (hello_moveit) StdoutLine: {'line': b'-- Detecting C compiler ABI info\n'}
+[3.169315] (ur5_controller) StdoutLine: {'line': b'-- Detecting C compiler ABI info\n'}
+[3.243920] (-) TimerEvent: {}
+[3.345291] (-) TimerEvent: {}
+[3.448265] (-) TimerEvent: {}
+[3.548813] (-) TimerEvent: {}
+[3.579235] (hello_moveit) StdoutLine: {'line': b'-- Detecting C compiler ABI info - done\n'}
+[3.584777] (ur5_moveit) StdoutLine: {'line': b'-- Detecting C compiler ABI info - done\n'}
+[3.604256] (ur5_controller) StdoutLine: {'line': b'-- Detecting C compiler ABI info - done\n'}
+[3.613606] (ur5_description) StdoutLine: {'line': b'-- Detecting C compiler ABI info - done\n'}
+[3.623182] (hello_moveit) StdoutLine: {'line': b'-- Check for working C compiler: /usr/bin/cc - skipped\n'}
+[3.624514] (hello_moveit) StdoutLine: {'line': b'-- Detecting C compile features\n'}
+[3.626662] (ur5_moveit) StdoutLine: {'line': b'-- Check for working C compiler: /usr/bin/cc - skipped\n'}
+[3.627144] (hello_moveit) StdoutLine: {'line': b'-- Detecting C compile features - done\n'}
+[3.627578] (ur5_moveit) StdoutLine: {'line': b'-- Detecting C compile features\n'}
+[3.628864] (ur5_moveit) StdoutLine: {'line': b'-- Detecting C compile features - done\n'}
+[3.647258] (ur5_controller) StdoutLine: {'line': b'-- Check for working C compiler: /usr/bin/cc - skipped\n'}
+[3.648709] (ur5_controller) StdoutLine: {'line': b'-- Detecting C compile features\n'}
+[3.650443] (-) TimerEvent: {}
+[3.655327] (ur5_controller) StdoutLine: {'line': b'-- Detecting C compile features - done\n'}
+[3.655988] (ur5_description) StdoutLine: {'line': b'-- Check for working C compiler: /usr/bin/cc - skipped\n'}
+[3.656596] (ur5_description) StdoutLine: {'line': b'-- Detecting C compile features\n'}
+[3.658273] (ur5_description) StdoutLine: {'line': b'-- Detecting C compile features - done\n'}
+[3.678651] (ur5_moveit) StdoutLine: {'line': b'-- Detecting CXX compiler ABI info\n'}
+[3.680654] (hello_moveit) StdoutLine: {'line': b'-- Detecting CXX compiler ABI info\n'}
+[3.689596] (ur5_controller) StdoutLine: {'line': b'-- Detecting CXX compiler ABI info\n'}
+[3.695282] (ur5_description) StdoutLine: {'line': b'-- Detecting CXX compiler ABI info\n'}
+[3.750588] (-) TimerEvent: {}
+[3.854248] (-) TimerEvent: {}
+[3.956268] (-) TimerEvent: {}
+[4.038930] (ur5_moveit) StdoutLine: {'line': b'-- Detecting CXX compiler ABI info - done\n'}
+[4.056404] (-) TimerEvent: {}
+[4.088387] (ur5_controller) StdoutLine: {'line': b'-- Detecting CXX compiler ABI info - done\n'}
+[4.093907] (ur5_moveit) StdoutLine: {'line': b'-- Check for working CXX compiler: /usr/bin/c++ - skipped\n'}
+[4.094542] (ur5_moveit) StdoutLine: {'line': b'-- Detecting CXX compile features\n'}
+[4.097108] (ur5_moveit) StdoutLine: {'line': b'-- Detecting CXX compile features - done\n'}
+[4.105761] (hello_moveit) StdoutLine: {'line': b'-- Detecting CXX compiler ABI info - done\n'}
+[4.120062] (ur5_description) StdoutLine: {'line': b'-- Detecting CXX compiler ABI info - done\n'}
+[4.129981] (ur5_controller) StdoutLine: {'line': b'-- Check for working CXX compiler: /usr/bin/c++ - skipped\n'}
+[4.130762] (ur5_controller) StdoutLine: {'line': b'-- Detecting CXX compile features\n'}
+[4.132142] (ur5_controller) StdoutLine: {'line': b'-- Detecting CXX compile features - done\n'}
+[4.146603] (hello_moveit) StdoutLine: {'line': b'-- Check for working CXX compiler: /usr/bin/c++ - skipped\n'}
+[4.147453] (hello_moveit) StdoutLine: {'line': b'-- Detecting CXX compile features\n'}
+[4.149026] (hello_moveit) StdoutLine: {'line': b'-- Detecting CXX compile features - done\n'}
+[4.156473] (ur5_description) StdoutLine: {'line': b'-- Check for working CXX compiler: /usr/bin/c++ - skipped\n'}
+[4.156877] (-) TimerEvent: {}
+[4.159415] (ur5_description) StdoutLine: {'line': b'-- Detecting CXX compile features\n'}
+[4.159827] (ur5_description) StdoutLine: {'line': b'-- Detecting CXX compile features - done\n'}
+[4.257504] (-) TimerEvent: {}
+[4.358285] (-) TimerEvent: {}
+[4.459257] (-) TimerEvent: {}
+[4.559918] (-) TimerEvent: {}
+[4.660613] (-) TimerEvent: {}
+[4.667573] (ur5_description) StdoutLine: {'line': b'-- Found ament_cmake: 2.5.5 (/opt/ros/jazzy/share/ament_cmake/cmake)\n'}
+[4.668698] (ur5_moveit) StdoutLine: {'line': b'-- Found ament_cmake: 2.5.5 (/opt/ros/jazzy/share/ament_cmake/cmake)\n'}
+[4.669505] (ur5_controller) StdoutLine: {'line': b'-- Found ament_cmake: 2.5.5 (/opt/ros/jazzy/share/ament_cmake/cmake)\n'}
+[4.675417] (hello_moveit) StdoutLine: {'line': b'-- Found ament_cmake: 2.5.5 (/opt/ros/jazzy/share/ament_cmake/cmake)\n'}
+[4.760771] (-) TimerEvent: {}
+[4.861408] (-) TimerEvent: {}
+[4.962762] (-) TimerEvent: {}
+[5.065787] (-) TimerEvent: {}
+[5.167178] (-) TimerEvent: {}
+[5.268043] (-) TimerEvent: {}
+[5.368557] (-) TimerEvent: {}
+[5.469230] (-) TimerEvent: {}
+[5.570453] (-) TimerEvent: {}
+[5.674622] (-) TimerEvent: {}
+[5.767186] (ur5_controller) StdoutLine: {'line': b'-- Found Python3: /usr/bin/python3 (found version "3.12.3") found components: Interpreter \n'}
+[5.772928] (ur5_moveit) StdoutLine: {'line': b'-- Found Python3: /usr/bin/python3 (found version "3.12.3") found components: Interpreter \n'}
+[5.774737] (-) TimerEvent: {}
+[5.828261] (ur5_description) StdoutLine: {'line': b'-- Found Python3: /usr/bin/python3 (found version "3.12.3") found components: Interpreter \n'}
+[5.858861] (hello_moveit) StdoutLine: {'line': b'-- Found Python3: /usr/bin/python3 (found version "3.12.3") found components: Interpreter \n'}
+[5.874858] (-) TimerEvent: {}
+[5.975350] (-) TimerEvent: {}
+[6.077461] (-) TimerEvent: {}
+[6.178258] (-) TimerEvent: {}
+[6.245901] (hello_moveit) StdoutLine: {'line': b'-- Override CMake install command with custom implementation using symlinks instead of copying resources\n'}
+[6.246637] (ur5_controller) StdoutLine: {'line': b'-- Override CMake install command with custom implementation using symlinks instead of copying resources\n'}
+[6.246957] (ur5_moveit) StdoutLine: {'line': b'-- Override CMake install command with custom implementation using symlinks instead of copying resources\n'}
+[6.247305] (ur5_description) StdoutLine: {'line': b'-- Override CMake install command with custom implementation using symlinks instead of copying resources\n'}
+[6.278877] (-) TimerEvent: {}
+[6.381608] (-) TimerEvent: {}
+[6.485620] (-) TimerEvent: {}
+[6.588558] (-) TimerEvent: {}
+[6.693584] (-) TimerEvent: {}
+[6.794440] (-) TimerEvent: {}
+[6.895044] (-) TimerEvent: {}
+[6.980545] (hello_moveit) StdoutLine: {'line': b'-- Found moveit_ros_planning_interface: 2.12.4 (/opt/ros/jazzy/share/moveit_ros_planning_interface/cmake)\n'}
+[6.995275] (-) TimerEvent: {}
+[7.025345] (ur5_description) StdoutLine: {'line': b'-- Found ament_lint_auto: 0.17.4 (/opt/ros/jazzy/share/ament_lint_auto/cmake)\n'}
+[7.026352] (ur5_controller) StdoutLine: {'line': b'-- Found ament_lint_auto: 0.17.4 (/opt/ros/jazzy/share/ament_lint_auto/cmake)\n'}
+[7.028749] (ur5_moveit) StdoutLine: {'line': b'-- Found ament_lint_auto: 0.17.4 (/opt/ros/jazzy/share/ament_lint_auto/cmake)\n'}
+[7.095825] (-) TimerEvent: {}
+[7.198767] (-) TimerEvent: {}
+[7.301510] (-) TimerEvent: {}
+[7.403644] (-) TimerEvent: {}
+[7.508690] (-) TimerEvent: {}
+[7.609272] (-) TimerEvent: {}
+[7.711070] (-) TimerEvent: {}
+[7.811947] (-) TimerEvent: {}
+[7.913508] (-) TimerEvent: {}
+[8.014282] (-) TimerEvent: {}
+[8.086763] (ur5_controller) StdoutLine: {'line': b"-- Added test 'flake8' to check Python code syntax and style conventions\n"}
+[8.087317] (ur5_controller) StdoutLine: {'line': b"-- Configured 'flake8' exclude dirs and/or files: \n"}
+[8.087985] (ur5_moveit) StdoutLine: {'line': b"-- Added test 'flake8' to check Python code syntax and style conventions\n"}
+[8.088373] (ur5_moveit) StdoutLine: {'line': b"-- Configured 'flake8' exclude dirs and/or files: \n"}
+[8.088681] (ur5_description) StdoutLine: {'line': b"-- Added test 'flake8' to check Python code syntax and style conventions\n"}
+[8.088985] (ur5_description) StdoutLine: {'line': b"-- Configured 'flake8' exclude dirs and/or files: \n"}
+[8.109503] (ur5_controller) StdoutLine: {'line': b"-- Added test 'lint_cmake' to check CMake code style\n"}
+[8.110101] (ur5_moveit) StdoutLine: {'line': b"-- Added test 'lint_cmake' to check CMake code style\n"}
+[8.113444] (ur5_description) StdoutLine: {'line': b"-- Added test 'lint_cmake' to check CMake code style\n"}
+[8.114397] (-) TimerEvent: {}
+[8.134973] (ur5_controller) StdoutLine: {'line': b"-- Added test 'pep257' to check Python code against some of the docstring style conventions in PEP 257\n"}
+[8.135869] (ur5_moveit) StdoutLine: {'line': b"-- Added test 'pep257' to check Python code against some of the docstring style conventions in PEP 257\n"}
+[8.136760] (ur5_description) StdoutLine: {'line': b"-- Added test 'pep257' to check Python code against some of the docstring style conventions in PEP 257\n"}
+[8.175657] (ur5_controller) StdoutLine: {'line': b"-- Added test 'xmllint' to check XML markup files\n"}
+[8.176430] (ur5_moveit) StdoutLine: {'line': b"-- Added test 'xmllint' to check XML markup files\n"}
+[8.178439] (ur5_description) StdoutLine: {'line': b"-- Added test 'xmllint' to check XML markup files\n"}
+[8.214558] (-) TimerEvent: {}
+[8.229970] (ur5_description) StdoutLine: {'line': b'-- Configuring done (7.8s)\n'}
+[8.231492] (ur5_controller) StdoutLine: {'line': b'-- Configuring done (7.8s)\n'}
+[8.232683] (ur5_moveit) StdoutLine: {'line': b'-- Configuring done (7.8s)\n'}
+[8.250475] (ur5_description) StdoutLine: {'line': b'-- Generating done (0.0s)\n'}
+[8.255012] (ur5_controller) StdoutLine: {'line': b'-- Generating done (0.0s)\n'}
+[8.259276] (ur5_moveit) StdoutLine: {'line': b'-- Generating done (0.0s)\n'}
+[8.265653] (ur5_description) StdoutLine: {'line': b'-- Build files have been written to: /home/beingar/ros2_jazzy_ws/build/ur5_description\n'}
+[8.270006] (ur5_moveit) StdoutLine: {'line': b'-- Build files have been written to: /home/beingar/ros2_jazzy_ws/build/ur5_moveit\n'}
+[8.271334] (ur5_controller) StdoutLine: {'line': b'-- Build files have been written to: /home/beingar/ros2_jazzy_ws/build/ur5_controller\n'}
+[8.286451] (ur5_description) CommandEnded: {'returncode': 0}
+[8.289510] (ur5_description) JobProgress: {'identifier': 'ur5_description', 'progress': 'build'}
+[8.294517] (ur5_description) Command: {'cmd': ['/usr/bin/cmake', '--build', '/home/beingar/ros2_jazzy_ws/build/ur5_description', '--', '-j4', '-l4'], 'cwd': '/home/beingar/ros2_jazzy_ws/build/ur5_description', 'env': OrderedDict({'GJS_DEBUG_TOPICS': 'JS ERROR;JS LOG', 'XDG_ACTIVATION_TOKEN': 'gnome-shell/Terminator/2312-7-beingar-HP-ProBook-650-G2_TIME24389819', 'LESSOPEN': '| /usr/bin/lesspipe %s', 'GZ_SIM_RESOURCE_PATH': '/opt/ros/jazzy/share', 'USER': 'beingar', 'GZ_CONFIG_PATH': '/opt/ros/jazzy/opt/gz_sim_vendor/share/gz:/opt/ros/jazzy/opt/sdformat_vendor/share/gz:/opt/ros/jazzy/opt/gz_gui_vendor/share/gz:/opt/ros/jazzy/opt/gz_transport_vendor/share/gz:/opt/ros/jazzy/opt/gz_rendering_vendor/share/gz:/opt/ros/jazzy/opt/gz_plugin_vendor/share/gz:/opt/ros/jazzy/opt/gz_fuel_tools_vendor/share/gz:/opt/ros/jazzy/opt/gz_msgs_vendor/share/gz:/opt/ros/jazzy/opt/gz_common_vendor/share/gz', 'XDG_SESSION_TYPE': 'wayland', 'CLUTTER_DISABLE_MIPMAPPED_TEXT': '1', 'SHLVL': '1', 'LD_LIBRARY_PATH': '/opt/ros/jazzy/opt/gz_sim_vendor/lib:/opt/ros/jazzy/opt/gz_sensors_vendor/lib:/opt/ros/jazzy/opt/gz_physics_vendor/lib:/opt/ros/jazzy/opt/sdformat_vendor/lib:/opt/ros/jazzy/opt/rviz_ogre_vendor/lib:/opt/ros/jazzy/lib/x86_64-linux-gnu:/opt/ros/jazzy/opt/gz_gui_vendor/lib:/opt/ros/jazzy/opt/gz_transport_vendor/lib:/opt/ros/jazzy/opt/gz_rendering_vendor/lib:/opt/ros/jazzy/opt/gz_plugin_vendor/lib:/opt/ros/jazzy/opt/gz_fuel_tools_vendor/lib:/opt/ros/jazzy/opt/gz_msgs_vendor/lib:/opt/ros/jazzy/opt/gz_common_vendor/lib:/opt/ros/jazzy/opt/gz_math_vendor/lib:/opt/ros/jazzy/opt/gz_utils_vendor/lib:/opt/ros/jazzy/opt/gz_tools_vendor/lib:/opt/ros/jazzy/opt/gz_ogre_next_vendor/lib:/opt/ros/jazzy/opt/gz_dartsim_vendor/lib:/opt/ros/jazzy/opt/gz_cmake_vendor/lib:/opt/ros/jazzy/lib', 'HOME': '/home/beingar', 'OLDPWD': '/home/beingar/ros2_jazzy_ws/src/ur5_ws/src', 'DESKTOP_SESSION': 'ubuntu', 'GIO_LAUNCHED_DESKTOP_FILE': '/usr/share/applications/terminator.desktop', 'ROS_PYTHON_VERSION': '3', 'GNOME_SHELL_SESSION_MODE': 'ubuntu', 'GTK_MODULES': 'gail:atk-bridge', 'MANAGERPID': '2037', 'SYSTEMD_EXEC_PID': '2312', 'GSM_SKIP_SSH_AGENT_WORKAROUND': 'true', 'DBUS_SESSION_BUS_ADDRESS': 'unix:path=/run/user/1000/bus', 'COLORTERM': 'truecolor', 'TERMINATOR_DBUS_NAME': 'net.tenshu.Terminator25ef4b219e3b005583550f2b0f9f990c3', 'GIO_LAUNCHED_DESKTOP_FILE_PID': '9188', 'DEBUGINFOD_URLS': 'https://debuginfod.ubuntu.com', 'IM_CONFIG_PHASE': '1', 'WAYLAND_DISPLAY': 'wayland-0', 'COLCON_PREFIX_PATH': '/home/beingar/ros2_jazzy_ws/install', 'ROS_DISTRO': 'jazzy', 'LOGNAME': 'beingar', 'JOURNAL_STREAM': '9:17243', '_': '/usr/bin/colcon', 'ROS_VERSION': '2', 'MEMORY_PRESSURE_WATCH': '/sys/fs/cgroup/user.slice/user-1000.slice/user@1000.service/session.slice/org.gnome.Shell@wayland.service/memory.pressure', 'XDG_SESSION_CLASS': 'user', 'USERNAME': 'beingar', 'TERM': 'xterm-256color', 'GNOME_DESKTOP_SESSION_ID': 'this-is-deprecated', 'PATH': '/opt/ros/jazzy/opt/gz_msgs_vendor/bin:/opt/ros/jazzy/opt/gz_tools_vendor/bin:/opt/ros/jazzy/opt/gz_ogre_next_vendor/bin:/opt/ros/jazzy/bin:/home/beingar/.local/bin:/usr/local/sbin:/usr/local/bin:/usr/sbin:/usr/bin:/sbin:/bin:/usr/games:/usr/local/games:/snap/bin:/snap/bin', 'SESSION_MANAGER': 'local/beingar-HP-ProBook-650-G2:@/tmp/.ICE-unix/2266,unix/beingar-HP-ProBook-650-G2:/tmp/.ICE-unix/2266', 'INVOCATION_ID': 'b926e553db25418ea4a9131805ffff6c', 'XDG_MENU_PREFIX': 'gnome-', 'GNOME_SETUP_DISPLAY': ':1', 'XDG_RUNTIME_DIR': '/run/user/1000', 'DISPLAY': ':0', 'TERMINATOR_DBUS_PATH': '/net/tenshu/Terminator2', 'LANG': 'fr_FR.UTF-8', 'XDG_CURRENT_DESKTOP': 'ubuntu:GNOME', 'XMODIFIERS': '@im=ibus', 'XDG_SESSION_DESKTOP': 'ubuntu', 'XAUTHORITY': '/run/user/1000/.mutter-Xwaylandauth.2KLUM3', 'LS_COLORS': 'rs=0:di=01;34:ln=01;36:mh=00:pi=40;33:so=01;35:do=01;35:bd=40;33;01:cd=40;33;01:or=40;31;01:mi=00:su=37;41:sg=30;43:ca=00:tw=30;42:ow=34;42:st=37;44:ex=01;32:*.tar=01;31:*.tgz=01;31:*.arc=01;31:*.arj=01;31:*.taz=01;31:*.lha=01;31:*.lz4=01;31:*.lzh=01;31:*.lzma=01;31:*.tlz=01;31:*.txz=01;31:*.tzo=01;31:*.t7z=01;31:*.zip=01;31:*.z=01;31:*.dz=01;31:*.gz=01;31:*.lrz=01;31:*.lz=01;31:*.lzo=01;31:*.xz=01;31:*.zst=01;31:*.tzst=01;31:*.bz2=01;31:*.bz=01;31:*.tbz=01;31:*.tbz2=01;31:*.tz=01;31:*.deb=01;31:*.rpm=01;31:*.jar=01;31:*.war=01;31:*.ear=01;31:*.sar=01;31:*.rar=01;31:*.alz=01;31:*.ace=01;31:*.zoo=01;31:*.cpio=01;31:*.7z=01;31:*.rz=01;31:*.cab=01;31:*.wim=01;31:*.swm=01;31:*.dwm=01;31:*.esd=01;31:*.avif=01;35:*.jpg=01;35:*.jpeg=01;35:*.mjpg=01;35:*.mjpeg=01;35:*.gif=01;35:*.bmp=01;35:*.pbm=01;35:*.pgm=01;35:*.ppm=01;35:*.tga=01;35:*.xbm=01;35:*.xpm=01;35:*.tif=01;35:*.tiff=01;35:*.png=01;35:*.svg=01;35:*.svgz=01;35:*.mng=01;35:*.pcx=01;35:*.mov=01;35:*.mpg=01;35:*.mpeg=01;35:*.m2v=01;35:*.mkv=01;35:*.webm=01;35:*.webp=01;35:*.ogm=01;35:*.mp4=01;35:*.m4v=01;35:*.mp4v=01;35:*.vob=01;35:*.qt=01;35:*.nuv=01;35:*.wmv=01;35:*.asf=01;35:*.rm=01;35:*.rmvb=01;35:*.flc=01;35:*.avi=01;35:*.fli=01;35:*.flv=01;35:*.gl=01;35:*.dl=01;35:*.xcf=01;35:*.xwd=01;35:*.yuv=01;35:*.cgm=01;35:*.emf=01;35:*.ogv=01;35:*.ogx=01;35:*.aac=00;36:*.au=00;36:*.flac=00;36:*.m4a=00;36:*.mid=00;36:*.midi=00;36:*.mka=00;36:*.mp3=00;36:*.mpc=00;36:*.ogg=00;36:*.ra=00;36:*.wav=00;36:*.oga=00;36:*.opus=00;36:*.spx=00;36:*.xspf=00;36:*~=00;90:*#=00;90:*.bak=00;90:*.crdownload=00;90:*.dpkg-dist=00;90:*.dpkg-new=00;90:*.dpkg-old=00;90:*.dpkg-tmp=00;90:*.old=00;90:*.orig=00;90:*.part=00;90:*.rej=00;90:*.rpmnew=00;90:*.rpmorig=00;90:*.rpmsave=00;90:*.swp=00;90:*.tmp=00;90:*.ucf-dist=00;90:*.ucf-new=00;90:*.ucf-old=00;90:', 'SSH_AUTH_SOCK': '/run/user/1000/keyring/ssh', 'AMENT_PREFIX_PATH': '/home/beingar/ros2_jazzy_ws/install/hri_manipulation:/opt/ros/jazzy', 'SHELL': '/bin/bash', 'TERMINATOR_UUID': 'urn:uuid:f96c641a-8bd9-44ec-89db-d184424d96b8', 'QT_ACCESSIBILITY': '1', 'GDMSESSION': 'ubuntu', 'LESSCLOSE': '/usr/bin/lesspipe %s %s', 'GJS_DEBUG_OUTPUT': 'stderr', 'ROS_AUTOMATIC_DISCOVERY_RANGE': 'SUBNET', 'QT_IM_MODULE': 'ibus', 'PWD': '/home/beingar/ros2_jazzy_ws/build/ur5_description', 'XDG_CONFIG_DIRS': '/etc/xdg/xdg-ubuntu:/etc/xdg', 'XDG_DATA_DIRS': '/usr/share/ubuntu:/usr/share/gnome:/usr/local/share/:/usr/share/:/var/lib/snapd/desktop', 'PYTHONPATH': '/home/beingar/ros2_jazzy_ws/build/hri_manipulation:/home/beingar/ros2_jazzy_ws/install/hri_manipulation/lib/python3.12/site-packages:/opt/ros/jazzy/lib/python3.12/site-packages', 'COLCON': '1', 'MEMORY_PRESSURE_WRITE': 'c29tZSAyMDAwMDAgMjAwMDAwMAA=', 'VTE_VERSION': '7600', 'CMAKE_PREFIX_PATH': '/opt/ros/jazzy/opt/gz_sim_vendor:/opt/ros/jazzy/opt/gz_sensors_vendor:/opt/ros/jazzy/opt/gz_physics_vendor:/opt/ros/jazzy/opt/sdformat_vendor:/opt/ros/jazzy/opt/gz_gui_vendor:/opt/ros/jazzy/opt/gz_transport_vendor:/opt/ros/jazzy/opt/gz_rendering_vendor:/opt/ros/jazzy/opt/gz_plugin_vendor:/opt/ros/jazzy/opt/gz_fuel_tools_vendor:/opt/ros/jazzy/opt/gz_msgs_vendor:/opt/ros/jazzy/opt/gz_common_vendor:/opt/ros/jazzy/opt/gz_math_vendor:/opt/ros/jazzy/opt/gz_utils_vendor:/opt/ros/jazzy/opt/gz_tools_vendor:/opt/ros/jazzy/opt/gz_ogre_next_vendor:/opt/ros/jazzy/opt/gz_dartsim_vendor:/opt/ros/jazzy/opt/gz_cmake_vendor:/home/beingar/ros2_jazzy_ws/install/hri_manipulation:/opt/ros/jazzy'}), 'shell': False}
+[8.301557] (ur5_controller) CommandEnded: {'returncode': 0}
+[8.304019] (ur5_controller) JobProgress: {'identifier': 'ur5_controller', 'progress': 'build'}
+[8.304891] (ur5_controller) Command: {'cmd': ['/usr/bin/cmake', '--build', '/home/beingar/ros2_jazzy_ws/build/ur5_controller', '--', '-j4', '-l4'], 'cwd': '/home/beingar/ros2_jazzy_ws/build/ur5_controller', 'env': OrderedDict({'GJS_DEBUG_TOPICS': 'JS ERROR;JS LOG', 'XDG_ACTIVATION_TOKEN': 'gnome-shell/Terminator/2312-7-beingar-HP-ProBook-650-G2_TIME24389819', 'LESSOPEN': '| /usr/bin/lesspipe %s', 'GZ_SIM_RESOURCE_PATH': '/opt/ros/jazzy/share', 'USER': 'beingar', 'GZ_CONFIG_PATH': '/opt/ros/jazzy/opt/gz_sim_vendor/share/gz:/opt/ros/jazzy/opt/sdformat_vendor/share/gz:/opt/ros/jazzy/opt/gz_gui_vendor/share/gz:/opt/ros/jazzy/opt/gz_transport_vendor/share/gz:/opt/ros/jazzy/opt/gz_rendering_vendor/share/gz:/opt/ros/jazzy/opt/gz_plugin_vendor/share/gz:/opt/ros/jazzy/opt/gz_fuel_tools_vendor/share/gz:/opt/ros/jazzy/opt/gz_msgs_vendor/share/gz:/opt/ros/jazzy/opt/gz_common_vendor/share/gz', 'XDG_SESSION_TYPE': 'wayland', 'CLUTTER_DISABLE_MIPMAPPED_TEXT': '1', 'SHLVL': '1', 'LD_LIBRARY_PATH': '/opt/ros/jazzy/opt/gz_sim_vendor/lib:/opt/ros/jazzy/opt/gz_sensors_vendor/lib:/opt/ros/jazzy/opt/gz_physics_vendor/lib:/opt/ros/jazzy/opt/sdformat_vendor/lib:/opt/ros/jazzy/opt/rviz_ogre_vendor/lib:/opt/ros/jazzy/lib/x86_64-linux-gnu:/opt/ros/jazzy/opt/gz_gui_vendor/lib:/opt/ros/jazzy/opt/gz_transport_vendor/lib:/opt/ros/jazzy/opt/gz_rendering_vendor/lib:/opt/ros/jazzy/opt/gz_plugin_vendor/lib:/opt/ros/jazzy/opt/gz_fuel_tools_vendor/lib:/opt/ros/jazzy/opt/gz_msgs_vendor/lib:/opt/ros/jazzy/opt/gz_common_vendor/lib:/opt/ros/jazzy/opt/gz_math_vendor/lib:/opt/ros/jazzy/opt/gz_utils_vendor/lib:/opt/ros/jazzy/opt/gz_tools_vendor/lib:/opt/ros/jazzy/opt/gz_ogre_next_vendor/lib:/opt/ros/jazzy/opt/gz_dartsim_vendor/lib:/opt/ros/jazzy/opt/gz_cmake_vendor/lib:/opt/ros/jazzy/lib', 'HOME': '/home/beingar', 'OLDPWD': '/home/beingar/ros2_jazzy_ws/src/ur5_ws/src', 'DESKTOP_SESSION': 'ubuntu', 'GIO_LAUNCHED_DESKTOP_FILE': '/usr/share/applications/terminator.desktop', 'ROS_PYTHON_VERSION': '3', 'GNOME_SHELL_SESSION_MODE': 'ubuntu', 'GTK_MODULES': 'gail:atk-bridge', 'MANAGERPID': '2037', 'SYSTEMD_EXEC_PID': '2312', 'GSM_SKIP_SSH_AGENT_WORKAROUND': 'true', 'DBUS_SESSION_BUS_ADDRESS': 'unix:path=/run/user/1000/bus', 'COLORTERM': 'truecolor', 'TERMINATOR_DBUS_NAME': 'net.tenshu.Terminator25ef4b219e3b005583550f2b0f9f990c3', 'GIO_LAUNCHED_DESKTOP_FILE_PID': '9188', 'DEBUGINFOD_URLS': 'https://debuginfod.ubuntu.com', 'IM_CONFIG_PHASE': '1', 'WAYLAND_DISPLAY': 'wayland-0', 'COLCON_PREFIX_PATH': '/home/beingar/ros2_jazzy_ws/install', 'ROS_DISTRO': 'jazzy', 'LOGNAME': 'beingar', 'JOURNAL_STREAM': '9:17243', '_': '/usr/bin/colcon', 'ROS_VERSION': '2', 'MEMORY_PRESSURE_WATCH': '/sys/fs/cgroup/user.slice/user-1000.slice/user@1000.service/session.slice/org.gnome.Shell@wayland.service/memory.pressure', 'XDG_SESSION_CLASS': 'user', 'USERNAME': 'beingar', 'TERM': 'xterm-256color', 'GNOME_DESKTOP_SESSION_ID': 'this-is-deprecated', 'PATH': '/opt/ros/jazzy/opt/gz_msgs_vendor/bin:/opt/ros/jazzy/opt/gz_tools_vendor/bin:/opt/ros/jazzy/opt/gz_ogre_next_vendor/bin:/opt/ros/jazzy/bin:/home/beingar/.local/bin:/usr/local/sbin:/usr/local/bin:/usr/sbin:/usr/bin:/sbin:/bin:/usr/games:/usr/local/games:/snap/bin:/snap/bin', 'SESSION_MANAGER': 'local/beingar-HP-ProBook-650-G2:@/tmp/.ICE-unix/2266,unix/beingar-HP-ProBook-650-G2:/tmp/.ICE-unix/2266', 'INVOCATION_ID': 'b926e553db25418ea4a9131805ffff6c', 'XDG_MENU_PREFIX': 'gnome-', 'GNOME_SETUP_DISPLAY': ':1', 'XDG_RUNTIME_DIR': '/run/user/1000', 'DISPLAY': ':0', 'TERMINATOR_DBUS_PATH': '/net/tenshu/Terminator2', 'LANG': 'fr_FR.UTF-8', 'XDG_CURRENT_DESKTOP': 'ubuntu:GNOME', 'XMODIFIERS': '@im=ibus', 'XDG_SESSION_DESKTOP': 'ubuntu', 'XAUTHORITY': '/run/user/1000/.mutter-Xwaylandauth.2KLUM3', 'LS_COLORS': 'rs=0:di=01;34:ln=01;36:mh=00:pi=40;33:so=01;35:do=01;35:bd=40;33;01:cd=40;33;01:or=40;31;01:mi=00:su=37;41:sg=30;43:ca=00:tw=30;42:ow=34;42:st=37;44:ex=01;32:*.tar=01;31:*.tgz=01;31:*.arc=01;31:*.arj=01;31:*.taz=01;31:*.lha=01;31:*.lz4=01;31:*.lzh=01;31:*.lzma=01;31:*.tlz=01;31:*.txz=01;31:*.tzo=01;31:*.t7z=01;31:*.zip=01;31:*.z=01;31:*.dz=01;31:*.gz=01;31:*.lrz=01;31:*.lz=01;31:*.lzo=01;31:*.xz=01;31:*.zst=01;31:*.tzst=01;31:*.bz2=01;31:*.bz=01;31:*.tbz=01;31:*.tbz2=01;31:*.tz=01;31:*.deb=01;31:*.rpm=01;31:*.jar=01;31:*.war=01;31:*.ear=01;31:*.sar=01;31:*.rar=01;31:*.alz=01;31:*.ace=01;31:*.zoo=01;31:*.cpio=01;31:*.7z=01;31:*.rz=01;31:*.cab=01;31:*.wim=01;31:*.swm=01;31:*.dwm=01;31:*.esd=01;31:*.avif=01;35:*.jpg=01;35:*.jpeg=01;35:*.mjpg=01;35:*.mjpeg=01;35:*.gif=01;35:*.bmp=01;35:*.pbm=01;35:*.pgm=01;35:*.ppm=01;35:*.tga=01;35:*.xbm=01;35:*.xpm=01;35:*.tif=01;35:*.tiff=01;35:*.png=01;35:*.svg=01;35:*.svgz=01;35:*.mng=01;35:*.pcx=01;35:*.mov=01;35:*.mpg=01;35:*.mpeg=01;35:*.m2v=01;35:*.mkv=01;35:*.webm=01;35:*.webp=01;35:*.ogm=01;35:*.mp4=01;35:*.m4v=01;35:*.mp4v=01;35:*.vob=01;35:*.qt=01;35:*.nuv=01;35:*.wmv=01;35:*.asf=01;35:*.rm=01;35:*.rmvb=01;35:*.flc=01;35:*.avi=01;35:*.fli=01;35:*.flv=01;35:*.gl=01;35:*.dl=01;35:*.xcf=01;35:*.xwd=01;35:*.yuv=01;35:*.cgm=01;35:*.emf=01;35:*.ogv=01;35:*.ogx=01;35:*.aac=00;36:*.au=00;36:*.flac=00;36:*.m4a=00;36:*.mid=00;36:*.midi=00;36:*.mka=00;36:*.mp3=00;36:*.mpc=00;36:*.ogg=00;36:*.ra=00;36:*.wav=00;36:*.oga=00;36:*.opus=00;36:*.spx=00;36:*.xspf=00;36:*~=00;90:*#=00;90:*.bak=00;90:*.crdownload=00;90:*.dpkg-dist=00;90:*.dpkg-new=00;90:*.dpkg-old=00;90:*.dpkg-tmp=00;90:*.old=00;90:*.orig=00;90:*.part=00;90:*.rej=00;90:*.rpmnew=00;90:*.rpmorig=00;90:*.rpmsave=00;90:*.swp=00;90:*.tmp=00;90:*.ucf-dist=00;90:*.ucf-new=00;90:*.ucf-old=00;90:', 'SSH_AUTH_SOCK': '/run/user/1000/keyring/ssh', 'AMENT_PREFIX_PATH': '/home/beingar/ros2_jazzy_ws/install/hri_manipulation:/opt/ros/jazzy', 'SHELL': '/bin/bash', 'TERMINATOR_UUID': 'urn:uuid:f96c641a-8bd9-44ec-89db-d184424d96b8', 'QT_ACCESSIBILITY': '1', 'GDMSESSION': 'ubuntu', 'LESSCLOSE': '/usr/bin/lesspipe %s %s', 'GJS_DEBUG_OUTPUT': 'stderr', 'ROS_AUTOMATIC_DISCOVERY_RANGE': 'SUBNET', 'QT_IM_MODULE': 'ibus', 'PWD': '/home/beingar/ros2_jazzy_ws/build/ur5_controller', 'XDG_CONFIG_DIRS': '/etc/xdg/xdg-ubuntu:/etc/xdg', 'XDG_DATA_DIRS': '/usr/share/ubuntu:/usr/share/gnome:/usr/local/share/:/usr/share/:/var/lib/snapd/desktop', 'PYTHONPATH': '/home/beingar/ros2_jazzy_ws/build/hri_manipulation:/home/beingar/ros2_jazzy_ws/install/hri_manipulation/lib/python3.12/site-packages:/opt/ros/jazzy/lib/python3.12/site-packages', 'COLCON': '1', 'MEMORY_PRESSURE_WRITE': 'c29tZSAyMDAwMDAgMjAwMDAwMAA=', 'VTE_VERSION': '7600', 'CMAKE_PREFIX_PATH': '/opt/ros/jazzy/opt/gz_sim_vendor:/opt/ros/jazzy/opt/gz_sensors_vendor:/opt/ros/jazzy/opt/gz_physics_vendor:/opt/ros/jazzy/opt/sdformat_vendor:/opt/ros/jazzy/opt/gz_gui_vendor:/opt/ros/jazzy/opt/gz_transport_vendor:/opt/ros/jazzy/opt/gz_rendering_vendor:/opt/ros/jazzy/opt/gz_plugin_vendor:/opt/ros/jazzy/opt/gz_fuel_tools_vendor:/opt/ros/jazzy/opt/gz_msgs_vendor:/opt/ros/jazzy/opt/gz_common_vendor:/opt/ros/jazzy/opt/gz_math_vendor:/opt/ros/jazzy/opt/gz_utils_vendor:/opt/ros/jazzy/opt/gz_tools_vendor:/opt/ros/jazzy/opt/gz_ogre_next_vendor:/opt/ros/jazzy/opt/gz_dartsim_vendor:/opt/ros/jazzy/opt/gz_cmake_vendor:/home/beingar/ros2_jazzy_ws/install/hri_manipulation:/opt/ros/jazzy'}), 'shell': False}
+[8.314059] (ur5_moveit) CommandEnded: {'returncode': 0}
+[8.317664] (-) TimerEvent: {}
+[8.321428] (ur5_moveit) JobProgress: {'identifier': 'ur5_moveit', 'progress': 'build'}
+[8.321601] (ur5_moveit) Command: {'cmd': ['/usr/bin/cmake', '--build', '/home/beingar/ros2_jazzy_ws/build/ur5_moveit', '--', '-j4', '-l4'], 'cwd': '/home/beingar/ros2_jazzy_ws/build/ur5_moveit', 'env': OrderedDict({'GJS_DEBUG_TOPICS': 'JS ERROR;JS LOG', 'XDG_ACTIVATION_TOKEN': 'gnome-shell/Terminator/2312-7-beingar-HP-ProBook-650-G2_TIME24389819', 'LESSOPEN': '| /usr/bin/lesspipe %s', 'GZ_SIM_RESOURCE_PATH': '/opt/ros/jazzy/share', 'USER': 'beingar', 'GZ_CONFIG_PATH': '/opt/ros/jazzy/opt/gz_sim_vendor/share/gz:/opt/ros/jazzy/opt/sdformat_vendor/share/gz:/opt/ros/jazzy/opt/gz_gui_vendor/share/gz:/opt/ros/jazzy/opt/gz_transport_vendor/share/gz:/opt/ros/jazzy/opt/gz_rendering_vendor/share/gz:/opt/ros/jazzy/opt/gz_plugin_vendor/share/gz:/opt/ros/jazzy/opt/gz_fuel_tools_vendor/share/gz:/opt/ros/jazzy/opt/gz_msgs_vendor/share/gz:/opt/ros/jazzy/opt/gz_common_vendor/share/gz', 'XDG_SESSION_TYPE': 'wayland', 'CLUTTER_DISABLE_MIPMAPPED_TEXT': '1', 'SHLVL': '1', 'LD_LIBRARY_PATH': '/opt/ros/jazzy/opt/gz_sim_vendor/lib:/opt/ros/jazzy/opt/gz_sensors_vendor/lib:/opt/ros/jazzy/opt/gz_physics_vendor/lib:/opt/ros/jazzy/opt/sdformat_vendor/lib:/opt/ros/jazzy/opt/rviz_ogre_vendor/lib:/opt/ros/jazzy/lib/x86_64-linux-gnu:/opt/ros/jazzy/opt/gz_gui_vendor/lib:/opt/ros/jazzy/opt/gz_transport_vendor/lib:/opt/ros/jazzy/opt/gz_rendering_vendor/lib:/opt/ros/jazzy/opt/gz_plugin_vendor/lib:/opt/ros/jazzy/opt/gz_fuel_tools_vendor/lib:/opt/ros/jazzy/opt/gz_msgs_vendor/lib:/opt/ros/jazzy/opt/gz_common_vendor/lib:/opt/ros/jazzy/opt/gz_math_vendor/lib:/opt/ros/jazzy/opt/gz_utils_vendor/lib:/opt/ros/jazzy/opt/gz_tools_vendor/lib:/opt/ros/jazzy/opt/gz_ogre_next_vendor/lib:/opt/ros/jazzy/opt/gz_dartsim_vendor/lib:/opt/ros/jazzy/opt/gz_cmake_vendor/lib:/opt/ros/jazzy/lib', 'HOME': '/home/beingar', 'OLDPWD': '/home/beingar/ros2_jazzy_ws/src/ur5_ws/src', 'DESKTOP_SESSION': 'ubuntu', 'GIO_LAUNCHED_DESKTOP_FILE': '/usr/share/applications/terminator.desktop', 'ROS_PYTHON_VERSION': '3', 'GNOME_SHELL_SESSION_MODE': 'ubuntu', 'GTK_MODULES': 'gail:atk-bridge', 'MANAGERPID': '2037', 'SYSTEMD_EXEC_PID': '2312', 'GSM_SKIP_SSH_AGENT_WORKAROUND': 'true', 'DBUS_SESSION_BUS_ADDRESS': 'unix:path=/run/user/1000/bus', 'COLORTERM': 'truecolor', 'TERMINATOR_DBUS_NAME': 'net.tenshu.Terminator25ef4b219e3b005583550f2b0f9f990c3', 'GIO_LAUNCHED_DESKTOP_FILE_PID': '9188', 'DEBUGINFOD_URLS': 'https://debuginfod.ubuntu.com', 'IM_CONFIG_PHASE': '1', 'WAYLAND_DISPLAY': 'wayland-0', 'COLCON_PREFIX_PATH': '/home/beingar/ros2_jazzy_ws/install', 'ROS_DISTRO': 'jazzy', 'LOGNAME': 'beingar', 'JOURNAL_STREAM': '9:17243', '_': '/usr/bin/colcon', 'ROS_VERSION': '2', 'MEMORY_PRESSURE_WATCH': '/sys/fs/cgroup/user.slice/user-1000.slice/user@1000.service/session.slice/org.gnome.Shell@wayland.service/memory.pressure', 'XDG_SESSION_CLASS': 'user', 'USERNAME': 'beingar', 'TERM': 'xterm-256color', 'GNOME_DESKTOP_SESSION_ID': 'this-is-deprecated', 'PATH': '/opt/ros/jazzy/opt/gz_msgs_vendor/bin:/opt/ros/jazzy/opt/gz_tools_vendor/bin:/opt/ros/jazzy/opt/gz_ogre_next_vendor/bin:/opt/ros/jazzy/bin:/home/beingar/.local/bin:/usr/local/sbin:/usr/local/bin:/usr/sbin:/usr/bin:/sbin:/bin:/usr/games:/usr/local/games:/snap/bin:/snap/bin', 'SESSION_MANAGER': 'local/beingar-HP-ProBook-650-G2:@/tmp/.ICE-unix/2266,unix/beingar-HP-ProBook-650-G2:/tmp/.ICE-unix/2266', 'INVOCATION_ID': 'b926e553db25418ea4a9131805ffff6c', 'XDG_MENU_PREFIX': 'gnome-', 'GNOME_SETUP_DISPLAY': ':1', 'XDG_RUNTIME_DIR': '/run/user/1000', 'DISPLAY': ':0', 'TERMINATOR_DBUS_PATH': '/net/tenshu/Terminator2', 'LANG': 'fr_FR.UTF-8', 'XDG_CURRENT_DESKTOP': 'ubuntu:GNOME', 'XMODIFIERS': '@im=ibus', 'XDG_SESSION_DESKTOP': 'ubuntu', 'XAUTHORITY': '/run/user/1000/.mutter-Xwaylandauth.2KLUM3', 'LS_COLORS': 'rs=0:di=01;34:ln=01;36:mh=00:pi=40;33:so=01;35:do=01;35:bd=40;33;01:cd=40;33;01:or=40;31;01:mi=00:su=37;41:sg=30;43:ca=00:tw=30;42:ow=34;42:st=37;44:ex=01;32:*.tar=01;31:*.tgz=01;31:*.arc=01;31:*.arj=01;31:*.taz=01;31:*.lha=01;31:*.lz4=01;31:*.lzh=01;31:*.lzma=01;31:*.tlz=01;31:*.txz=01;31:*.tzo=01;31:*.t7z=01;31:*.zip=01;31:*.z=01;31:*.dz=01;31:*.gz=01;31:*.lrz=01;31:*.lz=01;31:*.lzo=01;31:*.xz=01;31:*.zst=01;31:*.tzst=01;31:*.bz2=01;31:*.bz=01;31:*.tbz=01;31:*.tbz2=01;31:*.tz=01;31:*.deb=01;31:*.rpm=01;31:*.jar=01;31:*.war=01;31:*.ear=01;31:*.sar=01;31:*.rar=01;31:*.alz=01;31:*.ace=01;31:*.zoo=01;31:*.cpio=01;31:*.7z=01;31:*.rz=01;31:*.cab=01;31:*.wim=01;31:*.swm=01;31:*.dwm=01;31:*.esd=01;31:*.avif=01;35:*.jpg=01;35:*.jpeg=01;35:*.mjpg=01;35:*.mjpeg=01;35:*.gif=01;35:*.bmp=01;35:*.pbm=01;35:*.pgm=01;35:*.ppm=01;35:*.tga=01;35:*.xbm=01;35:*.xpm=01;35:*.tif=01;35:*.tiff=01;35:*.png=01;35:*.svg=01;35:*.svgz=01;35:*.mng=01;35:*.pcx=01;35:*.mov=01;35:*.mpg=01;35:*.mpeg=01;35:*.m2v=01;35:*.mkv=01;35:*.webm=01;35:*.webp=01;35:*.ogm=01;35:*.mp4=01;35:*.m4v=01;35:*.mp4v=01;35:*.vob=01;35:*.qt=01;35:*.nuv=01;35:*.wmv=01;35:*.asf=01;35:*.rm=01;35:*.rmvb=01;35:*.flc=01;35:*.avi=01;35:*.fli=01;35:*.flv=01;35:*.gl=01;35:*.dl=01;35:*.xcf=01;35:*.xwd=01;35:*.yuv=01;35:*.cgm=01;35:*.emf=01;35:*.ogv=01;35:*.ogx=01;35:*.aac=00;36:*.au=00;36:*.flac=00;36:*.m4a=00;36:*.mid=00;36:*.midi=00;36:*.mka=00;36:*.mp3=00;36:*.mpc=00;36:*.ogg=00;36:*.ra=00;36:*.wav=00;36:*.oga=00;36:*.opus=00;36:*.spx=00;36:*.xspf=00;36:*~=00;90:*#=00;90:*.bak=00;90:*.crdownload=00;90:*.dpkg-dist=00;90:*.dpkg-new=00;90:*.dpkg-old=00;90:*.dpkg-tmp=00;90:*.old=00;90:*.orig=00;90:*.part=00;90:*.rej=00;90:*.rpmnew=00;90:*.rpmorig=00;90:*.rpmsave=00;90:*.swp=00;90:*.tmp=00;90:*.ucf-dist=00;90:*.ucf-new=00;90:*.ucf-old=00;90:', 'SSH_AUTH_SOCK': '/run/user/1000/keyring/ssh', 'AMENT_PREFIX_PATH': '/home/beingar/ros2_jazzy_ws/install/hri_manipulation:/opt/ros/jazzy', 'SHELL': '/bin/bash', 'TERMINATOR_UUID': 'urn:uuid:f96c641a-8bd9-44ec-89db-d184424d96b8', 'QT_ACCESSIBILITY': '1', 'GDMSESSION': 'ubuntu', 'LESSCLOSE': '/usr/bin/lesspipe %s %s', 'GJS_DEBUG_OUTPUT': 'stderr', 'ROS_AUTOMATIC_DISCOVERY_RANGE': 'SUBNET', 'QT_IM_MODULE': 'ibus', 'PWD': '/home/beingar/ros2_jazzy_ws/build/ur5_moveit', 'XDG_CONFIG_DIRS': '/etc/xdg/xdg-ubuntu:/etc/xdg', 'XDG_DATA_DIRS': '/usr/share/ubuntu:/usr/share/gnome:/usr/local/share/:/usr/share/:/var/lib/snapd/desktop', 'PYTHONPATH': '/home/beingar/ros2_jazzy_ws/build/hri_manipulation:/home/beingar/ros2_jazzy_ws/install/hri_manipulation/lib/python3.12/site-packages:/opt/ros/jazzy/lib/python3.12/site-packages', 'COLCON': '1', 'MEMORY_PRESSURE_WRITE': 'c29tZSAyMDAwMDAgMjAwMDAwMAA=', 'VTE_VERSION': '7600', 'CMAKE_PREFIX_PATH': '/opt/ros/jazzy/opt/gz_sim_vendor:/opt/ros/jazzy/opt/gz_sensors_vendor:/opt/ros/jazzy/opt/gz_physics_vendor:/opt/ros/jazzy/opt/sdformat_vendor:/opt/ros/jazzy/opt/gz_gui_vendor:/opt/ros/jazzy/opt/gz_transport_vendor:/opt/ros/jazzy/opt/gz_rendering_vendor:/opt/ros/jazzy/opt/gz_plugin_vendor:/opt/ros/jazzy/opt/gz_fuel_tools_vendor:/opt/ros/jazzy/opt/gz_msgs_vendor:/opt/ros/jazzy/opt/gz_common_vendor:/opt/ros/jazzy/opt/gz_math_vendor:/opt/ros/jazzy/opt/gz_utils_vendor:/opt/ros/jazzy/opt/gz_tools_vendor:/opt/ros/jazzy/opt/gz_ogre_next_vendor:/opt/ros/jazzy/opt/gz_dartsim_vendor:/opt/ros/jazzy/opt/gz_cmake_vendor:/home/beingar/ros2_jazzy_ws/install/hri_manipulation:/opt/ros/jazzy'}), 'shell': False}
+[8.417866] (-) TimerEvent: {}
+[8.508963] (ur5_description) CommandEnded: {'returncode': 0}
+[8.510816] (ur5_description) JobProgress: {'identifier': 'ur5_description', 'progress': 'install'}
+[8.517988] (-) TimerEvent: {}
+[8.538006] (ur5_description) Command: {'cmd': ['/usr/bin/cmake', '--install', '/home/beingar/ros2_jazzy_ws/build/ur5_description'], 'cwd': '/home/beingar/ros2_jazzy_ws/build/ur5_description', 'env': OrderedDict({'GJS_DEBUG_TOPICS': 'JS ERROR;JS LOG', 'XDG_ACTIVATION_TOKEN': 'gnome-shell/Terminator/2312-7-beingar-HP-ProBook-650-G2_TIME24389819', 'LESSOPEN': '| /usr/bin/lesspipe %s', 'GZ_SIM_RESOURCE_PATH': '/opt/ros/jazzy/share', 'USER': 'beingar', 'GZ_CONFIG_PATH': '/opt/ros/jazzy/opt/gz_sim_vendor/share/gz:/opt/ros/jazzy/opt/sdformat_vendor/share/gz:/opt/ros/jazzy/opt/gz_gui_vendor/share/gz:/opt/ros/jazzy/opt/gz_transport_vendor/share/gz:/opt/ros/jazzy/opt/gz_rendering_vendor/share/gz:/opt/ros/jazzy/opt/gz_plugin_vendor/share/gz:/opt/ros/jazzy/opt/gz_fuel_tools_vendor/share/gz:/opt/ros/jazzy/opt/gz_msgs_vendor/share/gz:/opt/ros/jazzy/opt/gz_common_vendor/share/gz', 'XDG_SESSION_TYPE': 'wayland', 'CLUTTER_DISABLE_MIPMAPPED_TEXT': '1', 'SHLVL': '1', 'LD_LIBRARY_PATH': '/opt/ros/jazzy/opt/gz_sim_vendor/lib:/opt/ros/jazzy/opt/gz_sensors_vendor/lib:/opt/ros/jazzy/opt/gz_physics_vendor/lib:/opt/ros/jazzy/opt/sdformat_vendor/lib:/opt/ros/jazzy/opt/rviz_ogre_vendor/lib:/opt/ros/jazzy/lib/x86_64-linux-gnu:/opt/ros/jazzy/opt/gz_gui_vendor/lib:/opt/ros/jazzy/opt/gz_transport_vendor/lib:/opt/ros/jazzy/opt/gz_rendering_vendor/lib:/opt/ros/jazzy/opt/gz_plugin_vendor/lib:/opt/ros/jazzy/opt/gz_fuel_tools_vendor/lib:/opt/ros/jazzy/opt/gz_msgs_vendor/lib:/opt/ros/jazzy/opt/gz_common_vendor/lib:/opt/ros/jazzy/opt/gz_math_vendor/lib:/opt/ros/jazzy/opt/gz_utils_vendor/lib:/opt/ros/jazzy/opt/gz_tools_vendor/lib:/opt/ros/jazzy/opt/gz_ogre_next_vendor/lib:/opt/ros/jazzy/opt/gz_dartsim_vendor/lib:/opt/ros/jazzy/opt/gz_cmake_vendor/lib:/opt/ros/jazzy/lib', 'HOME': '/home/beingar', 'OLDPWD': '/home/beingar/ros2_jazzy_ws/src/ur5_ws/src', 'DESKTOP_SESSION': 'ubuntu', 'GIO_LAUNCHED_DESKTOP_FILE': '/usr/share/applications/terminator.desktop', 'ROS_PYTHON_VERSION': '3', 'GNOME_SHELL_SESSION_MODE': 'ubuntu', 'GTK_MODULES': 'gail:atk-bridge', 'MANAGERPID': '2037', 'SYSTEMD_EXEC_PID': '2312', 'GSM_SKIP_SSH_AGENT_WORKAROUND': 'true', 'DBUS_SESSION_BUS_ADDRESS': 'unix:path=/run/user/1000/bus', 'COLORTERM': 'truecolor', 'TERMINATOR_DBUS_NAME': 'net.tenshu.Terminator25ef4b219e3b005583550f2b0f9f990c3', 'GIO_LAUNCHED_DESKTOP_FILE_PID': '9188', 'DEBUGINFOD_URLS': 'https://debuginfod.ubuntu.com', 'IM_CONFIG_PHASE': '1', 'WAYLAND_DISPLAY': 'wayland-0', 'COLCON_PREFIX_PATH': '/home/beingar/ros2_jazzy_ws/install', 'ROS_DISTRO': 'jazzy', 'LOGNAME': 'beingar', 'JOURNAL_STREAM': '9:17243', '_': '/usr/bin/colcon', 'ROS_VERSION': '2', 'MEMORY_PRESSURE_WATCH': '/sys/fs/cgroup/user.slice/user-1000.slice/user@1000.service/session.slice/org.gnome.Shell@wayland.service/memory.pressure', 'XDG_SESSION_CLASS': 'user', 'USERNAME': 'beingar', 'TERM': 'xterm-256color', 'GNOME_DESKTOP_SESSION_ID': 'this-is-deprecated', 'PATH': '/opt/ros/jazzy/opt/gz_msgs_vendor/bin:/opt/ros/jazzy/opt/gz_tools_vendor/bin:/opt/ros/jazzy/opt/gz_ogre_next_vendor/bin:/opt/ros/jazzy/bin:/home/beingar/.local/bin:/usr/local/sbin:/usr/local/bin:/usr/sbin:/usr/bin:/sbin:/bin:/usr/games:/usr/local/games:/snap/bin:/snap/bin', 'SESSION_MANAGER': 'local/beingar-HP-ProBook-650-G2:@/tmp/.ICE-unix/2266,unix/beingar-HP-ProBook-650-G2:/tmp/.ICE-unix/2266', 'INVOCATION_ID': 'b926e553db25418ea4a9131805ffff6c', 'XDG_MENU_PREFIX': 'gnome-', 'GNOME_SETUP_DISPLAY': ':1', 'XDG_RUNTIME_DIR': '/run/user/1000', 'DISPLAY': ':0', 'TERMINATOR_DBUS_PATH': '/net/tenshu/Terminator2', 'LANG': 'fr_FR.UTF-8', 'XDG_CURRENT_DESKTOP': 'ubuntu:GNOME', 'XMODIFIERS': '@im=ibus', 'XDG_SESSION_DESKTOP': 'ubuntu', 'XAUTHORITY': '/run/user/1000/.mutter-Xwaylandauth.2KLUM3', 'LS_COLORS': 'rs=0:di=01;34:ln=01;36:mh=00:pi=40;33:so=01;35:do=01;35:bd=40;33;01:cd=40;33;01:or=40;31;01:mi=00:su=37;41:sg=30;43:ca=00:tw=30;42:ow=34;42:st=37;44:ex=01;32:*.tar=01;31:*.tgz=01;31:*.arc=01;31:*.arj=01;31:*.taz=01;31:*.lha=01;31:*.lz4=01;31:*.lzh=01;31:*.lzma=01;31:*.tlz=01;31:*.txz=01;31:*.tzo=01;31:*.t7z=01;31:*.zip=01;31:*.z=01;31:*.dz=01;31:*.gz=01;31:*.lrz=01;31:*.lz=01;31:*.lzo=01;31:*.xz=01;31:*.zst=01;31:*.tzst=01;31:*.bz2=01;31:*.bz=01;31:*.tbz=01;31:*.tbz2=01;31:*.tz=01;31:*.deb=01;31:*.rpm=01;31:*.jar=01;31:*.war=01;31:*.ear=01;31:*.sar=01;31:*.rar=01;31:*.alz=01;31:*.ace=01;31:*.zoo=01;31:*.cpio=01;31:*.7z=01;31:*.rz=01;31:*.cab=01;31:*.wim=01;31:*.swm=01;31:*.dwm=01;31:*.esd=01;31:*.avif=01;35:*.jpg=01;35:*.jpeg=01;35:*.mjpg=01;35:*.mjpeg=01;35:*.gif=01;35:*.bmp=01;35:*.pbm=01;35:*.pgm=01;35:*.ppm=01;35:*.tga=01;35:*.xbm=01;35:*.xpm=01;35:*.tif=01;35:*.tiff=01;35:*.png=01;35:*.svg=01;35:*.svgz=01;35:*.mng=01;35:*.pcx=01;35:*.mov=01;35:*.mpg=01;35:*.mpeg=01;35:*.m2v=01;35:*.mkv=01;35:*.webm=01;35:*.webp=01;35:*.ogm=01;35:*.mp4=01;35:*.m4v=01;35:*.mp4v=01;35:*.vob=01;35:*.qt=01;35:*.nuv=01;35:*.wmv=01;35:*.asf=01;35:*.rm=01;35:*.rmvb=01;35:*.flc=01;35:*.avi=01;35:*.fli=01;35:*.flv=01;35:*.gl=01;35:*.dl=01;35:*.xcf=01;35:*.xwd=01;35:*.yuv=01;35:*.cgm=01;35:*.emf=01;35:*.ogv=01;35:*.ogx=01;35:*.aac=00;36:*.au=00;36:*.flac=00;36:*.m4a=00;36:*.mid=00;36:*.midi=00;36:*.mka=00;36:*.mp3=00;36:*.mpc=00;36:*.ogg=00;36:*.ra=00;36:*.wav=00;36:*.oga=00;36:*.opus=00;36:*.spx=00;36:*.xspf=00;36:*~=00;90:*#=00;90:*.bak=00;90:*.crdownload=00;90:*.dpkg-dist=00;90:*.dpkg-new=00;90:*.dpkg-old=00;90:*.dpkg-tmp=00;90:*.old=00;90:*.orig=00;90:*.part=00;90:*.rej=00;90:*.rpmnew=00;90:*.rpmorig=00;90:*.rpmsave=00;90:*.swp=00;90:*.tmp=00;90:*.ucf-dist=00;90:*.ucf-new=00;90:*.ucf-old=00;90:', 'SSH_AUTH_SOCK': '/run/user/1000/keyring/ssh', 'AMENT_PREFIX_PATH': '/home/beingar/ros2_jazzy_ws/install/hri_manipulation:/opt/ros/jazzy', 'SHELL': '/bin/bash', 'TERMINATOR_UUID': 'urn:uuid:f96c641a-8bd9-44ec-89db-d184424d96b8', 'QT_ACCESSIBILITY': '1', 'GDMSESSION': 'ubuntu', 'LESSCLOSE': '/usr/bin/lesspipe %s %s', 'GJS_DEBUG_OUTPUT': 'stderr', 'ROS_AUTOMATIC_DISCOVERY_RANGE': 'SUBNET', 'QT_IM_MODULE': 'ibus', 'PWD': '/home/beingar/ros2_jazzy_ws/build/ur5_description', 'XDG_CONFIG_DIRS': '/etc/xdg/xdg-ubuntu:/etc/xdg', 'XDG_DATA_DIRS': '/usr/share/ubuntu:/usr/share/gnome:/usr/local/share/:/usr/share/:/var/lib/snapd/desktop', 'PYTHONPATH': '/home/beingar/ros2_jazzy_ws/build/hri_manipulation:/home/beingar/ros2_jazzy_ws/install/hri_manipulation/lib/python3.12/site-packages:/opt/ros/jazzy/lib/python3.12/site-packages', 'COLCON': '1', 'MEMORY_PRESSURE_WRITE': 'c29tZSAyMDAwMDAgMjAwMDAwMAA=', 'VTE_VERSION': '7600', 'CMAKE_PREFIX_PATH': '/opt/ros/jazzy/opt/gz_sim_vendor:/opt/ros/jazzy/opt/gz_sensors_vendor:/opt/ros/jazzy/opt/gz_physics_vendor:/opt/ros/jazzy/opt/sdformat_vendor:/opt/ros/jazzy/opt/gz_gui_vendor:/opt/ros/jazzy/opt/gz_transport_vendor:/opt/ros/jazzy/opt/gz_rendering_vendor:/opt/ros/jazzy/opt/gz_plugin_vendor:/opt/ros/jazzy/opt/gz_fuel_tools_vendor:/opt/ros/jazzy/opt/gz_msgs_vendor:/opt/ros/jazzy/opt/gz_common_vendor:/opt/ros/jazzy/opt/gz_math_vendor:/opt/ros/jazzy/opt/gz_utils_vendor:/opt/ros/jazzy/opt/gz_tools_vendor:/opt/ros/jazzy/opt/gz_ogre_next_vendor:/opt/ros/jazzy/opt/gz_dartsim_vendor:/opt/ros/jazzy/opt/gz_cmake_vendor:/home/beingar/ros2_jazzy_ws/install/hri_manipulation:/opt/ros/jazzy'}), 'shell': False}
+[8.542611] (ur5_moveit) CommandEnded: {'returncode': 0}
+[8.544641] (ur5_moveit) JobProgress: {'identifier': 'ur5_moveit', 'progress': 'install'}
+[8.545686] (ur5_moveit) Command: {'cmd': ['/usr/bin/cmake', '--install', '/home/beingar/ros2_jazzy_ws/build/ur5_moveit'], 'cwd': '/home/beingar/ros2_jazzy_ws/build/ur5_moveit', 'env': OrderedDict({'GJS_DEBUG_TOPICS': 'JS ERROR;JS LOG', 'XDG_ACTIVATION_TOKEN': 'gnome-shell/Terminator/2312-7-beingar-HP-ProBook-650-G2_TIME24389819', 'LESSOPEN': '| /usr/bin/lesspipe %s', 'GZ_SIM_RESOURCE_PATH': '/opt/ros/jazzy/share', 'USER': 'beingar', 'GZ_CONFIG_PATH': '/opt/ros/jazzy/opt/gz_sim_vendor/share/gz:/opt/ros/jazzy/opt/sdformat_vendor/share/gz:/opt/ros/jazzy/opt/gz_gui_vendor/share/gz:/opt/ros/jazzy/opt/gz_transport_vendor/share/gz:/opt/ros/jazzy/opt/gz_rendering_vendor/share/gz:/opt/ros/jazzy/opt/gz_plugin_vendor/share/gz:/opt/ros/jazzy/opt/gz_fuel_tools_vendor/share/gz:/opt/ros/jazzy/opt/gz_msgs_vendor/share/gz:/opt/ros/jazzy/opt/gz_common_vendor/share/gz', 'XDG_SESSION_TYPE': 'wayland', 'CLUTTER_DISABLE_MIPMAPPED_TEXT': '1', 'SHLVL': '1', 'LD_LIBRARY_PATH': '/opt/ros/jazzy/opt/gz_sim_vendor/lib:/opt/ros/jazzy/opt/gz_sensors_vendor/lib:/opt/ros/jazzy/opt/gz_physics_vendor/lib:/opt/ros/jazzy/opt/sdformat_vendor/lib:/opt/ros/jazzy/opt/rviz_ogre_vendor/lib:/opt/ros/jazzy/lib/x86_64-linux-gnu:/opt/ros/jazzy/opt/gz_gui_vendor/lib:/opt/ros/jazzy/opt/gz_transport_vendor/lib:/opt/ros/jazzy/opt/gz_rendering_vendor/lib:/opt/ros/jazzy/opt/gz_plugin_vendor/lib:/opt/ros/jazzy/opt/gz_fuel_tools_vendor/lib:/opt/ros/jazzy/opt/gz_msgs_vendor/lib:/opt/ros/jazzy/opt/gz_common_vendor/lib:/opt/ros/jazzy/opt/gz_math_vendor/lib:/opt/ros/jazzy/opt/gz_utils_vendor/lib:/opt/ros/jazzy/opt/gz_tools_vendor/lib:/opt/ros/jazzy/opt/gz_ogre_next_vendor/lib:/opt/ros/jazzy/opt/gz_dartsim_vendor/lib:/opt/ros/jazzy/opt/gz_cmake_vendor/lib:/opt/ros/jazzy/lib', 'HOME': '/home/beingar', 'OLDPWD': '/home/beingar/ros2_jazzy_ws/src/ur5_ws/src', 'DESKTOP_SESSION': 'ubuntu', 'GIO_LAUNCHED_DESKTOP_FILE': '/usr/share/applications/terminator.desktop', 'ROS_PYTHON_VERSION': '3', 'GNOME_SHELL_SESSION_MODE': 'ubuntu', 'GTK_MODULES': 'gail:atk-bridge', 'MANAGERPID': '2037', 'SYSTEMD_EXEC_PID': '2312', 'GSM_SKIP_SSH_AGENT_WORKAROUND': 'true', 'DBUS_SESSION_BUS_ADDRESS': 'unix:path=/run/user/1000/bus', 'COLORTERM': 'truecolor', 'TERMINATOR_DBUS_NAME': 'net.tenshu.Terminator25ef4b219e3b005583550f2b0f9f990c3', 'GIO_LAUNCHED_DESKTOP_FILE_PID': '9188', 'DEBUGINFOD_URLS': 'https://debuginfod.ubuntu.com', 'IM_CONFIG_PHASE': '1', 'WAYLAND_DISPLAY': 'wayland-0', 'COLCON_PREFIX_PATH': '/home/beingar/ros2_jazzy_ws/install', 'ROS_DISTRO': 'jazzy', 'LOGNAME': 'beingar', 'JOURNAL_STREAM': '9:17243', '_': '/usr/bin/colcon', 'ROS_VERSION': '2', 'MEMORY_PRESSURE_WATCH': '/sys/fs/cgroup/user.slice/user-1000.slice/user@1000.service/session.slice/org.gnome.Shell@wayland.service/memory.pressure', 'XDG_SESSION_CLASS': 'user', 'USERNAME': 'beingar', 'TERM': 'xterm-256color', 'GNOME_DESKTOP_SESSION_ID': 'this-is-deprecated', 'PATH': '/opt/ros/jazzy/opt/gz_msgs_vendor/bin:/opt/ros/jazzy/opt/gz_tools_vendor/bin:/opt/ros/jazzy/opt/gz_ogre_next_vendor/bin:/opt/ros/jazzy/bin:/home/beingar/.local/bin:/usr/local/sbin:/usr/local/bin:/usr/sbin:/usr/bin:/sbin:/bin:/usr/games:/usr/local/games:/snap/bin:/snap/bin', 'SESSION_MANAGER': 'local/beingar-HP-ProBook-650-G2:@/tmp/.ICE-unix/2266,unix/beingar-HP-ProBook-650-G2:/tmp/.ICE-unix/2266', 'INVOCATION_ID': 'b926e553db25418ea4a9131805ffff6c', 'XDG_MENU_PREFIX': 'gnome-', 'GNOME_SETUP_DISPLAY': ':1', 'XDG_RUNTIME_DIR': '/run/user/1000', 'DISPLAY': ':0', 'TERMINATOR_DBUS_PATH': '/net/tenshu/Terminator2', 'LANG': 'fr_FR.UTF-8', 'XDG_CURRENT_DESKTOP': 'ubuntu:GNOME', 'XMODIFIERS': '@im=ibus', 'XDG_SESSION_DESKTOP': 'ubuntu', 'XAUTHORITY': '/run/user/1000/.mutter-Xwaylandauth.2KLUM3', 'LS_COLORS': 'rs=0:di=01;34:ln=01;36:mh=00:pi=40;33:so=01;35:do=01;35:bd=40;33;01:cd=40;33;01:or=40;31;01:mi=00:su=37;41:sg=30;43:ca=00:tw=30;42:ow=34;42:st=37;44:ex=01;32:*.tar=01;31:*.tgz=01;31:*.arc=01;31:*.arj=01;31:*.taz=01;31:*.lha=01;31:*.lz4=01;31:*.lzh=01;31:*.lzma=01;31:*.tlz=01;31:*.txz=01;31:*.tzo=01;31:*.t7z=01;31:*.zip=01;31:*.z=01;31:*.dz=01;31:*.gz=01;31:*.lrz=01;31:*.lz=01;31:*.lzo=01;31:*.xz=01;31:*.zst=01;31:*.tzst=01;31:*.bz2=01;31:*.bz=01;31:*.tbz=01;31:*.tbz2=01;31:*.tz=01;31:*.deb=01;31:*.rpm=01;31:*.jar=01;31:*.war=01;31:*.ear=01;31:*.sar=01;31:*.rar=01;31:*.alz=01;31:*.ace=01;31:*.zoo=01;31:*.cpio=01;31:*.7z=01;31:*.rz=01;31:*.cab=01;31:*.wim=01;31:*.swm=01;31:*.dwm=01;31:*.esd=01;31:*.avif=01;35:*.jpg=01;35:*.jpeg=01;35:*.mjpg=01;35:*.mjpeg=01;35:*.gif=01;35:*.bmp=01;35:*.pbm=01;35:*.pgm=01;35:*.ppm=01;35:*.tga=01;35:*.xbm=01;35:*.xpm=01;35:*.tif=01;35:*.tiff=01;35:*.png=01;35:*.svg=01;35:*.svgz=01;35:*.mng=01;35:*.pcx=01;35:*.mov=01;35:*.mpg=01;35:*.mpeg=01;35:*.m2v=01;35:*.mkv=01;35:*.webm=01;35:*.webp=01;35:*.ogm=01;35:*.mp4=01;35:*.m4v=01;35:*.mp4v=01;35:*.vob=01;35:*.qt=01;35:*.nuv=01;35:*.wmv=01;35:*.asf=01;35:*.rm=01;35:*.rmvb=01;35:*.flc=01;35:*.avi=01;35:*.fli=01;35:*.flv=01;35:*.gl=01;35:*.dl=01;35:*.xcf=01;35:*.xwd=01;35:*.yuv=01;35:*.cgm=01;35:*.emf=01;35:*.ogv=01;35:*.ogx=01;35:*.aac=00;36:*.au=00;36:*.flac=00;36:*.m4a=00;36:*.mid=00;36:*.midi=00;36:*.mka=00;36:*.mp3=00;36:*.mpc=00;36:*.ogg=00;36:*.ra=00;36:*.wav=00;36:*.oga=00;36:*.opus=00;36:*.spx=00;36:*.xspf=00;36:*~=00;90:*#=00;90:*.bak=00;90:*.crdownload=00;90:*.dpkg-dist=00;90:*.dpkg-new=00;90:*.dpkg-old=00;90:*.dpkg-tmp=00;90:*.old=00;90:*.orig=00;90:*.part=00;90:*.rej=00;90:*.rpmnew=00;90:*.rpmorig=00;90:*.rpmsave=00;90:*.swp=00;90:*.tmp=00;90:*.ucf-dist=00;90:*.ucf-new=00;90:*.ucf-old=00;90:', 'SSH_AUTH_SOCK': '/run/user/1000/keyring/ssh', 'AMENT_PREFIX_PATH': '/home/beingar/ros2_jazzy_ws/install/hri_manipulation:/opt/ros/jazzy', 'SHELL': '/bin/bash', 'TERMINATOR_UUID': 'urn:uuid:f96c641a-8bd9-44ec-89db-d184424d96b8', 'QT_ACCESSIBILITY': '1', 'GDMSESSION': 'ubuntu', 'LESSCLOSE': '/usr/bin/lesspipe %s %s', 'GJS_DEBUG_OUTPUT': 'stderr', 'ROS_AUTOMATIC_DISCOVERY_RANGE': 'SUBNET', 'QT_IM_MODULE': 'ibus', 'PWD': '/home/beingar/ros2_jazzy_ws/build/ur5_moveit', 'XDG_CONFIG_DIRS': '/etc/xdg/xdg-ubuntu:/etc/xdg', 'XDG_DATA_DIRS': '/usr/share/ubuntu:/usr/share/gnome:/usr/local/share/:/usr/share/:/var/lib/snapd/desktop', 'PYTHONPATH': '/home/beingar/ros2_jazzy_ws/build/hri_manipulation:/home/beingar/ros2_jazzy_ws/install/hri_manipulation/lib/python3.12/site-packages:/opt/ros/jazzy/lib/python3.12/site-packages', 'COLCON': '1', 'MEMORY_PRESSURE_WRITE': 'c29tZSAyMDAwMDAgMjAwMDAwMAA=', 'VTE_VERSION': '7600', 'CMAKE_PREFIX_PATH': '/opt/ros/jazzy/opt/gz_sim_vendor:/opt/ros/jazzy/opt/gz_sensors_vendor:/opt/ros/jazzy/opt/gz_physics_vendor:/opt/ros/jazzy/opt/sdformat_vendor:/opt/ros/jazzy/opt/gz_gui_vendor:/opt/ros/jazzy/opt/gz_transport_vendor:/opt/ros/jazzy/opt/gz_rendering_vendor:/opt/ros/jazzy/opt/gz_plugin_vendor:/opt/ros/jazzy/opt/gz_fuel_tools_vendor:/opt/ros/jazzy/opt/gz_msgs_vendor:/opt/ros/jazzy/opt/gz_common_vendor:/opt/ros/jazzy/opt/gz_math_vendor:/opt/ros/jazzy/opt/gz_utils_vendor:/opt/ros/jazzy/opt/gz_tools_vendor:/opt/ros/jazzy/opt/gz_ogre_next_vendor:/opt/ros/jazzy/opt/gz_dartsim_vendor:/opt/ros/jazzy/opt/gz_cmake_vendor:/home/beingar/ros2_jazzy_ws/install/hri_manipulation:/opt/ros/jazzy'}), 'shell': False}
+[8.549260] (ur5_controller) CommandEnded: {'returncode': 0}
+[8.554246] (ur5_controller) JobProgress: {'identifier': 'ur5_controller', 'progress': 'install'}
+[8.554382] (ur5_controller) Command: {'cmd': ['/usr/bin/cmake', '--install', '/home/beingar/ros2_jazzy_ws/build/ur5_controller'], 'cwd': '/home/beingar/ros2_jazzy_ws/build/ur5_controller', 'env': OrderedDict({'GJS_DEBUG_TOPICS': 'JS ERROR;JS LOG', 'XDG_ACTIVATION_TOKEN': 'gnome-shell/Terminator/2312-7-beingar-HP-ProBook-650-G2_TIME24389819', 'LESSOPEN': '| /usr/bin/lesspipe %s', 'GZ_SIM_RESOURCE_PATH': '/opt/ros/jazzy/share', 'USER': 'beingar', 'GZ_CONFIG_PATH': '/opt/ros/jazzy/opt/gz_sim_vendor/share/gz:/opt/ros/jazzy/opt/sdformat_vendor/share/gz:/opt/ros/jazzy/opt/gz_gui_vendor/share/gz:/opt/ros/jazzy/opt/gz_transport_vendor/share/gz:/opt/ros/jazzy/opt/gz_rendering_vendor/share/gz:/opt/ros/jazzy/opt/gz_plugin_vendor/share/gz:/opt/ros/jazzy/opt/gz_fuel_tools_vendor/share/gz:/opt/ros/jazzy/opt/gz_msgs_vendor/share/gz:/opt/ros/jazzy/opt/gz_common_vendor/share/gz', 'XDG_SESSION_TYPE': 'wayland', 'CLUTTER_DISABLE_MIPMAPPED_TEXT': '1', 'SHLVL': '1', 'LD_LIBRARY_PATH': '/opt/ros/jazzy/opt/gz_sim_vendor/lib:/opt/ros/jazzy/opt/gz_sensors_vendor/lib:/opt/ros/jazzy/opt/gz_physics_vendor/lib:/opt/ros/jazzy/opt/sdformat_vendor/lib:/opt/ros/jazzy/opt/rviz_ogre_vendor/lib:/opt/ros/jazzy/lib/x86_64-linux-gnu:/opt/ros/jazzy/opt/gz_gui_vendor/lib:/opt/ros/jazzy/opt/gz_transport_vendor/lib:/opt/ros/jazzy/opt/gz_rendering_vendor/lib:/opt/ros/jazzy/opt/gz_plugin_vendor/lib:/opt/ros/jazzy/opt/gz_fuel_tools_vendor/lib:/opt/ros/jazzy/opt/gz_msgs_vendor/lib:/opt/ros/jazzy/opt/gz_common_vendor/lib:/opt/ros/jazzy/opt/gz_math_vendor/lib:/opt/ros/jazzy/opt/gz_utils_vendor/lib:/opt/ros/jazzy/opt/gz_tools_vendor/lib:/opt/ros/jazzy/opt/gz_ogre_next_vendor/lib:/opt/ros/jazzy/opt/gz_dartsim_vendor/lib:/opt/ros/jazzy/opt/gz_cmake_vendor/lib:/opt/ros/jazzy/lib', 'HOME': '/home/beingar', 'OLDPWD': '/home/beingar/ros2_jazzy_ws/src/ur5_ws/src', 'DESKTOP_SESSION': 'ubuntu', 'GIO_LAUNCHED_DESKTOP_FILE': '/usr/share/applications/terminator.desktop', 'ROS_PYTHON_VERSION': '3', 'GNOME_SHELL_SESSION_MODE': 'ubuntu', 'GTK_MODULES': 'gail:atk-bridge', 'MANAGERPID': '2037', 'SYSTEMD_EXEC_PID': '2312', 'GSM_SKIP_SSH_AGENT_WORKAROUND': 'true', 'DBUS_SESSION_BUS_ADDRESS': 'unix:path=/run/user/1000/bus', 'COLORTERM': 'truecolor', 'TERMINATOR_DBUS_NAME': 'net.tenshu.Terminator25ef4b219e3b005583550f2b0f9f990c3', 'GIO_LAUNCHED_DESKTOP_FILE_PID': '9188', 'DEBUGINFOD_URLS': 'https://debuginfod.ubuntu.com', 'IM_CONFIG_PHASE': '1', 'WAYLAND_DISPLAY': 'wayland-0', 'COLCON_PREFIX_PATH': '/home/beingar/ros2_jazzy_ws/install', 'ROS_DISTRO': 'jazzy', 'LOGNAME': 'beingar', 'JOURNAL_STREAM': '9:17243', '_': '/usr/bin/colcon', 'ROS_VERSION': '2', 'MEMORY_PRESSURE_WATCH': '/sys/fs/cgroup/user.slice/user-1000.slice/user@1000.service/session.slice/org.gnome.Shell@wayland.service/memory.pressure', 'XDG_SESSION_CLASS': 'user', 'USERNAME': 'beingar', 'TERM': 'xterm-256color', 'GNOME_DESKTOP_SESSION_ID': 'this-is-deprecated', 'PATH': '/opt/ros/jazzy/opt/gz_msgs_vendor/bin:/opt/ros/jazzy/opt/gz_tools_vendor/bin:/opt/ros/jazzy/opt/gz_ogre_next_vendor/bin:/opt/ros/jazzy/bin:/home/beingar/.local/bin:/usr/local/sbin:/usr/local/bin:/usr/sbin:/usr/bin:/sbin:/bin:/usr/games:/usr/local/games:/snap/bin:/snap/bin', 'SESSION_MANAGER': 'local/beingar-HP-ProBook-650-G2:@/tmp/.ICE-unix/2266,unix/beingar-HP-ProBook-650-G2:/tmp/.ICE-unix/2266', 'INVOCATION_ID': 'b926e553db25418ea4a9131805ffff6c', 'XDG_MENU_PREFIX': 'gnome-', 'GNOME_SETUP_DISPLAY': ':1', 'XDG_RUNTIME_DIR': '/run/user/1000', 'DISPLAY': ':0', 'TERMINATOR_DBUS_PATH': '/net/tenshu/Terminator2', 'LANG': 'fr_FR.UTF-8', 'XDG_CURRENT_DESKTOP': 'ubuntu:GNOME', 'XMODIFIERS': '@im=ibus', 'XDG_SESSION_DESKTOP': 'ubuntu', 'XAUTHORITY': '/run/user/1000/.mutter-Xwaylandauth.2KLUM3', 'LS_COLORS': 'rs=0:di=01;34:ln=01;36:mh=00:pi=40;33:so=01;35:do=01;35:bd=40;33;01:cd=40;33;01:or=40;31;01:mi=00:su=37;41:sg=30;43:ca=00:tw=30;42:ow=34;42:st=37;44:ex=01;32:*.tar=01;31:*.tgz=01;31:*.arc=01;31:*.arj=01;31:*.taz=01;31:*.lha=01;31:*.lz4=01;31:*.lzh=01;31:*.lzma=01;31:*.tlz=01;31:*.txz=01;31:*.tzo=01;31:*.t7z=01;31:*.zip=01;31:*.z=01;31:*.dz=01;31:*.gz=01;31:*.lrz=01;31:*.lz=01;31:*.lzo=01;31:*.xz=01;31:*.zst=01;31:*.tzst=01;31:*.bz2=01;31:*.bz=01;31:*.tbz=01;31:*.tbz2=01;31:*.tz=01;31:*.deb=01;31:*.rpm=01;31:*.jar=01;31:*.war=01;31:*.ear=01;31:*.sar=01;31:*.rar=01;31:*.alz=01;31:*.ace=01;31:*.zoo=01;31:*.cpio=01;31:*.7z=01;31:*.rz=01;31:*.cab=01;31:*.wim=01;31:*.swm=01;31:*.dwm=01;31:*.esd=01;31:*.avif=01;35:*.jpg=01;35:*.jpeg=01;35:*.mjpg=01;35:*.mjpeg=01;35:*.gif=01;35:*.bmp=01;35:*.pbm=01;35:*.pgm=01;35:*.ppm=01;35:*.tga=01;35:*.xbm=01;35:*.xpm=01;35:*.tif=01;35:*.tiff=01;35:*.png=01;35:*.svg=01;35:*.svgz=01;35:*.mng=01;35:*.pcx=01;35:*.mov=01;35:*.mpg=01;35:*.mpeg=01;35:*.m2v=01;35:*.mkv=01;35:*.webm=01;35:*.webp=01;35:*.ogm=01;35:*.mp4=01;35:*.m4v=01;35:*.mp4v=01;35:*.vob=01;35:*.qt=01;35:*.nuv=01;35:*.wmv=01;35:*.asf=01;35:*.rm=01;35:*.rmvb=01;35:*.flc=01;35:*.avi=01;35:*.fli=01;35:*.flv=01;35:*.gl=01;35:*.dl=01;35:*.xcf=01;35:*.xwd=01;35:*.yuv=01;35:*.cgm=01;35:*.emf=01;35:*.ogv=01;35:*.ogx=01;35:*.aac=00;36:*.au=00;36:*.flac=00;36:*.m4a=00;36:*.mid=00;36:*.midi=00;36:*.mka=00;36:*.mp3=00;36:*.mpc=00;36:*.ogg=00;36:*.ra=00;36:*.wav=00;36:*.oga=00;36:*.opus=00;36:*.spx=00;36:*.xspf=00;36:*~=00;90:*#=00;90:*.bak=00;90:*.crdownload=00;90:*.dpkg-dist=00;90:*.dpkg-new=00;90:*.dpkg-old=00;90:*.dpkg-tmp=00;90:*.old=00;90:*.orig=00;90:*.part=00;90:*.rej=00;90:*.rpmnew=00;90:*.rpmorig=00;90:*.rpmsave=00;90:*.swp=00;90:*.tmp=00;90:*.ucf-dist=00;90:*.ucf-new=00;90:*.ucf-old=00;90:', 'SSH_AUTH_SOCK': '/run/user/1000/keyring/ssh', 'AMENT_PREFIX_PATH': '/home/beingar/ros2_jazzy_ws/install/hri_manipulation:/opt/ros/jazzy', 'SHELL': '/bin/bash', 'TERMINATOR_UUID': 'urn:uuid:f96c641a-8bd9-44ec-89db-d184424d96b8', 'QT_ACCESSIBILITY': '1', 'GDMSESSION': 'ubuntu', 'LESSCLOSE': '/usr/bin/lesspipe %s %s', 'GJS_DEBUG_OUTPUT': 'stderr', 'ROS_AUTOMATIC_DISCOVERY_RANGE': 'SUBNET', 'QT_IM_MODULE': 'ibus', 'PWD': '/home/beingar/ros2_jazzy_ws/build/ur5_controller', 'XDG_CONFIG_DIRS': '/etc/xdg/xdg-ubuntu:/etc/xdg', 'XDG_DATA_DIRS': '/usr/share/ubuntu:/usr/share/gnome:/usr/local/share/:/usr/share/:/var/lib/snapd/desktop', 'PYTHONPATH': '/home/beingar/ros2_jazzy_ws/build/hri_manipulation:/home/beingar/ros2_jazzy_ws/install/hri_manipulation/lib/python3.12/site-packages:/opt/ros/jazzy/lib/python3.12/site-packages', 'COLCON': '1', 'MEMORY_PRESSURE_WRITE': 'c29tZSAyMDAwMDAgMjAwMDAwMAA=', 'VTE_VERSION': '7600', 'CMAKE_PREFIX_PATH': '/opt/ros/jazzy/opt/gz_sim_vendor:/opt/ros/jazzy/opt/gz_sensors_vendor:/opt/ros/jazzy/opt/gz_physics_vendor:/opt/ros/jazzy/opt/sdformat_vendor:/opt/ros/jazzy/opt/gz_gui_vendor:/opt/ros/jazzy/opt/gz_transport_vendor:/opt/ros/jazzy/opt/gz_rendering_vendor:/opt/ros/jazzy/opt/gz_plugin_vendor:/opt/ros/jazzy/opt/gz_fuel_tools_vendor:/opt/ros/jazzy/opt/gz_msgs_vendor:/opt/ros/jazzy/opt/gz_common_vendor:/opt/ros/jazzy/opt/gz_math_vendor:/opt/ros/jazzy/opt/gz_utils_vendor:/opt/ros/jazzy/opt/gz_tools_vendor:/opt/ros/jazzy/opt/gz_ogre_next_vendor:/opt/ros/jazzy/opt/gz_dartsim_vendor:/opt/ros/jazzy/opt/gz_cmake_vendor:/home/beingar/ros2_jazzy_ws/install/hri_manipulation:/opt/ros/jazzy'}), 'shell': False}
+[8.566348] (ur5_description) StdoutLine: {'line': b'-- Install configuration: ""\n'}
+[8.566783] (ur5_description) StdoutLine: {'line': b'-- Execute custom install script\n'}
+[8.569095] (ur5_description) StdoutLine: {'line': b'-- Symlinking: /home/beingar/ros2_jazzy_ws/install/ur5_description/share/ur5_description/launch/gazebo.launch.py\n'}
+[8.581553] (ur5_moveit) StdoutLine: {'line': b'-- Install configuration: ""\n'}
+[8.583301] (ur5_moveit) StdoutLine: {'line': b'-- Execute custom install script\n'}
+[8.584067] (ur5_controller) StdoutLine: {'line': b'-- Install configuration: ""\n'}
+[8.584900] (ur5_moveit) StdoutLine: {'line': b'-- Symlinking: /home/beingar/ros2_jazzy_ws/install/ur5_moveit/share/ur5_moveit/launch/moveit.launch.py\n'}
+[8.585864] (ur5_controller) StdoutLine: {'line': b'-- Execute custom install script\n'}
+[8.587468] (ur5_controller) StdoutLine: {'line': b'-- Symlinking: /home/beingar/ros2_jazzy_ws/install/ur5_controller/share/ur5_controller/launch/controller.launch.py\n'}
+[8.604364] (ur5_description) StdoutLine: {'line': b'-- Symlinking: /home/beingar/ros2_jazzy_ws/install/ur5_description/share/ur5_description/launch/rviz.launch.py\n'}
+[8.618131] (-) TimerEvent: {}
+[8.621318] (ur5_moveit) StdoutLine: {'line': b'-- Symlinking: /home/beingar/ros2_jazzy_ws/install/ur5_moveit/share/ur5_moveit/launch/simulated_robot.launch.py\n'}
+[8.627958] (ur5_controller) StdoutLine: {'line': b'-- Symlinking: /home/beingar/ros2_jazzy_ws/install/ur5_controller/share/ur5_controller/config/ros2_controllers.yaml\n'}
+[8.640272] (ur5_description) StdoutLine: {'line': b'-- Symlinking: /home/beingar/ros2_jazzy_ws/install/ur5_description/share/ur5_description/urdf/initial_positions.yaml\n'}
+[8.649272] (hello_moveit) StdoutLine: {'line': b'-- Found Boost: /usr/lib/x86_64-linux-gnu/cmake/Boost-1.83.0/BoostConfig.cmake (found version "1.83.0") found components: date_time filesystem program_options system thread \n'}
+[8.656214] (ur5_controller) StdoutLine: {'line': b'-- Symlinking: /home/beingar/ros2_jazzy_ws/install/ur5_controller/share/ament_index/resource_index/package_run_dependencies/ur5_controller\n'}
+[8.659910] (ur5_moveit) StdoutLine: {'line': b'-- Symlinking: /home/beingar/ros2_jazzy_ws/install/ur5_moveit/share/ur5_moveit/config/controller_setting.yaml\n'}
+[8.676312] (ur5_description) StdoutLine: {'line': b'-- Symlinking: /home/beingar/ros2_jazzy_ws/install/ur5_description/share/ur5_description/urdf/ur5_robot.gazebo.xacro\n'}
+[8.681898] (ur5_controller) StdoutLine: {'line': b'-- Symlinking: /home/beingar/ros2_jazzy_ws/install/ur5_controller/share/ament_index/resource_index/parent_prefix_path/ur5_controller\n'}
+[8.692375] (ur5_moveit) StdoutLine: {'line': b'-- Symlinking: /home/beingar/ros2_jazzy_ws/install/ur5_moveit/share/ur5_moveit/config/initial_positions.yaml\n'}
+[8.707464] (ur5_description) StdoutLine: {'line': b'-- Symlinking: /home/beingar/ros2_jazzy_ws/install/ur5_description/share/ur5_description/urdf/ur5_robot.ros2_control.xacro\n'}
+[8.710469] (ur5_controller) StdoutLine: {'line': b'-- Symlinking: /home/beingar/ros2_jazzy_ws/install/ur5_controller/share/ur5_controller/environment/ament_prefix_path.sh\n'}
+[8.718288] (-) TimerEvent: {}
+[8.727246] (ur5_moveit) StdoutLine: {'line': b'-- Symlinking: /home/beingar/ros2_jazzy_ws/install/ur5_moveit/share/ur5_moveit/config/joint_limits.yaml\n'}
+[8.741135] (ur5_description) StdoutLine: {'line': b'-- Symlinking: /home/beingar/ros2_jazzy_ws/install/ur5_description/share/ur5_description/urdf/ur5_robot.urdf.xacro\n'}
+[8.746813] (ur5_controller) StdoutLine: {'line': b'-- Symlinking: /home/beingar/ros2_jazzy_ws/install/ur5_controller/share/ur5_controller/environment/ament_prefix_path.dsv\n'}
+[8.764073] (ur5_moveit) StdoutLine: {'line': b'-- Symlinking: /home/beingar/ros2_jazzy_ws/install/ur5_moveit/share/ur5_moveit/config/kinematics.yaml\n'}
+[8.772286] (ur5_description) StdoutLine: {'line': b'-- Symlinking: /home/beingar/ros2_jazzy_ws/install/ur5_description/share/ur5_description/config/ros2_gz_bridge.yaml\n'}
+[8.775336] (ur5_controller) StdoutLine: {'line': b'-- Symlinking: /home/beingar/ros2_jazzy_ws/install/ur5_controller/share/ur5_controller/environment/path.sh\n'}
+[8.798957] (ur5_moveit) StdoutLine: {'line': b'-- Symlinking: /home/beingar/ros2_jazzy_ws/install/ur5_moveit/share/ur5_moveit/config/moveit.rviz\n'}
+[8.800628] (ur5_controller) StdoutLine: {'line': b'-- Symlinking: /home/beingar/ros2_jazzy_ws/install/ur5_controller/share/ur5_controller/environment/path.dsv\n'}
+[8.809229] (ur5_description) StdoutLine: {'line': b'-- Symlinking: /home/beingar/ros2_jazzy_ws/install/ur5_description/share/ur5_description/config/view_config.rviz\n'}
+[8.818424] (-) TimerEvent: {}
+[8.829631] (ur5_controller) StdoutLine: {'line': b'-- Symlinking: /home/beingar/ros2_jazzy_ws/install/ur5_controller/share/ur5_controller/local_setup.bash\n'}
+[8.831546] (ur5_moveit) StdoutLine: {'line': b'-- Symlinking: /home/beingar/ros2_jazzy_ws/install/ur5_moveit/share/ur5_moveit/config/moveit_controllers.yaml\n'}
+[8.835351] (ur5_description) StdoutLine: {'line': b'-- Symlinking: /home/beingar/ros2_jazzy_ws/install/ur5_description/share/ur5_description/worlds/gazebo_world.sdf\n'}
+[8.862483] (ur5_description) StdoutLine: {'line': b'-- Symlinking: /home/beingar/ros2_jazzy_ws/install/ur5_description/share/ur5_description/meshes/collision/rg2/finger.stl\n'}
+[8.866048] (ur5_moveit) StdoutLine: {'line': b'-- Symlinking: /home/beingar/ros2_jazzy_ws/install/ur5_moveit/share/ur5_moveit/config/pilz_cartesian_limits.yaml\n'}
+[8.866540] (ur5_controller) StdoutLine: {'line': b'-- Symlinking: /home/beingar/ros2_jazzy_ws/install/ur5_controller/share/ur5_controller/local_setup.sh\n'}
+[8.893416] (ur5_description) StdoutLine: {'line': b'-- Symlinking: /home/beingar/ros2_jazzy_ws/install/ur5_description/share/ur5_description/meshes/collision/rg2/finger_neutral.stl\n'}
+[8.896420] (ur5_controller) StdoutLine: {'line': b'-- Symlinking: /home/beingar/ros2_jazzy_ws/install/ur5_controller/share/ur5_controller/local_setup.zsh\n'}
+[8.898343] (ur5_moveit) StdoutLine: {'line': b'-- Symlinking: /home/beingar/ros2_jazzy_ws/install/ur5_moveit/share/ur5_moveit/config/ros2_controllers.yaml\n'}
+[8.918582] (-) TimerEvent: {}
+[8.922556] (ur5_controller) StdoutLine: {'line': b'-- Symlinking: /home/beingar/ros2_jazzy_ws/install/ur5_controller/share/ur5_controller/local_setup.dsv\n'}
+[8.923086] (ur5_description) StdoutLine: {'line': b'-- Symlinking: /home/beingar/ros2_jazzy_ws/install/ur5_description/share/ur5_description/meshes/collision/rg2/hand.stl\n'}
+[8.932385] (ur5_moveit) StdoutLine: {'line': b'-- Symlinking: /home/beingar/ros2_jazzy_ws/install/ur5_moveit/share/ur5_moveit/config/ur5_robot.srdf\n'}
+[8.949135] (ur5_description) StdoutLine: {'line': b'-- Symlinking: /home/beingar/ros2_jazzy_ws/install/ur5_description/share/ur5_description/meshes/collision/ur5/SuctionCup.stl\n'}
+[8.957281] (ur5_controller) StdoutLine: {'line': b'-- Symlinking: /home/beingar/ros2_jazzy_ws/install/ur5_controller/share/ur5_controller/package.dsv\n'}
+[8.965096] (ur5_moveit) StdoutLine: {'line': b'-- Symlinking: /home/beingar/ros2_jazzy_ws/install/ur5_moveit/share/ament_index/resource_index/package_run_dependencies/ur5_moveit\n'}
+[8.978200] (ur5_description) StdoutLine: {'line': b'-- Symlinking: /home/beingar/ros2_jazzy_ws/install/ur5_description/share/ur5_description/meshes/collision/ur5/base.stl\n'}
+[8.988652] (ur5_controller) StdoutLine: {'line': b'-- Symlinking: /home/beingar/ros2_jazzy_ws/install/ur5_controller/share/ament_index/resource_index/packages/ur5_controller\n'}
+[8.998099] (ur5_moveit) StdoutLine: {'line': b'-- Symlinking: /home/beingar/ros2_jazzy_ws/install/ur5_moveit/share/ament_index/resource_index/parent_prefix_path/ur5_moveit\n'}
+[9.002013] (ur5_description) StdoutLine: {'line': b'-- Symlinking: /home/beingar/ros2_jazzy_ws/install/ur5_description/share/ur5_description/meshes/collision/ur5/forearm.stl\n'}
+[9.018723] (-) TimerEvent: {}
+[9.023432] (ur5_controller) StdoutLine: {'line': b'-- Symlinking: /home/beingar/ros2_jazzy_ws/install/ur5_controller/share/ur5_controller/cmake/ur5_controllerConfig.cmake\n'}
+[9.028656] (ur5_description) StdoutLine: {'line': b'-- Symlinking: /home/beingar/ros2_jazzy_ws/install/ur5_description/share/ur5_description/meshes/collision/ur5/robotiq_85_base_link.stl\n'}
+[9.032512] (ur5_moveit) StdoutLine: {'line': b'-- Symlinking: /home/beingar/ros2_jazzy_ws/install/ur5_moveit/share/ur5_moveit/environment/ament_prefix_path.sh\n'}
+[9.052671] (ur5_description) StdoutLine: {'line': b'-- Symlinking: /home/beingar/ros2_jazzy_ws/install/ur5_description/share/ur5_description/meshes/collision/ur5/robotiq_85_finger_link.stl\n'}
+[9.053277] (ur5_controller) StdoutLine: {'line': b'-- Symlinking: /home/beingar/ros2_jazzy_ws/install/ur5_controller/share/ur5_controller/cmake/ur5_controllerConfig-version.cmake\n'}
+[9.064811] (ur5_moveit) StdoutLine: {'line': b'-- Symlinking: /home/beingar/ros2_jazzy_ws/install/ur5_moveit/share/ur5_moveit/environment/ament_prefix_path.dsv\n'}
+[9.083286] (ur5_controller) StdoutLine: {'line': b'-- Symlinking: /home/beingar/ros2_jazzy_ws/install/ur5_controller/share/ur5_controller/package.xml\n'}
+[9.089417] (ur5_description) StdoutLine: {'line': b'-- Symlinking: /home/beingar/ros2_jazzy_ws/install/ur5_description/share/ur5_description/meshes/collision/ur5/robotiq_85_finger_tip_link.stl\n'}
+[9.096986] (ur5_moveit) StdoutLine: {'line': b'-- Symlinking: /home/beingar/ros2_jazzy_ws/install/ur5_moveit/share/ur5_moveit/environment/path.sh\n'}
+[9.113942] (ur5_description) StdoutLine: {'line': b'-- Symlinking: /home/beingar/ros2_jazzy_ws/install/ur5_description/share/ur5_description/meshes/collision/ur5/robotiq_85_inner_knuckle_link.stl\n'}
+[9.118992] (-) TimerEvent: {}
+[9.120537] (ur5_controller) CommandEnded: {'returncode': 0}
+[9.129235] (ur5_moveit) StdoutLine: {'line': b'-- Symlinking: /home/beingar/ros2_jazzy_ws/install/ur5_moveit/share/ur5_moveit/environment/path.dsv\n'}
+[9.146079] (ur5_description) StdoutLine: {'line': b'-- Symlinking: /home/beingar/ros2_jazzy_ws/install/ur5_description/share/ur5_description/meshes/collision/ur5/robotiq_85_knuckle_link.stl\n'}
+[9.155770] (ur5_moveit) StdoutLine: {'line': b'-- Symlinking: /home/beingar/ros2_jazzy_ws/install/ur5_moveit/share/ur5_moveit/local_setup.bash\n'}
+[9.174376] (ur5_description) StdoutLine: {'line': b'-- Symlinking: /home/beingar/ros2_jazzy_ws/install/ur5_description/share/ur5_description/meshes/collision/ur5/shoulder.stl\n'}
+[9.184330] (ur5_moveit) StdoutLine: {'line': b'-- Symlinking: /home/beingar/ros2_jazzy_ws/install/ur5_moveit/share/ur5_moveit/local_setup.sh\n'}
+[9.191021] (ur5_controller) JobEnded: {'identifier': 'ur5_controller', 'rc': 0}
+[9.202798] (ur5_description) StdoutLine: {'line': b'-- Symlinking: /home/beingar/ros2_jazzy_ws/install/ur5_description/share/ur5_description/meshes/collision/ur5/upperarm.stl\n'}
+[9.207605] (ur5_moveit) StdoutLine: {'line': b'-- Symlinking: /home/beingar/ros2_jazzy_ws/install/ur5_moveit/share/ur5_moveit/local_setup.zsh\n'}
+[9.219106] (-) TimerEvent: {}
+[9.229787] (ur5_description) StdoutLine: {'line': b'-- Symlinking: /home/beingar/ros2_jazzy_ws/install/ur5_description/share/ur5_description/meshes/collision/ur5/wrist1.stl\n'}
+[9.233975] (ur5_moveit) StdoutLine: {'line': b'-- Symlinking: /home/beingar/ros2_jazzy_ws/install/ur5_moveit/share/ur5_moveit/local_setup.dsv\n'}
+[9.253253] (ur5_description) StdoutLine: {'line': b'-- Symlinking: /home/beingar/ros2_jazzy_ws/install/ur5_description/share/ur5_description/meshes/collision/ur5/wrist2.stl\n'}
+[9.260362] (ur5_moveit) StdoutLine: {'line': b'-- Symlinking: /home/beingar/ros2_jazzy_ws/install/ur5_moveit/share/ur5_moveit/package.dsv\n'}
+[9.277504] (ur5_description) StdoutLine: {'line': b'-- Symlinking: /home/beingar/ros2_jazzy_ws/install/ur5_description/share/ur5_description/meshes/collision/ur5/wrist3.stl\n'}
+[9.285714] (ur5_moveit) StdoutLine: {'line': b'-- Symlinking: /home/beingar/ros2_jazzy_ws/install/ur5_moveit/share/ament_index/resource_index/packages/ur5_moveit\n'}
+[9.301879] (ur5_description) StdoutLine: {'line': b'-- Symlinking: /home/beingar/ros2_jazzy_ws/install/ur5_description/share/ur5_description/meshes/visual/rg2/finger.dae\n'}
+[9.310478] (ur5_moveit) StdoutLine: {'line': b'-- Symlinking: /home/beingar/ros2_jazzy_ws/install/ur5_moveit/share/ur5_moveit/cmake/ur5_moveitConfig.cmake\n'}
+[9.319252] (-) TimerEvent: {}
+[9.330043] (ur5_description) StdoutLine: {'line': b'-- Symlinking: /home/beingar/ros2_jazzy_ws/install/ur5_description/share/ur5_description/meshes/visual/rg2/finger_neutral.dae\n'}
+[9.336854] (ur5_moveit) StdoutLine: {'line': b'-- Symlinking: /home/beingar/ros2_jazzy_ws/install/ur5_moveit/share/ur5_moveit/cmake/ur5_moveitConfig-version.cmake\n'}
+[9.354568] (ur5_description) StdoutLine: {'line': b'-- Symlinking: /home/beingar/ros2_jazzy_ws/install/ur5_description/share/ur5_description/meshes/visual/rg2/hand.dae\n'}
+[9.363436] (ur5_moveit) StdoutLine: {'line': b'-- Symlinking: /home/beingar/ros2_jazzy_ws/install/ur5_moveit/share/ur5_moveit/package.xml\n'}
+[9.380026] (ur5_description) StdoutLine: {'line': b'-- Symlinking: /home/beingar/ros2_jazzy_ws/install/ur5_description/share/ur5_description/meshes/visual/ur5/SuctionCup.stl\n'}
+[9.393324] (ur5_moveit) CommandEnded: {'returncode': 0}
+[9.405000] (ur5_description) StdoutLine: {'line': b'-- Symlinking: /home/beingar/ros2_jazzy_ws/install/ur5_description/share/ur5_description/meshes/visual/ur5/base.dae\n'}
+[9.419386] (-) TimerEvent: {}
+[9.430917] (ur5_moveit) JobEnded: {'identifier': 'ur5_moveit', 'rc': 0}
+[9.434979] (ur5_description) StdoutLine: {'line': b'-- Symlinking: /home/beingar/ros2_jazzy_ws/install/ur5_description/share/ur5_description/meshes/visual/ur5/forearm.dae\n'}
+[9.459361] (ur5_description) StdoutLine: {'line': b'-- Symlinking: /home/beingar/ros2_jazzy_ws/install/ur5_description/share/ur5_description/meshes/visual/ur5/robotiq_85_base_link.dae\n'}
+[9.481104] (ur5_description) StdoutLine: {'line': b'-- Symlinking: /home/beingar/ros2_jazzy_ws/install/ur5_description/share/ur5_description/meshes/visual/ur5/robotiq_85_finger_link.dae\n'}
+[9.503028] (ur5_description) StdoutLine: {'line': b'-- Symlinking: /home/beingar/ros2_jazzy_ws/install/ur5_description/share/ur5_description/meshes/visual/ur5/robotiq_85_finger_tip_link.dae\n'}
+[9.519518] (-) TimerEvent: {}
+[9.525173] (ur5_description) StdoutLine: {'line': b'-- Symlinking: /home/beingar/ros2_jazzy_ws/install/ur5_description/share/ur5_description/meshes/visual/ur5/robotiq_85_inner_knuckle_link.dae\n'}
+[9.548518] (ur5_description) StdoutLine: {'line': b'-- Symlinking: /home/beingar/ros2_jazzy_ws/install/ur5_description/share/ur5_description/meshes/visual/ur5/robotiq_85_knuckle_link.dae\n'}
+[9.570828] (ur5_description) StdoutLine: {'line': b'-- Symlinking: /home/beingar/ros2_jazzy_ws/install/ur5_description/share/ur5_description/meshes/visual/ur5/shoulder.dae\n'}
+[9.592414] (ur5_description) StdoutLine: {'line': b'-- Symlinking: /home/beingar/ros2_jazzy_ws/install/ur5_description/share/ur5_description/meshes/visual/ur5/upperarm.dae\n'}
+[9.614386] (ur5_description) StdoutLine: {'line': b'-- Symlinking: /home/beingar/ros2_jazzy_ws/install/ur5_description/share/ur5_description/meshes/visual/ur5/wrist1.dae\n'}
+[9.619640] (-) TimerEvent: {}
+[9.638787] (ur5_description) StdoutLine: {'line': b'-- Symlinking: /home/beingar/ros2_jazzy_ws/install/ur5_description/share/ur5_description/meshes/visual/ur5/wrist2.dae\n'}
+[9.664605] (ur5_description) StdoutLine: {'line': b'-- Symlinking: /home/beingar/ros2_jazzy_ws/install/ur5_description/share/ur5_description/meshes/visual/ur5/wrist3.dae\n'}
+[9.687207] (ur5_description) StdoutLine: {'line': b'-- Symlinking: /home/beingar/ros2_jazzy_ws/install/ur5_description/share/ament_index/resource_index/package_run_dependencies/ur5_description\n'}
+[9.710096] (ur5_description) StdoutLine: {'line': b'-- Symlinking: /home/beingar/ros2_jazzy_ws/install/ur5_description/share/ament_index/resource_index/parent_prefix_path/ur5_description\n'}
+[9.719796] (-) TimerEvent: {}
+[9.732840] (ur5_description) StdoutLine: {'line': b'-- Symlinking: /home/beingar/ros2_jazzy_ws/install/ur5_description/share/ur5_description/environment/ament_prefix_path.sh\n'}
+[9.755350] (ur5_description) StdoutLine: {'line': b'-- Symlinking: /home/beingar/ros2_jazzy_ws/install/ur5_description/share/ur5_description/environment/ament_prefix_path.dsv\n'}
+[9.781095] (ur5_description) StdoutLine: {'line': b'-- Symlinking: /home/beingar/ros2_jazzy_ws/install/ur5_description/share/ur5_description/environment/path.sh\n'}
+[9.802478] (hello_moveit) StdoutLine: {'line': b'-- Found rosidl_generator_c: 4.6.7 (/opt/ros/jazzy/share/rosidl_generator_c/cmake)\n'}
+[9.803668] (ur5_description) StdoutLine: {'line': b'-- Symlinking: /home/beingar/ros2_jazzy_ws/install/ur5_description/share/ur5_description/environment/path.dsv\n'}
+[9.819951] (-) TimerEvent: {}
+[9.828488] (ur5_description) StdoutLine: {'line': b'-- Symlinking: /home/beingar/ros2_jazzy_ws/install/ur5_description/share/ur5_description/local_setup.bash\n'}
+[9.850903] (ur5_description) StdoutLine: {'line': b'-- Symlinking: /home/beingar/ros2_jazzy_ws/install/ur5_description/share/ur5_description/local_setup.sh\n'}
+[9.881752] (ur5_description) StdoutLine: {'line': b'-- Symlinking: /home/beingar/ros2_jazzy_ws/install/ur5_description/share/ur5_description/local_setup.zsh\n'}
+[9.904264] (ur5_description) StdoutLine: {'line': b'-- Symlinking: /home/beingar/ros2_jazzy_ws/install/ur5_description/share/ur5_description/local_setup.dsv\n'}
+[9.920082] (-) TimerEvent: {}
+[9.921956] (hello_moveit) StdoutLine: {'line': b'-- Found rosidl_generator_cpp: 4.6.7 (/opt/ros/jazzy/share/rosidl_generator_cpp/cmake)\n'}
+[9.930023] (ur5_description) StdoutLine: {'line': b'-- Symlinking: /home/beingar/ros2_jazzy_ws/install/ur5_description/share/ur5_description/package.dsv\n'}
+[9.960974] (ur5_description) StdoutLine: {'line': b'-- Symlinking: /home/beingar/ros2_jazzy_ws/install/ur5_description/share/ament_index/resource_index/packages/ur5_description\n'}
+[9.984355] (ur5_description) StdoutLine: {'line': b'-- Symlinking: /home/beingar/ros2_jazzy_ws/install/ur5_description/share/ur5_description/cmake/ur5_descriptionConfig.cmake\n'}
+[10.008400] (ur5_description) StdoutLine: {'line': b'-- Symlinking: /home/beingar/ros2_jazzy_ws/install/ur5_description/share/ur5_description/cmake/ur5_descriptionConfig-version.cmake\n'}
+[10.020238] (-) TimerEvent: {}
+[10.032197] (ur5_description) StdoutLine: {'line': b'-- Symlinking: /home/beingar/ros2_jazzy_ws/install/ur5_description/share/ur5_description/package.xml\n'}
+[10.120371] (-) TimerEvent: {}
+[10.220863] (-) TimerEvent: {}
+[10.229021] (ur5_description) CommandEnded: {'returncode': 0}
+[10.284382] (ur5_description) JobEnded: {'identifier': 'ur5_description', 'rc': 0}
+[10.321091] (-) TimerEvent: {}
+[10.351189] (hello_moveit) StdoutLine: {'line': b'-- Using all available rosidl_typesupport_c: rosidl_typesupport_fastrtps_c;rosidl_typesupport_introspection_c\n'}
+[10.421353] (-) TimerEvent: {}
+[10.521908] (-) TimerEvent: {}
+[10.539434] (hello_moveit) StdoutLine: {'line': b'-- Using all available rosidl_typesupport_cpp: rosidl_typesupport_fastrtps_cpp;rosidl_typesupport_introspection_cpp\n'}
+[10.622112] (-) TimerEvent: {}
+[10.722640] (-) TimerEvent: {}
+[10.823427] (-) TimerEvent: {}
+[10.924281] (-) TimerEvent: {}
+[11.025108] (-) TimerEvent: {}
+[11.125805] (-) TimerEvent: {}
+[11.226345] (-) TimerEvent: {}
+[11.326708] (-) TimerEvent: {}
+[11.427147] (-) TimerEvent: {}
+[11.527740] (-) TimerEvent: {}
+[11.628220] (-) TimerEvent: {}
+[11.728624] (-) TimerEvent: {}
+[11.829037] (-) TimerEvent: {}
+[11.929725] (-) TimerEvent: {}
+[12.030452] (-) TimerEvent: {}
+[12.130787] (-) TimerEvent: {}
+[12.231197] (-) TimerEvent: {}
+[12.331529] (-) TimerEvent: {}
+[12.381611] (hello_moveit) StdoutLine: {'line': b'-- Found Boost: /usr/lib/x86_64-linux-gnu/cmake/Boost-1.83.0/BoostConfig.cmake (found version "1.83.0") found components: chrono date_time filesystem iostreams program_options regex serialization system thread \n'}
+[12.431701] (-) TimerEvent: {}
+[12.532207] (-) TimerEvent: {}
+[12.632842] (-) TimerEvent: {}
+[12.733543] (-) TimerEvent: {}
+[12.834076] (-) TimerEvent: {}
+[12.934559] (-) TimerEvent: {}
+[13.035363] (-) TimerEvent: {}
+[13.135969] (-) TimerEvent: {}
+[13.236620] (-) TimerEvent: {}
+[13.337283] (-) TimerEvent: {}
+[13.427378] (hello_moveit) StdoutLine: {'line': b'-- Found parameter_traits: 0.6.0 (/opt/ros/jazzy/share/parameter_traits/cmake)\n'}
+[13.437458] (-) TimerEvent: {}
+[13.538089] (-) TimerEvent: {}
+[13.638972] (-) TimerEvent: {}
+[13.739685] (-) TimerEvent: {}
+[13.840737] (-) TimerEvent: {}
+[13.925290] (hello_moveit) StdoutLine: {'line': b'-- Found rmw_implementation_cmake: 7.3.3 (/opt/ros/jazzy/share/rmw_implementation_cmake/cmake)\n'}
+[13.939864] (hello_moveit) StdoutLine: {'line': b'-- Found rmw_fastrtps_cpp: 8.4.3 (/opt/ros/jazzy/share/rmw_fastrtps_cpp/cmake)\n'}
+[13.940868] (-) TimerEvent: {}
+[14.041273] (-) TimerEvent: {}
+[14.141875] (-) TimerEvent: {}
+[14.242412] (-) TimerEvent: {}
+[14.342970] (-) TimerEvent: {}
+[14.443755] (-) TimerEvent: {}
+[14.544435] (-) TimerEvent: {}
+[14.645054] (-) TimerEvent: {}
+[14.721457] (hello_moveit) StdoutLine: {'line': b'-- Found OpenSSL: /usr/lib/x86_64-linux-gnu/libcrypto.so (found version "3.0.13")  \n'}
+[14.745378] (-) TimerEvent: {}
+[14.846128] (-) TimerEvent: {}
+[14.877678] (hello_moveit) StdoutLine: {'line': b'-- Found FastRTPS: /opt/ros/jazzy/include (Required is at least version "2.13") \n'}
+[14.946335] (-) TimerEvent: {}
+[15.036286] (hello_moveit) StdoutLine: {'line': b"-- Using RMW implementation 'rmw_fastrtps_cpp' as default\n"}
+[15.046442] (-) TimerEvent: {}
+[15.146863] (-) TimerEvent: {}
+[15.247347] (-) TimerEvent: {}
+[15.347797] (-) TimerEvent: {}
+[15.448247] (-) TimerEvent: {}
+[15.548709] (-) TimerEvent: {}
+[15.575705] (hello_moveit) StdoutLine: {'line': b'-- Found rclcpp_lifecycle: 28.1.16 (/opt/ros/jazzy/share/rclcpp_lifecycle/cmake)\n'}
+[15.648910] (-) TimerEvent: {}
+[15.749728] (-) TimerEvent: {}
+[15.850429] (-) TimerEvent: {}
+[15.909578] (hello_moveit) StdoutLine: {'line': b'-- Found Boost: /usr/lib/x86_64-linux-gnu/cmake/Boost-1.83.0/BoostConfig.cmake (found version "1.83.0") found components: filesystem \n'}
+[15.950603] (-) TimerEvent: {}
+[16.051078] (-) TimerEvent: {}
+[16.151989] (-) TimerEvent: {}
+[16.252606] (-) TimerEvent: {}
+[16.353229] (-) TimerEvent: {}
+[16.453908] (-) TimerEvent: {}
+[16.554302] (-) TimerEvent: {}
+[16.590148] (hello_moveit) StdoutLine: {'line': b'-- Found Eigen3: TRUE (found version "3.4.0") \n'}
+[16.591174] (hello_moveit) StdoutLine: {'line': b'-- Ensuring Eigen3 include directory is part of orocos-kdl CMake target\n'}
+[16.654613] (-) TimerEvent: {}
+[16.756602] (-) TimerEvent: {}
+[16.857301] (-) TimerEvent: {}
+[16.958319] (-) TimerEvent: {}
+[17.059299] (-) TimerEvent: {}
+[17.161253] (-) TimerEvent: {}
+[17.263843] (-) TimerEvent: {}
+[17.364313] (-) TimerEvent: {}
+[17.464772] (-) TimerEvent: {}
+[17.565406] (-) TimerEvent: {}
+[17.666011] (-) TimerEvent: {}
+[17.766396] (-) TimerEvent: {}
+[17.866759] (-) TimerEvent: {}
+[17.967102] (-) TimerEvent: {}
+[17.999964] (hello_moveit) StdoutLine: {'line': b'-- Found Boost: /usr/lib/x86_64-linux-gnu/cmake/Boost-1.83.0/BoostConfig.cmake (found version "1.83.0") found components: system filesystem date_time program_options thread chrono \n'}
+[18.067225] (-) TimerEvent: {}
+[18.167761] (-) TimerEvent: {}
+[18.181370] (hello_moveit) StdoutLine: {'line': b'-- Found Boost: /usr/lib/x86_64-linux-gnu/cmake/Boost-1.83.0/BoostConfig.cmake (found version "1.83.0") found components: thread system filesystem regex date_time program_options \n'}
+[18.267804] (-) TimerEvent: {}
+[18.368258] (-) TimerEvent: {}
+[18.385039] (hello_moveit) StdoutLine: {'line': b'-- Found Boost: /usr/lib/x86_64-linux-gnu/cmake/Boost-1.83.0/BoostConfig.cmake (found version "1.83.0") found components: system filesystem date_time program_options thread \n'}
+[18.468410] (-) TimerEvent: {}
+[18.568930] (-) TimerEvent: {}
+[18.622819] (hello_moveit) StdoutLine: {'line': b'-- Found ament_lint_auto: 0.17.4 (/opt/ros/jazzy/share/ament_lint_auto/cmake)\n'}
+[18.669043] (-) TimerEvent: {}
+[18.769475] (-) TimerEvent: {}
+[18.869897] (-) TimerEvent: {}
+[18.945659] (hello_moveit) StdoutLine: {'line': b"-- Added test 'cppcheck' to perform static code analysis on C / C++ code\n"}
+[18.946275] (hello_moveit) StdoutLine: {'line': b'-- Configured cppcheck include dirs: $<BUILD_INTERFACE:/home/beingar/ros2_jazzy_ws/src/ur5_ws/src/hello_moveit/include>\n'}
+[18.946585] (hello_moveit) StdoutLine: {'line': b'-- Configured cppcheck exclude dirs and/or files: \n'}
+[18.949094] (hello_moveit) StdoutLine: {'line': b"-- Added test 'lint_cmake' to check CMake code style\n"}
+[18.952124] (hello_moveit) StdoutLine: {'line': b"-- Added test 'uncrustify' to check C / C++ code style\n"}
+[18.952493] (hello_moveit) StdoutLine: {'line': b'-- Configured uncrustify additional arguments: \n'}
+[18.954642] (hello_moveit) StdoutLine: {'line': b"-- Added test 'xmllint' to check XML markup files\n"}
+[18.961775] (hello_moveit) StdoutLine: {'line': b'-- Configuring done (18.5s)\n'}
+[18.970016] (-) TimerEvent: {}
+[19.070489] (-) TimerEvent: {}
+[19.170914] (-) TimerEvent: {}
+[19.271505] (-) TimerEvent: {}
+[19.284484] (hello_moveit) StdoutLine: {'line': b'-- Generating done (0.3s)\n'}
+[19.319537] (hello_moveit) StdoutLine: {'line': b'-- Build files have been written to: /home/beingar/ros2_jazzy_ws/build/hello_moveit\n'}
+[19.371784] (-) TimerEvent: {}
+[19.372452] (hello_moveit) CommandEnded: {'returncode': 0}
+[19.374097] (hello_moveit) JobProgress: {'identifier': 'hello_moveit', 'progress': 'build'}
+[19.376000] (hello_moveit) Command: {'cmd': ['/usr/bin/cmake', '--build', '/home/beingar/ros2_jazzy_ws/build/hello_moveit', '--', '-j4', '-l4'], 'cwd': '/home/beingar/ros2_jazzy_ws/build/hello_moveit', 'env': OrderedDict({'GJS_DEBUG_TOPICS': 'JS ERROR;JS LOG', 'XDG_ACTIVATION_TOKEN': 'gnome-shell/Terminator/2312-7-beingar-HP-ProBook-650-G2_TIME24389819', 'LESSOPEN': '| /usr/bin/lesspipe %s', 'GZ_SIM_RESOURCE_PATH': '/opt/ros/jazzy/share', 'USER': 'beingar', 'GZ_CONFIG_PATH': '/opt/ros/jazzy/opt/gz_sim_vendor/share/gz:/opt/ros/jazzy/opt/sdformat_vendor/share/gz:/opt/ros/jazzy/opt/gz_gui_vendor/share/gz:/opt/ros/jazzy/opt/gz_transport_vendor/share/gz:/opt/ros/jazzy/opt/gz_rendering_vendor/share/gz:/opt/ros/jazzy/opt/gz_plugin_vendor/share/gz:/opt/ros/jazzy/opt/gz_fuel_tools_vendor/share/gz:/opt/ros/jazzy/opt/gz_msgs_vendor/share/gz:/opt/ros/jazzy/opt/gz_common_vendor/share/gz', 'XDG_SESSION_TYPE': 'wayland', 'CLUTTER_DISABLE_MIPMAPPED_TEXT': '1', 'SHLVL': '1', 'LD_LIBRARY_PATH': '/opt/ros/jazzy/opt/gz_sim_vendor/lib:/opt/ros/jazzy/opt/gz_sensors_vendor/lib:/opt/ros/jazzy/opt/gz_physics_vendor/lib:/opt/ros/jazzy/opt/sdformat_vendor/lib:/opt/ros/jazzy/opt/rviz_ogre_vendor/lib:/opt/ros/jazzy/lib/x86_64-linux-gnu:/opt/ros/jazzy/opt/gz_gui_vendor/lib:/opt/ros/jazzy/opt/gz_transport_vendor/lib:/opt/ros/jazzy/opt/gz_rendering_vendor/lib:/opt/ros/jazzy/opt/gz_plugin_vendor/lib:/opt/ros/jazzy/opt/gz_fuel_tools_vendor/lib:/opt/ros/jazzy/opt/gz_msgs_vendor/lib:/opt/ros/jazzy/opt/gz_common_vendor/lib:/opt/ros/jazzy/opt/gz_math_vendor/lib:/opt/ros/jazzy/opt/gz_utils_vendor/lib:/opt/ros/jazzy/opt/gz_tools_vendor/lib:/opt/ros/jazzy/opt/gz_ogre_next_vendor/lib:/opt/ros/jazzy/opt/gz_dartsim_vendor/lib:/opt/ros/jazzy/opt/gz_cmake_vendor/lib:/opt/ros/jazzy/lib', 'HOME': '/home/beingar', 'OLDPWD': '/home/beingar/ros2_jazzy_ws/src/ur5_ws/src', 'DESKTOP_SESSION': 'ubuntu', 'GIO_LAUNCHED_DESKTOP_FILE': '/usr/share/applications/terminator.desktop', 'ROS_PYTHON_VERSION': '3', 'GNOME_SHELL_SESSION_MODE': 'ubuntu', 'GTK_MODULES': 'gail:atk-bridge', 'MANAGERPID': '2037', 'SYSTEMD_EXEC_PID': '2312', 'GSM_SKIP_SSH_AGENT_WORKAROUND': 'true', 'DBUS_SESSION_BUS_ADDRESS': 'unix:path=/run/user/1000/bus', 'COLORTERM': 'truecolor', 'TERMINATOR_DBUS_NAME': 'net.tenshu.Terminator25ef4b219e3b005583550f2b0f9f990c3', 'GIO_LAUNCHED_DESKTOP_FILE_PID': '9188', 'DEBUGINFOD_URLS': 'https://debuginfod.ubuntu.com', 'IM_CONFIG_PHASE': '1', 'WAYLAND_DISPLAY': 'wayland-0', 'COLCON_PREFIX_PATH': '/home/beingar/ros2_jazzy_ws/install', 'ROS_DISTRO': 'jazzy', 'LOGNAME': 'beingar', 'JOURNAL_STREAM': '9:17243', '_': '/usr/bin/colcon', 'ROS_VERSION': '2', 'MEMORY_PRESSURE_WATCH': '/sys/fs/cgroup/user.slice/user-1000.slice/user@1000.service/session.slice/org.gnome.Shell@wayland.service/memory.pressure', 'XDG_SESSION_CLASS': 'user', 'USERNAME': 'beingar', 'TERM': 'xterm-256color', 'GNOME_DESKTOP_SESSION_ID': 'this-is-deprecated', 'PATH': '/opt/ros/jazzy/opt/gz_msgs_vendor/bin:/opt/ros/jazzy/opt/gz_tools_vendor/bin:/opt/ros/jazzy/opt/gz_ogre_next_vendor/bin:/opt/ros/jazzy/bin:/home/beingar/.local/bin:/usr/local/sbin:/usr/local/bin:/usr/sbin:/usr/bin:/sbin:/bin:/usr/games:/usr/local/games:/snap/bin:/snap/bin', 'SESSION_MANAGER': 'local/beingar-HP-ProBook-650-G2:@/tmp/.ICE-unix/2266,unix/beingar-HP-ProBook-650-G2:/tmp/.ICE-unix/2266', 'INVOCATION_ID': 'b926e553db25418ea4a9131805ffff6c', 'XDG_MENU_PREFIX': 'gnome-', 'GNOME_SETUP_DISPLAY': ':1', 'XDG_RUNTIME_DIR': '/run/user/1000', 'DISPLAY': ':0', 'TERMINATOR_DBUS_PATH': '/net/tenshu/Terminator2', 'LANG': 'fr_FR.UTF-8', 'XDG_CURRENT_DESKTOP': 'ubuntu:GNOME', 'XMODIFIERS': '@im=ibus', 'XDG_SESSION_DESKTOP': 'ubuntu', 'XAUTHORITY': '/run/user/1000/.mutter-Xwaylandauth.2KLUM3', 'LS_COLORS': 'rs=0:di=01;34:ln=01;36:mh=00:pi=40;33:so=01;35:do=01;35:bd=40;33;01:cd=40;33;01:or=40;31;01:mi=00:su=37;41:sg=30;43:ca=00:tw=30;42:ow=34;42:st=37;44:ex=01;32:*.tar=01;31:*.tgz=01;31:*.arc=01;31:*.arj=01;31:*.taz=01;31:*.lha=01;31:*.lz4=01;31:*.lzh=01;31:*.lzma=01;31:*.tlz=01;31:*.txz=01;31:*.tzo=01;31:*.t7z=01;31:*.zip=01;31:*.z=01;31:*.dz=01;31:*.gz=01;31:*.lrz=01;31:*.lz=01;31:*.lzo=01;31:*.xz=01;31:*.zst=01;31:*.tzst=01;31:*.bz2=01;31:*.bz=01;31:*.tbz=01;31:*.tbz2=01;31:*.tz=01;31:*.deb=01;31:*.rpm=01;31:*.jar=01;31:*.war=01;31:*.ear=01;31:*.sar=01;31:*.rar=01;31:*.alz=01;31:*.ace=01;31:*.zoo=01;31:*.cpio=01;31:*.7z=01;31:*.rz=01;31:*.cab=01;31:*.wim=01;31:*.swm=01;31:*.dwm=01;31:*.esd=01;31:*.avif=01;35:*.jpg=01;35:*.jpeg=01;35:*.mjpg=01;35:*.mjpeg=01;35:*.gif=01;35:*.bmp=01;35:*.pbm=01;35:*.pgm=01;35:*.ppm=01;35:*.tga=01;35:*.xbm=01;35:*.xpm=01;35:*.tif=01;35:*.tiff=01;35:*.png=01;35:*.svg=01;35:*.svgz=01;35:*.mng=01;35:*.pcx=01;35:*.mov=01;35:*.mpg=01;35:*.mpeg=01;35:*.m2v=01;35:*.mkv=01;35:*.webm=01;35:*.webp=01;35:*.ogm=01;35:*.mp4=01;35:*.m4v=01;35:*.mp4v=01;35:*.vob=01;35:*.qt=01;35:*.nuv=01;35:*.wmv=01;35:*.asf=01;35:*.rm=01;35:*.rmvb=01;35:*.flc=01;35:*.avi=01;35:*.fli=01;35:*.flv=01;35:*.gl=01;35:*.dl=01;35:*.xcf=01;35:*.xwd=01;35:*.yuv=01;35:*.cgm=01;35:*.emf=01;35:*.ogv=01;35:*.ogx=01;35:*.aac=00;36:*.au=00;36:*.flac=00;36:*.m4a=00;36:*.mid=00;36:*.midi=00;36:*.mka=00;36:*.mp3=00;36:*.mpc=00;36:*.ogg=00;36:*.ra=00;36:*.wav=00;36:*.oga=00;36:*.opus=00;36:*.spx=00;36:*.xspf=00;36:*~=00;90:*#=00;90:*.bak=00;90:*.crdownload=00;90:*.dpkg-dist=00;90:*.dpkg-new=00;90:*.dpkg-old=00;90:*.dpkg-tmp=00;90:*.old=00;90:*.orig=00;90:*.part=00;90:*.rej=00;90:*.rpmnew=00;90:*.rpmorig=00;90:*.rpmsave=00;90:*.swp=00;90:*.tmp=00;90:*.ucf-dist=00;90:*.ucf-new=00;90:*.ucf-old=00;90:', 'SSH_AUTH_SOCK': '/run/user/1000/keyring/ssh', 'AMENT_PREFIX_PATH': '/home/beingar/ros2_jazzy_ws/install/hri_manipulation:/opt/ros/jazzy', 'SHELL': '/bin/bash', 'TERMINATOR_UUID': 'urn:uuid:f96c641a-8bd9-44ec-89db-d184424d96b8', 'QT_ACCESSIBILITY': '1', 'GDMSESSION': 'ubuntu', 'LESSCLOSE': '/usr/bin/lesspipe %s %s', 'GJS_DEBUG_OUTPUT': 'stderr', 'ROS_AUTOMATIC_DISCOVERY_RANGE': 'SUBNET', 'QT_IM_MODULE': 'ibus', 'PWD': '/home/beingar/ros2_jazzy_ws/build/hello_moveit', 'XDG_CONFIG_DIRS': '/etc/xdg/xdg-ubuntu:/etc/xdg', 'XDG_DATA_DIRS': '/usr/share/ubuntu:/usr/share/gnome:/usr/local/share/:/usr/share/:/var/lib/snapd/desktop', 'PYTHONPATH': '/home/beingar/ros2_jazzy_ws/build/hri_manipulation:/home/beingar/ros2_jazzy_ws/install/hri_manipulation/lib/python3.12/site-packages:/opt/ros/jazzy/lib/python3.12/site-packages', 'COLCON': '1', 'MEMORY_PRESSURE_WRITE': 'c29tZSAyMDAwMDAgMjAwMDAwMAA=', 'VTE_VERSION': '7600', 'CMAKE_PREFIX_PATH': '/opt/ros/jazzy/opt/gz_sim_vendor:/opt/ros/jazzy/opt/gz_sensors_vendor:/opt/ros/jazzy/opt/gz_physics_vendor:/opt/ros/jazzy/opt/sdformat_vendor:/opt/ros/jazzy/opt/gz_gui_vendor:/opt/ros/jazzy/opt/gz_transport_vendor:/opt/ros/jazzy/opt/gz_rendering_vendor:/opt/ros/jazzy/opt/gz_plugin_vendor:/opt/ros/jazzy/opt/gz_fuel_tools_vendor:/opt/ros/jazzy/opt/gz_msgs_vendor:/opt/ros/jazzy/opt/gz_common_vendor:/opt/ros/jazzy/opt/gz_math_vendor:/opt/ros/jazzy/opt/gz_utils_vendor:/opt/ros/jazzy/opt/gz_tools_vendor:/opt/ros/jazzy/opt/gz_ogre_next_vendor:/opt/ros/jazzy/opt/gz_dartsim_vendor:/opt/ros/jazzy/opt/gz_cmake_vendor:/home/beingar/ros2_jazzy_ws/install/hri_manipulation:/opt/ros/jazzy'}), 'shell': False}
+[19.471941] (-) TimerEvent: {}
+[19.515640] (hello_moveit) StdoutLine: {'line': b'[ 50%] \x1b[32mBuilding CXX object CMakeFiles/hello_moveit.dir/src/hello_moveit.cpp.o\x1b[0m\n'}
+[19.572204] (-) TimerEvent: {}
+[19.673373] (-) TimerEvent: {}
+[19.774858] (-) TimerEvent: {}
+[19.875708] (-) TimerEvent: {}
+[19.976451] (-) TimerEvent: {}
+[20.077290] (-) TimerEvent: {}
+[20.177972] (-) TimerEvent: {}
+[20.279037] (-) TimerEvent: {}
+[20.380509] (-) TimerEvent: {}
+[20.481199] (-) TimerEvent: {}
+[20.581911] (-) TimerEvent: {}
+[20.682600] (-) TimerEvent: {}
+[20.783266] (-) TimerEvent: {}
+[20.883937] (-) TimerEvent: {}
+[20.984748] (-) TimerEvent: {}
+[21.085580] (-) TimerEvent: {}
+[21.186977] (-) TimerEvent: {}
+[21.288144] (-) TimerEvent: {}
+[21.388764] (-) TimerEvent: {}
+[21.489465] (-) TimerEvent: {}
+[21.590010] (-) TimerEvent: {}
+[21.690687] (-) TimerEvent: {}
+[21.791423] (-) TimerEvent: {}
+[21.892292] (-) TimerEvent: {}
+[21.993093] (-) TimerEvent: {}
+[22.094207] (-) TimerEvent: {}
+[22.194835] (-) TimerEvent: {}
+[22.295550] (-) TimerEvent: {}
+[22.396349] (-) TimerEvent: {}
+[22.497123] (-) TimerEvent: {}
+[22.597941] (-) TimerEvent: {}
+[22.698544] (-) TimerEvent: {}
+[22.799191] (-) TimerEvent: {}
+[22.899794] (-) TimerEvent: {}
+[23.000521] (-) TimerEvent: {}
+[23.101122] (-) TimerEvent: {}
+[23.202089] (-) TimerEvent: {}
+[23.302671] (-) TimerEvent: {}
+[23.403373] (-) TimerEvent: {}
+[23.503999] (-) TimerEvent: {}
+[23.604862] (-) TimerEvent: {}
+[23.705557] (-) TimerEvent: {}
+[23.806523] (-) TimerEvent: {}
+[23.907293] (-) TimerEvent: {}
+[24.008268] (-) TimerEvent: {}
+[24.108927] (-) TimerEvent: {}
+[24.209706] (-) TimerEvent: {}
+[24.311067] (-) TimerEvent: {}
+[24.412212] (-) TimerEvent: {}
+[24.512796] (-) TimerEvent: {}
+[24.613563] (-) TimerEvent: {}
+[24.714260] (-) TimerEvent: {}
+[24.814885] (-) TimerEvent: {}
+[24.915693] (-) TimerEvent: {}
+[25.016317] (-) TimerEvent: {}
+[25.117066] (-) TimerEvent: {}
+[25.217941] (-) TimerEvent: {}
+[25.318679] (-) TimerEvent: {}
+[25.419547] (-) TimerEvent: {}
+[25.520235] (-) TimerEvent: {}
+[25.620899] (-) TimerEvent: {}
+[25.721538] (-) TimerEvent: {}
+[25.822337] (-) TimerEvent: {}
+[25.923152] (-) TimerEvent: {}
+[26.024023] (-) TimerEvent: {}
+[26.124815] (-) TimerEvent: {}
+[26.225876] (-) TimerEvent: {}
+[26.327128] (-) TimerEvent: {}
+[26.427928] (-) TimerEvent: {}
+[26.529992] (-) TimerEvent: {}
+[26.630777] (-) TimerEvent: {}
+[26.731430] (-) TimerEvent: {}
+[26.832198] (-) TimerEvent: {}
+[26.932829] (-) TimerEvent: {}
+[27.033573] (-) TimerEvent: {}
+[27.134305] (-) TimerEvent: {}
+[27.235208] (-) TimerEvent: {}
+[27.335882] (-) TimerEvent: {}
+[27.436610] (-) TimerEvent: {}
+[27.537472] (-) TimerEvent: {}
+[27.638094] (-) TimerEvent: {}
+[27.738719] (-) TimerEvent: {}
+[27.839522] (-) TimerEvent: {}
+[27.940286] (-) TimerEvent: {}
+[28.043127] (-) TimerEvent: {}
+[28.143872] (-) TimerEvent: {}
+[28.244499] (-) TimerEvent: {}
+[28.345064] (-) TimerEvent: {}
+[28.445925] (-) TimerEvent: {}
+[28.546533] (-) TimerEvent: {}
+[28.647096] (-) TimerEvent: {}
+[28.747797] (-) TimerEvent: {}
+[28.848379] (-) TimerEvent: {}
+[28.948913] (-) TimerEvent: {}
+[29.049514] (-) TimerEvent: {}
+[29.150128] (-) TimerEvent: {}
+[29.250840] (-) TimerEvent: {}
+[29.351452] (-) TimerEvent: {}
+[29.452097] (-) TimerEvent: {}
+[29.552896] (-) TimerEvent: {}
+[29.653759] (-) TimerEvent: {}
+[29.754969] (-) TimerEvent: {}
+[29.855719] (-) TimerEvent: {}
+[29.956610] (-) TimerEvent: {}
+[30.057450] (-) TimerEvent: {}
+[30.158130] (-) TimerEvent: {}
+[30.259006] (-) TimerEvent: {}
+[30.359702] (-) TimerEvent: {}
+[30.460551] (-) TimerEvent: {}
+[30.561841] (-) TimerEvent: {}
+[30.662698] (-) TimerEvent: {}
+[30.763296] (-) TimerEvent: {}
+[30.863860] (-) TimerEvent: {}
+[30.964580] (-) TimerEvent: {}
+[31.065312] (-) TimerEvent: {}
+[31.166033] (-) TimerEvent: {}
+[31.266755] (-) TimerEvent: {}
+[31.367320] (-) TimerEvent: {}
+[31.468296] (-) TimerEvent: {}
+[31.568894] (-) TimerEvent: {}
+[31.669512] (-) TimerEvent: {}
+[31.770130] (-) TimerEvent: {}
+[31.870893] (-) TimerEvent: {}
+[31.971671] (-) TimerEvent: {}
+[32.072321] (-) TimerEvent: {}
+[32.173275] (-) TimerEvent: {}
+[32.274372] (-) TimerEvent: {}
+[32.375275] (-) TimerEvent: {}
+[32.476070] (-) TimerEvent: {}
+[32.576755] (-) TimerEvent: {}
+[32.677619] (-) TimerEvent: {}
+[32.777997] (-) TimerEvent: {}
+[32.878770] (-) TimerEvent: {}
+[32.979636] (-) TimerEvent: {}
+[33.080227] (-) TimerEvent: {}
+[33.180611] (-) TimerEvent: {}
+[33.280960] (-) TimerEvent: {}
+[33.381282] (-) TimerEvent: {}
+[33.481677] (-) TimerEvent: {}
+[33.582608] (-) TimerEvent: {}
+[33.683040] (-) TimerEvent: {}
+[33.783515] (-) TimerEvent: {}
+[33.883945] (-) TimerEvent: {}
+[33.984404] (-) TimerEvent: {}
+[34.084820] (-) TimerEvent: {}
+[34.185246] (-) TimerEvent: {}
+[34.285664] (-) TimerEvent: {}
+[34.386131] (-) TimerEvent: {}
+[34.486569] (-) TimerEvent: {}
+[34.586975] (-) TimerEvent: {}
+[34.687416] (-) TimerEvent: {}
+[34.787904] (-) TimerEvent: {}
+[34.888365] (-) TimerEvent: {}
+[34.989050] (-) TimerEvent: {}
+[35.089497] (-) TimerEvent: {}
+[35.189903] (-) TimerEvent: {}
+[35.290292] (-) TimerEvent: {}
+[35.390813] (-) TimerEvent: {}
+[35.491255] (-) TimerEvent: {}
+[35.591670] (-) TimerEvent: {}
+[35.692060] (-) TimerEvent: {}
+[35.792592] (-) TimerEvent: {}
+[35.892987] (-) TimerEvent: {}
+[35.993388] (-) TimerEvent: {}
+[36.093810] (-) TimerEvent: {}
+[36.194233] (-) TimerEvent: {}
+[36.294639] (-) TimerEvent: {}
+[36.395057] (-) TimerEvent: {}
+[36.495513] (-) TimerEvent: {}
+[36.595891] (-) TimerEvent: {}
+[36.696302] (-) TimerEvent: {}
+[36.796700] (-) TimerEvent: {}
+[36.897148] (-) TimerEvent: {}
+[36.997582] (-) TimerEvent: {}
+[37.098018] (-) TimerEvent: {}
+[37.198416] (-) TimerEvent: {}
+[37.298842] (-) TimerEvent: {}
+[37.399250] (-) TimerEvent: {}
+[37.499583] (-) TimerEvent: {}
+[37.599966] (-) TimerEvent: {}
+[37.700254] (-) TimerEvent: {}
+[37.800606] (-) TimerEvent: {}
+[37.900895] (-) TimerEvent: {}
+[38.001242] (-) TimerEvent: {}
+[38.101624] (-) TimerEvent: {}
+[38.202035] (-) TimerEvent: {}
+[38.302454] (-) TimerEvent: {}
+[38.402830] (-) TimerEvent: {}
+[38.503212] (-) TimerEvent: {}
+[38.603548] (-) TimerEvent: {}
+[38.703892] (-) TimerEvent: {}
+[38.804257] (-) TimerEvent: {}
+[38.904683] (-) TimerEvent: {}
+[39.005189] (-) TimerEvent: {}
+[39.105642] (-) TimerEvent: {}
+[39.206040] (-) TimerEvent: {}
+[39.306503] (-) TimerEvent: {}
+[39.407024] (-) TimerEvent: {}
+[39.507561] (-) TimerEvent: {}
+[39.607993] (-) TimerEvent: {}
+[39.708375] (-) TimerEvent: {}
+[39.808778] (-) TimerEvent: {}
+[39.909322] (-) TimerEvent: {}
+[40.009711] (-) TimerEvent: {}
+[40.110082] (-) TimerEvent: {}
+[40.210443] (-) TimerEvent: {}
+[40.310804] (-) TimerEvent: {}
+[40.411168] (-) TimerEvent: {}
+[40.511490] (-) TimerEvent: {}
+[40.611818] (-) TimerEvent: {}
+[40.712178] (-) TimerEvent: {}
+[40.812545] (-) TimerEvent: {}
+[40.912889] (-) TimerEvent: {}
+[41.013244] (-) TimerEvent: {}
+[41.113577] (-) TimerEvent: {}
+[41.213933] (-) TimerEvent: {}
+[41.314256] (-) TimerEvent: {}
+[41.414576] (-) TimerEvent: {}
+[41.514920] (-) TimerEvent: {}
+[41.615252] (-) TimerEvent: {}
+[41.715567] (-) TimerEvent: {}
+[41.815928] (-) TimerEvent: {}
+[41.916260] (-) TimerEvent: {}
+[42.016604] (-) TimerEvent: {}
+[42.116938] (-) TimerEvent: {}
+[42.217256] (-) TimerEvent: {}
+[42.317608] (-) TimerEvent: {}
+[42.417946] (-) TimerEvent: {}
+[42.518296] (-) TimerEvent: {}
+[42.618656] (-) TimerEvent: {}
+[42.719002] (-) TimerEvent: {}
+[42.819374] (-) TimerEvent: {}
+[42.919705] (-) TimerEvent: {}
+[43.020070] (-) TimerEvent: {}
+[43.120483] (-) TimerEvent: {}
+[43.220905] (-) TimerEvent: {}
+[43.321341] (-) TimerEvent: {}
+[43.422087] (-) TimerEvent: {}
+[43.522411] (-) TimerEvent: {}
+[43.622782] (-) TimerEvent: {}
+[43.723166] (-) TimerEvent: {}
+[43.823711] (-) TimerEvent: {}
+[43.924247] (-) TimerEvent: {}
+[44.024625] (-) TimerEvent: {}
+[44.125080] (-) TimerEvent: {}
+[44.225484] (-) TimerEvent: {}
+[44.325805] (-) TimerEvent: {}
+[44.426205] (-) TimerEvent: {}
+[44.526542] (-) TimerEvent: {}
+[44.626890] (-) TimerEvent: {}
+[44.727262] (-) TimerEvent: {}
+[44.827596] (-) TimerEvent: {}
+[44.927976] (-) TimerEvent: {}
+[45.028293] (-) TimerEvent: {}
+[45.128661] (-) TimerEvent: {}
+[45.229037] (-) TimerEvent: {}
+[45.329424] (-) TimerEvent: {}
+[45.429763] (-) TimerEvent: {}
+[45.530119] (-) TimerEvent: {}
+[45.630482] (-) TimerEvent: {}
+[45.730802] (-) TimerEvent: {}
+[45.831174] (-) TimerEvent: {}
+[45.931466] (-) TimerEvent: {}
+[46.031805] (-) TimerEvent: {}
+[46.108118] (hello_moveit) StdoutLine: {'line': b'[100%] \x1b[32m\x1b[1mLinking CXX executable hello_moveit\x1b[0m\n'}
+[46.131973] (-) TimerEvent: {}
+[46.232265] (-) TimerEvent: {}
+[46.332815] (-) TimerEvent: {}
+[46.433326] (-) TimerEvent: {}
+[46.533870] (-) TimerEvent: {}
+[46.634427] (-) TimerEvent: {}
+[46.735029] (-) TimerEvent: {}
+[46.835536] (-) TimerEvent: {}
+[46.936150] (-) TimerEvent: {}
+[47.036805] (-) TimerEvent: {}
+[47.137533] (-) TimerEvent: {}
+[47.238795] (-) TimerEvent: {}
+[47.339289] (-) TimerEvent: {}
+[47.440005] (-) TimerEvent: {}
+[47.540440] (-) TimerEvent: {}
+[47.640948] (-) TimerEvent: {}
+[47.741361] (-) TimerEvent: {}
+[47.802678] (hello_moveit) StdoutLine: {'line': b'[100%] Built target hello_moveit\n'}
+[47.832354] (hello_moveit) CommandEnded: {'returncode': 0}
+[47.833491] (hello_moveit) JobProgress: {'identifier': 'hello_moveit', 'progress': 'install'}
+[47.834603] (hello_moveit) Command: {'cmd': ['/usr/bin/cmake', '--install', '/home/beingar/ros2_jazzy_ws/build/hello_moveit'], 'cwd': '/home/beingar/ros2_jazzy_ws/build/hello_moveit', 'env': OrderedDict({'GJS_DEBUG_TOPICS': 'JS ERROR;JS LOG', 'XDG_ACTIVATION_TOKEN': 'gnome-shell/Terminator/2312-7-beingar-HP-ProBook-650-G2_TIME24389819', 'LESSOPEN': '| /usr/bin/lesspipe %s', 'GZ_SIM_RESOURCE_PATH': '/opt/ros/jazzy/share', 'USER': 'beingar', 'GZ_CONFIG_PATH': '/opt/ros/jazzy/opt/gz_sim_vendor/share/gz:/opt/ros/jazzy/opt/sdformat_vendor/share/gz:/opt/ros/jazzy/opt/gz_gui_vendor/share/gz:/opt/ros/jazzy/opt/gz_transport_vendor/share/gz:/opt/ros/jazzy/opt/gz_rendering_vendor/share/gz:/opt/ros/jazzy/opt/gz_plugin_vendor/share/gz:/opt/ros/jazzy/opt/gz_fuel_tools_vendor/share/gz:/opt/ros/jazzy/opt/gz_msgs_vendor/share/gz:/opt/ros/jazzy/opt/gz_common_vendor/share/gz', 'XDG_SESSION_TYPE': 'wayland', 'CLUTTER_DISABLE_MIPMAPPED_TEXT': '1', 'SHLVL': '1', 'LD_LIBRARY_PATH': '/opt/ros/jazzy/opt/gz_sim_vendor/lib:/opt/ros/jazzy/opt/gz_sensors_vendor/lib:/opt/ros/jazzy/opt/gz_physics_vendor/lib:/opt/ros/jazzy/opt/sdformat_vendor/lib:/opt/ros/jazzy/opt/rviz_ogre_vendor/lib:/opt/ros/jazzy/lib/x86_64-linux-gnu:/opt/ros/jazzy/opt/gz_gui_vendor/lib:/opt/ros/jazzy/opt/gz_transport_vendor/lib:/opt/ros/jazzy/opt/gz_rendering_vendor/lib:/opt/ros/jazzy/opt/gz_plugin_vendor/lib:/opt/ros/jazzy/opt/gz_fuel_tools_vendor/lib:/opt/ros/jazzy/opt/gz_msgs_vendor/lib:/opt/ros/jazzy/opt/gz_common_vendor/lib:/opt/ros/jazzy/opt/gz_math_vendor/lib:/opt/ros/jazzy/opt/gz_utils_vendor/lib:/opt/ros/jazzy/opt/gz_tools_vendor/lib:/opt/ros/jazzy/opt/gz_ogre_next_vendor/lib:/opt/ros/jazzy/opt/gz_dartsim_vendor/lib:/opt/ros/jazzy/opt/gz_cmake_vendor/lib:/opt/ros/jazzy/lib', 'HOME': '/home/beingar', 'OLDPWD': '/home/beingar/ros2_jazzy_ws/src/ur5_ws/src', 'DESKTOP_SESSION': 'ubuntu', 'GIO_LAUNCHED_DESKTOP_FILE': '/usr/share/applications/terminator.desktop', 'ROS_PYTHON_VERSION': '3', 'GNOME_SHELL_SESSION_MODE': 'ubuntu', 'GTK_MODULES': 'gail:atk-bridge', 'MANAGERPID': '2037', 'SYSTEMD_EXEC_PID': '2312', 'GSM_SKIP_SSH_AGENT_WORKAROUND': 'true', 'DBUS_SESSION_BUS_ADDRESS': 'unix:path=/run/user/1000/bus', 'COLORTERM': 'truecolor', 'TERMINATOR_DBUS_NAME': 'net.tenshu.Terminator25ef4b219e3b005583550f2b0f9f990c3', 'GIO_LAUNCHED_DESKTOP_FILE_PID': '9188', 'DEBUGINFOD_URLS': 'https://debuginfod.ubuntu.com', 'IM_CONFIG_PHASE': '1', 'WAYLAND_DISPLAY': 'wayland-0', 'COLCON_PREFIX_PATH': '/home/beingar/ros2_jazzy_ws/install', 'ROS_DISTRO': 'jazzy', 'LOGNAME': 'beingar', 'JOURNAL_STREAM': '9:17243', '_': '/usr/bin/colcon', 'ROS_VERSION': '2', 'MEMORY_PRESSURE_WATCH': '/sys/fs/cgroup/user.slice/user-1000.slice/user@1000.service/session.slice/org.gnome.Shell@wayland.service/memory.pressure', 'XDG_SESSION_CLASS': 'user', 'USERNAME': 'beingar', 'TERM': 'xterm-256color', 'GNOME_DESKTOP_SESSION_ID': 'this-is-deprecated', 'PATH': '/opt/ros/jazzy/opt/gz_msgs_vendor/bin:/opt/ros/jazzy/opt/gz_tools_vendor/bin:/opt/ros/jazzy/opt/gz_ogre_next_vendor/bin:/opt/ros/jazzy/bin:/home/beingar/.local/bin:/usr/local/sbin:/usr/local/bin:/usr/sbin:/usr/bin:/sbin:/bin:/usr/games:/usr/local/games:/snap/bin:/snap/bin', 'SESSION_MANAGER': 'local/beingar-HP-ProBook-650-G2:@/tmp/.ICE-unix/2266,unix/beingar-HP-ProBook-650-G2:/tmp/.ICE-unix/2266', 'INVOCATION_ID': 'b926e553db25418ea4a9131805ffff6c', 'XDG_MENU_PREFIX': 'gnome-', 'GNOME_SETUP_DISPLAY': ':1', 'XDG_RUNTIME_DIR': '/run/user/1000', 'DISPLAY': ':0', 'TERMINATOR_DBUS_PATH': '/net/tenshu/Terminator2', 'LANG': 'fr_FR.UTF-8', 'XDG_CURRENT_DESKTOP': 'ubuntu:GNOME', 'XMODIFIERS': '@im=ibus', 'XDG_SESSION_DESKTOP': 'ubuntu', 'XAUTHORITY': '/run/user/1000/.mutter-Xwaylandauth.2KLUM3', 'LS_COLORS': 'rs=0:di=01;34:ln=01;36:mh=00:pi=40;33:so=01;35:do=01;35:bd=40;33;01:cd=40;33;01:or=40;31;01:mi=00:su=37;41:sg=30;43:ca=00:tw=30;42:ow=34;42:st=37;44:ex=01;32:*.tar=01;31:*.tgz=01;31:*.arc=01;31:*.arj=01;31:*.taz=01;31:*.lha=01;31:*.lz4=01;31:*.lzh=01;31:*.lzma=01;31:*.tlz=01;31:*.txz=01;31:*.tzo=01;31:*.t7z=01;31:*.zip=01;31:*.z=01;31:*.dz=01;31:*.gz=01;31:*.lrz=01;31:*.lz=01;31:*.lzo=01;31:*.xz=01;31:*.zst=01;31:*.tzst=01;31:*.bz2=01;31:*.bz=01;31:*.tbz=01;31:*.tbz2=01;31:*.tz=01;31:*.deb=01;31:*.rpm=01;31:*.jar=01;31:*.war=01;31:*.ear=01;31:*.sar=01;31:*.rar=01;31:*.alz=01;31:*.ace=01;31:*.zoo=01;31:*.cpio=01;31:*.7z=01;31:*.rz=01;31:*.cab=01;31:*.wim=01;31:*.swm=01;31:*.dwm=01;31:*.esd=01;31:*.avif=01;35:*.jpg=01;35:*.jpeg=01;35:*.mjpg=01;35:*.mjpeg=01;35:*.gif=01;35:*.bmp=01;35:*.pbm=01;35:*.pgm=01;35:*.ppm=01;35:*.tga=01;35:*.xbm=01;35:*.xpm=01;35:*.tif=01;35:*.tiff=01;35:*.png=01;35:*.svg=01;35:*.svgz=01;35:*.mng=01;35:*.pcx=01;35:*.mov=01;35:*.mpg=01;35:*.mpeg=01;35:*.m2v=01;35:*.mkv=01;35:*.webm=01;35:*.webp=01;35:*.ogm=01;35:*.mp4=01;35:*.m4v=01;35:*.mp4v=01;35:*.vob=01;35:*.qt=01;35:*.nuv=01;35:*.wmv=01;35:*.asf=01;35:*.rm=01;35:*.rmvb=01;35:*.flc=01;35:*.avi=01;35:*.fli=01;35:*.flv=01;35:*.gl=01;35:*.dl=01;35:*.xcf=01;35:*.xwd=01;35:*.yuv=01;35:*.cgm=01;35:*.emf=01;35:*.ogv=01;35:*.ogx=01;35:*.aac=00;36:*.au=00;36:*.flac=00;36:*.m4a=00;36:*.mid=00;36:*.midi=00;36:*.mka=00;36:*.mp3=00;36:*.mpc=00;36:*.ogg=00;36:*.ra=00;36:*.wav=00;36:*.oga=00;36:*.opus=00;36:*.spx=00;36:*.xspf=00;36:*~=00;90:*#=00;90:*.bak=00;90:*.crdownload=00;90:*.dpkg-dist=00;90:*.dpkg-new=00;90:*.dpkg-old=00;90:*.dpkg-tmp=00;90:*.old=00;90:*.orig=00;90:*.part=00;90:*.rej=00;90:*.rpmnew=00;90:*.rpmorig=00;90:*.rpmsave=00;90:*.swp=00;90:*.tmp=00;90:*.ucf-dist=00;90:*.ucf-new=00;90:*.ucf-old=00;90:', 'SSH_AUTH_SOCK': '/run/user/1000/keyring/ssh', 'AMENT_PREFIX_PATH': '/home/beingar/ros2_jazzy_ws/install/hri_manipulation:/opt/ros/jazzy', 'SHELL': '/bin/bash', 'TERMINATOR_UUID': 'urn:uuid:f96c641a-8bd9-44ec-89db-d184424d96b8', 'QT_ACCESSIBILITY': '1', 'GDMSESSION': 'ubuntu', 'LESSCLOSE': '/usr/bin/lesspipe %s %s', 'GJS_DEBUG_OUTPUT': 'stderr', 'ROS_AUTOMATIC_DISCOVERY_RANGE': 'SUBNET', 'QT_IM_MODULE': 'ibus', 'PWD': '/home/beingar/ros2_jazzy_ws/build/hello_moveit', 'XDG_CONFIG_DIRS': '/etc/xdg/xdg-ubuntu:/etc/xdg', 'XDG_DATA_DIRS': '/usr/share/ubuntu:/usr/share/gnome:/usr/local/share/:/usr/share/:/var/lib/snapd/desktop', 'PYTHONPATH': '/home/beingar/ros2_jazzy_ws/build/hri_manipulation:/home/beingar/ros2_jazzy_ws/install/hri_manipulation/lib/python3.12/site-packages:/opt/ros/jazzy/lib/python3.12/site-packages', 'COLCON': '1', 'MEMORY_PRESSURE_WRITE': 'c29tZSAyMDAwMDAgMjAwMDAwMAA=', 'VTE_VERSION': '7600', 'CMAKE_PREFIX_PATH': '/opt/ros/jazzy/opt/gz_sim_vendor:/opt/ros/jazzy/opt/gz_sensors_vendor:/opt/ros/jazzy/opt/gz_physics_vendor:/opt/ros/jazzy/opt/sdformat_vendor:/opt/ros/jazzy/opt/gz_gui_vendor:/opt/ros/jazzy/opt/gz_transport_vendor:/opt/ros/jazzy/opt/gz_rendering_vendor:/opt/ros/jazzy/opt/gz_plugin_vendor:/opt/ros/jazzy/opt/gz_fuel_tools_vendor:/opt/ros/jazzy/opt/gz_msgs_vendor:/opt/ros/jazzy/opt/gz_common_vendor:/opt/ros/jazzy/opt/gz_math_vendor:/opt/ros/jazzy/opt/gz_utils_vendor:/opt/ros/jazzy/opt/gz_tools_vendor:/opt/ros/jazzy/opt/gz_ogre_next_vendor:/opt/ros/jazzy/opt/gz_dartsim_vendor:/opt/ros/jazzy/opt/gz_cmake_vendor:/home/beingar/ros2_jazzy_ws/install/hri_manipulation:/opt/ros/jazzy'}), 'shell': False}
+[47.841470] (-) TimerEvent: {}
+[47.857095] (hello_moveit) StdoutLine: {'line': b'-- Install configuration: ""\n'}
+[47.858613] (hello_moveit) StdoutLine: {'line': b'-- Execute custom install script\n'}
+[47.859420] (hello_moveit) StdoutLine: {'line': b'-- Symlinking: /home/beingar/ros2_jazzy_ws/install/hello_moveit/lib/hello_moveit/hello_moveit\n'}
+[47.880782] (hello_moveit) StdoutLine: {'line': b'-- Symlinking: /home/beingar/ros2_jazzy_ws/install/hello_moveit/share/ament_index/resource_index/package_run_dependencies/hello_moveit\n'}
+[47.901913] (hello_moveit) StdoutLine: {'line': b'-- Symlinking: /home/beingar/ros2_jazzy_ws/install/hello_moveit/share/ament_index/resource_index/parent_prefix_path/hello_moveit\n'}
+[47.925572] (hello_moveit) StdoutLine: {'line': b'-- Symlinking: /home/beingar/ros2_jazzy_ws/install/hello_moveit/share/hello_moveit/environment/ament_prefix_path.sh\n'}
+[47.941593] (-) TimerEvent: {}
+[47.947927] (hello_moveit) StdoutLine: {'line': b'-- Symlinking: /home/beingar/ros2_jazzy_ws/install/hello_moveit/share/hello_moveit/environment/ament_prefix_path.dsv\n'}
+[47.969603] (hello_moveit) StdoutLine: {'line': b'-- Symlinking: /home/beingar/ros2_jazzy_ws/install/hello_moveit/share/hello_moveit/environment/path.sh\n'}
+[47.991977] (hello_moveit) StdoutLine: {'line': b'-- Symlinking: /home/beingar/ros2_jazzy_ws/install/hello_moveit/share/hello_moveit/environment/path.dsv\n'}
+[48.014678] (hello_moveit) StdoutLine: {'line': b'-- Symlinking: /home/beingar/ros2_jazzy_ws/install/hello_moveit/share/hello_moveit/local_setup.bash\n'}
+[48.035573] (hello_moveit) StdoutLine: {'line': b'-- Symlinking: /home/beingar/ros2_jazzy_ws/install/hello_moveit/share/hello_moveit/local_setup.sh\n'}
+[48.041732] (-) TimerEvent: {}
+[48.058245] (hello_moveit) StdoutLine: {'line': b'-- Symlinking: /home/beingar/ros2_jazzy_ws/install/hello_moveit/share/hello_moveit/local_setup.zsh\n'}
+[48.080218] (hello_moveit) StdoutLine: {'line': b'-- Symlinking: /home/beingar/ros2_jazzy_ws/install/hello_moveit/share/hello_moveit/local_setup.dsv\n'}
+[48.102079] (hello_moveit) StdoutLine: {'line': b'-- Symlinking: /home/beingar/ros2_jazzy_ws/install/hello_moveit/share/hello_moveit/package.dsv\n'}
+[48.124554] (hello_moveit) StdoutLine: {'line': b'-- Symlinking: /home/beingar/ros2_jazzy_ws/install/hello_moveit/share/ament_index/resource_index/packages/hello_moveit\n'}
+[48.141862] (-) TimerEvent: {}
+[48.146065] (hello_moveit) StdoutLine: {'line': b'-- Symlinking: /home/beingar/ros2_jazzy_ws/install/hello_moveit/share/hello_moveit/cmake/hello_moveitConfig.cmake\n'}
+[48.166980] (hello_moveit) StdoutLine: {'line': b'-- Symlinking: /home/beingar/ros2_jazzy_ws/install/hello_moveit/share/hello_moveit/cmake/hello_moveitConfig-version.cmake\n'}
+[48.188558] (hello_moveit) StdoutLine: {'line': b'-- Symlinking: /home/beingar/ros2_jazzy_ws/install/hello_moveit/share/hello_moveit/package.xml\n'}
+[48.213340] (hello_moveit) CommandEnded: {'returncode': 0}
+[48.237717] (hello_moveit) JobEnded: {'identifier': 'hello_moveit', 'rc': 0}
+[48.239882] (-) EventReactorShutdown: {}

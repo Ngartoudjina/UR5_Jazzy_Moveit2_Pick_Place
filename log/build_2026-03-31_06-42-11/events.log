@@ -1,0 +1,90 @@
+[0.000000] (-) TimerEvent: {}
+[0.001919] (hri_manipulation) JobQueued: {'identifier': 'hri_manipulation', 'dependencies': OrderedDict()}
+[0.002242] (hri_manipulation) JobStarted: {'identifier': 'hri_manipulation'}
+[0.099530] (-) TimerEvent: {}
+[0.199980] (-) TimerEvent: {}
+[0.300434] (-) TimerEvent: {}
+[0.400782] (-) TimerEvent: {}
+[0.501112] (-) TimerEvent: {}
+[0.601442] (-) TimerEvent: {}
+[0.701890] (-) TimerEvent: {}
+[0.802421] (-) TimerEvent: {}
+[0.902828] (-) TimerEvent: {}
+[1.003227] (-) TimerEvent: {}
+[1.103597] (-) TimerEvent: {}
+[1.203979] (-) TimerEvent: {}
+[1.304426] (-) TimerEvent: {}
+[1.405028] (-) TimerEvent: {}
+[1.505398] (-) TimerEvent: {}
+[1.606135] (-) TimerEvent: {}
+[1.706816] (-) TimerEvent: {}
+[1.807634] (-) TimerEvent: {}
+[1.908220] (-) TimerEvent: {}
+[2.008884] (-) TimerEvent: {}
+[2.109465] (-) TimerEvent: {}
+[2.209957] (-) TimerEvent: {}
+[2.310319] (-) TimerEvent: {}
+[2.410703] (-) TimerEvent: {}
+[2.511197] (-) TimerEvent: {}
+[2.611576] (-) TimerEvent: {}
+[2.712145] (-) TimerEvent: {}
+[2.812740] (-) TimerEvent: {}
+[2.913273] (-) TimerEvent: {}
+[3.013631] (-) TimerEvent: {}
+[3.113967] (-) TimerEvent: {}
+[3.214328] (-) TimerEvent: {}
+[3.314607] (-) TimerEvent: {}
+[3.415019] (-) TimerEvent: {}
+[3.515423] (-) TimerEvent: {}
+[3.615967] (-) TimerEvent: {}
+[3.716515] (-) TimerEvent: {}
+[3.816867] (-) TimerEvent: {}
+[3.837330] (hri_manipulation) Command: {'cmd': ['/usr/bin/python3', '-W', 'ignore:setup.py install is deprecated', '-W', 'ignore:easy_install command is deprecated', 'setup.py', 'develop', '--editable', '--build-directory', '/home/beingar/ros2_jazzy_ws/build/hri_manipulation/build', '--no-deps', 'symlink_data'], 'cwd': '/home/beingar/ros2_jazzy_ws/build/hri_manipulation', 'env': {'GJS_DEBUG_TOPICS': 'JS ERROR;JS LOG', 'XDG_ACTIVATION_TOKEN': 'gnome-shell/Terminator/2312-7-beingar-HP-ProBook-650-G2_TIME24389819', 'LESSOPEN': '| /usr/bin/lesspipe %s', 'GZ_SIM_RESOURCE_PATH': '/opt/ros/jazzy/share', 'USER': 'beingar', 'GZ_CONFIG_PATH': '/opt/ros/jazzy/opt/gz_sim_vendor/share/gz:/opt/ros/jazzy/opt/sdformat_vendor/share/gz:/opt/ros/jazzy/opt/gz_gui_vendor/share/gz:/opt/ros/jazzy/opt/gz_transport_vendor/share/gz:/opt/ros/jazzy/opt/gz_rendering_vendor/share/gz:/opt/ros/jazzy/opt/gz_plugin_vendor/share/gz:/opt/ros/jazzy/opt/gz_fuel_tools_vendor/share/gz:/opt/ros/jazzy/opt/gz_msgs_vendor/share/gz:/opt/ros/jazzy/opt/gz_common_vendor/share/gz', 'XDG_SESSION_TYPE': 'wayland', 'CLUTTER_DISABLE_MIPMAPPED_TEXT': '1', 'SHLVL': '1', 'LD_LIBRARY_PATH': '/opt/ros/jazzy/opt/gz_sim_vendor/lib:/opt/ros/jazzy/opt/gz_sensors_vendor/lib:/opt/ros/jazzy/opt/gz_physics_vendor/lib:/opt/ros/jazzy/opt/sdformat_vendor/lib:/opt/ros/jazzy/opt/rviz_ogre_vendor/lib:/opt/ros/jazzy/lib/x86_64-linux-gnu:/opt/ros/jazzy/opt/gz_gui_vendor/lib:/opt/ros/jazzy/opt/gz_transport_vendor/lib:/opt/ros/jazzy/opt/gz_rendering_vendor/lib:/opt/ros/jazzy/opt/gz_plugin_vendor/lib:/opt/ros/jazzy/opt/gz_fuel_tools_vendor/lib:/opt/ros/jazzy/opt/gz_msgs_vendor/lib:/opt/ros/jazzy/opt/gz_common_vendor/lib:/opt/ros/jazzy/opt/gz_math_vendor/lib:/opt/ros/jazzy/opt/gz_utils_vendor/lib:/opt/ros/jazzy/opt/gz_tools_vendor/lib:/opt/ros/jazzy/opt/gz_ogre_next_vendor/lib:/opt/ros/jazzy/opt/gz_dartsim_vendor/lib:/opt/ros/jazzy/opt/gz_cmake_vendor/lib:/opt/ros/jazzy/lib', 'HOME': '/home/beingar', 'OLDPWD': '/home/beingar/ros2_jazzy_ws', 'DESKTOP_SESSION': 'ubuntu', 'GIO_LAUNCHED_DESKTOP_FILE': '/usr/share/applications/terminator.desktop', 'ROS_PYTHON_VERSION': '3', 'GNOME_SHELL_SESSION_MODE': 'ubuntu', 'GTK_MODULES': 'gail:atk-bridge', 'MANAGERPID': '2037', 'SYSTEMD_EXEC_PID': '2312', 'GSM_SKIP_SSH_AGENT_WORKAROUND': 'true', 'DBUS_SESSION_BUS_ADDRESS': 'unix:path=/run/user/1000/bus', 'COLORTERM': 'truecolor', 'TERMINATOR_DBUS_NAME': 'net.tenshu.Terminator25ef4b219e3b005583550f2b0f9f990c3', 'GIO_LAUNCHED_DESKTOP_FILE_PID': '9188', 'DEBUGINFOD_URLS': 'https://debuginfod.ubuntu.com', 'IM_CONFIG_PHASE': '1', 'WAYLAND_DISPLAY': 'wayland-0', 'COLCON_PREFIX_PATH': '/home/beingar/ros2_jazzy_ws/install', 'ROS_DISTRO': 'jazzy', 'LOGNAME': 'beingar', 'JOURNAL_STREAM': '9:17243', '_': '/usr/bin/colcon', 'ROS_VERSION': '2', 'MEMORY_PRESSURE_WATCH': '/sys/fs/cgroup/user.slice/user-1000.slice/user@1000.service/session.slice/org.gnome.Shell@wayland.service/memory.pressure', 'XDG_SESSION_CLASS': 'user', 'USERNAME': 'beingar', 'TERM': 'xterm-256color', 'GNOME_DESKTOP_SESSION_ID': 'this-is-deprecated', 'PATH': '/opt/ros/jazzy/opt/gz_msgs_vendor/bin:/opt/ros/jazzy/opt/gz_tools_vendor/bin:/opt/ros/jazzy/opt/gz_ogre_next_vendor/bin:/opt/ros/jazzy/bin:/home/beingar/.local/bin:/usr/local/sbin:/usr/local/bin:/usr/sbin:/usr/bin:/sbin:/bin:/usr/games:/usr/local/games:/snap/bin:/snap/bin', 'SESSION_MANAGER': 'local/beingar-HP-ProBook-650-G2:@/tmp/.ICE-unix/2266,unix/beingar-HP-ProBook-650-G2:/tmp/.ICE-unix/2266', 'INVOCATION_ID': 'b926e553db25418ea4a9131805ffff6c', 'XDG_MENU_PREFIX': 'gnome-', 'GNOME_SETUP_DISPLAY': ':1', 'XDG_RUNTIME_DIR': '/run/user/1000', 'DISPLAY': ':0', 'TERMINATOR_DBUS_PATH': '/net/tenshu/Terminator2', 'LANG': 'fr_FR.UTF-8', 'XDG_CURRENT_DESKTOP': 'ubuntu:GNOME', 'XMODIFIERS': '@im=ibus', 'XDG_SESSION_DESKTOP': 'ubuntu', 'XAUTHORITY': '/run/user/1000/.mutter-Xwaylandauth.2KLUM3', 'LS_COLORS': 'rs=0:di=01;34:ln=01;36:mh=00:pi=40;33:so=01;35:do=01;35:bd=40;33;01:cd=40;33;01:or=40;31;01:mi=00:su=37;41:sg=30;43:ca=00:tw=30;42:ow=34;42:st=37;44:ex=01;32:*.tar=01;31:*.tgz=01;31:*.arc=01;31:*.arj=01;31:*.taz=01;31:*.lha=01;31:*.lz4=01;31:*.lzh=01;31:*.lzma=01;31:*.tlz=01;31:*.txz=01;31:*.tzo=01;31:*.t7z=01;31:*.zip=01;31:*.z=01;31:*.dz=01;31:*.gz=01;31:*.lrz=01;31:*.lz=01;31:*.lzo=01;31:*.xz=01;31:*.zst=01;31:*.tzst=01;31:*.bz2=01;31:*.bz=01;31:*.tbz=01;31:*.tbz2=01;31:*.tz=01;31:*.deb=01;31:*.rpm=01;31:*.jar=01;31:*.war=01;31:*.ear=01;31:*.sar=01;31:*.rar=01;31:*.alz=01;31:*.ace=01;31:*.zoo=01;31:*.cpio=01;31:*.7z=01;31:*.rz=01;31:*.cab=01;31:*.wim=01;31:*.swm=01;31:*.dwm=01;31:*.esd=01;31:*.avif=01;35:*.jpg=01;35:*.jpeg=01;35:*.mjpg=01;35:*.mjpeg=01;35:*.gif=01;35:*.bmp=01;35:*.pbm=01;35:*.pgm=01;35:*.ppm=01;35:*.tga=01;35:*.xbm=01;35:*.xpm=01;35:*.tif=01;35:*.tiff=01;35:*.png=01;35:*.svg=01;35:*.svgz=01;35:*.mng=01;35:*.pcx=01;35:*.mov=01;35:*.mpg=01;35:*.mpeg=01;35:*.m2v=01;35:*.mkv=01;35:*.webm=01;35:*.webp=01;35:*.ogm=01;35:*.mp4=01;35:*.m4v=01;35:*.mp4v=01;35:*.vob=01;35:*.qt=01;35:*.nuv=01;35:*.wmv=01;35:*.asf=01;35:*.rm=01;35:*.rmvb=01;35:*.flc=01;35:*.avi=01;35:*.fli=01;35:*.flv=01;35:*.gl=01;35:*.dl=01;35:*.xcf=01;35:*.xwd=01;35:*.yuv=01;35:*.cgm=01;35:*.emf=01;35:*.ogv=01;35:*.ogx=01;35:*.aac=00;36:*.au=00;36:*.flac=00;36:*.m4a=00;36:*.mid=00;36:*.midi=00;36:*.mka=00;36:*.mp3=00;36:*.mpc=00;36:*.ogg=00;36:*.ra=00;36:*.wav=00;36:*.oga=00;36:*.opus=00;36:*.spx=00;36:*.xspf=00;36:*~=00;90:*#=00;90:*.bak=00;90:*.crdownload=00;90:*.dpkg-dist=00;90:*.dpkg-new=00;90:*.dpkg-old=00;90:*.dpkg-tmp=00;90:*.old=00;90:*.orig=00;90:*.part=00;90:*.rej=00;90:*.rpmnew=00;90:*.rpmorig=00;90:*.rpmsave=00;90:*.swp=00;90:*.tmp=00;90:*.ucf-dist=00;90:*.ucf-new=00;90:*.ucf-old=00;90:', 'SSH_AUTH_SOCK': '/run/user/1000/keyring/ssh', 'AMENT_PREFIX_PATH': '/home/beingar/ros2_jazzy_ws/install/hri_manipulation:/opt/ros/jazzy', 'SHELL': '/bin/bash', 'TERMINATOR_UUID': 'urn:uuid:ef1a87fc-2f1d-496e-b8da-c8f48815dadc', 'QT_ACCESSIBILITY': '1', 'GDMSESSION': 'ubuntu', 'LESSCLOSE': '/usr/bin/lesspipe %s %s', 'GJS_DEBUG_OUTPUT': 'stderr', 'ROS_AUTOMATIC_DISCOVERY_RANGE': 'SUBNET', 'QT_IM_MODULE': 'ibus', 'PWD': '/home/beingar/ros2_jazzy_ws/build/hri_manipulation', 'XDG_CONFIG_DIRS': '/etc/xdg/xdg-ubuntu:/etc/xdg', 'XDG_DATA_DIRS': '/usr/share/ubuntu:/usr/share/gnome:/usr/local/share/:/usr/share/:/var/lib/snapd/desktop', 'PYTHONPATH': '/home/beingar/ros2_jazzy_ws/build/hri_manipulation/prefix_override:/usr/lib/python3/dist-packages/colcon_core/task/python/colcon_distutils_commands:/home/beingar/ros2_jazzy_ws/install/hri_manipulation/lib/python3.12/site-packages:/home/beingar/ros2_jazzy_ws/build/hri_manipulation:/home/beingar/ros2_jazzy_ws/install/hri_manipulation/lib/python3.12/site-packages:/opt/ros/jazzy/lib/python3.12/site-packages', 'COLCON': '1', 'MEMORY_PRESSURE_WRITE': 'c29tZSAyMDAwMDAgMjAwMDAwMAA=', 'VTE_VERSION': '7600', 'CMAKE_PREFIX_PATH': '/opt/ros/jazzy/opt/gz_sim_vendor:/opt/ros/jazzy/opt/gz_sensors_vendor:/opt/ros/jazzy/opt/gz_physics_vendor:/opt/ros/jazzy/opt/sdformat_vendor:/opt/ros/jazzy/opt/gz_gui_vendor:/opt/ros/jazzy/opt/gz_transport_vendor:/opt/ros/jazzy/opt/gz_rendering_vendor:/opt/ros/jazzy/opt/gz_plugin_vendor:/opt/ros/jazzy/opt/gz_fuel_tools_vendor:/opt/ros/jazzy/opt/gz_msgs_vendor:/opt/ros/jazzy/opt/gz_common_vendor:/opt/ros/jazzy/opt/gz_math_vendor:/opt/ros/jazzy/opt/gz_utils_vendor:/opt/ros/jazzy/opt/gz_tools_vendor:/opt/ros/jazzy/opt/gz_ogre_next_vendor:/opt/ros/jazzy/opt/gz_dartsim_vendor:/opt/ros/jazzy/opt/gz_cmake_vendor'}, 'shell': False}
+[3.917057] (-) TimerEvent: {}
+[4.017449] (-) TimerEvent: {}
+[4.117843] (-) TimerEvent: {}
+[4.218326] (-) TimerEvent: {}
+[4.318698] (-) TimerEvent: {}
+[4.419018] (-) TimerEvent: {}
+[4.519314] (-) TimerEvent: {}
+[4.619711] (-) TimerEvent: {}
+[4.720087] (-) TimerEvent: {}
+[4.820441] (-) TimerEvent: {}
+[4.858351] (hri_manipulation) StdoutLine: {'line': b'running develop\n'}
+[4.920596] (-) TimerEvent: {}
+[5.020924] (-) TimerEvent: {}
+[5.121334] (-) TimerEvent: {}
+[5.221710] (-) TimerEvent: {}
+[5.322052] (-) TimerEvent: {}
+[5.422400] (-) TimerEvent: {}
+[5.510894] (hri_manipulation) StdoutLine: {'line': b'running egg_info\n'}
+[5.522506] (-) TimerEvent: {}
+[5.576410] (hri_manipulation) StdoutLine: {'line': b'writing hri_manipulation.egg-info/PKG-INFO\n'}
+[5.576799] (hri_manipulation) StdoutLine: {'line': b'writing dependency_links to hri_manipulation.egg-info/dependency_links.txt\n'}
+[5.577337] (hri_manipulation) StdoutLine: {'line': b'writing entry points to hri_manipulation.egg-info/entry_points.txt\n'}
+[5.577613] (hri_manipulation) StdoutLine: {'line': b'writing requirements to hri_manipulation.egg-info/requires.txt\n'}
+[5.578003] (hri_manipulation) StdoutLine: {'line': b'writing top-level names to hri_manipulation.egg-info/top_level.txt\n'}
+[5.622633] (-) TimerEvent: {}
+[5.711106] (hri_manipulation) StdoutLine: {'line': b"reading manifest file 'hri_manipulation.egg-info/SOURCES.txt'\n"}
+[5.712842] (hri_manipulation) StdoutLine: {'line': b"writing manifest file 'hri_manipulation.egg-info/SOURCES.txt'\n"}
+[5.722746] (-) TimerEvent: {}
+[5.779980] (hri_manipulation) StdoutLine: {'line': b'running build_ext\n'}
+[5.780680] (hri_manipulation) StdoutLine: {'line': b'Creating /home/beingar/ros2_jazzy_ws/install/hri_manipulation/lib/python3.12/site-packages/hri-manipulation.egg-link (link to .)\n'}
+[5.781870] (hri_manipulation) StdoutLine: {'line': b'Installing add_object script to /home/beingar/ros2_jazzy_ws/install/hri_manipulation/lib/hri_manipulation\n'}
+[5.782190] (hri_manipulation) StdoutLine: {'line': b'Installing admittance_node script to /home/beingar/ros2_jazzy_ws/install/hri_manipulation/lib/hri_manipulation\n'}
+[5.782499] (hri_manipulation) StdoutLine: {'line': b'Installing attach_object script to /home/beingar/ros2_jazzy_ws/install/hri_manipulation/lib/hri_manipulation\n'}
+[5.782774] (hri_manipulation) StdoutLine: {'line': b'Installing detach_object script to /home/beingar/ros2_jazzy_ws/install/hri_manipulation/lib/hri_manipulation\n'}
+[5.783045] (hri_manipulation) StdoutLine: {'line': b'Installing fake_object_pose script to /home/beingar/ros2_jazzy_ws/install/hri_manipulation/lib/hri_manipulation\n'}
+[5.783336] (hri_manipulation) StdoutLine: {'line': b'Installing ik_node script to /home/beingar/ros2_jazzy_ws/install/hri_manipulation/lib/hri_manipulation\n'}
+[5.783568] (hri_manipulation) StdoutLine: {'line': b'Installing jacobian_torque_node script to /home/beingar/ros2_jazzy_ws/install/hri_manipulation/lib/hri_manipulation\n'}
+[5.783797] (hri_manipulation) StdoutLine: {'line': b'Installing pick_place_fsm script to /home/beingar/ros2_jazzy_ws/install/hri_manipulation/lib/hri_manipulation\n'}
+[5.784007] (hri_manipulation) StdoutLine: {'line': b'Installing planar_arm script to /home/beingar/ros2_jazzy_ws/install/hri_manipulation/lib/hri_manipulation\n'}
+[5.784249] (hri_manipulation) StdoutLine: {'line': b'Installing pose_sender script to /home/beingar/ros2_jazzy_ws/install/hri_manipulation/lib/hri_manipulation\n'}
+[5.784769] (hri_manipulation) StdoutLine: {'line': b'\n'}
+[5.785110] (hri_manipulation) StdoutLine: {'line': b'Installed /home/beingar/ros2_jazzy_ws/build/hri_manipulation\n'}
+[5.785246] (hri_manipulation) StdoutLine: {'line': b'running symlink_data\n'}
+[5.822869] (-) TimerEvent: {}
+[5.862030] (hri_manipulation) CommandEnded: {'returncode': 0}
+[5.922974] (-) TimerEvent: {}
+[5.965512] (hri_manipulation) JobEnded: {'identifier': 'hri_manipulation', 'rc': 0}
+[5.967428] (-) EventReactorShutdown: {}

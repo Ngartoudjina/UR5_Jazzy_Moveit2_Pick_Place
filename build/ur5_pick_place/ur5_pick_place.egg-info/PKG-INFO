@@ -1,0 +1,7 @@
+Metadata-Version: 2.1
+Name: ur5-pick-place
+Version: 0.1.0
+Summary: UR5 Pick and Place with MoveIt2
+Maintainer: beingar
+Maintainer-email: beingar@example.com
+License: Apache License 2.0

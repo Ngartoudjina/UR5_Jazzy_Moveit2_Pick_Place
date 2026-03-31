@@ -1,0 +1,1 @@
+/home/beingar/ros2_jazzy_ws/build/ur5_controller/ament_cmake_environment_hooks/local_setup.sh

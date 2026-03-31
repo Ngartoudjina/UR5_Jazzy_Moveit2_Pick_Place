@@ -1,0 +1,19 @@
+[2.302s] Invoking command in '/home/beingar/ros2_jazzy_ws/build/ur5_pick_place': DEBUGINFOD_URLS=https://debuginfod.ubuntu.com PYTHONPATH=/home/beingar/ros2_jazzy_ws/build/ur5_pick_place/prefix_override:/usr/lib/python3/dist-packages/colcon_core/task/python/colcon_distutils_commands:/home/beingar/ros2_jazzy_ws/install/ur5_pick_place/lib/python3.12/site-packages:${PYTHONPATH} /usr/bin/python3 -W ignore:setup.py install is deprecated -W ignore:easy_install command is deprecated setup.py develop --editable --build-directory /home/beingar/ros2_jazzy_ws/build/ur5_pick_place/build --no-deps symlink_data
+[3.184s] running develop
+[3.811s] running egg_info
+[3.873s] writing ur5_pick_place.egg-info/PKG-INFO
+[3.874s] writing dependency_links to ur5_pick_place.egg-info/dependency_links.txt
+[3.875s] writing entry points to ur5_pick_place.egg-info/entry_points.txt
+[3.875s] writing requirements to ur5_pick_place.egg-info/requires.txt
+[3.875s] writing top-level names to ur5_pick_place.egg-info/top_level.txt
+[4.002s] reading manifest file 'ur5_pick_place.egg-info/SOURCES.txt'
+[4.003s] writing manifest file 'ur5_pick_place.egg-info/SOURCES.txt'
+[4.071s] running build_ext
+[4.072s] Creating /home/beingar/ros2_jazzy_ws/install/ur5_pick_place/lib/python3.12/site-packages/ur5-pick-place.egg-link (link to .)
+[4.073s] Installing add_object script to /home/beingar/ros2_jazzy_ws/install/ur5_pick_place/lib/ur5_pick_place
+[4.074s] Installing fake_object_pose script to /home/beingar/ros2_jazzy_ws/install/ur5_pick_place/lib/ur5_pick_place
+[4.074s] Installing pose_sender script to /home/beingar/ros2_jazzy_ws/install/ur5_pick_place/lib/ur5_pick_place
+[4.075s] 
+[4.075s] Installed /home/beingar/ros2_jazzy_ws/build/ur5_pick_place
+[4.075s] running symlink_data
+[4.150s] Invoked command in '/home/beingar/ros2_jazzy_ws/build/ur5_pick_place' returned '0': DEBUGINFOD_URLS=https://debuginfod.ubuntu.com PYTHONPATH=/home/beingar/ros2_jazzy_ws/build/ur5_pick_place/prefix_override:/usr/lib/python3/dist-packages/colcon_core/task/python/colcon_distutils_commands:/home/beingar/ros2_jazzy_ws/install/ur5_pick_place/lib/python3.12/site-packages:${PYTHONPATH} /usr/bin/python3 -W ignore:setup.py install is deprecated -W ignore:easy_install command is deprecated setup.py develop --editable --build-directory /home/beingar/ros2_jazzy_ws/build/ur5_pick_place/build --no-deps symlink_data

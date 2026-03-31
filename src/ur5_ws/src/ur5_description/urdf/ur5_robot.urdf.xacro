@@ -1,0 +1,460 @@
+<?xml version="1.0"?>
+<robot xmlns:xacro="http://www.ros.org/wiki/xacro" name="ur5_robot">
+
+  <link name="world"/>
+    <joint name="connect_root_and_world" type="fixed">
+      <child link="base_link" />
+      <parent link="world" />
+      <origin xyz="0 0 0" rpy="0 0 0" />    
+    </joint> 
+  <!-- Arm Links -->
+  <link name="base_link">
+    <visual name="base_link_visual">
+      <geometry>
+        <mesh filename="package://ur5_description/meshes/visual/ur5/base.dae"/>
+      </geometry>
+    </visual>
+    <collision name="base_link_collision">
+      <geometry>
+        <mesh filename="package://ur5_description/meshes/collision/ur5/base.stl"/>
+      </geometry>
+    </collision>
+    <inertial>
+      <origin xyz="-7.83914e-07 0.00442178 0.184343" rpy="0 0 0"/>
+      <mass value="4.210389694173812"/>
+      <inertia ixx="0.09309670560602573" ixy="5.711270872759674e-09" ixz="2.0039833861772347e-07"
+               iyy="0.09257037651287492" iyz="0.0047053532779924665"
+               izz="0.004310645613985299"/>
+    </inertial>
+  </link>
+
+  <link name="shoulder_link">
+    <visual name="shoulder_link_visual">
+      <geometry>
+        <mesh filename="package://ur5_description/meshes/visual/ur5/shoulder.dae"/>
+      </geometry>
+    </visual>
+    <collision name="shoulder_link_collision">
+      <geometry>
+        <mesh filename="package://ur5_description/meshes/collision/ur5/shoulder.stl"/>
+      </geometry>
+    </collision>
+    <inertial>
+      <origin xyz="-3.81853e-06 0.00927291 -0.0018563" rpy="0 0 0"/>
+      <mass value="2.6078628081050645"/>
+      <inertia ixx="0.00615890739477387" ixy="8.486678716437087e-07" ixz="1.436028981488676e-07"
+               iyy="0.005562932983198189" iyz="-0.00018809980689883695"
+               izz="0.005255082470414319"/>
+    </inertial>
+  </link>
+
+  <link name="upper_arm_link">
+    <visual name="upper_arm_link_visual">
+      <geometry>
+        <mesh filename="package://ur5_description/meshes/visual/ur5/upperarm.dae"/>
+      </geometry>
+    </visual>
+    <collision name="upper_arm_link_collision">
+      <geometry>
+        <mesh filename="package://ur5_description/meshes/collision/ur5/upperarm.stl"/>
+      </geometry>
+    </collision>
+    <inertial>
+      <origin xyz="9.68139e-10 -0.00107158 0.2125" rpy="0 0 0"/>
+      <mass value="9.034556202946057"/>
+      <inertia ixx="0.2566537454248199" ixy="-2.2173460061911962e-09" ixz="2.3397723734924104e-06"
+               iyy="0.25483850258961777" iyz="5.701897149736449e-09"
+               izz="0.016022276702360172"/>
+    </inertial>
+  </link>
+
+  <link name="forearm_link">
+    <visual name="forearm_link_visual">
+      <geometry>
+        <mesh filename="package://ur5_description/meshes/visual/ur5/forearm.dae"/>
+      </geometry>
+    </visual>
+    <collision name="forearm_link_collision">
+      <geometry>
+        <mesh filename="package://ur5_description/meshes/collision/ur5/forearm.stl"/>
+      </geometry>
+    </collision>
+    <inertial>
+      <origin xyz="-7.83914e-07 0.00442178 0.184343" rpy="0 0 0"/>
+      <mass value="4.210389694173812"/>
+      <inertia ixx="0.09309670560602573" ixy="5.711270872759674e-09" ixz="2.0039833861772347e-07"
+               iyy="0.09257037651287492" iyz="0.0047053532779924665"
+               izz="0.004310645613985299"/>
+    </inertial>
+  </link>
+
+  <link name="wrist_1_link">
+    <visual name="wrist_1_link_visual">
+      <geometry>
+        <mesh filename="package://ur5_description/meshes/visual/ur5/wrist1.dae"/>
+      </geometry>
+    </visual>
+    <collision name="wrist_1_link_collision">
+      <geometry>
+        <mesh filename="package://ur5_description/meshes/collision/ur5/wrist1.stl"/>
+      </geometry>
+    </collision>
+    <inertial>
+      <origin xyz="2.12195e-06 0.0886236 -0.00357675" rpy="0 0 0"/>
+      <mass value="0.8652783044597422"/>
+      <inertia ixx="0.0011006744464830784" ixy="-4.062057055066431e-08" ixz="-2.441133081746347e-08"
+               iyy="0.0010246557119841899" iyz="1.000924524333879e-05"
+               izz="0.0007125213984803068"/>
+    </inertial>
+  </link>
+
+  <link name="wrist_2_link">
+    <visual name="wrist_2_link_visual">
+      <geometry>
+        <mesh filename="package://ur5_description/meshes/visual/ur5/wrist2.dae"/>
+      </geometry>
+    </visual>
+    <collision name="wrist_2_link_collision">
+      <geometry>
+        <mesh filename="package://ur5_description/meshes/collision/ur5/wrist2.stl"/>
+      </geometry>
+    </collision>
+    <inertial>
+      <origin xyz="-2.12306e-06 -0.00357678 0.0901045" rpy="0 0 0"/>
+      <mass value="0.8652786866955592"/>
+      <inertia ixx="0.0010980920821000012" ixy="2.436032506659575e-08" ixz="4.047086050601145e-08"
+               iyy="0.0007099378137563144" iyz="4.96085194908414e-06"
+               izz="0.0010246570857519936"/>
+    </inertial>
+  </link>
+
+  <link name="wrist_3_link">
+    <visual name="wrist_3_link_visual">
+      <geometry>
+        <mesh filename="package://ur5_description/meshes/visual/ur5/wrist3.dae"/>
+      </geometry>
+    </visual>
+    <collision name="wrist_3_link_collision">
+      <geometry>
+        <mesh filename="package://ur5_description/meshes/collision/ur5/wrist3.stl"/>
+      </geometry>
+    </collision>
+    <inertial>
+      <origin xyz="8.12548e-09 0.0630914 0.000189932" rpy="0 0 0"/>
+      <mass value="0.23285976783205536"/>
+      <inertia ixx="0.00010068520800989181" ixy="-1.3195380569038253e-11" ixz="2.0466677535340047e-11"
+               iyy="0.00016016377462915846" iyz="3.421454203362164e-08"
+               izz="9.951199288758246e-05"/>
+    </inertial>
+  </link>
+
+  <!-- Arm Joints -->
+  <joint name="shoulder_pan_joint" type="revolute">
+    <parent link="base_link"/>
+    <child link="shoulder_link"/>
+    <origin xyz="0 0 0.089159" rpy="0 0 0"/>
+    <axis xyz="0 0 1"/>
+    <limit lower="-6.28319" upper="6.28319" effort="150.0" velocity="3.15"/>
+  </joint>
+
+  <joint name="shoulder_lift_joint" type="revolute">
+    <parent link="shoulder_link"/>
+    <child link="upper_arm_link"/>
+    <origin xyz="0 0.13585 0" rpy="0 0 0"/>
+    <axis xyz="0 1 0"/>
+    <limit lower="-6.28319" upper="6.28319" effort="150.0" velocity="3.15"/>
+  </joint>
+
+  <joint name="elbow_joint" type="revolute">
+    <parent link="upper_arm_link"/>
+    <child link="forearm_link"/>
+    <origin xyz="0 -0.1197 0.425" rpy="0 0 0"/>
+    <axis xyz="0 1 0"/>
+    <limit lower="-6.28319" upper="6.28319" effort="150.0" velocity="3.15"/>
+  </joint>
+
+  <joint name="wrist_1_joint" type="revolute">
+    <parent link="forearm_link"/>
+    <child link="wrist_1_link"/>
+    <origin xyz="0 0 0.39225" rpy="0 0 0"/>
+    <axis xyz="0 1 0"/>
+    <limit lower="-6.28319" upper="6.28319" effort="28.0" velocity="3.2"/>
+  </joint>
+
+  <joint name="wrist_2_joint" type="revolute">
+    <parent link="wrist_1_link"/>
+    <child link="wrist_2_link"/>
+    <origin xyz="0 0.093 0" rpy="0 0 0"/>
+    <axis xyz="0 0 1"/>
+    <limit lower="-6.28319" upper="6.28319" effort="28.0" velocity="3.2"/>
+  </joint>
+
+  <joint name="wrist_3_joint" type="revolute">
+    <parent link="wrist_2_link"/>
+    <child link="wrist_3_link"/>
+    <origin xyz="0 0 0.09465" rpy="0 0 0"/>
+    <axis xyz="0 1 0"/>
+    <limit lower="-6.28319" upper="6.28319" effort="28.0" velocity="3.2"/>
+  </joint>
+  
+  <joint name="robotiq_85_base_joint" type="fixed">
+      <parent link="wrist_3_link"/>
+      <child link="robotiq_85_base_link"/>
+      <origin xyz="0 0.0823 0" rpy="1.570796325 0 1.570796325"/>
+      <limit lower="0" upper="0" effort="0" velocity="0"/>
+    </joint>
+
+    <link name="robotiq_85_base_link">
+      <visual>
+        <geometry>
+          <mesh filename="package://ur5_description/meshes/visual/ur5/robotiq_85_base_link.dae"/>
+        </geometry>
+      </visual>
+      <collision>
+        <geometry>
+          <mesh filename="package://ur5_description/meshes/collision/ur5/robotiq_85_base_link.stl"/>
+        </geometry>
+      </collision>
+      <inertial>
+        <mass value="0.636951" />
+        <origin xyz="0.0 0.0 0.0" />
+        <inertia ixx = "0.000380" ixy = "0.000000" ixz = "0.000000"
+             iyx = "0.000000" iyy = "0.001110" iyz = "0.000000"
+             izx = "0.000000" izy = "0.000000" izz = "0.001171" />
+      </inertial>
+    </link>
+
+    <joint name="robotiq_85_left_knuckle_joint" type="revolute">
+      <parent link="robotiq_85_base_link"/>
+      <child link="robotiq_85_left_knuckle_link"/>
+      <axis xyz="0 0 1"/>
+      <origin rpy="${pi} 0.0 0.0" xyz="0.05490451627 0.03060114443 0.0"/>
+      <limit lower="0.0" upper="0.80285" velocity="0.5" effort="1000"/>
+    </joint>
+
+    <joint name="robotiq_85_right_knuckle_joint" type="continuous">
+      <parent link="robotiq_85_base_link"/>
+      <child link="robotiq_85_right_knuckle_link"/>
+      <axis xyz="0 0 1"/>
+      <origin rpy="0.0 0.0 0.0" xyz="0.05490451627 -0.03060114443 0.0"/>
+      <limit lower="-3.14" upper="3.14" velocity="100.0" effort="1000"/>
+      <mimic joint="robotiq_85_left_knuckle_joint"/>
+    </joint>
+
+     <link name="robotiq_85_left_knuckle_link">
+      <visual>
+        <geometry>
+          <mesh filename="package://ur5_description/meshes/visual/ur5/robotiq_85_knuckle_link.dae"/>
+        </geometry>
+      </visual>
+      <collision>
+        <geometry>
+          <mesh filename="package://ur5_description/meshes/collision/ur5/robotiq_85_knuckle_link.stl"/>
+        </geometry>
+      </collision>
+      <inertial>
+        <mass value="0.018491" />
+        <origin xyz="0.0 0.0 0.0" />
+        <inertia ixx = "0.000009" ixy = "-0.000001" ixz = "0.000000"
+             iyx = "-0.000001" iyy = "0.000010" iyz = "0.000000"
+             izx = "0.000000" izy = "0.000000" izz = "0.000010" />
+      </inertial>
+    </link> 
+
+    <link name="robotiq_85_right_knuckle_link">
+      <visual>
+        <geometry>
+          <mesh filename="package://ur5_description/meshes/visual/ur5/robotiq_85_knuckle_link.dae"/>
+        </geometry>
+      </visual>
+      <collision>
+        <geometry>
+          <mesh filename="package://ur5_description/meshes/collision/ur5/robotiq_85_knuckle_link.stl"/>
+        </geometry>
+      </collision>
+      <inertial>
+        <mass value="0.018491" />
+        <origin xyz="0.0 0.0 0.0" />
+        <inertia ixx = "0.000009" ixy = "-0.000001" ixz = "0.000000"
+             iyx = "-0.000001" iyy = "0.000010" iyz = "0.000000"
+             izx = "0.000000" izy = "0.000000" izz = "0.000010" />
+      </inertial>
+    </link>
+
+    <joint name="robotiq_85_left_finger_joint" type="fixed">
+      <parent link="robotiq_85_left_knuckle_link"/>
+      <child link="robotiq_85_left_finger_link"/>
+      <origin xyz="-0.00408552455 -0.03148604435 0.0" rpy="0 0 0" />
+    </joint>
+
+    <joint name="robotiq_85_right_finger_joint" type="fixed">
+      <parent link="robotiq_85_right_knuckle_link"/>
+      <child link="robotiq_85_right_finger_link"/>
+      <origin xyz="-0.00408552455 -0.03148604435 0.0" rpy="0 0 0" />
+    </joint>
+    
+    <link name="robotiq_85_left_finger_link">
+      <visual>
+        <geometry>
+          <mesh filename="package://ur5_description/meshes/visual/ur5/robotiq_85_finger_link.dae"/>
+        </geometry>
+      </visual>
+      <collision>
+        <geometry>
+          <mesh filename="package://ur5_description/meshes/collision/ur5/robotiq_85_finger_link.stl"/>
+        </geometry>
+      </collision>
+      <inertial>
+        <mass value="0.027309" />
+        <origin xyz="0.0 0.0 0.0" />
+        <inertia ixx = "0.000003" ixy = "-0.000002" ixz = "0.000000"
+             iyx = "-0.000002" iyy = "0.000021" iyz = "0.000000"
+             izx = "0.000000" izy = "0.000000" izz = "0.000020" />
+      </inertial>
+    </link> 
+
+    <link name="robotiq_85_right_finger_link">
+      <visual>
+        <geometry>
+          <mesh filename="package://ur5_description/meshes/visual/ur5/robotiq_85_finger_link.dae"/>
+        </geometry>
+      </visual>
+      <collision>
+        <geometry>
+          <mesh filename="package://ur5_description/meshes/collision/ur5/robotiq_85_finger_link.stl"/>
+        </geometry>
+      </collision>
+      <inertial>
+        <mass value="0.027309" />
+        <origin xyz="0.0 0.0 0.0" />
+        <inertia ixx = "0.000003" ixy = "-0.000002" ixz = "0.000000"
+             iyx = "-0.000002" iyy = "0.000021" iyz = "0.000000"
+             izx = "0.000000" izy = "0.000000" izz = "0.000020" />
+      </inertial>
+    </link> 
+
+    <joint name="robotiq_85_left_inner_knuckle_joint" type="continuous">
+      <parent link="robotiq_85_base_link"/>
+      <child link="robotiq_85_left_inner_knuckle_link"/>
+      <axis xyz="0 0 1"/>
+      <origin xyz="0.06142 0.0127 0" rpy="${pi} 0.0 0.0" />
+      <limit lower="-3.14" upper="3.14" velocity="100.0" effort="0.1"/>
+      <mimic joint="robotiq_85_left_knuckle_joint" offset="0"/>
+    </joint>
+
+    <joint name="robotiq_85_right_inner_knuckle_joint" type="continuous">
+      <parent link="robotiq_85_base_link"/>
+      <child link="robotiq_85_right_inner_knuckle_link"/>
+      <axis xyz="0 0 1"/>
+      <origin xyz="0.06142 -0.0127 0" rpy="0 0 0"/>
+      <limit lower="-3.14" upper="3.14" velocity="100.0" effort="0.1"/>
+      <mimic joint="robotiq_85_left_knuckle_joint" offset="0"/>
+    </joint>
+
+    <link name="robotiq_85_left_inner_knuckle_link">
+      <visual>
+        <geometry>
+          <mesh filename="package://ur5_description/meshes/visual/ur5/robotiq_85_inner_knuckle_link.dae"/>
+        </geometry>
+      </visual>
+      <collision>
+        <geometry>
+          <mesh filename="package://ur5_description/meshes/collision/ur5/robotiq_85_inner_knuckle_link.stl"/>
+        </geometry>
+      </collision>
+      <inertial>
+        <mass value="0.029951" />
+        <origin xyz="0.0 0.0 0.0" />
+        <inertia ixx = "0.000039" ixy = "0.000000" ixz = "0.000000"
+             iyx = "0.000000" iyy = "0.000005" iyz = "0.000000"
+             izx = "0.000000" izy = "0.000000" izz = "0.000035" />
+      </inertial>
+    </link>
+    <link name="robotiq_85_right_inner_knuckle_link">
+      <visual>
+        <geometry>
+          <mesh filename="package://ur5_description/meshes/visual/ur5/robotiq_85_inner_knuckle_link.dae"/>
+        </geometry>
+      </visual>
+      <collision>
+        <geometry>
+          <mesh filename="package://ur5_description/meshes/collision/ur5/robotiq_85_inner_knuckle_link.stl"/>
+        </geometry>
+      </collision>
+      <inertial>
+        <mass value="0.029951" />
+        <origin xyz="0.0 0.0 0.0" />
+        <inertia ixx = "0.000039" ixy = "0.000000" ixz = "0.000000"
+             iyx = "0.000000" iyy = "0.000005" iyz = "0.000000"
+             izx = "0.000000" izy = "0.000000" izz = "0.000035" />
+      </inertial>
+    </link>
+
+    <joint name="robotiq_85_left_finger_tip_joint" type="continuous">
+      <parent link="robotiq_85_left_inner_knuckle_link"/>
+      <child link="robotiq_85_left_finger_tip_link"/>
+      <axis xyz="0 0 1"/>
+      <origin xyz="0.04303959807 -0.03759940821 0.0" rpy="0.0 0.0 0.0"/>
+      <limit lower="-3.14" upper="3.14" velocity="100.0" effort="0.1"/>
+      <mimic joint="robotiq_85_left_knuckle_joint" multiplier="-1"/>
+    </joint>
+
+    <joint name="robotiq_85_right_finger_tip_joint" type="continuous">
+      <parent link="robotiq_85_right_inner_knuckle_link"/>
+      <child link="robotiq_85_right_finger_tip_link"/>
+      <axis xyz="0 0 1"/>
+      <origin rpy="0.0 0.0 0.0" xyz="0.04303959807 -0.03759940821  0.0"/>
+      <limit lower="-3.14" upper="3.14" velocity="100.0" effort="0.1"/>
+      <mimic joint="robotiq_85_left_knuckle_joint" multiplier="-1"/>
+    </joint>
+
+     <link name="robotiq_85_left_finger_tip_link">
+      <visual>
+        <geometry>
+          <mesh filename="package://ur5_description/meshes/visual/ur5/robotiq_85_finger_tip_link.dae"/>
+        </geometry>
+      </visual>
+      <collision>
+        <geometry>
+          <mesh filename="package://ur5_description/meshes/collision/ur5/robotiq_85_finger_tip_link.stl"/>
+        </geometry>
+      </collision>
+      <inertial>
+        <mass value="0.019555" />
+        <origin xyz="0.0 0.0 0.0" />
+        <inertia ixx = "0.000002" ixy = "0.000000" ixz = "0.000000"
+             iyx = "0.000000" iyy = "0.000005" iyz = "0.000000"
+             izx = "0.000000" izy = "0.000000" izz = "0.000006" />
+      </inertial>
+    </link> 
+
+    <link name="robotiq_85_right_finger_tip_link">
+      <visual>
+        <geometry>
+          <mesh filename="package://ur5_description/meshes/visual/ur5/robotiq_85_finger_tip_link.dae"/>
+        </geometry>
+      </visual>
+      <collision>
+        <geometry>
+          <mesh filename="package://ur5_description/meshes/collision/ur5/robotiq_85_finger_tip_link.stl"/>
+        </geometry>
+      </collision>
+      <inertial>
+        <mass value="0.019555" />
+        <origin xyz="0.0 0.0 0.0" />
+        <inertia ixx = "0.000002" ixy = "0.000000" ixz = "0.000000"
+             iyx = "0.000000" iyy = "0.000005" iyz = "0.000000"
+             izx = "0.000000" izy = "0.000000" izz = "0.000006" />
+      </inertial>
+    </link>
+
+
+  <xacro:arg name="initial_positions_file" default="initial_positions.yaml" />
+
+    <xacro:include filename="ur5_robot.ros2_control.xacro" />
+    <xacro:include filename="ur5_robot.gazebo.xacro" />
+
+
+    <xacro:ur5_robot_ros2_control name="FakeSystem" initial_positions_file="$(arg initial_positions_file)"/>
+
+</robot>

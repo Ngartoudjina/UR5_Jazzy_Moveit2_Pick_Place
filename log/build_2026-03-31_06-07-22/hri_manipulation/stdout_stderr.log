@@ -1,0 +1,31 @@
+running develop
+running egg_info
+creating hri_manipulation.egg-info
+writing hri_manipulation.egg-info/PKG-INFO
+writing dependency_links to hri_manipulation.egg-info/dependency_links.txt
+writing entry points to hri_manipulation.egg-info/entry_points.txt
+writing requirements to hri_manipulation.egg-info/requires.txt
+writing top-level names to hri_manipulation.egg-info/top_level.txt
+writing manifest file 'hri_manipulation.egg-info/SOURCES.txt'
+reading manifest file 'hri_manipulation.egg-info/SOURCES.txt'
+writing manifest file 'hri_manipulation.egg-info/SOURCES.txt'
+running build_ext
+Creating /home/beingar/ros2_jazzy_ws/install/hri_manipulation/lib/python3.12/site-packages/hri-manipulation.egg-link (link to .)
+Installing add_object script to /home/beingar/ros2_jazzy_ws/install/hri_manipulation/lib/hri_manipulation
+Installing admittance_node script to /home/beingar/ros2_jazzy_ws/install/hri_manipulation/lib/hri_manipulation
+Installing attach_object script to /home/beingar/ros2_jazzy_ws/install/hri_manipulation/lib/hri_manipulation
+Installing detach_object script to /home/beingar/ros2_jazzy_ws/install/hri_manipulation/lib/hri_manipulation
+Installing fake_object_pose script to /home/beingar/ros2_jazzy_ws/install/hri_manipulation/lib/hri_manipulation
+Installing ik_node script to /home/beingar/ros2_jazzy_ws/install/hri_manipulation/lib/hri_manipulation
+Installing jacobian_torque_node script to /home/beingar/ros2_jazzy_ws/install/hri_manipulation/lib/hri_manipulation
+Installing pick_place_fsm script to /home/beingar/ros2_jazzy_ws/install/hri_manipulation/lib/hri_manipulation
+Installing planar_arm script to /home/beingar/ros2_jazzy_ws/install/hri_manipulation/lib/hri_manipulation
+Installing pose_sender script to /home/beingar/ros2_jazzy_ws/install/hri_manipulation/lib/hri_manipulation
+
+Installed /home/beingar/ros2_jazzy_ws/build/hri_manipulation
+running symlink_data
+creating /home/beingar/ros2_jazzy_ws/install/hri_manipulation/share/ament_index
+creating /home/beingar/ros2_jazzy_ws/install/hri_manipulation/share/ament_index/resource_index
+creating /home/beingar/ros2_jazzy_ws/install/hri_manipulation/share/ament_index/resource_index/packages
+symbolically linking /home/beingar/ros2_jazzy_ws/build/hri_manipulation/resource/hri_manipulation -> /home/beingar/ros2_jazzy_ws/install/hri_manipulation/share/ament_index/resource_index/packages
+symbolically linking /home/beingar/ros2_jazzy_ws/build/hri_manipulation/package.xml -> /home/beingar/ros2_jazzy_ws/install/hri_manipulation/share/hri_manipulation
