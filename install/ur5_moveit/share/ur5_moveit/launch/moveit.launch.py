@@ -1,1 +1,0 @@
-/home/beingar/ros2_jazzy_ws/src/ur5_ws/src/ur5_moveit/launch/moveit.launch.py

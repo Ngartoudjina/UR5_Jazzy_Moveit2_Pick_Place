@@ -1,7 +1,0 @@
-Metadata-Version: 2.1
-Name: hri-manipulation
-Version: 0.0.0
-Summary: ROS2 manipulation utilities (MoveIt2 pick&place, planning scene, etc.)
-Maintainer: nila
-Maintainer-email: nila@example.com
-License: Apache License 2.0

@@ -1,4 +1,0 @@
-[console_scripts]
-add_object = ur5_pick_place.add_object:main
-fake_object_pose = ur5_pick_place.fake_object_pose:main
-pose_sender = ur5_pick_place.pose_sender:main

@@ -1,1 +1,0 @@
-/home/beingar/ros2_jazzy_ws/build/ur5_controller/ament_cmake_core/ur5_controllerConfig.cmake
