@@ -1,28 +1,20 @@
 planning_plugin: ompl_interface/OMPLPlanner
 
-request_adapters:
-  - default_planning_request_adapters/ResolveConstraintFrames
-  - default_planning_request_adapters/ValidateWorkspaceBounds
-  - default_planning_request_adapters/CheckStartStateBounds
-  - default_planning_request_adapters/CheckStartStateCollision
+request_adapters: >-
+  default_planning_request_adapters/ResolveConstraintFrames
+  default_planning_request_adapters/ValidateWorkspaceBounds
+  default_planning_request_adapters/CheckStartStateBounds
 
-response_adapters:
-  - default_planning_response_adapters/AddTimeOptimalParameterization
-  - default_planning_response_adapters/DisplayMotionPath
+response_adapters: >-
+  default_planning_response_adapters/AddTimeOptimalParameterization
+  default_planning_response_adapters/DisplayMotionPath
 
 ur5_arm:
   default_planner_config: RRTConnectkConfigDefault
   planner_configs:
     - RRTConnectkConfigDefault
-    - RRTstarkConfigDefault
-    - ESTkConfigDefault
 
 planner_configs:
   RRTConnectkConfigDefault:
     type: geometric::RRTConnect
-    range: 0.1
-  RRTstarkConfigDefault:
-    type: geometric::RRTstar
-    range: 0.1
-  ESTkConfigDefault:
-    type: geometric::EST
+    range: 0.2
