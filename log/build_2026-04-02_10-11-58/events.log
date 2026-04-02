@@ -1,0 +1,86 @@
+[0.000000] (-) TimerEvent: {}
+[0.000499] (-) JobUnselected: {'identifier': 'ur5_controller'}
+[0.000663] (-) JobUnselected: {'identifier': 'ur5_description'}
+[0.000908] (-) JobUnselected: {'identifier': 'ur5_moveit'}
+[0.001072] (ur5_pick_place) JobQueued: {'identifier': 'ur5_pick_place', 'dependencies': OrderedDict()}
+[0.003548] (ur5_pick_place) JobStarted: {'identifier': 'ur5_pick_place'}
+[0.097509] (-) TimerEvent: {}
+[0.198276] (-) TimerEvent: {}
+[0.300800] (-) TimerEvent: {}
+[0.404859] (-) TimerEvent: {}
+[0.506857] (-) TimerEvent: {}
+[0.608960] (-) TimerEvent: {}
+[0.711377] (-) TimerEvent: {}
+[0.813886] (-) TimerEvent: {}
+[0.914618] (-) TimerEvent: {}
+[1.015853] (-) TimerEvent: {}
+[1.117032] (-) TimerEvent: {}
+[1.218675] (-) TimerEvent: {}
+[1.319819] (-) TimerEvent: {}
+[1.420936] (-) TimerEvent: {}
+[1.521837] (-) TimerEvent: {}
+[1.627480] (-) TimerEvent: {}
+[1.728509] (-) TimerEvent: {}
+[1.829405] (-) TimerEvent: {}
+[1.930191] (-) TimerEvent: {}
+[2.030855] (-) TimerEvent: {}
+[2.131532] (-) TimerEvent: {}
+[2.232337] (-) TimerEvent: {}
+[2.333258] (-) TimerEvent: {}
+[2.433881] (-) TimerEvent: {}
+[2.534471] (-) TimerEvent: {}
+[2.635093] (-) TimerEvent: {}
+[2.736003] (-) TimerEvent: {}
+[2.836794] (-) TimerEvent: {}
+[2.937869] (-) TimerEvent: {}
+[3.038685] (-) TimerEvent: {}
+[3.139855] (-) TimerEvent: {}
+[3.241231] (-) TimerEvent: {}
+[3.342485] (-) TimerEvent: {}
+[3.444505] (-) TimerEvent: {}
+[3.448726] (ur5_pick_place) Command: {'cmd': ['/usr/bin/python3', '-W', 'ignore:setup.py install is deprecated', '-W', 'ignore:easy_install command is deprecated', 'setup.py', 'egg_info', '--egg-base', '../../build/ur5_pick_place', 'build', '--build-base', '/ros2_ws/src/UR5_Jazzy_Moveit2_Pick_Place/build/ur5_pick_place/build', 'install', '--record', '/ros2_ws/src/UR5_Jazzy_Moveit2_Pick_Place/build/ur5_pick_place/install.log', '--single-version-externally-managed', 'install_data'], 'cwd': '/ros2_ws/src/UR5_Jazzy_Moveit2_Pick_Place/src/ur5_pick_place', 'env': {'HOSTNAME': 'beingar-HP-ProBook-650-G2', 'SHLVL': '1', 'LD_LIBRARY_PATH': '/opt/ros/humble/opt/rviz_ogre_vendor/lib:/opt/ros/humble/lib/x86_64-linux-gnu:/opt/ros/humble/lib', 'HOME': '/root', 'OLDPWD': '/ros2_ws/src/UR5_Jazzy_Moveit2_Pick_Place', 'ROS_PYTHON_VERSION': '3', 'COLCON_PREFIX_PATH': '/ros2_ws/src/UR5_Jazzy_Moveit2_Pick_Place/install', 'ROS_DISTRO': 'humble', '_': '/usr/bin/colcon', 'ROS_VERSION': '2', 'TERM': 'xterm', 'ROS_LOCALHOST_ONLY': '0', 'QT_X11_NO_MITSHM': '1', 'PATH': '/opt/ros/humble/bin:/usr/local/sbin:/usr/local/bin:/usr/sbin:/usr/bin:/sbin:/bin', 'DISPLAY': ':0', 'LANG': 'C.UTF-8', 'LS_COLORS': 'rs=0:di=01;34:ln=01;36:mh=00:pi=40;33:so=01;35:do=01;35:bd=40;33;01:cd=40;33;01:or=40;31;01:mi=00:su=37;41:sg=30;43:ca=30;41:tw=30;42:ow=34;42:st=37;44:ex=01;32:*.tar=01;31:*.tgz=01;31:*.arc=01;31:*.arj=01;31:*.taz=01;31:*.lha=01;31:*.lz4=01;31:*.lzh=01;31:*.lzma=01;31:*.tlz=01;31:*.txz=01;31:*.tzo=01;31:*.t7z=01;31:*.zip=01;31:*.z=01;31:*.dz=01;31:*.gz=01;31:*.lrz=01;31:*.lz=01;31:*.lzo=01;31:*.xz=01;31:*.zst=01;31:*.tzst=01;31:*.bz2=01;31:*.bz=01;31:*.tbz=01;31:*.tbz2=01;31:*.tz=01;31:*.deb=01;31:*.rpm=01;31:*.jar=01;31:*.war=01;31:*.ear=01;31:*.sar=01;31:*.rar=01;31:*.alz=01;31:*.ace=01;31:*.zoo=01;31:*.cpio=01;31:*.7z=01;31:*.rz=01;31:*.cab=01;31:*.wim=01;31:*.swm=01;31:*.dwm=01;31:*.esd=01;31:*.jpg=01;35:*.jpeg=01;35:*.mjpg=01;35:*.mjpeg=01;35:*.gif=01;35:*.bmp=01;35:*.pbm=01;35:*.pgm=01;35:*.ppm=01;35:*.tga=01;35:*.xbm=01;35:*.xpm=01;35:*.tif=01;35:*.tiff=01;35:*.png=01;35:*.svg=01;35:*.svgz=01;35:*.mng=01;35:*.pcx=01;35:*.mov=01;35:*.mpg=01;35:*.mpeg=01;35:*.m2v=01;35:*.mkv=01;35:*.webm=01;35:*.webp=01;35:*.ogm=01;35:*.mp4=01;35:*.m4v=01;35:*.mp4v=01;35:*.vob=01;35:*.qt=01;35:*.nuv=01;35:*.wmv=01;35:*.asf=01;35:*.rm=01;35:*.rmvb=01;35:*.flc=01;35:*.avi=01;35:*.fli=01;35:*.flv=01;35:*.gl=01;35:*.dl=01;35:*.xcf=01;35:*.xwd=01;35:*.yuv=01;35:*.cgm=01;35:*.emf=01;35:*.ogv=01;35:*.ogx=01;35:*.aac=00;36:*.au=00;36:*.flac=00;36:*.m4a=00;36:*.mid=00;36:*.midi=00;36:*.mka=00;36:*.mp3=00;36:*.mpc=00;36:*.ogg=00;36:*.ra=00;36:*.wav=00;36:*.oga=00;36:*.opus=00;36:*.spx=00;36:*.xspf=00;36:', 'AMENT_PREFIX_PATH': '/ros2_ws/src/UR5_Jazzy_Moveit2_Pick_Place/install/ur5_pick_place:/opt/ros/humble', 'PWD': '/ros2_ws/src/UR5_Jazzy_Moveit2_Pick_Place/build/ur5_pick_place', 'LC_ALL': 'C.UTF-8', 'PYTHONPATH': '/ros2_ws/src/UR5_Jazzy_Moveit2_Pick_Place/build/ur5_pick_place/prefix_override:/usr/lib/python3/dist-packages/colcon_core/task/python/colcon_distutils_commands:/ros2_ws/src/UR5_Jazzy_Moveit2_Pick_Place/install/ur5_pick_place/lib/python3.10/site-packages:/ros2_ws/src/UR5_Jazzy_Moveit2_Pick_Place/install/ur5_pick_place/lib/python3.10/site-packages:/opt/ros/humble/lib/python3.10/site-packages:/opt/ros/humble/local/lib/python3.10/dist-packages', 'COLCON': '1'}, 'shell': False}
+[3.544769] (-) TimerEvent: {}
+[3.646471] (-) TimerEvent: {}
+[3.747132] (-) TimerEvent: {}
+[3.847809] (-) TimerEvent: {}
+[3.948504] (-) TimerEvent: {}
+[4.049205] (-) TimerEvent: {}
+[4.150121] (-) TimerEvent: {}
+[4.251876] (-) TimerEvent: {}
+[4.352657] (-) TimerEvent: {}
+[4.453657] (-) TimerEvent: {}
+[4.554359] (-) TimerEvent: {}
+[4.638656] (ur5_pick_place) StdoutLine: {'line': b'running egg_info\n'}
+[4.642616] (ur5_pick_place) StdoutLine: {'line': b'writing ../../build/ur5_pick_place/ur5_pick_place.egg-info/PKG-INFO\n'}
+[4.644186] (ur5_pick_place) StdoutLine: {'line': b'writing dependency_links to ../../build/ur5_pick_place/ur5_pick_place.egg-info/dependency_links.txt\n'}
+[4.647241] (ur5_pick_place) StdoutLine: {'line': b'writing entry points to ../../build/ur5_pick_place/ur5_pick_place.egg-info/entry_points.txt\n'}
+[4.648143] (ur5_pick_place) StdoutLine: {'line': b'writing requirements to ../../build/ur5_pick_place/ur5_pick_place.egg-info/requires.txt\n'}
+[4.649524] (ur5_pick_place) StdoutLine: {'line': b'writing top-level names to ../../build/ur5_pick_place/ur5_pick_place.egg-info/top_level.txt\n'}
+[4.655175] (-) TimerEvent: {}
+[4.658711] (ur5_pick_place) StdoutLine: {'line': b"reading manifest file '../../build/ur5_pick_place/ur5_pick_place.egg-info/SOURCES.txt'\n"}
+[4.664823] (ur5_pick_place) StdoutLine: {'line': b"writing manifest file '../../build/ur5_pick_place/ur5_pick_place.egg-info/SOURCES.txt'\n"}
+[4.666898] (ur5_pick_place) StdoutLine: {'line': b'running build\n'}
+[4.667542] (ur5_pick_place) StdoutLine: {'line': b'running build_py\n'}
+[4.672184] (ur5_pick_place) StdoutLine: {'line': b'running install\n'}
+[4.673920] (ur5_pick_place) StdoutLine: {'line': b'running install_lib\n'}
+[4.681131] (ur5_pick_place) StdoutLine: {'line': b'byte-compiling /ros2_ws/src/UR5_Jazzy_Moveit2_Pick_Place/install/ur5_pick_place/lib/python3.10/site-packages/ur5_pick_place/base_pick_place.py to base_pick_place.cpython-310.pyc\n'}
+[4.683560] (ur5_pick_place) StderrLine: {'line': b'Sorry: IndentationError: expected an indented block after function definition on line 49 (base_pick_place.py, line 50)\n'}
+[4.685916] (ur5_pick_place) StdoutLine: {'line': b'running install_data\n'}
+[4.687685] (ur5_pick_place) StdoutLine: {'line': b'running install_egg_info\n'}
+[4.696918] (ur5_pick_place) StdoutLine: {'line': b"removing '/ros2_ws/src/UR5_Jazzy_Moveit2_Pick_Place/install/ur5_pick_place/lib/python3.10/site-packages/ur5_pick_place-2.0.0-py3.10.egg-info' (and everything under it)\n"}
+[4.701768] (ur5_pick_place) StdoutLine: {'line': b'Copying ../../build/ur5_pick_place/ur5_pick_place.egg-info to /ros2_ws/src/UR5_Jazzy_Moveit2_Pick_Place/install/ur5_pick_place/lib/python3.10/site-packages/ur5_pick_place-2.0.0-py3.10.egg-info\n'}
+[4.703683] (ur5_pick_place) StdoutLine: {'line': b'running install_scripts\n'}
+[4.755868] (-) TimerEvent: {}
+[4.816989] (ur5_pick_place) StdoutLine: {'line': b'Installing add_object_legacy script to /ros2_ws/src/UR5_Jazzy_Moveit2_Pick_Place/install/ur5_pick_place/lib/ur5_pick_place\n'}
+[4.818076] (ur5_pick_place) StdoutLine: {'line': b'Installing fake_object_pose_legacy script to /ros2_ws/src/UR5_Jazzy_Moveit2_Pick_Place/install/ur5_pick_place/lib/ur5_pick_place\n'}
+[4.819287] (ur5_pick_place) StdoutLine: {'line': b'Installing joint_state_pub_legacy script to /ros2_ws/src/UR5_Jazzy_Moveit2_Pick_Place/install/ur5_pick_place/lib/ur5_pick_place\n'}
+[4.822151] (ur5_pick_place) StdoutLine: {'line': b'Installing pick_place_node script to /ros2_ws/src/UR5_Jazzy_Moveit2_Pick_Place/install/ur5_pick_place/lib/ur5_pick_place\n'}
+[4.823318] (ur5_pick_place) StdoutLine: {'line': b'Installing pick_place_node_legacy script to /ros2_ws/src/UR5_Jazzy_Moveit2_Pick_Place/install/ur5_pick_place/lib/ur5_pick_place\n'}
+[4.824045] (ur5_pick_place) StdoutLine: {'line': b'Installing pose_sender script to /ros2_ws/src/UR5_Jazzy_Moveit2_Pick_Place/install/ur5_pick_place/lib/ur5_pick_place\n'}
+[4.825172] (ur5_pick_place) StdoutLine: {'line': b'Installing pose_sender_legacy script to /ros2_ws/src/UR5_Jazzy_Moveit2_Pick_Place/install/ur5_pick_place/lib/ur5_pick_place\n'}
+[4.825718] (ur5_pick_place) StdoutLine: {'line': b"writing list of installed files to '/ros2_ws/src/UR5_Jazzy_Moveit2_Pick_Place/build/ur5_pick_place/install.log'\n"}
+[4.856090] (-) TimerEvent: {}
+[4.930922] (ur5_pick_place) CommandEnded: {'returncode': 0}
+[4.957192] (-) TimerEvent: {}
+[5.032664] (ur5_pick_place) JobEnded: {'identifier': 'ur5_pick_place', 'rc': 0}
+[5.040231] (-) EventReactorShutdown: {}

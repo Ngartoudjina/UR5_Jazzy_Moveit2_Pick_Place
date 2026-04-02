@@ -1,0 +1,90 @@
+[0.000000] (-) TimerEvent: {}
+[0.000900] (-) JobUnselected: {'identifier': 'ur5_controller'}
+[0.001126] (-) JobUnselected: {'identifier': 'ur5_description'}
+[0.001417] (-) JobUnselected: {'identifier': 'ur5_moveit'}
+[0.001567] (ur5_pick_place) JobQueued: {'identifier': 'ur5_pick_place', 'dependencies': OrderedDict()}
+[0.001687] (ur5_pick_place) JobStarted: {'identifier': 'ur5_pick_place'}
+[0.096908] (-) TimerEvent: {}
+[0.197282] (-) TimerEvent: {}
+[0.297682] (-) TimerEvent: {}
+[0.398083] (-) TimerEvent: {}
+[0.498432] (-) TimerEvent: {}
+[0.598799] (-) TimerEvent: {}
+[0.699142] (-) TimerEvent: {}
+[0.799476] (-) TimerEvent: {}
+[0.899842] (-) TimerEvent: {}
+[1.000173] (-) TimerEvent: {}
+[1.100498] (-) TimerEvent: {}
+[1.200875] (-) TimerEvent: {}
+[1.301222] (-) TimerEvent: {}
+[1.401706] (-) TimerEvent: {}
+[1.502112] (-) TimerEvent: {}
+[1.602532] (-) TimerEvent: {}
+[1.703849] (-) TimerEvent: {}
+[1.804898] (-) TimerEvent: {}
+[1.905708] (-) TimerEvent: {}
+[2.007359] (-) TimerEvent: {}
+[2.109255] (-) TimerEvent: {}
+[2.209896] (-) TimerEvent: {}
+[2.310504] (-) TimerEvent: {}
+[2.416582] (-) TimerEvent: {}
+[2.517050] (-) TimerEvent: {}
+[2.651485] (-) TimerEvent: {}
+[2.751908] (-) TimerEvent: {}
+[2.852862] (-) TimerEvent: {}
+[2.958958] (-) TimerEvent: {}
+[3.059382] (-) TimerEvent: {}
+[3.159860] (-) TimerEvent: {}
+[3.260496] (-) TimerEvent: {}
+[3.361084] (-) TimerEvent: {}
+[3.461510] (-) TimerEvent: {}
+[3.561921] (-) TimerEvent: {}
+[3.662314] (-) TimerEvent: {}
+[3.762717] (-) TimerEvent: {}
+[3.863212] (-) TimerEvent: {}
+[3.964351] (-) TimerEvent: {}
+[3.996463] (ur5_pick_place) Command: {'cmd': ['/usr/bin/python3', '-W', 'ignore:setup.py install is deprecated', '-W', 'ignore:easy_install command is deprecated', 'setup.py', 'egg_info', '--egg-base', '../../build/ur5_pick_place', 'build', '--build-base', '/ros2_ws/src/UR5_Jazzy_Moveit2_Pick_Place/build/ur5_pick_place/build', 'install', '--record', '/ros2_ws/src/UR5_Jazzy_Moveit2_Pick_Place/build/ur5_pick_place/install.log', '--single-version-externally-managed', 'install_data'], 'cwd': '/ros2_ws/src/UR5_Jazzy_Moveit2_Pick_Place/src/ur5_pick_place', 'env': {'HOSTNAME': 'beingar-HP-ProBook-650-G2', 'SHLVL': '0', 'LD_LIBRARY_PATH': '/opt/ros/humble/opt/rviz_ogre_vendor/lib:/opt/ros/humble/lib/x86_64-linux-gnu:/opt/ros/humble/lib', 'HOME': '/root', 'OLDPWD': '/ros2_ws/src/UR5_Jazzy_Moveit2_Pick_Place', 'ROS_PYTHON_VERSION': '3', 'COLCON_PREFIX_PATH': '/ros2_ws/src/UR5_Jazzy_Moveit2_Pick_Place/install', 'ROS_DISTRO': 'humble', '_': '/usr/bin/colcon', 'ROS_VERSION': '2', 'TERM': 'xterm', 'ROS_LOCALHOST_ONLY': '0', 'QT_X11_NO_MITSHM': '1', 'PATH': '/opt/ros/humble/bin:/usr/local/sbin:/usr/local/bin:/usr/sbin:/usr/bin:/sbin:/bin', 'DISPLAY': ':0', 'LANG': 'C.UTF-8', 'LS_COLORS': 'rs=0:di=01;34:ln=01;36:mh=00:pi=40;33:so=01;35:do=01;35:bd=40;33;01:cd=40;33;01:or=40;31;01:mi=00:su=37;41:sg=30;43:ca=30;41:tw=30;42:ow=34;42:st=37;44:ex=01;32:*.tar=01;31:*.tgz=01;31:*.arc=01;31:*.arj=01;31:*.taz=01;31:*.lha=01;31:*.lz4=01;31:*.lzh=01;31:*.lzma=01;31:*.tlz=01;31:*.txz=01;31:*.tzo=01;31:*.t7z=01;31:*.zip=01;31:*.z=01;31:*.dz=01;31:*.gz=01;31:*.lrz=01;31:*.lz=01;31:*.lzo=01;31:*.xz=01;31:*.zst=01;31:*.tzst=01;31:*.bz2=01;31:*.bz=01;31:*.tbz=01;31:*.tbz2=01;31:*.tz=01;31:*.deb=01;31:*.rpm=01;31:*.jar=01;31:*.war=01;31:*.ear=01;31:*.sar=01;31:*.rar=01;31:*.alz=01;31:*.ace=01;31:*.zoo=01;31:*.cpio=01;31:*.7z=01;31:*.rz=01;31:*.cab=01;31:*.wim=01;31:*.swm=01;31:*.dwm=01;31:*.esd=01;31:*.jpg=01;35:*.jpeg=01;35:*.mjpg=01;35:*.mjpeg=01;35:*.gif=01;35:*.bmp=01;35:*.pbm=01;35:*.pgm=01;35:*.ppm=01;35:*.tga=01;35:*.xbm=01;35:*.xpm=01;35:*.tif=01;35:*.tiff=01;35:*.png=01;35:*.svg=01;35:*.svgz=01;35:*.mng=01;35:*.pcx=01;35:*.mov=01;35:*.mpg=01;35:*.mpeg=01;35:*.m2v=01;35:*.mkv=01;35:*.webm=01;35:*.webp=01;35:*.ogm=01;35:*.mp4=01;35:*.m4v=01;35:*.mp4v=01;35:*.vob=01;35:*.qt=01;35:*.nuv=01;35:*.wmv=01;35:*.asf=01;35:*.rm=01;35:*.rmvb=01;35:*.flc=01;35:*.avi=01;35:*.fli=01;35:*.flv=01;35:*.gl=01;35:*.dl=01;35:*.xcf=01;35:*.xwd=01;35:*.yuv=01;35:*.cgm=01;35:*.emf=01;35:*.ogv=01;35:*.ogx=01;35:*.aac=00;36:*.au=00;36:*.flac=00;36:*.m4a=00;36:*.mid=00;36:*.midi=00;36:*.mka=00;36:*.mp3=00;36:*.mpc=00;36:*.ogg=00;36:*.ra=00;36:*.wav=00;36:*.oga=00;36:*.opus=00;36:*.spx=00;36:*.xspf=00;36:', 'AMENT_PREFIX_PATH': '/ros2_ws/src/UR5_Jazzy_Moveit2_Pick_Place/install/ur5_pick_place:/opt/ros/humble', 'PWD': '/ros2_ws/src/UR5_Jazzy_Moveit2_Pick_Place/build/ur5_pick_place', 'LC_ALL': 'C.UTF-8', 'PYTHONPATH': '/ros2_ws/src/UR5_Jazzy_Moveit2_Pick_Place/build/ur5_pick_place/prefix_override:/usr/lib/python3/dist-packages/colcon_core/task/python/colcon_distutils_commands:/ros2_ws/src/UR5_Jazzy_Moveit2_Pick_Place/install/ur5_pick_place/lib/python3.10/site-packages:/ros2_ws/src/UR5_Jazzy_Moveit2_Pick_Place/install/ur5_pick_place/lib/python3.10/site-packages:/opt/ros/humble/lib/python3.10/site-packages:/opt/ros/humble/local/lib/python3.10/dist-packages', 'COLCON': '1'}, 'shell': False}
+[4.064891] (-) TimerEvent: {}
+[4.165345] (-) TimerEvent: {}
+[4.265932] (-) TimerEvent: {}
+[4.366896] (-) TimerEvent: {}
+[4.467335] (-) TimerEvent: {}
+[4.567886] (-) TimerEvent: {}
+[4.668888] (-) TimerEvent: {}
+[4.769296] (-) TimerEvent: {}
+[4.869895] (-) TimerEvent: {}
+[4.970609] (-) TimerEvent: {}
+[5.064299] (ur5_pick_place) StderrLine: {'line': b'Traceback (most recent call last):\n'}
+[5.066183] (ur5_pick_place) StderrLine: {'line': b'  File "/ros2_ws/src/UR5_Jazzy_Moveit2_Pick_Place/src/ur5_pick_place/setup.py", line 1, in <module>\n'}
+[5.067412] (ur5_pick_place) StderrLine: {'line': b'    from setuptools import setup, find_packages\n'}
+[5.068098] (ur5_pick_place) StderrLine: {'line': b'  File "/usr/lib/python3/dist-packages/setuptools/__init__.py", line 16, in <module>\n'}
+[5.068566] (ur5_pick_place) StderrLine: {'line': b'    import setuptools.version\n'}
+[5.069013] (ur5_pick_place) StderrLine: {'line': b'  File "/usr/lib/python3/dist-packages/setuptools/version.py", line 1, in <module>\n'}
+[5.070819] (-) TimerEvent: {}
+[5.094147] (ur5_pick_place) StderrLine: {'line': b'    import pkg_resources\n'}
+[5.094840] (ur5_pick_place) StderrLine: {'line': b'  File "/usr/lib/python3/dist-packages/pkg_resources/__init__.py", line 3267, in <module>\n'}
+[5.170948] (-) TimerEvent: {}
+[5.183870] (ur5_pick_place) StderrLine: {'line': b'    def _initialize_master_working_set():\n'}
+[5.184479] (ur5_pick_place) StderrLine: {'line': b'  File "/usr/lib/python3/dist-packages/pkg_resources/__init__.py", line 3241, in _call_aside\n'}
+[5.186476] (ur5_pick_place) StderrLine: {'line': b'    f(*args, **kwargs)\n'}
+[5.187060] (ur5_pick_place) StderrLine: {'line': b'  File "/usr/lib/python3/dist-packages/pkg_resources/__init__.py", line 3292, in _initialize_master_working_set\n'}
+[5.190870] (ur5_pick_place) StderrLine: {'line': b'    tuple(\n'}
+[5.191492] (ur5_pick_place) StderrLine: {'line': b'  File "/usr/lib/python3/dist-packages/pkg_resources/__init__.py", line 3293, in <genexpr>\n'}
+[5.192584] (ur5_pick_place) StderrLine: {'line': b'    dist.activate(replace=False)\n'}
+[5.194620] (ur5_pick_place) StderrLine: {'line': b'  File "/usr/lib/python3/dist-packages/pkg_resources/__init__.py", line 2796, in activate\n'}
+[5.198879] (ur5_pick_place) StderrLine: {'line': b"    for pkg in self._get_metadata('namespace_packages.txt'):\n"}
+[5.199442] (ur5_pick_place) StderrLine: {'line': b'  File "/usr/lib/python3/dist-packages/pkg_resources/__init__.py", line 2779, in _get_metadata\n'}
+[5.200820] (ur5_pick_place) StderrLine: {'line': b'    if self.has_metadata(name):\n'}
+[5.202289] (ur5_pick_place) StderrLine: {'line': b'  File "/usr/lib/python3/dist-packages/pkg_resources/__init__.py", line 1405, in has_metadata\n'}
+[5.205464] (ur5_pick_place) StderrLine: {'line': b'    path = self._get_metadata_path(name)\n'}
+[5.206257] (ur5_pick_place) StderrLine: {'line': b'  File "/usr/lib/python3/dist-packages/pkg_resources/__init__.py", line 1399, in _get_metadata_path\n'}
+[5.207310] (ur5_pick_place) StderrLine: {'line': b'    return self._fn(self.egg_info, name)\n'}
+[5.207914] (ur5_pick_place) StderrLine: {'line': b'  File "/usr/lib/python3/dist-packages/pkg_resources/__init__.py", line 1480, in _fn\n'}
+[5.209670] (ur5_pick_place) StderrLine: {'line': b"    return os.path.join(base, *resource_name.split('/'))\n"}
+[5.210289] (ur5_pick_place) StderrLine: {'line': b'  File "/usr/lib/python3.10/posixpath.py", line 83, in join\n'}
+[5.237869] (ur5_pick_place) StderrLine: {'line': b'    if b.startswith(sep):\n'}
+[5.238471] (ur5_pick_place) StderrLine: {'line': b'KeyboardInterrupt\n'}
+[5.271138] (-) TimerEvent: {}
+[5.323910] (ur5_pick_place) CommandEnded: {'returncode': -2}
+[5.326260] (ur5_pick_place) JobEnded: {'identifier': 'ur5_pick_place', 'rc': 'SIGINT'}
+[5.335516] (-) EventReactorShutdown: {}

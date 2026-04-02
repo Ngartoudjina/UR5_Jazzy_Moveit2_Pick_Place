@@ -1,0 +1,29 @@
+[3.022s] Invoking command in '/ros2_ws/src/UR5_Jazzy_Moveit2_Pick_Place/src/ur5_pick_place': PYTHONPATH=/ros2_ws/src/UR5_Jazzy_Moveit2_Pick_Place/build/ur5_pick_place/prefix_override:/usr/lib/python3/dist-packages/colcon_core/task/python/colcon_distutils_commands:/ros2_ws/src/UR5_Jazzy_Moveit2_Pick_Place/install/ur5_pick_place/lib/python3.10/site-packages:${PYTHONPATH} /usr/bin/python3 -W ignore:setup.py install is deprecated -W ignore:easy_install command is deprecated setup.py egg_info --egg-base ../../build/ur5_pick_place build --build-base /ros2_ws/src/UR5_Jazzy_Moveit2_Pick_Place/build/ur5_pick_place/build install --record /ros2_ws/src/UR5_Jazzy_Moveit2_Pick_Place/build/ur5_pick_place/install.log --single-version-externally-managed install_data
+[4.060s] running egg_info
+[4.065s] writing ../../build/ur5_pick_place/ur5_pick_place.egg-info/PKG-INFO
+[4.066s] writing dependency_links to ../../build/ur5_pick_place/ur5_pick_place.egg-info/dependency_links.txt
+[4.068s] writing entry points to ../../build/ur5_pick_place/ur5_pick_place.egg-info/entry_points.txt
+[4.069s] writing requirements to ../../build/ur5_pick_place/ur5_pick_place.egg-info/requires.txt
+[4.069s] writing top-level names to ../../build/ur5_pick_place/ur5_pick_place.egg-info/top_level.txt
+[4.079s] reading manifest file '../../build/ur5_pick_place/ur5_pick_place.egg-info/SOURCES.txt'
+[4.087s] writing manifest file '../../build/ur5_pick_place/ur5_pick_place.egg-info/SOURCES.txt'
+[4.088s] running build
+[4.090s] running build_py
+[4.093s] running install
+[4.094s] running install_lib
+[4.102s] byte-compiling /ros2_ws/src/UR5_Jazzy_Moveit2_Pick_Place/install/ur5_pick_place/lib/python3.10/site-packages/ur5_pick_place/base_pick_place.py to base_pick_place.cpython-310.pyc
+[4.105s] Sorry: IndentationError: expected an indented block after function definition on line 49 (base_pick_place.py, line 50)
+[4.106s] running install_data
+[4.108s] running install_egg_info
+[4.117s] removing '/ros2_ws/src/UR5_Jazzy_Moveit2_Pick_Place/install/ur5_pick_place/lib/python3.10/site-packages/ur5_pick_place-2.0.0-py3.10.egg-info' (and everything under it)
+[4.118s] Copying ../../build/ur5_pick_place/ur5_pick_place.egg-info to /ros2_ws/src/UR5_Jazzy_Moveit2_Pick_Place/install/ur5_pick_place/lib/python3.10/site-packages/ur5_pick_place-2.0.0-py3.10.egg-info
+[4.122s] running install_scripts
+[4.227s] Installing add_object_legacy script to /ros2_ws/src/UR5_Jazzy_Moveit2_Pick_Place/install/ur5_pick_place/lib/ur5_pick_place
+[4.228s] Installing fake_object_pose_legacy script to /ros2_ws/src/UR5_Jazzy_Moveit2_Pick_Place/install/ur5_pick_place/lib/ur5_pick_place
+[4.228s] Installing joint_state_pub_legacy script to /ros2_ws/src/UR5_Jazzy_Moveit2_Pick_Place/install/ur5_pick_place/lib/ur5_pick_place
+[4.230s] Installing pick_place_node script to /ros2_ws/src/UR5_Jazzy_Moveit2_Pick_Place/install/ur5_pick_place/lib/ur5_pick_place
+[4.230s] Installing pick_place_node_legacy script to /ros2_ws/src/UR5_Jazzy_Moveit2_Pick_Place/install/ur5_pick_place/lib/ur5_pick_place
+[4.232s] Installing pose_sender script to /ros2_ws/src/UR5_Jazzy_Moveit2_Pick_Place/install/ur5_pick_place/lib/ur5_pick_place
+[4.234s] Installing pose_sender_legacy script to /ros2_ws/src/UR5_Jazzy_Moveit2_Pick_Place/install/ur5_pick_place/lib/ur5_pick_place
+[4.239s] writing list of installed files to '/ros2_ws/src/UR5_Jazzy_Moveit2_Pick_Place/build/ur5_pick_place/install.log'
+[4.338s] Invoked command in '/ros2_ws/src/UR5_Jazzy_Moveit2_Pick_Place/src/ur5_pick_place' returned '0': PYTHONPATH=/ros2_ws/src/UR5_Jazzy_Moveit2_Pick_Place/build/ur5_pick_place/prefix_override:/usr/lib/python3/dist-packages/colcon_core/task/python/colcon_distutils_commands:/ros2_ws/src/UR5_Jazzy_Moveit2_Pick_Place/install/ur5_pick_place/lib/python3.10/site-packages:${PYTHONPATH} /usr/bin/python3 -W ignore:setup.py install is deprecated -W ignore:easy_install command is deprecated setup.py egg_info --egg-base ../../build/ur5_pick_place build --build-base /ros2_ws/src/UR5_Jazzy_Moveit2_Pick_Place/build/ur5_pick_place/build install --record /ros2_ws/src/UR5_Jazzy_Moveit2_Pick_Place/build/ur5_pick_place/install.log --single-version-externally-managed install_data

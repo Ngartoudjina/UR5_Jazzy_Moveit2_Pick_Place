@@ -1,0 +1,9 @@
+[console_scripts]
+add_object_legacy = ur5_pick_place.add_object:main
+fake_object_pose_legacy = ur5_pick_place.fake_object_pose:main
+joint_state_pub_legacy = ur5_pick_place.joint_state_publisher:main
+pick_place_node = ur5_pick_place.pick_place_node_v2:main
+pick_place_node_legacy = ur5_pick_place.pick_place_node:main
+pose_sender = ur5_pick_place.pose_sender_v2:main
+pose_sender_legacy = ur5_pick_place.pose_sender:main
+

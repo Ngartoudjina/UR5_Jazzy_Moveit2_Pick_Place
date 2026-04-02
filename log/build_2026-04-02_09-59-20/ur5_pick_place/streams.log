@@ -1,0 +1,75 @@
+[4.049s] Invoking command in '/ros2_ws/src/UR5_Jazzy_Moveit2_Pick_Place/src/ur5_pick_place': PYTHONPATH=/ros2_ws/src/UR5_Jazzy_Moveit2_Pick_Place/build/ur5_pick_place/prefix_override:/usr/lib/python3/dist-packages/colcon_core/task/python/colcon_distutils_commands:/ros2_ws/src/UR5_Jazzy_Moveit2_Pick_Place/install/ur5_pick_place/lib/python3.10/site-packages:${PYTHONPATH} /usr/bin/python3 -W ignore:setup.py install is deprecated -W ignore:easy_install command is deprecated setup.py egg_info --egg-base ../../build/ur5_pick_place build --build-base /ros2_ws/src/UR5_Jazzy_Moveit2_Pick_Place/build/ur5_pick_place/build install --record /ros2_ws/src/UR5_Jazzy_Moveit2_Pick_Place/build/ur5_pick_place/install.log --single-version-externally-managed install_data
+[5.027s] running egg_info
+[5.030s] creating ../../build/ur5_pick_place/ur5_pick_place.egg-info
+[5.031s] writing ../../build/ur5_pick_place/ur5_pick_place.egg-info/PKG-INFO
+[5.032s] writing dependency_links to ../../build/ur5_pick_place/ur5_pick_place.egg-info/dependency_links.txt
+[5.033s] writing entry points to ../../build/ur5_pick_place/ur5_pick_place.egg-info/entry_points.txt
+[5.034s] writing requirements to ../../build/ur5_pick_place/ur5_pick_place.egg-info/requires.txt
+[5.035s] writing top-level names to ../../build/ur5_pick_place/ur5_pick_place.egg-info/top_level.txt
+[5.036s] writing manifest file '../../build/ur5_pick_place/ur5_pick_place.egg-info/SOURCES.txt'
+[5.044s] reading manifest file '../../build/ur5_pick_place/ur5_pick_place.egg-info/SOURCES.txt'
+[5.048s] writing manifest file '../../build/ur5_pick_place/ur5_pick_place.egg-info/SOURCES.txt'
+[5.049s] running build
+[5.049s] running build_py
+[5.050s] creating /ros2_ws/src/UR5_Jazzy_Moveit2_Pick_Place/build/ur5_pick_place/build
+[5.051s] creating /ros2_ws/src/UR5_Jazzy_Moveit2_Pick_Place/build/ur5_pick_place/build/lib
+[5.052s] creating /ros2_ws/src/UR5_Jazzy_Moveit2_Pick_Place/build/ur5_pick_place/build/lib/ur5_pick_place
+[5.053s] copying ur5_pick_place/__init__.py -> /ros2_ws/src/UR5_Jazzy_Moveit2_Pick_Place/build/ur5_pick_place/build/lib/ur5_pick_place
+[5.053s] copying ur5_pick_place/validators.py -> /ros2_ws/src/UR5_Jazzy_Moveit2_Pick_Place/build/ur5_pick_place/build/lib/ur5_pick_place
+[5.053s] copying ur5_pick_place/pick_place_node.py -> /ros2_ws/src/UR5_Jazzy_Moveit2_Pick_Place/build/ur5_pick_place/build/lib/ur5_pick_place
+[5.079s] copying ur5_pick_place/base_pick_place.py -> /ros2_ws/src/UR5_Jazzy_Moveit2_Pick_Place/build/ur5_pick_place/build/lib/ur5_pick_place
+[5.080s] copying ur5_pick_place/config_loader.py -> /ros2_ws/src/UR5_Jazzy_Moveit2_Pick_Place/build/ur5_pick_place/build/lib/ur5_pick_place
+[5.081s] copying ur5_pick_place/fake_object_pose.py -> /ros2_ws/src/UR5_Jazzy_Moveit2_Pick_Place/build/ur5_pick_place/build/lib/ur5_pick_place
+[5.082s] copying ur5_pick_place/pose_sender.py -> /ros2_ws/src/UR5_Jazzy_Moveit2_Pick_Place/build/ur5_pick_place/build/lib/ur5_pick_place
+[5.082s] copying ur5_pick_place/joint_state_publisher.py -> /ros2_ws/src/UR5_Jazzy_Moveit2_Pick_Place/build/ur5_pick_place/build/lib/ur5_pick_place
+[5.083s] copying ur5_pick_place/add_object.py -> /ros2_ws/src/UR5_Jazzy_Moveit2_Pick_Place/build/ur5_pick_place/build/lib/ur5_pick_place
+[5.084s] copying ur5_pick_place/gripper_controller.py -> /ros2_ws/src/UR5_Jazzy_Moveit2_Pick_Place/build/ur5_pick_place/build/lib/ur5_pick_place
+[5.085s] copying ur5_pick_place/pose_sender_v2.py -> /ros2_ws/src/UR5_Jazzy_Moveit2_Pick_Place/build/ur5_pick_place/build/lib/ur5_pick_place
+[5.086s] copying ur5_pick_place/pick_place_node_v2.py -> /ros2_ws/src/UR5_Jazzy_Moveit2_Pick_Place/build/ur5_pick_place/build/lib/ur5_pick_place
+[5.087s] running install
+[5.089s] running install_lib
+[5.092s] creating /ros2_ws/src/UR5_Jazzy_Moveit2_Pick_Place/install/ur5_pick_place/lib/python3.10/site-packages/ur5_pick_place
+[5.093s] copying /ros2_ws/src/UR5_Jazzy_Moveit2_Pick_Place/build/ur5_pick_place/build/lib/ur5_pick_place/__init__.py -> /ros2_ws/src/UR5_Jazzy_Moveit2_Pick_Place/install/ur5_pick_place/lib/python3.10/site-packages/ur5_pick_place
+[5.094s] copying /ros2_ws/src/UR5_Jazzy_Moveit2_Pick_Place/build/ur5_pick_place/build/lib/ur5_pick_place/validators.py -> /ros2_ws/src/UR5_Jazzy_Moveit2_Pick_Place/install/ur5_pick_place/lib/python3.10/site-packages/ur5_pick_place
+[5.095s] copying /ros2_ws/src/UR5_Jazzy_Moveit2_Pick_Place/build/ur5_pick_place/build/lib/ur5_pick_place/pick_place_node.py -> /ros2_ws/src/UR5_Jazzy_Moveit2_Pick_Place/install/ur5_pick_place/lib/python3.10/site-packages/ur5_pick_place
+[5.095s] copying /ros2_ws/src/UR5_Jazzy_Moveit2_Pick_Place/build/ur5_pick_place/build/lib/ur5_pick_place/base_pick_place.py -> /ros2_ws/src/UR5_Jazzy_Moveit2_Pick_Place/install/ur5_pick_place/lib/python3.10/site-packages/ur5_pick_place
+[5.096s] copying /ros2_ws/src/UR5_Jazzy_Moveit2_Pick_Place/build/ur5_pick_place/build/lib/ur5_pick_place/config_loader.py -> /ros2_ws/src/UR5_Jazzy_Moveit2_Pick_Place/install/ur5_pick_place/lib/python3.10/site-packages/ur5_pick_place
+[5.097s] copying /ros2_ws/src/UR5_Jazzy_Moveit2_Pick_Place/build/ur5_pick_place/build/lib/ur5_pick_place/fake_object_pose.py -> /ros2_ws/src/UR5_Jazzy_Moveit2_Pick_Place/install/ur5_pick_place/lib/python3.10/site-packages/ur5_pick_place
+[5.098s] copying /ros2_ws/src/UR5_Jazzy_Moveit2_Pick_Place/build/ur5_pick_place/build/lib/ur5_pick_place/pose_sender.py -> /ros2_ws/src/UR5_Jazzy_Moveit2_Pick_Place/install/ur5_pick_place/lib/python3.10/site-packages/ur5_pick_place
+[5.099s] copying /ros2_ws/src/UR5_Jazzy_Moveit2_Pick_Place/build/ur5_pick_place/build/lib/ur5_pick_place/joint_state_publisher.py -> /ros2_ws/src/UR5_Jazzy_Moveit2_Pick_Place/install/ur5_pick_place/lib/python3.10/site-packages/ur5_pick_place
+[5.099s] copying /ros2_ws/src/UR5_Jazzy_Moveit2_Pick_Place/build/ur5_pick_place/build/lib/ur5_pick_place/add_object.py -> /ros2_ws/src/UR5_Jazzy_Moveit2_Pick_Place/install/ur5_pick_place/lib/python3.10/site-packages/ur5_pick_place
+[5.100s] copying /ros2_ws/src/UR5_Jazzy_Moveit2_Pick_Place/build/ur5_pick_place/build/lib/ur5_pick_place/gripper_controller.py -> /ros2_ws/src/UR5_Jazzy_Moveit2_Pick_Place/install/ur5_pick_place/lib/python3.10/site-packages/ur5_pick_place
+[5.101s] copying /ros2_ws/src/UR5_Jazzy_Moveit2_Pick_Place/build/ur5_pick_place/build/lib/ur5_pick_place/pose_sender_v2.py -> /ros2_ws/src/UR5_Jazzy_Moveit2_Pick_Place/install/ur5_pick_place/lib/python3.10/site-packages/ur5_pick_place
+[5.101s] copying /ros2_ws/src/UR5_Jazzy_Moveit2_Pick_Place/build/ur5_pick_place/build/lib/ur5_pick_place/pick_place_node_v2.py -> /ros2_ws/src/UR5_Jazzy_Moveit2_Pick_Place/install/ur5_pick_place/lib/python3.10/site-packages/ur5_pick_place
+[5.104s] byte-compiling /ros2_ws/src/UR5_Jazzy_Moveit2_Pick_Place/install/ur5_pick_place/lib/python3.10/site-packages/ur5_pick_place/__init__.py to __init__.cpython-310.pyc
+[5.105s] byte-compiling /ros2_ws/src/UR5_Jazzy_Moveit2_Pick_Place/install/ur5_pick_place/lib/python3.10/site-packages/ur5_pick_place/validators.py to validators.cpython-310.pyc
+[5.109s] byte-compiling /ros2_ws/src/UR5_Jazzy_Moveit2_Pick_Place/install/ur5_pick_place/lib/python3.10/site-packages/ur5_pick_place/pick_place_node.py to pick_place_node.cpython-310.pyc
+[5.128s] byte-compiling /ros2_ws/src/UR5_Jazzy_Moveit2_Pick_Place/install/ur5_pick_place/lib/python3.10/site-packages/ur5_pick_place/base_pick_place.py to base_pick_place.cpython-310.pyc
+[5.135s] byte-compiling /ros2_ws/src/UR5_Jazzy_Moveit2_Pick_Place/install/ur5_pick_place/lib/python3.10/site-packages/ur5_pick_place/config_loader.py to config_loader.cpython-310.pyc
+[5.140s] byte-compiling /ros2_ws/src/UR5_Jazzy_Moveit2_Pick_Place/install/ur5_pick_place/lib/python3.10/site-packages/ur5_pick_place/fake_object_pose.py to fake_object_pose.cpython-310.pyc
+[5.143s] byte-compiling /ros2_ws/src/UR5_Jazzy_Moveit2_Pick_Place/install/ur5_pick_place/lib/python3.10/site-packages/ur5_pick_place/pose_sender.py to pose_sender.cpython-310.pyc
+[5.149s] byte-compiling /ros2_ws/src/UR5_Jazzy_Moveit2_Pick_Place/install/ur5_pick_place/lib/python3.10/site-packages/ur5_pick_place/joint_state_publisher.py to joint_state_publisher.cpython-310.pyc
+[5.151s] byte-compiling /ros2_ws/src/UR5_Jazzy_Moveit2_Pick_Place/install/ur5_pick_place/lib/python3.10/site-packages/ur5_pick_place/add_object.py to add_object.cpython-310.pyc
+[5.154s] byte-compiling /ros2_ws/src/UR5_Jazzy_Moveit2_Pick_Place/install/ur5_pick_place/lib/python3.10/site-packages/ur5_pick_place/gripper_controller.py to gripper_controller.cpython-310.pyc
+[5.157s] byte-compiling /ros2_ws/src/UR5_Jazzy_Moveit2_Pick_Place/install/ur5_pick_place/lib/python3.10/site-packages/ur5_pick_place/pose_sender_v2.py to pose_sender_v2.cpython-310.pyc
+[5.160s] byte-compiling /ros2_ws/src/UR5_Jazzy_Moveit2_Pick_Place/install/ur5_pick_place/lib/python3.10/site-packages/ur5_pick_place/pick_place_node_v2.py to pick_place_node_v2.cpython-310.pyc
+[5.165s] running install_data
+[5.165s] creating /ros2_ws/src/UR5_Jazzy_Moveit2_Pick_Place/install/ur5_pick_place/share/ament_index
+[5.166s] creating /ros2_ws/src/UR5_Jazzy_Moveit2_Pick_Place/install/ur5_pick_place/share/ament_index/resource_index
+[5.167s] creating /ros2_ws/src/UR5_Jazzy_Moveit2_Pick_Place/install/ur5_pick_place/share/ament_index/resource_index/packages
+[5.167s] copying resource/ur5_pick_place -> /ros2_ws/src/UR5_Jazzy_Moveit2_Pick_Place/install/ur5_pick_place/share/ament_index/resource_index/packages
+[5.168s] copying package.xml -> /ros2_ws/src/UR5_Jazzy_Moveit2_Pick_Place/install/ur5_pick_place/share/ur5_pick_place
+[5.168s] creating /ros2_ws/src/UR5_Jazzy_Moveit2_Pick_Place/install/ur5_pick_place/share/ur5_pick_place/config
+[5.168s] copying config/ur5_pick_place_config.yaml -> /ros2_ws/src/UR5_Jazzy_Moveit2_Pick_Place/install/ur5_pick_place/share/ur5_pick_place/config
+[5.169s] running install_egg_info
+[5.176s] Copying ../../build/ur5_pick_place/ur5_pick_place.egg-info to /ros2_ws/src/UR5_Jazzy_Moveit2_Pick_Place/install/ur5_pick_place/lib/python3.10/site-packages/ur5_pick_place-2.0.0-py3.10.egg-info
+[5.180s] running install_scripts
+[5.272s] Installing add_object_legacy script to /ros2_ws/src/UR5_Jazzy_Moveit2_Pick_Place/install/ur5_pick_place/lib/ur5_pick_place
+[5.273s] Installing fake_object_pose_legacy script to /ros2_ws/src/UR5_Jazzy_Moveit2_Pick_Place/install/ur5_pick_place/lib/ur5_pick_place
+[5.273s] Installing joint_state_pub_legacy script to /ros2_ws/src/UR5_Jazzy_Moveit2_Pick_Place/install/ur5_pick_place/lib/ur5_pick_place
+[5.274s] Installing pick_place_node script to /ros2_ws/src/UR5_Jazzy_Moveit2_Pick_Place/install/ur5_pick_place/lib/ur5_pick_place
+[5.274s] Installing pick_place_node_legacy script to /ros2_ws/src/UR5_Jazzy_Moveit2_Pick_Place/install/ur5_pick_place/lib/ur5_pick_place
+[5.275s] Installing pose_sender script to /ros2_ws/src/UR5_Jazzy_Moveit2_Pick_Place/install/ur5_pick_place/lib/ur5_pick_place
+[5.275s] Installing pose_sender_legacy script to /ros2_ws/src/UR5_Jazzy_Moveit2_Pick_Place/install/ur5_pick_place/lib/ur5_pick_place
+[5.278s] writing list of installed files to '/ros2_ws/src/UR5_Jazzy_Moveit2_Pick_Place/build/ur5_pick_place/install.log'
+[5.371s] Invoked command in '/ros2_ws/src/UR5_Jazzy_Moveit2_Pick_Place/src/ur5_pick_place' returned '0': PYTHONPATH=/ros2_ws/src/UR5_Jazzy_Moveit2_Pick_Place/build/ur5_pick_place/prefix_override:/usr/lib/python3/dist-packages/colcon_core/task/python/colcon_distutils_commands:/ros2_ws/src/UR5_Jazzy_Moveit2_Pick_Place/install/ur5_pick_place/lib/python3.10/site-packages:${PYTHONPATH} /usr/bin/python3 -W ignore:setup.py install is deprecated -W ignore:easy_install command is deprecated setup.py egg_info --egg-base ../../build/ur5_pick_place build --build-base /ros2_ws/src/UR5_Jazzy_Moveit2_Pick_Place/build/ur5_pick_place/build install --record /ros2_ws/src/UR5_Jazzy_Moveit2_Pick_Place/build/ur5_pick_place/install.log --single-version-externally-managed install_data

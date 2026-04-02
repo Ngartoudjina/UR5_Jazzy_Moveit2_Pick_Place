@@ -1,0 +1,30 @@
+[4.001s] Invoking command in '/ros2_ws/src/UR5_Jazzy_Moveit2_Pick_Place/src/ur5_pick_place': PYTHONPATH=/ros2_ws/src/UR5_Jazzy_Moveit2_Pick_Place/build/ur5_pick_place/prefix_override:/usr/lib/python3/dist-packages/colcon_core/task/python/colcon_distutils_commands:/ros2_ws/src/UR5_Jazzy_Moveit2_Pick_Place/install/ur5_pick_place/lib/python3.10/site-packages:${PYTHONPATH} /usr/bin/python3 -W ignore:setup.py install is deprecated -W ignore:easy_install command is deprecated setup.py egg_info --egg-base ../../build/ur5_pick_place build --build-base /ros2_ws/src/UR5_Jazzy_Moveit2_Pick_Place/build/ur5_pick_place/build install --record /ros2_ws/src/UR5_Jazzy_Moveit2_Pick_Place/build/ur5_pick_place/install.log --single-version-externally-managed install_data
+[5.064s] Traceback (most recent call last):
+[5.065s]   File "/ros2_ws/src/UR5_Jazzy_Moveit2_Pick_Place/src/ur5_pick_place/setup.py", line 1, in <module>
+[5.066s]     from setuptools import setup, find_packages
+[5.067s]   File "/usr/lib/python3/dist-packages/setuptools/__init__.py", line 16, in <module>
+[5.067s]     import setuptools.version
+[5.068s]   File "/usr/lib/python3/dist-packages/setuptools/version.py", line 1, in <module>
+[5.093s]     import pkg_resources
+[5.093s]   File "/usr/lib/python3/dist-packages/pkg_resources/__init__.py", line 3267, in <module>
+[5.183s]     def _initialize_master_working_set():
+[5.183s]   File "/usr/lib/python3/dist-packages/pkg_resources/__init__.py", line 3241, in _call_aside
+[5.185s]     f(*args, **kwargs)
+[5.186s]   File "/usr/lib/python3/dist-packages/pkg_resources/__init__.py", line 3292, in _initialize_master_working_set
+[5.190s]     tuple(
+[5.190s]   File "/usr/lib/python3/dist-packages/pkg_resources/__init__.py", line 3293, in <genexpr>
+[5.193s]     dist.activate(replace=False)
+[5.193s]   File "/usr/lib/python3/dist-packages/pkg_resources/__init__.py", line 2796, in activate
+[5.198s]     for pkg in self._get_metadata('namespace_packages.txt'):
+[5.198s]   File "/usr/lib/python3/dist-packages/pkg_resources/__init__.py", line 2779, in _get_metadata
+[5.200s]     if self.has_metadata(name):
+[5.201s]   File "/usr/lib/python3/dist-packages/pkg_resources/__init__.py", line 1405, in has_metadata
+[5.204s]     path = self._get_metadata_path(name)
+[5.205s]   File "/usr/lib/python3/dist-packages/pkg_resources/__init__.py", line 1399, in _get_metadata_path
+[5.206s]     return self._fn(self.egg_info, name)
+[5.207s]   File "/usr/lib/python3/dist-packages/pkg_resources/__init__.py", line 1480, in _fn
+[5.208s]     return os.path.join(base, *resource_name.split('/'))
+[5.209s]   File "/usr/lib/python3.10/posixpath.py", line 83, in join
+[5.237s]     if b.startswith(sep):
+[5.237s] KeyboardInterrupt
+[5.324s] Invoked command in '/ros2_ws/src/UR5_Jazzy_Moveit2_Pick_Place/src/ur5_pick_place' returned '-2': PYTHONPATH=/ros2_ws/src/UR5_Jazzy_Moveit2_Pick_Place/build/ur5_pick_place/prefix_override:/usr/lib/python3/dist-packages/colcon_core/task/python/colcon_distutils_commands:/ros2_ws/src/UR5_Jazzy_Moveit2_Pick_Place/install/ur5_pick_place/lib/python3.10/site-packages:${PYTHONPATH} /usr/bin/python3 -W ignore:setup.py install is deprecated -W ignore:easy_install command is deprecated setup.py egg_info --egg-base ../../build/ur5_pick_place build --build-base /ros2_ws/src/UR5_Jazzy_Moveit2_Pick_Place/build/ur5_pick_place/build install --record /ros2_ws/src/UR5_Jazzy_Moveit2_Pick_Place/build/ur5_pick_place/install.log --single-version-externally-managed install_data
