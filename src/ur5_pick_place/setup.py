@@ -24,7 +24,7 @@ setup(
             'pose_sender          = ur5_pick_place.pose_sender:main',
             'add_object           = ur5_pick_place.add_object:main',
             'fake_object_pose     = ur5_pick_place.fake_object_pose:main',
-            'joint_state_publisher= ur5_pick_place.joint_state_publisher:main',
+            'joint_state_pub          = ur5_pick_place.joint_state_publisher:main',
 
             # ── NEW enhanced node ───────────────────────────────────────
             'pick_place_node      = ur5_pick_place.pick_place_node:main',

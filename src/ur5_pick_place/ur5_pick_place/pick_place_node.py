@@ -45,25 +45,25 @@ GRIPPER_EFFORT = 40.0   # Newtons
 # shoulder_pan | shoulder_lift | elbow | wrist_1 | wrist_2 | wrist_3
 # ──────────────────────────────────────────────────────────────────────────────
 POSITIONS = {
-    # Safe resting pose
+    # Safe resting pose — shoulder_pan=0 (different from start pos 0.5)
     'home':       [ 0.00, -1.57,  1.57, -1.57, -1.57,  0.00],
 
-    # Above pick zone — 15 cm above object
+    # Above pick zone
     'pre_pick':   [ 0.00, -1.10,  1.30, -1.77, -1.57,  0.00],
 
-    # At object level — gripper descends to grasp
+    # At object level
     'grasp':      [ 0.00, -0.85,  1.55, -2.27, -1.57,  0.00],
 
-    # Same as pre_pick but used after grasp (lift up with object)
+    # Lift after grasp
     'lift':       [ 0.00, -1.10,  1.30, -1.77, -1.57,  0.00],
 
-    # Transit pose rotated 90° to place zone
+    # Transit to place zone
     'pre_place':  [ 1.57, -1.10,  1.30, -1.77, -1.57,  0.00],
 
     # Descend at place zone
     'place':      [ 1.57, -0.85,  1.55, -2.27, -1.57,  0.00],
 
-    # Retreat after releasing (mirrors pre_place)
+    # Retreat after placing
     'retreat':    [ 1.57, -1.10,  1.30, -1.77, -1.57,  0.00],
 }
 
@@ -177,6 +177,9 @@ class PickPlaceNode(Node):
         req.max_acceleration_scaling_factor = float(self.acc)
         req.pipeline_id = 'ompl'
         req.planner_id  = 'RRTConnectkConfigDefault'
+        req.start_state.is_diff = True
+        req.allowed_planning_time = float(self.ptime)
+
 
         c = Constraints()
         for name, pos in zip(ARM_JOINT_NAMES, positions):
@@ -374,7 +377,7 @@ class PickPlaceNode(Node):
         time.sleep(0.3)
         self.add_collision_box(
             box_id='target_box',
-            position=(0.35, 0.0, 0.05),
+            position=(0.50, 0.20, 0.05),
             size=(0.05, 0.05, 0.10),
         )
 
