@@ -1,0 +1,24 @@
+[0.215s] Invoking command in '/ros2_ws/src/UR5_Jazzy_Moveit2_Pick_Place/build/ur5_controller': CMAKE_PREFIX_PATH=/ros2_ws/install/ur5_pick_place:/opt/ros/humble /usr/bin/cmake --build /ros2_ws/src/UR5_Jazzy_Moveit2_Pick_Place/build/ur5_controller -- -j4 -l4
+[1.882s] Invoked command in '/ros2_ws/src/UR5_Jazzy_Moveit2_Pick_Place/build/ur5_controller' returned '0': CMAKE_PREFIX_PATH=/ros2_ws/install/ur5_pick_place:/opt/ros/humble /usr/bin/cmake --build /ros2_ws/src/UR5_Jazzy_Moveit2_Pick_Place/build/ur5_controller -- -j4 -l4
+[1.897s] Invoking command in '/ros2_ws/src/UR5_Jazzy_Moveit2_Pick_Place/build/ur5_controller': CMAKE_PREFIX_PATH=/ros2_ws/install/ur5_pick_place:/opt/ros/humble /usr/bin/cmake --install /ros2_ws/src/UR5_Jazzy_Moveit2_Pick_Place/build/ur5_controller
+[1.996s] -- Install configuration: ""
+[1.997s] -- Up-to-date: /ros2_ws/src/UR5_Jazzy_Moveit2_Pick_Place/install/ur5_controller/share/ur5_controller/launch
+[1.998s] -- Up-to-date: /ros2_ws/src/UR5_Jazzy_Moveit2_Pick_Place/install/ur5_controller/share/ur5_controller/launch/controller.launch.py
+[1.998s] -- Up-to-date: /ros2_ws/src/UR5_Jazzy_Moveit2_Pick_Place/install/ur5_controller/share/ur5_controller/config
+[1.999s] -- Up-to-date: /ros2_ws/src/UR5_Jazzy_Moveit2_Pick_Place/install/ur5_controller/share/ur5_controller/config/ros2_controllers.yaml
+[2.001s] -- Up-to-date: /ros2_ws/src/UR5_Jazzy_Moveit2_Pick_Place/install/ur5_controller/share/ament_index/resource_index/package_run_dependencies/ur5_controller
+[2.002s] -- Up-to-date: /ros2_ws/src/UR5_Jazzy_Moveit2_Pick_Place/install/ur5_controller/share/ament_index/resource_index/parent_prefix_path/ur5_controller
+[2.002s] -- Up-to-date: /ros2_ws/src/UR5_Jazzy_Moveit2_Pick_Place/install/ur5_controller/share/ur5_controller/environment/ament_prefix_path.sh
+[2.002s] -- Up-to-date: /ros2_ws/src/UR5_Jazzy_Moveit2_Pick_Place/install/ur5_controller/share/ur5_controller/environment/ament_prefix_path.dsv
+[2.003s] -- Up-to-date: /ros2_ws/src/UR5_Jazzy_Moveit2_Pick_Place/install/ur5_controller/share/ur5_controller/environment/path.sh
+[2.003s] -- Up-to-date: /ros2_ws/src/UR5_Jazzy_Moveit2_Pick_Place/install/ur5_controller/share/ur5_controller/environment/path.dsv
+[2.003s] -- Up-to-date: /ros2_ws/src/UR5_Jazzy_Moveit2_Pick_Place/install/ur5_controller/share/ur5_controller/local_setup.bash
+[2.003s] -- Up-to-date: /ros2_ws/src/UR5_Jazzy_Moveit2_Pick_Place/install/ur5_controller/share/ur5_controller/local_setup.sh
+[2.003s] -- Up-to-date: /ros2_ws/src/UR5_Jazzy_Moveit2_Pick_Place/install/ur5_controller/share/ur5_controller/local_setup.zsh
+[2.004s] -- Up-to-date: /ros2_ws/src/UR5_Jazzy_Moveit2_Pick_Place/install/ur5_controller/share/ur5_controller/local_setup.dsv
+[2.004s] -- Up-to-date: /ros2_ws/src/UR5_Jazzy_Moveit2_Pick_Place/install/ur5_controller/share/ur5_controller/package.dsv
+[2.005s] -- Up-to-date: /ros2_ws/src/UR5_Jazzy_Moveit2_Pick_Place/install/ur5_controller/share/ament_index/resource_index/packages/ur5_controller
+[2.005s] -- Up-to-date: /ros2_ws/src/UR5_Jazzy_Moveit2_Pick_Place/install/ur5_controller/share/ur5_controller/cmake/ur5_controllerConfig.cmake
+[2.006s] -- Up-to-date: /ros2_ws/src/UR5_Jazzy_Moveit2_Pick_Place/install/ur5_controller/share/ur5_controller/cmake/ur5_controllerConfig-version.cmake
+[2.006s] -- Up-to-date: /ros2_ws/src/UR5_Jazzy_Moveit2_Pick_Place/install/ur5_controller/share/ur5_controller/package.xml
+[2.148s] Invoked command in '/ros2_ws/src/UR5_Jazzy_Moveit2_Pick_Place/build/ur5_controller' returned '0': CMAKE_PREFIX_PATH=/ros2_ws/install/ur5_pick_place:/opt/ros/humble /usr/bin/cmake --install /ros2_ws/src/UR5_Jazzy_Moveit2_Pick_Place/build/ur5_controller

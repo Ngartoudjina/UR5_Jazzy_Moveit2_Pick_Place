@@ -1,0 +1,34 @@
+[0.205s] Invoking command in '/ros2_ws/src/UR5_Jazzy_Moveit2_Pick_Place/build/ur5_moveit': CMAKE_PREFIX_PATH=/ros2_ws/install/ur5_pick_place:/opt/ros/humble /usr/bin/cmake --build /ros2_ws/src/UR5_Jazzy_Moveit2_Pick_Place/build/ur5_moveit -- -j4 -l4
+[1.725s] Invoked command in '/ros2_ws/src/UR5_Jazzy_Moveit2_Pick_Place/build/ur5_moveit' returned '0': CMAKE_PREFIX_PATH=/ros2_ws/install/ur5_pick_place:/opt/ros/humble /usr/bin/cmake --build /ros2_ws/src/UR5_Jazzy_Moveit2_Pick_Place/build/ur5_moveit -- -j4 -l4
+[1.772s] Invoking command in '/ros2_ws/src/UR5_Jazzy_Moveit2_Pick_Place/build/ur5_moveit': CMAKE_PREFIX_PATH=/ros2_ws/install/ur5_pick_place:/opt/ros/humble /usr/bin/cmake --install /ros2_ws/src/UR5_Jazzy_Moveit2_Pick_Place/build/ur5_moveit
+[1.838s] -- Install configuration: ""
+[1.839s] -- Up-to-date: /ros2_ws/src/UR5_Jazzy_Moveit2_Pick_Place/install/ur5_moveit/share/ur5_moveit/launch
+[1.840s] -- Up-to-date: /ros2_ws/src/UR5_Jazzy_Moveit2_Pick_Place/install/ur5_moveit/share/ur5_moveit/launch/simulated_robot.launch.py
+[1.840s] -- Up-to-date: /ros2_ws/src/UR5_Jazzy_Moveit2_Pick_Place/install/ur5_moveit/share/ur5_moveit/launch/moveit.launch.py
+[1.841s] -- Up-to-date: /ros2_ws/src/UR5_Jazzy_Moveit2_Pick_Place/install/ur5_moveit/share/ur5_moveit/config
+[1.842s] -- Up-to-date: /ros2_ws/src/UR5_Jazzy_Moveit2_Pick_Place/install/ur5_moveit/share/ur5_moveit/config/ros2_controllers.yaml
+[1.842s] -- Up-to-date: /ros2_ws/src/UR5_Jazzy_Moveit2_Pick_Place/install/ur5_moveit/share/ur5_moveit/config/joint_limits.yaml
+[1.843s] -- Up-to-date: /ros2_ws/src/UR5_Jazzy_Moveit2_Pick_Place/install/ur5_moveit/share/ur5_moveit/config/ur5_robot.srdf
+[1.847s] -- Up-to-date: /ros2_ws/src/UR5_Jazzy_Moveit2_Pick_Place/install/ur5_moveit/share/ur5_moveit/config/ompl_planning.yaml
+[1.848s] -- Up-to-date: /ros2_ws/src/UR5_Jazzy_Moveit2_Pick_Place/install/ur5_moveit/share/ur5_moveit/config/moveit.rviz
+[1.849s] -- Up-to-date: /ros2_ws/src/UR5_Jazzy_Moveit2_Pick_Place/install/ur5_moveit/share/ur5_moveit/config/initial_positions.yaml
+[1.856s] -- Up-to-date: /ros2_ws/src/UR5_Jazzy_Moveit2_Pick_Place/install/ur5_moveit/share/ur5_moveit/config/kinematics.yaml
+[1.857s] -- Up-to-date: /ros2_ws/src/UR5_Jazzy_Moveit2_Pick_Place/install/ur5_moveit/share/ur5_moveit/config/pilz_cartesian_limits.yaml
+[1.857s] -- Up-to-date: /ros2_ws/src/UR5_Jazzy_Moveit2_Pick_Place/install/ur5_moveit/share/ur5_moveit/config/moveit_controllers.yaml
+[1.858s] -- Up-to-date: /ros2_ws/src/UR5_Jazzy_Moveit2_Pick_Place/install/ur5_moveit/share/ur5_moveit/config/controller_setting.yaml
+[1.859s] -- Up-to-date: /ros2_ws/src/UR5_Jazzy_Moveit2_Pick_Place/install/ur5_moveit/share/ament_index/resource_index/package_run_dependencies/ur5_moveit
+[1.860s] -- Up-to-date: /ros2_ws/src/UR5_Jazzy_Moveit2_Pick_Place/install/ur5_moveit/share/ament_index/resource_index/parent_prefix_path/ur5_moveit
+[1.860s] -- Up-to-date: /ros2_ws/src/UR5_Jazzy_Moveit2_Pick_Place/install/ur5_moveit/share/ur5_moveit/environment/ament_prefix_path.sh
+[1.866s] -- Up-to-date: /ros2_ws/src/UR5_Jazzy_Moveit2_Pick_Place/install/ur5_moveit/share/ur5_moveit/environment/ament_prefix_path.dsv
+[1.868s] -- Up-to-date: /ros2_ws/src/UR5_Jazzy_Moveit2_Pick_Place/install/ur5_moveit/share/ur5_moveit/environment/path.sh
+[1.868s] -- Up-to-date: /ros2_ws/src/UR5_Jazzy_Moveit2_Pick_Place/install/ur5_moveit/share/ur5_moveit/environment/path.dsv
+[1.873s] -- Up-to-date: /ros2_ws/src/UR5_Jazzy_Moveit2_Pick_Place/install/ur5_moveit/share/ur5_moveit/local_setup.bash
+[1.876s] -- Up-to-date: /ros2_ws/src/UR5_Jazzy_Moveit2_Pick_Place/install/ur5_moveit/share/ur5_moveit/local_setup.sh
+[1.884s] -- Up-to-date: /ros2_ws/src/UR5_Jazzy_Moveit2_Pick_Place/install/ur5_moveit/share/ur5_moveit/local_setup.zsh
+[1.888s] -- Up-to-date: /ros2_ws/src/UR5_Jazzy_Moveit2_Pick_Place/install/ur5_moveit/share/ur5_moveit/local_setup.dsv
+[1.889s] -- Up-to-date: /ros2_ws/src/UR5_Jazzy_Moveit2_Pick_Place/install/ur5_moveit/share/ur5_moveit/package.dsv
+[1.889s] -- Up-to-date: /ros2_ws/src/UR5_Jazzy_Moveit2_Pick_Place/install/ur5_moveit/share/ament_index/resource_index/packages/ur5_moveit
+[1.890s] -- Up-to-date: /ros2_ws/src/UR5_Jazzy_Moveit2_Pick_Place/install/ur5_moveit/share/ur5_moveit/cmake/ur5_moveitConfig.cmake
+[1.890s] -- Up-to-date: /ros2_ws/src/UR5_Jazzy_Moveit2_Pick_Place/install/ur5_moveit/share/ur5_moveit/cmake/ur5_moveitConfig-version.cmake
+[1.891s] -- Up-to-date: /ros2_ws/src/UR5_Jazzy_Moveit2_Pick_Place/install/ur5_moveit/share/ur5_moveit/package.xml
+[1.943s] Invoked command in '/ros2_ws/src/UR5_Jazzy_Moveit2_Pick_Place/build/ur5_moveit' returned '0': CMAKE_PREFIX_PATH=/ros2_ws/install/ur5_pick_place:/opt/ros/humble /usr/bin/cmake --install /ros2_ws/src/UR5_Jazzy_Moveit2_Pick_Place/build/ur5_moveit

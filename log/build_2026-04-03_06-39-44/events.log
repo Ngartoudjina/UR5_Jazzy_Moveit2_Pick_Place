@@ -1,0 +1,362 @@
+[0.000000] (-) TimerEvent: {}
+[0.001259] (ur5_controller) JobQueued: {'identifier': 'ur5_controller', 'dependencies': OrderedDict()}
+[0.002046] (ur5_description) JobQueued: {'identifier': 'ur5_description', 'dependencies': OrderedDict()}
+[0.002515] (ur5_moveit) JobQueued: {'identifier': 'ur5_moveit', 'dependencies': OrderedDict()}
+[0.002651] (ur5_pick_place) JobQueued: {'identifier': 'ur5_pick_place', 'dependencies': OrderedDict()}
+[0.002784] (ur5_controller) JobStarted: {'identifier': 'ur5_controller'}
+[0.044903] (ur5_description) JobStarted: {'identifier': 'ur5_description'}
+[0.073549] (ur5_moveit) JobStarted: {'identifier': 'ur5_moveit'}
+[0.097412] (-) TimerEvent: {}
+[0.104907] (ur5_pick_place) JobStarted: {'identifier': 'ur5_pick_place'}
+[0.156917] (ur5_controller) JobProgress: {'identifier': 'ur5_controller', 'progress': 'cmake'}
+[0.159878] (ur5_controller) Command: {'cmd': ['/usr/bin/cmake', '/ros2_ws/src/UR5_Jazzy_Moveit2_Pick_Place/src/ur5_ws/src/ur5_controller', '-DCMAKE_INSTALL_PREFIX=/ros2_ws/src/UR5_Jazzy_Moveit2_Pick_Place/install/ur5_controller'], 'cwd': '/ros2_ws/src/UR5_Jazzy_Moveit2_Pick_Place/build/ur5_controller', 'env': OrderedDict([('HOSTNAME', 'beingar-HP-ProBook-650-G2'), ('SHLVL', '1'), ('LD_LIBRARY_PATH', '/opt/ros/humble/opt/rviz_ogre_vendor/lib:/opt/ros/humble/lib/x86_64-linux-gnu:/opt/ros/humble/lib'), ('HOME', '/root'), ('OLDPWD', '/ros2_ws'), ('ROS_PYTHON_VERSION', '3'), ('COLCON_PREFIX_PATH', '/ros2_ws/install'), ('ROS_DISTRO', 'humble'), ('_', '/usr/bin/colcon'), ('ROS_VERSION', '2'), ('TERM', 'xterm'), ('ROS_LOCALHOST_ONLY', '0'), ('QT_X11_NO_MITSHM', '1'), ('PATH', '/opt/ros/humble/bin:/usr/local/sbin:/usr/local/bin:/usr/sbin:/usr/bin:/sbin:/bin'), ('DISPLAY', ':0'), ('LANG', 'C.UTF-8'), ('LS_COLORS', 'rs=0:di=01;34:ln=01;36:mh=00:pi=40;33:so=01;35:do=01;35:bd=40;33;01:cd=40;33;01:or=40;31;01:mi=00:su=37;41:sg=30;43:ca=30;41:tw=30;42:ow=34;42:st=37;44:ex=01;32:*.tar=01;31:*.tgz=01;31:*.arc=01;31:*.arj=01;31:*.taz=01;31:*.lha=01;31:*.lz4=01;31:*.lzh=01;31:*.lzma=01;31:*.tlz=01;31:*.txz=01;31:*.tzo=01;31:*.t7z=01;31:*.zip=01;31:*.z=01;31:*.dz=01;31:*.gz=01;31:*.lrz=01;31:*.lz=01;31:*.lzo=01;31:*.xz=01;31:*.zst=01;31:*.tzst=01;31:*.bz2=01;31:*.bz=01;31:*.tbz=01;31:*.tbz2=01;31:*.tz=01;31:*.deb=01;31:*.rpm=01;31:*.jar=01;31:*.war=01;31:*.ear=01;31:*.sar=01;31:*.rar=01;31:*.alz=01;31:*.ace=01;31:*.zoo=01;31:*.cpio=01;31:*.7z=01;31:*.rz=01;31:*.cab=01;31:*.wim=01;31:*.swm=01;31:*.dwm=01;31:*.esd=01;31:*.jpg=01;35:*.jpeg=01;35:*.mjpg=01;35:*.mjpeg=01;35:*.gif=01;35:*.bmp=01;35:*.pbm=01;35:*.pgm=01;35:*.ppm=01;35:*.tga=01;35:*.xbm=01;35:*.xpm=01;35:*.tif=01;35:*.tiff=01;35:*.png=01;35:*.svg=01;35:*.svgz=01;35:*.mng=01;35:*.pcx=01;35:*.mov=01;35:*.mpg=01;35:*.mpeg=01;35:*.m2v=01;35:*.mkv=01;35:*.webm=01;35:*.webp=01;35:*.ogm=01;35:*.mp4=01;35:*.m4v=01;35:*.mp4v=01;35:*.vob=01;35:*.qt=01;35:*.nuv=01;35:*.wmv=01;35:*.asf=01;35:*.rm=01;35:*.rmvb=01;35:*.flc=01;35:*.avi=01;35:*.fli=01;35:*.flv=01;35:*.gl=01;35:*.dl=01;35:*.xcf=01;35:*.xwd=01;35:*.yuv=01;35:*.cgm=01;35:*.emf=01;35:*.ogv=01;35:*.ogx=01;35:*.aac=00;36:*.au=00;36:*.flac=00;36:*.m4a=00;36:*.mid=00;36:*.midi=00;36:*.mka=00;36:*.mp3=00;36:*.mpc=00;36:*.ogg=00;36:*.ra=00;36:*.wav=00;36:*.oga=00;36:*.opus=00;36:*.spx=00;36:*.xspf=00;36:'), ('AMENT_PREFIX_PATH', '/ros2_ws/install/ur5_pick_place:/opt/ros/humble'), ('PWD', '/ros2_ws/src/UR5_Jazzy_Moveit2_Pick_Place/build/ur5_controller'), ('LC_ALL', 'C.UTF-8'), ('PYTHONPATH', '/ros2_ws/build/ur5_pick_place:/ros2_ws/install/ur5_pick_place/lib/python3.10/site-packages:/opt/ros/humble/lib/python3.10/site-packages:/opt/ros/humble/local/lib/python3.10/dist-packages'), ('COLCON', '1'), ('CMAKE_PREFIX_PATH', '/ros2_ws/install/ur5_pick_place:/opt/ros/humble')]), 'shell': False}
+[0.199145] (-) TimerEvent: {}
+[0.199955] (ur5_description) JobProgress: {'identifier': 'ur5_description', 'progress': 'cmake'}
+[0.203909] (ur5_description) Command: {'cmd': ['/usr/bin/cmake', '/ros2_ws/src/UR5_Jazzy_Moveit2_Pick_Place/src/ur5_ws/src/ur5_description', '-DCMAKE_INSTALL_PREFIX=/ros2_ws/src/UR5_Jazzy_Moveit2_Pick_Place/install/ur5_description'], 'cwd': '/ros2_ws/src/UR5_Jazzy_Moveit2_Pick_Place/build/ur5_description', 'env': OrderedDict([('HOSTNAME', 'beingar-HP-ProBook-650-G2'), ('SHLVL', '1'), ('LD_LIBRARY_PATH', '/opt/ros/humble/opt/rviz_ogre_vendor/lib:/opt/ros/humble/lib/x86_64-linux-gnu:/opt/ros/humble/lib'), ('HOME', '/root'), ('OLDPWD', '/ros2_ws'), ('ROS_PYTHON_VERSION', '3'), ('COLCON_PREFIX_PATH', '/ros2_ws/install'), ('ROS_DISTRO', 'humble'), ('_', '/usr/bin/colcon'), ('ROS_VERSION', '2'), ('TERM', 'xterm'), ('ROS_LOCALHOST_ONLY', '0'), ('QT_X11_NO_MITSHM', '1'), ('PATH', '/opt/ros/humble/bin:/usr/local/sbin:/usr/local/bin:/usr/sbin:/usr/bin:/sbin:/bin'), ('DISPLAY', ':0'), ('LANG', 'C.UTF-8'), ('LS_COLORS', 'rs=0:di=01;34:ln=01;36:mh=00:pi=40;33:so=01;35:do=01;35:bd=40;33;01:cd=40;33;01:or=40;31;01:mi=00:su=37;41:sg=30;43:ca=30;41:tw=30;42:ow=34;42:st=37;44:ex=01;32:*.tar=01;31:*.tgz=01;31:*.arc=01;31:*.arj=01;31:*.taz=01;31:*.lha=01;31:*.lz4=01;31:*.lzh=01;31:*.lzma=01;31:*.tlz=01;31:*.txz=01;31:*.tzo=01;31:*.t7z=01;31:*.zip=01;31:*.z=01;31:*.dz=01;31:*.gz=01;31:*.lrz=01;31:*.lz=01;31:*.lzo=01;31:*.xz=01;31:*.zst=01;31:*.tzst=01;31:*.bz2=01;31:*.bz=01;31:*.tbz=01;31:*.tbz2=01;31:*.tz=01;31:*.deb=01;31:*.rpm=01;31:*.jar=01;31:*.war=01;31:*.ear=01;31:*.sar=01;31:*.rar=01;31:*.alz=01;31:*.ace=01;31:*.zoo=01;31:*.cpio=01;31:*.7z=01;31:*.rz=01;31:*.cab=01;31:*.wim=01;31:*.swm=01;31:*.dwm=01;31:*.esd=01;31:*.jpg=01;35:*.jpeg=01;35:*.mjpg=01;35:*.mjpeg=01;35:*.gif=01;35:*.bmp=01;35:*.pbm=01;35:*.pgm=01;35:*.ppm=01;35:*.tga=01;35:*.xbm=01;35:*.xpm=01;35:*.tif=01;35:*.tiff=01;35:*.png=01;35:*.svg=01;35:*.svgz=01;35:*.mng=01;35:*.pcx=01;35:*.mov=01;35:*.mpg=01;35:*.mpeg=01;35:*.m2v=01;35:*.mkv=01;35:*.webm=01;35:*.webp=01;35:*.ogm=01;35:*.mp4=01;35:*.m4v=01;35:*.mp4v=01;35:*.vob=01;35:*.qt=01;35:*.nuv=01;35:*.wmv=01;35:*.asf=01;35:*.rm=01;35:*.rmvb=01;35:*.flc=01;35:*.avi=01;35:*.fli=01;35:*.flv=01;35:*.gl=01;35:*.dl=01;35:*.xcf=01;35:*.xwd=01;35:*.yuv=01;35:*.cgm=01;35:*.emf=01;35:*.ogv=01;35:*.ogx=01;35:*.aac=00;36:*.au=00;36:*.flac=00;36:*.m4a=00;36:*.mid=00;36:*.midi=00;36:*.mka=00;36:*.mp3=00;36:*.mpc=00;36:*.ogg=00;36:*.ra=00;36:*.wav=00;36:*.oga=00;36:*.opus=00;36:*.spx=00;36:*.xspf=00;36:'), ('AMENT_PREFIX_PATH', '/ros2_ws/install/ur5_pick_place:/opt/ros/humble'), ('PWD', '/ros2_ws/src/UR5_Jazzy_Moveit2_Pick_Place/build/ur5_description'), ('LC_ALL', 'C.UTF-8'), ('PYTHONPATH', '/ros2_ws/build/ur5_pick_place:/ros2_ws/install/ur5_pick_place/lib/python3.10/site-packages:/opt/ros/humble/lib/python3.10/site-packages:/opt/ros/humble/local/lib/python3.10/dist-packages'), ('COLCON', '1'), ('CMAKE_PREFIX_PATH', '/ros2_ws/install/ur5_pick_place:/opt/ros/humble')]), 'shell': False}
+[0.208987] (ur5_moveit) JobProgress: {'identifier': 'ur5_moveit', 'progress': 'cmake'}
+[0.217812] (ur5_moveit) Command: {'cmd': ['/usr/bin/cmake', '/ros2_ws/src/UR5_Jazzy_Moveit2_Pick_Place/src/ur5_ws/src/ur5_moveit', '-DCMAKE_INSTALL_PREFIX=/ros2_ws/src/UR5_Jazzy_Moveit2_Pick_Place/install/ur5_moveit'], 'cwd': '/ros2_ws/src/UR5_Jazzy_Moveit2_Pick_Place/build/ur5_moveit', 'env': OrderedDict([('HOSTNAME', 'beingar-HP-ProBook-650-G2'), ('SHLVL', '1'), ('LD_LIBRARY_PATH', '/opt/ros/humble/opt/rviz_ogre_vendor/lib:/opt/ros/humble/lib/x86_64-linux-gnu:/opt/ros/humble/lib'), ('HOME', '/root'), ('OLDPWD', '/ros2_ws'), ('ROS_PYTHON_VERSION', '3'), ('COLCON_PREFIX_PATH', '/ros2_ws/install'), ('ROS_DISTRO', 'humble'), ('_', '/usr/bin/colcon'), ('ROS_VERSION', '2'), ('TERM', 'xterm'), ('ROS_LOCALHOST_ONLY', '0'), ('QT_X11_NO_MITSHM', '1'), ('PATH', '/opt/ros/humble/bin:/usr/local/sbin:/usr/local/bin:/usr/sbin:/usr/bin:/sbin:/bin'), ('DISPLAY', ':0'), ('LANG', 'C.UTF-8'), ('LS_COLORS', 'rs=0:di=01;34:ln=01;36:mh=00:pi=40;33:so=01;35:do=01;35:bd=40;33;01:cd=40;33;01:or=40;31;01:mi=00:su=37;41:sg=30;43:ca=30;41:tw=30;42:ow=34;42:st=37;44:ex=01;32:*.tar=01;31:*.tgz=01;31:*.arc=01;31:*.arj=01;31:*.taz=01;31:*.lha=01;31:*.lz4=01;31:*.lzh=01;31:*.lzma=01;31:*.tlz=01;31:*.txz=01;31:*.tzo=01;31:*.t7z=01;31:*.zip=01;31:*.z=01;31:*.dz=01;31:*.gz=01;31:*.lrz=01;31:*.lz=01;31:*.lzo=01;31:*.xz=01;31:*.zst=01;31:*.tzst=01;31:*.bz2=01;31:*.bz=01;31:*.tbz=01;31:*.tbz2=01;31:*.tz=01;31:*.deb=01;31:*.rpm=01;31:*.jar=01;31:*.war=01;31:*.ear=01;31:*.sar=01;31:*.rar=01;31:*.alz=01;31:*.ace=01;31:*.zoo=01;31:*.cpio=01;31:*.7z=01;31:*.rz=01;31:*.cab=01;31:*.wim=01;31:*.swm=01;31:*.dwm=01;31:*.esd=01;31:*.jpg=01;35:*.jpeg=01;35:*.mjpg=01;35:*.mjpeg=01;35:*.gif=01;35:*.bmp=01;35:*.pbm=01;35:*.pgm=01;35:*.ppm=01;35:*.tga=01;35:*.xbm=01;35:*.xpm=01;35:*.tif=01;35:*.tiff=01;35:*.png=01;35:*.svg=01;35:*.svgz=01;35:*.mng=01;35:*.pcx=01;35:*.mov=01;35:*.mpg=01;35:*.mpeg=01;35:*.m2v=01;35:*.mkv=01;35:*.webm=01;35:*.webp=01;35:*.ogm=01;35:*.mp4=01;35:*.m4v=01;35:*.mp4v=01;35:*.vob=01;35:*.qt=01;35:*.nuv=01;35:*.wmv=01;35:*.asf=01;35:*.rm=01;35:*.rmvb=01;35:*.flc=01;35:*.avi=01;35:*.fli=01;35:*.flv=01;35:*.gl=01;35:*.dl=01;35:*.xcf=01;35:*.xwd=01;35:*.yuv=01;35:*.cgm=01;35:*.emf=01;35:*.ogv=01;35:*.ogx=01;35:*.aac=00;36:*.au=00;36:*.flac=00;36:*.m4a=00;36:*.mid=00;36:*.midi=00;36:*.mka=00;36:*.mp3=00;36:*.mpc=00;36:*.ogg=00;36:*.ra=00;36:*.wav=00;36:*.oga=00;36:*.opus=00;36:*.spx=00;36:*.xspf=00;36:'), ('AMENT_PREFIX_PATH', '/ros2_ws/install/ur5_pick_place:/opt/ros/humble'), ('PWD', '/ros2_ws/src/UR5_Jazzy_Moveit2_Pick_Place/build/ur5_moveit'), ('LC_ALL', 'C.UTF-8'), ('PYTHONPATH', '/ros2_ws/build/ur5_pick_place:/ros2_ws/install/ur5_pick_place/lib/python3.10/site-packages:/opt/ros/humble/lib/python3.10/site-packages:/opt/ros/humble/local/lib/python3.10/dist-packages'), ('COLCON', '1'), ('CMAKE_PREFIX_PATH', '/ros2_ws/install/ur5_pick_place:/opt/ros/humble')]), 'shell': False}
+[0.299478] (-) TimerEvent: {}
+[0.400428] (-) TimerEvent: {}
+[0.501048] (-) TimerEvent: {}
+[0.601701] (-) TimerEvent: {}
+[0.702364] (-) TimerEvent: {}
+[0.802982] (-) TimerEvent: {}
+[0.903698] (-) TimerEvent: {}
+[1.004426] (-) TimerEvent: {}
+[1.105219] (-) TimerEvent: {}
+[1.205831] (-) TimerEvent: {}
+[1.306517] (-) TimerEvent: {}
+[1.407107] (-) TimerEvent: {}
+[1.507777] (-) TimerEvent: {}
+[1.609015] (-) TimerEvent: {}
+[1.709888] (-) TimerEvent: {}
+[1.810641] (-) TimerEvent: {}
+[1.911361] (-) TimerEvent: {}
+[2.012591] (-) TimerEvent: {}
+[2.117207] (-) TimerEvent: {}
+[2.218216] (-) TimerEvent: {}
+[2.318821] (-) TimerEvent: {}
+[2.419494] (-) TimerEvent: {}
+[2.520212] (-) TimerEvent: {}
+[2.620914] (-) TimerEvent: {}
+[2.721528] (-) TimerEvent: {}
+[2.822160] (-) TimerEvent: {}
+[2.922787] (-) TimerEvent: {}
+[3.023991] (-) TimerEvent: {}
+[3.126450] (-) TimerEvent: {}
+[3.239238] (-) TimerEvent: {}
+[3.339892] (-) TimerEvent: {}
+[3.440539] (-) TimerEvent: {}
+[3.541229] (-) TimerEvent: {}
+[3.636272] (ur5_description) StdoutLine: {'line': b'-- The C compiler identification is GNU 11.4.0\n'}
+[3.638518] (ur5_moveit) StdoutLine: {'line': b'-- The C compiler identification is GNU 11.4.0\n'}
+[3.641986] (-) TimerEvent: {}
+[3.659910] (ur5_controller) StdoutLine: {'line': b'-- The C compiler identification is GNU 11.4.0\n'}
+[3.709527] (ur5_pick_place) Command: {'cmd': ['/usr/bin/python3', '-W', 'ignore:setup.py install is deprecated', '-W', 'ignore:easy_install command is deprecated', 'setup.py', 'egg_info', '--egg-base', '../../build/ur5_pick_place', 'build', '--build-base', '/ros2_ws/src/UR5_Jazzy_Moveit2_Pick_Place/build/ur5_pick_place/build', 'install', '--record', '/ros2_ws/src/UR5_Jazzy_Moveit2_Pick_Place/build/ur5_pick_place/install.log', '--single-version-externally-managed', 'install_data'], 'cwd': '/ros2_ws/src/UR5_Jazzy_Moveit2_Pick_Place/src/ur5_pick_place', 'env': {'HOSTNAME': 'beingar-HP-ProBook-650-G2', 'SHLVL': '1', 'LD_LIBRARY_PATH': '/opt/ros/humble/opt/rviz_ogre_vendor/lib:/opt/ros/humble/lib/x86_64-linux-gnu:/opt/ros/humble/lib', 'HOME': '/root', 'OLDPWD': '/ros2_ws', 'ROS_PYTHON_VERSION': '3', 'COLCON_PREFIX_PATH': '/ros2_ws/install', 'ROS_DISTRO': 'humble', '_': '/usr/bin/colcon', 'ROS_VERSION': '2', 'TERM': 'xterm', 'ROS_LOCALHOST_ONLY': '0', 'QT_X11_NO_MITSHM': '1', 'PATH': '/opt/ros/humble/bin:/usr/local/sbin:/usr/local/bin:/usr/sbin:/usr/bin:/sbin:/bin', 'DISPLAY': ':0', 'LANG': 'C.UTF-8', 'LS_COLORS': 'rs=0:di=01;34:ln=01;36:mh=00:pi=40;33:so=01;35:do=01;35:bd=40;33;01:cd=40;33;01:or=40;31;01:mi=00:su=37;41:sg=30;43:ca=30;41:tw=30;42:ow=34;42:st=37;44:ex=01;32:*.tar=01;31:*.tgz=01;31:*.arc=01;31:*.arj=01;31:*.taz=01;31:*.lha=01;31:*.lz4=01;31:*.lzh=01;31:*.lzma=01;31:*.tlz=01;31:*.txz=01;31:*.tzo=01;31:*.t7z=01;31:*.zip=01;31:*.z=01;31:*.dz=01;31:*.gz=01;31:*.lrz=01;31:*.lz=01;31:*.lzo=01;31:*.xz=01;31:*.zst=01;31:*.tzst=01;31:*.bz2=01;31:*.bz=01;31:*.tbz=01;31:*.tbz2=01;31:*.tz=01;31:*.deb=01;31:*.rpm=01;31:*.jar=01;31:*.war=01;31:*.ear=01;31:*.sar=01;31:*.rar=01;31:*.alz=01;31:*.ace=01;31:*.zoo=01;31:*.cpio=01;31:*.7z=01;31:*.rz=01;31:*.cab=01;31:*.wim=01;31:*.swm=01;31:*.dwm=01;31:*.esd=01;31:*.jpg=01;35:*.jpeg=01;35:*.mjpg=01;35:*.mjpeg=01;35:*.gif=01;35:*.bmp=01;35:*.pbm=01;35:*.pgm=01;35:*.ppm=01;35:*.tga=01;35:*.xbm=01;35:*.xpm=01;35:*.tif=01;35:*.tiff=01;35:*.png=01;35:*.svg=01;35:*.svgz=01;35:*.mng=01;35:*.pcx=01;35:*.mov=01;35:*.mpg=01;35:*.mpeg=01;35:*.m2v=01;35:*.mkv=01;35:*.webm=01;35:*.webp=01;35:*.ogm=01;35:*.mp4=01;35:*.m4v=01;35:*.mp4v=01;35:*.vob=01;35:*.qt=01;35:*.nuv=01;35:*.wmv=01;35:*.asf=01;35:*.rm=01;35:*.rmvb=01;35:*.flc=01;35:*.avi=01;35:*.fli=01;35:*.flv=01;35:*.gl=01;35:*.dl=01;35:*.xcf=01;35:*.xwd=01;35:*.yuv=01;35:*.cgm=01;35:*.emf=01;35:*.ogv=01;35:*.ogx=01;35:*.aac=00;36:*.au=00;36:*.flac=00;36:*.m4a=00;36:*.mid=00;36:*.midi=00;36:*.mka=00;36:*.mp3=00;36:*.mpc=00;36:*.ogg=00;36:*.ra=00;36:*.wav=00;36:*.oga=00;36:*.opus=00;36:*.spx=00;36:*.xspf=00;36:', 'AMENT_PREFIX_PATH': '/ros2_ws/install/ur5_pick_place:/opt/ros/humble', 'PWD': '/ros2_ws/src/UR5_Jazzy_Moveit2_Pick_Place/build/ur5_pick_place', 'LC_ALL': 'C.UTF-8', 'PYTHONPATH': '/ros2_ws/src/UR5_Jazzy_Moveit2_Pick_Place/build/ur5_pick_place/prefix_override:/usr/lib/python3/dist-packages/colcon_core/task/python/colcon_distutils_commands:/ros2_ws/src/UR5_Jazzy_Moveit2_Pick_Place/install/ur5_pick_place/lib/python3.10/site-packages:/ros2_ws/build/ur5_pick_place:/ros2_ws/install/ur5_pick_place/lib/python3.10/site-packages:/opt/ros/humble/lib/python3.10/site-packages:/opt/ros/humble/local/lib/python3.10/dist-packages', 'COLCON': '1'}, 'shell': False}
+[3.743003] (-) TimerEvent: {}
+[3.845091] (-) TimerEvent: {}
+[3.945784] (-) TimerEvent: {}
+[4.046540] (-) TimerEvent: {}
+[4.147194] (-) TimerEvent: {}
+[4.247813] (-) TimerEvent: {}
+[4.348419] (-) TimerEvent: {}
+[4.450009] (-) TimerEvent: {}
+[4.550930] (-) TimerEvent: {}
+[4.651768] (-) TimerEvent: {}
+[4.752991] (-) TimerEvent: {}
+[4.800007] (ur5_moveit) StdoutLine: {'line': b'-- The CXX compiler identification is GNU 11.4.0\n'}
+[4.806696] (ur5_controller) StdoutLine: {'line': b'-- The CXX compiler identification is GNU 11.4.0\n'}
+[4.823917] (ur5_description) StdoutLine: {'line': b'-- The CXX compiler identification is GNU 11.4.0\n'}
+[4.853315] (-) TimerEvent: {}
+[4.946257] (ur5_moveit) StdoutLine: {'line': b'-- Detecting C compiler ABI info\n'}
+[4.946928] (ur5_controller) StdoutLine: {'line': b'-- Detecting C compiler ABI info\n'}
+[4.951152] (ur5_description) StdoutLine: {'line': b'-- Detecting C compiler ABI info\n'}
+[4.953477] (-) TimerEvent: {}
+[5.060699] (-) TimerEvent: {}
+[5.100173] (ur5_pick_place) StdoutLine: {'line': b'running egg_info\n'}
+[5.105386] (ur5_pick_place) StdoutLine: {'line': b'writing ../../build/ur5_pick_place/ur5_pick_place.egg-info/PKG-INFO\n'}
+[5.134014] (ur5_pick_place) StdoutLine: {'line': b'writing dependency_links to ../../build/ur5_pick_place/ur5_pick_place.egg-info/dependency_links.txt\n'}
+[5.136151] (ur5_pick_place) StdoutLine: {'line': b'writing entry points to ../../build/ur5_pick_place/ur5_pick_place.egg-info/entry_points.txt\n'}
+[5.142049] (ur5_pick_place) StdoutLine: {'line': b'writing requirements to ../../build/ur5_pick_place/ur5_pick_place.egg-info/requires.txt\n'}
+[5.142805] (ur5_pick_place) StdoutLine: {'line': b'writing top-level names to ../../build/ur5_pick_place/ur5_pick_place.egg-info/top_level.txt\n'}
+[5.151952] (ur5_pick_place) StdoutLine: {'line': b"reading manifest file '../../build/ur5_pick_place/ur5_pick_place.egg-info/SOURCES.txt'\n"}
+[5.160926] (-) TimerEvent: {}
+[5.183010] (ur5_pick_place) StdoutLine: {'line': b"writing manifest file '../../build/ur5_pick_place/ur5_pick_place.egg-info/SOURCES.txt'\n"}
+[5.187966] (ur5_pick_place) StdoutLine: {'line': b'running build\n'}
+[5.199010] (ur5_pick_place) StdoutLine: {'line': b'running build_py\n'}
+[5.211063] (ur5_pick_place) StdoutLine: {'line': b'copying ur5_pick_place/test_gripper.py -> /ros2_ws/src/UR5_Jazzy_Moveit2_Pick_Place/build/ur5_pick_place/build/lib/ur5_pick_place\n'}
+[5.221721] (ur5_pick_place) StdoutLine: {'line': b'copying ur5_pick_place/pick_place_node.py -> /ros2_ws/src/UR5_Jazzy_Moveit2_Pick_Place/build/ur5_pick_place/build/lib/ur5_pick_place\n'}
+[5.246116] (ur5_pick_place) StdoutLine: {'line': b'copying ur5_pick_place/test_joints.py -> /ros2_ws/src/UR5_Jazzy_Moveit2_Pick_Place/build/ur5_pick_place/build/lib/ur5_pick_place\n'}
+[5.263050] (-) TimerEvent: {}
+[5.270249] (ur5_pick_place) StdoutLine: {'line': b'running install\n'}
+[5.286496] (ur5_pick_place) StdoutLine: {'line': b'running install_lib\n'}
+[5.302655] (ur5_pick_place) StdoutLine: {'line': b'copying /ros2_ws/src/UR5_Jazzy_Moveit2_Pick_Place/build/ur5_pick_place/build/lib/ur5_pick_place/test_gripper.py -> /ros2_ws/src/UR5_Jazzy_Moveit2_Pick_Place/install/ur5_pick_place/lib/python3.10/site-packages/ur5_pick_place\n'}
+[5.312069] (ur5_pick_place) StdoutLine: {'line': b'copying /ros2_ws/src/UR5_Jazzy_Moveit2_Pick_Place/build/ur5_pick_place/build/lib/ur5_pick_place/pick_place_node.py -> /ros2_ws/src/UR5_Jazzy_Moveit2_Pick_Place/install/ur5_pick_place/lib/python3.10/site-packages/ur5_pick_place\n'}
+[5.321134] (ur5_pick_place) StdoutLine: {'line': b'copying /ros2_ws/src/UR5_Jazzy_Moveit2_Pick_Place/build/ur5_pick_place/build/lib/ur5_pick_place/test_joints.py -> /ros2_ws/src/UR5_Jazzy_Moveit2_Pick_Place/install/ur5_pick_place/lib/python3.10/site-packages/ur5_pick_place\n'}
+[5.334410] (ur5_pick_place) StdoutLine: {'line': b'byte-compiling /ros2_ws/src/UR5_Jazzy_Moveit2_Pick_Place/install/ur5_pick_place/lib/python3.10/site-packages/ur5_pick_place/test_gripper.py to test_gripper.cpython-310.pyc\n'}
+[5.339098] (ur5_pick_place) StdoutLine: {'line': b'byte-compiling /ros2_ws/src/UR5_Jazzy_Moveit2_Pick_Place/install/ur5_pick_place/lib/python3.10/site-packages/ur5_pick_place/pick_place_node.py to pick_place_node.cpython-310.pyc\n'}
+[5.345622] (ur5_pick_place) StderrLine: {'line': b'Sorry: IndentationError: expected an indented block after function definition on line 54 (test_gripper.py, line 55)\n'}
+[5.365042] (-) TimerEvent: {}
+[5.404372] (ur5_pick_place) StdoutLine: {'line': b'byte-compiling /ros2_ws/src/UR5_Jazzy_Moveit2_Pick_Place/install/ur5_pick_place/lib/python3.10/site-packages/ur5_pick_place/test_joints.py to test_joints.cpython-310.pyc\n'}
+[5.405381] (ur5_pick_place) StdoutLine: {'line': b'running install_data\n'}
+[5.405964] (ur5_pick_place) StdoutLine: {'line': b'running install_egg_info\n'}
+[5.421034] (ur5_pick_place) StdoutLine: {'line': b'Copying ../../build/ur5_pick_place/ur5_pick_place.egg-info to /ros2_ws/src/UR5_Jazzy_Moveit2_Pick_Place/install/ur5_pick_place/lib/python3.10/site-packages/ur5_pick_place-0.2.0-py3.10.egg-info\n'}
+[5.452072] (ur5_pick_place) StdoutLine: {'line': b'running install_scripts\n'}
+[5.468110] (-) TimerEvent: {}
+[5.497996] (ur5_description) StdoutLine: {'line': b'-- Detecting C compiler ABI info - done\n'}
+[5.550980] (ur5_moveit) StdoutLine: {'line': b'-- Detecting C compiler ABI info - done\n'}
+[5.566905] (ur5_description) StdoutLine: {'line': b'-- Check for working C compiler: /usr/bin/cc - skipped\n'}
+[5.568259] (-) TimerEvent: {}
+[5.584120] (ur5_description) StdoutLine: {'line': b'-- Detecting C compile features\n'}
+[5.585992] (ur5_pick_place) StdoutLine: {'line': b'Installing add_object script to /ros2_ws/src/UR5_Jazzy_Moveit2_Pick_Place/install/ur5_pick_place/lib/ur5_pick_place\n'}
+[5.602713] (ur5_pick_place) StdoutLine: {'line': b'Installing fake_object_pose script to /ros2_ws/src/UR5_Jazzy_Moveit2_Pick_Place/install/ur5_pick_place/lib/ur5_pick_place\n'}
+[5.603587] (ur5_pick_place) StdoutLine: {'line': b'Installing joint_state_pub script to /ros2_ws/src/UR5_Jazzy_Moveit2_Pick_Place/install/ur5_pick_place/lib/ur5_pick_place\n'}
+[5.604418] (ur5_pick_place) StdoutLine: {'line': b'Installing pick_place_node script to /ros2_ws/src/UR5_Jazzy_Moveit2_Pick_Place/install/ur5_pick_place/lib/ur5_pick_place\n'}
+[5.605012] (ur5_pick_place) StdoutLine: {'line': b'Installing pose_sender script to /ros2_ws/src/UR5_Jazzy_Moveit2_Pick_Place/install/ur5_pick_place/lib/ur5_pick_place\n'}
+[5.605784] (ur5_pick_place) StdoutLine: {'line': b'Installing test_gripper script to /ros2_ws/src/UR5_Jazzy_Moveit2_Pick_Place/install/ur5_pick_place/lib/ur5_pick_place\n'}
+[5.606646] (ur5_pick_place) StdoutLine: {'line': b'Installing test_joints script to /ros2_ws/src/UR5_Jazzy_Moveit2_Pick_Place/install/ur5_pick_place/lib/ur5_pick_place\n'}
+[5.612150] (ur5_moveit) StdoutLine: {'line': b'-- Check for working C compiler: /usr/bin/cc - skipped\n'}
+[5.612730] (ur5_moveit) StdoutLine: {'line': b'-- Detecting C compile features\n'}
+[5.618160] (ur5_moveit) StdoutLine: {'line': b'-- Detecting C compile features - done\n'}
+[5.619214] (ur5_pick_place) StdoutLine: {'line': b"writing list of installed files to '/ros2_ws/src/UR5_Jazzy_Moveit2_Pick_Place/build/ur5_pick_place/install.log'\n"}
+[5.619499] (ur5_description) StdoutLine: {'line': b'-- Detecting C compile features - done\n'}
+[5.627635] (ur5_controller) StdoutLine: {'line': b'-- Detecting C compiler ABI info - done\n'}
+[5.669171] (ur5_controller) StdoutLine: {'line': b'-- Check for working C compiler: /usr/bin/cc - skipped\n'}
+[5.669982] (-) TimerEvent: {}
+[5.673145] (ur5_controller) StdoutLine: {'line': b'-- Detecting C compile features\n'}
+[5.677757] (ur5_controller) StdoutLine: {'line': b'-- Detecting C compile features - done\n'}
+[5.691073] (ur5_moveit) StdoutLine: {'line': b'-- Detecting CXX compiler ABI info\n'}
+[5.700363] (ur5_description) StdoutLine: {'line': b'-- Detecting CXX compiler ABI info\n'}
+[5.711145] (ur5_controller) StdoutLine: {'line': b'-- Detecting CXX compiler ABI info\n'}
+[5.723368] (ur5_pick_place) CommandEnded: {'returncode': 0}
+[5.772357] (-) TimerEvent: {}
+[5.812514] (ur5_pick_place) JobEnded: {'identifier': 'ur5_pick_place', 'rc': 0}
+[5.872905] (-) TimerEvent: {}
+[5.974107] (-) TimerEvent: {}
+[6.075984] (-) TimerEvent: {}
+[6.167119] (ur5_moveit) StdoutLine: {'line': b'-- Detecting CXX compiler ABI info - done\n'}
+[6.176199] (-) TimerEvent: {}
+[6.184211] (ur5_description) StdoutLine: {'line': b'-- Detecting CXX compiler ABI info - done\n'}
+[6.220648] (ur5_controller) StdoutLine: {'line': b'-- Detecting CXX compiler ABI info - done\n'}
+[6.231494] (ur5_moveit) StdoutLine: {'line': b'-- Check for working CXX compiler: /usr/bin/c++ - skipped\n'}
+[6.232078] (ur5_moveit) StdoutLine: {'line': b'-- Detecting CXX compile features\n'}
+[6.234197] (ur5_moveit) StdoutLine: {'line': b'-- Detecting CXX compile features - done\n'}
+[6.249553] (ur5_description) StdoutLine: {'line': b'-- Check for working CXX compiler: /usr/bin/c++ - skipped\n'}
+[6.250727] (ur5_description) StdoutLine: {'line': b'-- Detecting CXX compile features\n'}
+[6.252721] (ur5_description) StdoutLine: {'line': b'-- Detecting CXX compile features - done\n'}
+[6.264485] (ur5_controller) StdoutLine: {'line': b'-- Check for working CXX compiler: /usr/bin/c++ - skipped\n'}
+[6.265604] (ur5_controller) StdoutLine: {'line': b'-- Detecting CXX compile features\n'}
+[6.267277] (ur5_controller) StdoutLine: {'line': b'-- Detecting CXX compile features - done\n'}
+[6.276417] (-) TimerEvent: {}
+[6.352683] (ur5_description) StdoutLine: {'line': b'-- Found ament_cmake: 1.3.13 (/opt/ros/humble/share/ament_cmake/cmake)\n'}
+[6.353517] (ur5_controller) StdoutLine: {'line': b'-- Found ament_cmake: 1.3.13 (/opt/ros/humble/share/ament_cmake/cmake)\n'}
+[6.354228] (ur5_moveit) StdoutLine: {'line': b'-- Found ament_cmake: 1.3.13 (/opt/ros/humble/share/ament_cmake/cmake)\n'}
+[6.376618] (-) TimerEvent: {}
+[6.477346] (-) TimerEvent: {}
+[6.579983] (-) TimerEvent: {}
+[6.680753] (-) TimerEvent: {}
+[6.784328] (-) TimerEvent: {}
+[6.885927] (-) TimerEvent: {}
+[6.988833] (-) TimerEvent: {}
+[7.089803] (-) TimerEvent: {}
+[7.198441] (-) TimerEvent: {}
+[7.302992] (-) TimerEvent: {}
+[7.404999] (-) TimerEvent: {}
+[7.433652] (ur5_description) StdoutLine: {'line': b'-- Found Python3: /usr/bin/python3 (found version "3.10.12") found components: Interpreter \n'}
+[7.473175] (ur5_moveit) StdoutLine: {'line': b'-- Found Python3: /usr/bin/python3 (found version "3.10.12") found components: Interpreter \n'}
+[7.498376] (ur5_controller) StdoutLine: {'line': b'-- Found Python3: /usr/bin/python3 (found version "3.10.12") found components: Interpreter \n'}
+[7.505306] (-) TimerEvent: {}
+[7.609979] (-) TimerEvent: {}
+[7.711983] (-) TimerEvent: {}
+[7.812750] (-) TimerEvent: {}
+[7.918443] (-) TimerEvent: {}
+[8.019147] (-) TimerEvent: {}
+[8.119946] (-) TimerEvent: {}
+[8.221664] (-) TimerEvent: {}
+[8.323393] (-) TimerEvent: {}
+[8.427983] (-) TimerEvent: {}
+[8.493424] (ur5_moveit) StdoutLine: {'line': b'-- Found ament_lint_auto: 0.12.15 (/opt/ros/humble/share/ament_lint_auto/cmake)\n'}
+[8.496524] (ur5_controller) StdoutLine: {'line': b'-- Found ament_lint_auto: 0.12.15 (/opt/ros/humble/share/ament_lint_auto/cmake)\n'}
+[8.497967] (ur5_description) StdoutLine: {'line': b'-- Found ament_lint_auto: 0.12.15 (/opt/ros/humble/share/ament_lint_auto/cmake)\n'}
+[8.528979] (-) TimerEvent: {}
+[8.630387] (-) TimerEvent: {}
+[8.733204] (-) TimerEvent: {}
+[8.834008] (-) TimerEvent: {}
+[8.934899] (-) TimerEvent: {}
+[9.035586] (-) TimerEvent: {}
+[9.136511] (-) TimerEvent: {}
+[9.148939] (ur5_controller) StdoutLine: {'line': b"-- Added test 'flake8' to check Python code syntax and style conventions\n"}
+[9.149972] (ur5_moveit) StdoutLine: {'line': b"-- Added test 'flake8' to check Python code syntax and style conventions\n"}
+[9.173623] (ur5_controller) StdoutLine: {'line': b"-- Added test 'lint_cmake' to check CMake code style\n"}
+[9.175571] (ur5_moveit) StdoutLine: {'line': b"-- Added test 'lint_cmake' to check CMake code style\n"}
+[9.177422] (ur5_controller) StdoutLine: {'line': b"-- Added test 'pep257' to check Python code against some of the docstring style conventions in PEP 257\n"}
+[9.178025] (ur5_moveit) StdoutLine: {'line': b"-- Added test 'pep257' to check Python code against some of the docstring style conventions in PEP 257\n"}
+[9.180111] (ur5_description) StdoutLine: {'line': b"-- Added test 'flake8' to check Python code syntax and style conventions\n"}
+[9.185498] (ur5_description) StdoutLine: {'line': b"-- Added test 'lint_cmake' to check CMake code style\n"}
+[9.186776] (ur5_controller) StdoutLine: {'line': b"-- Added test 'xmllint' to check XML markup files\n"}
+[9.190505] (ur5_moveit) StdoutLine: {'line': b"-- Added test 'xmllint' to check XML markup files\n"}
+[9.193412] (ur5_description) StdoutLine: {'line': b"-- Added test 'pep257' to check Python code against some of the docstring style conventions in PEP 257\n"}
+[9.211373] (ur5_description) StdoutLine: {'line': b"-- Added test 'xmllint' to check XML markup files\n"}
+[9.225008] (ur5_controller) StdoutLine: {'line': b'-- Configuring done\n'}
+[9.226103] (ur5_moveit) StdoutLine: {'line': b'-- Configuring done\n'}
+[9.227628] (ur5_description) StdoutLine: {'line': b'-- Configuring done\n'}
+[9.236741] (-) TimerEvent: {}
+[9.248171] (ur5_controller) StdoutLine: {'line': b'-- Generating done\n'}
+[9.249083] (ur5_description) StdoutLine: {'line': b'-- Generating done\n'}
+[9.254161] (ur5_moveit) StdoutLine: {'line': b'-- Generating done\n'}
+[9.257176] (ur5_controller) StdoutLine: {'line': b'-- Build files have been written to: /ros2_ws/src/UR5_Jazzy_Moveit2_Pick_Place/build/ur5_controller\n'}
+[9.261321] (ur5_description) StdoutLine: {'line': b'-- Build files have been written to: /ros2_ws/src/UR5_Jazzy_Moveit2_Pick_Place/build/ur5_description\n'}
+[9.267075] (ur5_moveit) StdoutLine: {'line': b'-- Build files have been written to: /ros2_ws/src/UR5_Jazzy_Moveit2_Pick_Place/build/ur5_moveit\n'}
+[9.278686] (ur5_controller) CommandEnded: {'returncode': 0}
+[9.281609] (ur5_controller) JobProgress: {'identifier': 'ur5_controller', 'progress': 'build'}
+[9.284358] (ur5_controller) Command: {'cmd': ['/usr/bin/cmake', '--build', '/ros2_ws/src/UR5_Jazzy_Moveit2_Pick_Place/build/ur5_controller', '--', '-j4', '-l4'], 'cwd': '/ros2_ws/src/UR5_Jazzy_Moveit2_Pick_Place/build/ur5_controller', 'env': OrderedDict([('HOSTNAME', 'beingar-HP-ProBook-650-G2'), ('SHLVL', '1'), ('LD_LIBRARY_PATH', '/opt/ros/humble/opt/rviz_ogre_vendor/lib:/opt/ros/humble/lib/x86_64-linux-gnu:/opt/ros/humble/lib'), ('HOME', '/root'), ('OLDPWD', '/ros2_ws'), ('ROS_PYTHON_VERSION', '3'), ('COLCON_PREFIX_PATH', '/ros2_ws/install'), ('ROS_DISTRO', 'humble'), ('_', '/usr/bin/colcon'), ('ROS_VERSION', '2'), ('TERM', 'xterm'), ('ROS_LOCALHOST_ONLY', '0'), ('QT_X11_NO_MITSHM', '1'), ('PATH', '/opt/ros/humble/bin:/usr/local/sbin:/usr/local/bin:/usr/sbin:/usr/bin:/sbin:/bin'), ('DISPLAY', ':0'), ('LANG', 'C.UTF-8'), ('LS_COLORS', 'rs=0:di=01;34:ln=01;36:mh=00:pi=40;33:so=01;35:do=01;35:bd=40;33;01:cd=40;33;01:or=40;31;01:mi=00:su=37;41:sg=30;43:ca=30;41:tw=30;42:ow=34;42:st=37;44:ex=01;32:*.tar=01;31:*.tgz=01;31:*.arc=01;31:*.arj=01;31:*.taz=01;31:*.lha=01;31:*.lz4=01;31:*.lzh=01;31:*.lzma=01;31:*.tlz=01;31:*.txz=01;31:*.tzo=01;31:*.t7z=01;31:*.zip=01;31:*.z=01;31:*.dz=01;31:*.gz=01;31:*.lrz=01;31:*.lz=01;31:*.lzo=01;31:*.xz=01;31:*.zst=01;31:*.tzst=01;31:*.bz2=01;31:*.bz=01;31:*.tbz=01;31:*.tbz2=01;31:*.tz=01;31:*.deb=01;31:*.rpm=01;31:*.jar=01;31:*.war=01;31:*.ear=01;31:*.sar=01;31:*.rar=01;31:*.alz=01;31:*.ace=01;31:*.zoo=01;31:*.cpio=01;31:*.7z=01;31:*.rz=01;31:*.cab=01;31:*.wim=01;31:*.swm=01;31:*.dwm=01;31:*.esd=01;31:*.jpg=01;35:*.jpeg=01;35:*.mjpg=01;35:*.mjpeg=01;35:*.gif=01;35:*.bmp=01;35:*.pbm=01;35:*.pgm=01;35:*.ppm=01;35:*.tga=01;35:*.xbm=01;35:*.xpm=01;35:*.tif=01;35:*.tiff=01;35:*.png=01;35:*.svg=01;35:*.svgz=01;35:*.mng=01;35:*.pcx=01;35:*.mov=01;35:*.mpg=01;35:*.mpeg=01;35:*.m2v=01;35:*.mkv=01;35:*.webm=01;35:*.webp=01;35:*.ogm=01;35:*.mp4=01;35:*.m4v=01;35:*.mp4v=01;35:*.vob=01;35:*.qt=01;35:*.nuv=01;35:*.wmv=01;35:*.asf=01;35:*.rm=01;35:*.rmvb=01;35:*.flc=01;35:*.avi=01;35:*.fli=01;35:*.flv=01;35:*.gl=01;35:*.dl=01;35:*.xcf=01;35:*.xwd=01;35:*.yuv=01;35:*.cgm=01;35:*.emf=01;35:*.ogv=01;35:*.ogx=01;35:*.aac=00;36:*.au=00;36:*.flac=00;36:*.m4a=00;36:*.mid=00;36:*.midi=00;36:*.mka=00;36:*.mp3=00;36:*.mpc=00;36:*.ogg=00;36:*.ra=00;36:*.wav=00;36:*.oga=00;36:*.opus=00;36:*.spx=00;36:*.xspf=00;36:'), ('AMENT_PREFIX_PATH', '/ros2_ws/install/ur5_pick_place:/opt/ros/humble'), ('PWD', '/ros2_ws/src/UR5_Jazzy_Moveit2_Pick_Place/build/ur5_controller'), ('LC_ALL', 'C.UTF-8'), ('PYTHONPATH', '/ros2_ws/build/ur5_pick_place:/ros2_ws/install/ur5_pick_place/lib/python3.10/site-packages:/opt/ros/humble/lib/python3.10/site-packages:/opt/ros/humble/local/lib/python3.10/dist-packages'), ('COLCON', '1'), ('CMAKE_PREFIX_PATH', '/ros2_ws/install/ur5_pick_place:/opt/ros/humble')]), 'shell': False}
+[9.295620] (ur5_description) CommandEnded: {'returncode': 0}
+[9.298635] (ur5_description) JobProgress: {'identifier': 'ur5_description', 'progress': 'build'}
+[9.302394] (ur5_description) Command: {'cmd': ['/usr/bin/cmake', '--build', '/ros2_ws/src/UR5_Jazzy_Moveit2_Pick_Place/build/ur5_description', '--', '-j4', '-l4'], 'cwd': '/ros2_ws/src/UR5_Jazzy_Moveit2_Pick_Place/build/ur5_description', 'env': OrderedDict([('HOSTNAME', 'beingar-HP-ProBook-650-G2'), ('SHLVL', '1'), ('LD_LIBRARY_PATH', '/opt/ros/humble/opt/rviz_ogre_vendor/lib:/opt/ros/humble/lib/x86_64-linux-gnu:/opt/ros/humble/lib'), ('HOME', '/root'), ('OLDPWD', '/ros2_ws'), ('ROS_PYTHON_VERSION', '3'), ('COLCON_PREFIX_PATH', '/ros2_ws/install'), ('ROS_DISTRO', 'humble'), ('_', '/usr/bin/colcon'), ('ROS_VERSION', '2'), ('TERM', 'xterm'), ('ROS_LOCALHOST_ONLY', '0'), ('QT_X11_NO_MITSHM', '1'), ('PATH', '/opt/ros/humble/bin:/usr/local/sbin:/usr/local/bin:/usr/sbin:/usr/bin:/sbin:/bin'), ('DISPLAY', ':0'), ('LANG', 'C.UTF-8'), ('LS_COLORS', 'rs=0:di=01;34:ln=01;36:mh=00:pi=40;33:so=01;35:do=01;35:bd=40;33;01:cd=40;33;01:or=40;31;01:mi=00:su=37;41:sg=30;43:ca=30;41:tw=30;42:ow=34;42:st=37;44:ex=01;32:*.tar=01;31:*.tgz=01;31:*.arc=01;31:*.arj=01;31:*.taz=01;31:*.lha=01;31:*.lz4=01;31:*.lzh=01;31:*.lzma=01;31:*.tlz=01;31:*.txz=01;31:*.tzo=01;31:*.t7z=01;31:*.zip=01;31:*.z=01;31:*.dz=01;31:*.gz=01;31:*.lrz=01;31:*.lz=01;31:*.lzo=01;31:*.xz=01;31:*.zst=01;31:*.tzst=01;31:*.bz2=01;31:*.bz=01;31:*.tbz=01;31:*.tbz2=01;31:*.tz=01;31:*.deb=01;31:*.rpm=01;31:*.jar=01;31:*.war=01;31:*.ear=01;31:*.sar=01;31:*.rar=01;31:*.alz=01;31:*.ace=01;31:*.zoo=01;31:*.cpio=01;31:*.7z=01;31:*.rz=01;31:*.cab=01;31:*.wim=01;31:*.swm=01;31:*.dwm=01;31:*.esd=01;31:*.jpg=01;35:*.jpeg=01;35:*.mjpg=01;35:*.mjpeg=01;35:*.gif=01;35:*.bmp=01;35:*.pbm=01;35:*.pgm=01;35:*.ppm=01;35:*.tga=01;35:*.xbm=01;35:*.xpm=01;35:*.tif=01;35:*.tiff=01;35:*.png=01;35:*.svg=01;35:*.svgz=01;35:*.mng=01;35:*.pcx=01;35:*.mov=01;35:*.mpg=01;35:*.mpeg=01;35:*.m2v=01;35:*.mkv=01;35:*.webm=01;35:*.webp=01;35:*.ogm=01;35:*.mp4=01;35:*.m4v=01;35:*.mp4v=01;35:*.vob=01;35:*.qt=01;35:*.nuv=01;35:*.wmv=01;35:*.asf=01;35:*.rm=01;35:*.rmvb=01;35:*.flc=01;35:*.avi=01;35:*.fli=01;35:*.flv=01;35:*.gl=01;35:*.dl=01;35:*.xcf=01;35:*.xwd=01;35:*.yuv=01;35:*.cgm=01;35:*.emf=01;35:*.ogv=01;35:*.ogx=01;35:*.aac=00;36:*.au=00;36:*.flac=00;36:*.m4a=00;36:*.mid=00;36:*.midi=00;36:*.mka=00;36:*.mp3=00;36:*.mpc=00;36:*.ogg=00;36:*.ra=00;36:*.wav=00;36:*.oga=00;36:*.opus=00;36:*.spx=00;36:*.xspf=00;36:'), ('AMENT_PREFIX_PATH', '/ros2_ws/install/ur5_pick_place:/opt/ros/humble'), ('PWD', '/ros2_ws/src/UR5_Jazzy_Moveit2_Pick_Place/build/ur5_description'), ('LC_ALL', 'C.UTF-8'), ('PYTHONPATH', '/ros2_ws/build/ur5_pick_place:/ros2_ws/install/ur5_pick_place/lib/python3.10/site-packages:/opt/ros/humble/lib/python3.10/site-packages:/opt/ros/humble/local/lib/python3.10/dist-packages'), ('COLCON', '1'), ('CMAKE_PREFIX_PATH', '/ros2_ws/install/ur5_pick_place:/opt/ros/humble')]), 'shell': False}
+[9.307053] (ur5_moveit) CommandEnded: {'returncode': 0}
+[9.310457] (ur5_moveit) JobProgress: {'identifier': 'ur5_moveit', 'progress': 'build'}
+[9.312226] (ur5_moveit) Command: {'cmd': ['/usr/bin/cmake', '--build', '/ros2_ws/src/UR5_Jazzy_Moveit2_Pick_Place/build/ur5_moveit', '--', '-j4', '-l4'], 'cwd': '/ros2_ws/src/UR5_Jazzy_Moveit2_Pick_Place/build/ur5_moveit', 'env': OrderedDict([('HOSTNAME', 'beingar-HP-ProBook-650-G2'), ('SHLVL', '1'), ('LD_LIBRARY_PATH', '/opt/ros/humble/opt/rviz_ogre_vendor/lib:/opt/ros/humble/lib/x86_64-linux-gnu:/opt/ros/humble/lib'), ('HOME', '/root'), ('OLDPWD', '/ros2_ws'), ('ROS_PYTHON_VERSION', '3'), ('COLCON_PREFIX_PATH', '/ros2_ws/install'), ('ROS_DISTRO', 'humble'), ('_', '/usr/bin/colcon'), ('ROS_VERSION', '2'), ('TERM', 'xterm'), ('ROS_LOCALHOST_ONLY', '0'), ('QT_X11_NO_MITSHM', '1'), ('PATH', '/opt/ros/humble/bin:/usr/local/sbin:/usr/local/bin:/usr/sbin:/usr/bin:/sbin:/bin'), ('DISPLAY', ':0'), ('LANG', 'C.UTF-8'), ('LS_COLORS', 'rs=0:di=01;34:ln=01;36:mh=00:pi=40;33:so=01;35:do=01;35:bd=40;33;01:cd=40;33;01:or=40;31;01:mi=00:su=37;41:sg=30;43:ca=30;41:tw=30;42:ow=34;42:st=37;44:ex=01;32:*.tar=01;31:*.tgz=01;31:*.arc=01;31:*.arj=01;31:*.taz=01;31:*.lha=01;31:*.lz4=01;31:*.lzh=01;31:*.lzma=01;31:*.tlz=01;31:*.txz=01;31:*.tzo=01;31:*.t7z=01;31:*.zip=01;31:*.z=01;31:*.dz=01;31:*.gz=01;31:*.lrz=01;31:*.lz=01;31:*.lzo=01;31:*.xz=01;31:*.zst=01;31:*.tzst=01;31:*.bz2=01;31:*.bz=01;31:*.tbz=01;31:*.tbz2=01;31:*.tz=01;31:*.deb=01;31:*.rpm=01;31:*.jar=01;31:*.war=01;31:*.ear=01;31:*.sar=01;31:*.rar=01;31:*.alz=01;31:*.ace=01;31:*.zoo=01;31:*.cpio=01;31:*.7z=01;31:*.rz=01;31:*.cab=01;31:*.wim=01;31:*.swm=01;31:*.dwm=01;31:*.esd=01;31:*.jpg=01;35:*.jpeg=01;35:*.mjpg=01;35:*.mjpeg=01;35:*.gif=01;35:*.bmp=01;35:*.pbm=01;35:*.pgm=01;35:*.ppm=01;35:*.tga=01;35:*.xbm=01;35:*.xpm=01;35:*.tif=01;35:*.tiff=01;35:*.png=01;35:*.svg=01;35:*.svgz=01;35:*.mng=01;35:*.pcx=01;35:*.mov=01;35:*.mpg=01;35:*.mpeg=01;35:*.m2v=01;35:*.mkv=01;35:*.webm=01;35:*.webp=01;35:*.ogm=01;35:*.mp4=01;35:*.m4v=01;35:*.mp4v=01;35:*.vob=01;35:*.qt=01;35:*.nuv=01;35:*.wmv=01;35:*.asf=01;35:*.rm=01;35:*.rmvb=01;35:*.flc=01;35:*.avi=01;35:*.fli=01;35:*.flv=01;35:*.gl=01;35:*.dl=01;35:*.xcf=01;35:*.xwd=01;35:*.yuv=01;35:*.cgm=01;35:*.emf=01;35:*.ogv=01;35:*.ogx=01;35:*.aac=00;36:*.au=00;36:*.flac=00;36:*.m4a=00;36:*.mid=00;36:*.midi=00;36:*.mka=00;36:*.mp3=00;36:*.mpc=00;36:*.ogg=00;36:*.ra=00;36:*.wav=00;36:*.oga=00;36:*.opus=00;36:*.spx=00;36:*.xspf=00;36:'), ('AMENT_PREFIX_PATH', '/ros2_ws/install/ur5_pick_place:/opt/ros/humble'), ('PWD', '/ros2_ws/src/UR5_Jazzy_Moveit2_Pick_Place/build/ur5_moveit'), ('LC_ALL', 'C.UTF-8'), ('PYTHONPATH', '/ros2_ws/build/ur5_pick_place:/ros2_ws/install/ur5_pick_place/lib/python3.10/site-packages:/opt/ros/humble/lib/python3.10/site-packages:/opt/ros/humble/local/lib/python3.10/dist-packages'), ('COLCON', '1'), ('CMAKE_PREFIX_PATH', '/ros2_ws/install/ur5_pick_place:/opt/ros/humble')]), 'shell': False}
+[9.338008] (-) TimerEvent: {}
+[9.441016] (-) TimerEvent: {}
+[9.501889] (ur5_controller) CommandEnded: {'returncode': 0}
+[9.515452] (ur5_controller) JobProgress: {'identifier': 'ur5_controller', 'progress': 'install'}
+[9.537339] (ur5_controller) Command: {'cmd': ['/usr/bin/cmake', '--install', '/ros2_ws/src/UR5_Jazzy_Moveit2_Pick_Place/build/ur5_controller'], 'cwd': '/ros2_ws/src/UR5_Jazzy_Moveit2_Pick_Place/build/ur5_controller', 'env': OrderedDict([('HOSTNAME', 'beingar-HP-ProBook-650-G2'), ('SHLVL', '1'), ('LD_LIBRARY_PATH', '/opt/ros/humble/opt/rviz_ogre_vendor/lib:/opt/ros/humble/lib/x86_64-linux-gnu:/opt/ros/humble/lib'), ('HOME', '/root'), ('OLDPWD', '/ros2_ws'), ('ROS_PYTHON_VERSION', '3'), ('COLCON_PREFIX_PATH', '/ros2_ws/install'), ('ROS_DISTRO', 'humble'), ('_', '/usr/bin/colcon'), ('ROS_VERSION', '2'), ('TERM', 'xterm'), ('ROS_LOCALHOST_ONLY', '0'), ('QT_X11_NO_MITSHM', '1'), ('PATH', '/opt/ros/humble/bin:/usr/local/sbin:/usr/local/bin:/usr/sbin:/usr/bin:/sbin:/bin'), ('DISPLAY', ':0'), ('LANG', 'C.UTF-8'), ('LS_COLORS', 'rs=0:di=01;34:ln=01;36:mh=00:pi=40;33:so=01;35:do=01;35:bd=40;33;01:cd=40;33;01:or=40;31;01:mi=00:su=37;41:sg=30;43:ca=30;41:tw=30;42:ow=34;42:st=37;44:ex=01;32:*.tar=01;31:*.tgz=01;31:*.arc=01;31:*.arj=01;31:*.taz=01;31:*.lha=01;31:*.lz4=01;31:*.lzh=01;31:*.lzma=01;31:*.tlz=01;31:*.txz=01;31:*.tzo=01;31:*.t7z=01;31:*.zip=01;31:*.z=01;31:*.dz=01;31:*.gz=01;31:*.lrz=01;31:*.lz=01;31:*.lzo=01;31:*.xz=01;31:*.zst=01;31:*.tzst=01;31:*.bz2=01;31:*.bz=01;31:*.tbz=01;31:*.tbz2=01;31:*.tz=01;31:*.deb=01;31:*.rpm=01;31:*.jar=01;31:*.war=01;31:*.ear=01;31:*.sar=01;31:*.rar=01;31:*.alz=01;31:*.ace=01;31:*.zoo=01;31:*.cpio=01;31:*.7z=01;31:*.rz=01;31:*.cab=01;31:*.wim=01;31:*.swm=01;31:*.dwm=01;31:*.esd=01;31:*.jpg=01;35:*.jpeg=01;35:*.mjpg=01;35:*.mjpeg=01;35:*.gif=01;35:*.bmp=01;35:*.pbm=01;35:*.pgm=01;35:*.ppm=01;35:*.tga=01;35:*.xbm=01;35:*.xpm=01;35:*.tif=01;35:*.tiff=01;35:*.png=01;35:*.svg=01;35:*.svgz=01;35:*.mng=01;35:*.pcx=01;35:*.mov=01;35:*.mpg=01;35:*.mpeg=01;35:*.m2v=01;35:*.mkv=01;35:*.webm=01;35:*.webp=01;35:*.ogm=01;35:*.mp4=01;35:*.m4v=01;35:*.mp4v=01;35:*.vob=01;35:*.qt=01;35:*.nuv=01;35:*.wmv=01;35:*.asf=01;35:*.rm=01;35:*.rmvb=01;35:*.flc=01;35:*.avi=01;35:*.fli=01;35:*.flv=01;35:*.gl=01;35:*.dl=01;35:*.xcf=01;35:*.xwd=01;35:*.yuv=01;35:*.cgm=01;35:*.emf=01;35:*.ogv=01;35:*.ogx=01;35:*.aac=00;36:*.au=00;36:*.flac=00;36:*.m4a=00;36:*.mid=00;36:*.midi=00;36:*.mka=00;36:*.mp3=00;36:*.mpc=00;36:*.ogg=00;36:*.ra=00;36:*.wav=00;36:*.oga=00;36:*.opus=00;36:*.spx=00;36:*.xspf=00;36:'), ('AMENT_PREFIX_PATH', '/ros2_ws/install/ur5_pick_place:/opt/ros/humble'), ('PWD', '/ros2_ws/src/UR5_Jazzy_Moveit2_Pick_Place/build/ur5_controller'), ('LC_ALL', 'C.UTF-8'), ('PYTHONPATH', '/ros2_ws/build/ur5_pick_place:/ros2_ws/install/ur5_pick_place/lib/python3.10/site-packages:/opt/ros/humble/lib/python3.10/site-packages:/opt/ros/humble/local/lib/python3.10/dist-packages'), ('COLCON', '1'), ('CMAKE_PREFIX_PATH', '/ros2_ws/install/ur5_pick_place:/opt/ros/humble')]), 'shell': False}
+[9.543051] (-) TimerEvent: {}
+[9.550493] (ur5_description) CommandEnded: {'returncode': 0}
+[9.553471] (ur5_description) JobProgress: {'identifier': 'ur5_description', 'progress': 'install'}
+[9.557503] (ur5_description) Command: {'cmd': ['/usr/bin/cmake', '--install', '/ros2_ws/src/UR5_Jazzy_Moveit2_Pick_Place/build/ur5_description'], 'cwd': '/ros2_ws/src/UR5_Jazzy_Moveit2_Pick_Place/build/ur5_description', 'env': OrderedDict([('HOSTNAME', 'beingar-HP-ProBook-650-G2'), ('SHLVL', '1'), ('LD_LIBRARY_PATH', '/opt/ros/humble/opt/rviz_ogre_vendor/lib:/opt/ros/humble/lib/x86_64-linux-gnu:/opt/ros/humble/lib'), ('HOME', '/root'), ('OLDPWD', '/ros2_ws'), ('ROS_PYTHON_VERSION', '3'), ('COLCON_PREFIX_PATH', '/ros2_ws/install'), ('ROS_DISTRO', 'humble'), ('_', '/usr/bin/colcon'), ('ROS_VERSION', '2'), ('TERM', 'xterm'), ('ROS_LOCALHOST_ONLY', '0'), ('QT_X11_NO_MITSHM', '1'), ('PATH', '/opt/ros/humble/bin:/usr/local/sbin:/usr/local/bin:/usr/sbin:/usr/bin:/sbin:/bin'), ('DISPLAY', ':0'), ('LANG', 'C.UTF-8'), ('LS_COLORS', 'rs=0:di=01;34:ln=01;36:mh=00:pi=40;33:so=01;35:do=01;35:bd=40;33;01:cd=40;33;01:or=40;31;01:mi=00:su=37;41:sg=30;43:ca=30;41:tw=30;42:ow=34;42:st=37;44:ex=01;32:*.tar=01;31:*.tgz=01;31:*.arc=01;31:*.arj=01;31:*.taz=01;31:*.lha=01;31:*.lz4=01;31:*.lzh=01;31:*.lzma=01;31:*.tlz=01;31:*.txz=01;31:*.tzo=01;31:*.t7z=01;31:*.zip=01;31:*.z=01;31:*.dz=01;31:*.gz=01;31:*.lrz=01;31:*.lz=01;31:*.lzo=01;31:*.xz=01;31:*.zst=01;31:*.tzst=01;31:*.bz2=01;31:*.bz=01;31:*.tbz=01;31:*.tbz2=01;31:*.tz=01;31:*.deb=01;31:*.rpm=01;31:*.jar=01;31:*.war=01;31:*.ear=01;31:*.sar=01;31:*.rar=01;31:*.alz=01;31:*.ace=01;31:*.zoo=01;31:*.cpio=01;31:*.7z=01;31:*.rz=01;31:*.cab=01;31:*.wim=01;31:*.swm=01;31:*.dwm=01;31:*.esd=01;31:*.jpg=01;35:*.jpeg=01;35:*.mjpg=01;35:*.mjpeg=01;35:*.gif=01;35:*.bmp=01;35:*.pbm=01;35:*.pgm=01;35:*.ppm=01;35:*.tga=01;35:*.xbm=01;35:*.xpm=01;35:*.tif=01;35:*.tiff=01;35:*.png=01;35:*.svg=01;35:*.svgz=01;35:*.mng=01;35:*.pcx=01;35:*.mov=01;35:*.mpg=01;35:*.mpeg=01;35:*.m2v=01;35:*.mkv=01;35:*.webm=01;35:*.webp=01;35:*.ogm=01;35:*.mp4=01;35:*.m4v=01;35:*.mp4v=01;35:*.vob=01;35:*.qt=01;35:*.nuv=01;35:*.wmv=01;35:*.asf=01;35:*.rm=01;35:*.rmvb=01;35:*.flc=01;35:*.avi=01;35:*.fli=01;35:*.flv=01;35:*.gl=01;35:*.dl=01;35:*.xcf=01;35:*.xwd=01;35:*.yuv=01;35:*.cgm=01;35:*.emf=01;35:*.ogv=01;35:*.ogx=01;35:*.aac=00;36:*.au=00;36:*.flac=00;36:*.m4a=00;36:*.mid=00;36:*.midi=00;36:*.mka=00;36:*.mp3=00;36:*.mpc=00;36:*.ogg=00;36:*.ra=00;36:*.wav=00;36:*.oga=00;36:*.opus=00;36:*.spx=00;36:*.xspf=00;36:'), ('AMENT_PREFIX_PATH', '/ros2_ws/install/ur5_pick_place:/opt/ros/humble'), ('PWD', '/ros2_ws/src/UR5_Jazzy_Moveit2_Pick_Place/build/ur5_description'), ('LC_ALL', 'C.UTF-8'), ('PYTHONPATH', '/ros2_ws/build/ur5_pick_place:/ros2_ws/install/ur5_pick_place/lib/python3.10/site-packages:/opt/ros/humble/lib/python3.10/site-packages:/opt/ros/humble/local/lib/python3.10/dist-packages'), ('COLCON', '1'), ('CMAKE_PREFIX_PATH', '/ros2_ws/install/ur5_pick_place:/opt/ros/humble')]), 'shell': False}
+[9.568179] (ur5_moveit) CommandEnded: {'returncode': 0}
+[9.571425] (ur5_moveit) JobProgress: {'identifier': 'ur5_moveit', 'progress': 'install'}
+[9.572939] (ur5_moveit) Command: {'cmd': ['/usr/bin/cmake', '--install', '/ros2_ws/src/UR5_Jazzy_Moveit2_Pick_Place/build/ur5_moveit'], 'cwd': '/ros2_ws/src/UR5_Jazzy_Moveit2_Pick_Place/build/ur5_moveit', 'env': OrderedDict([('HOSTNAME', 'beingar-HP-ProBook-650-G2'), ('SHLVL', '1'), ('LD_LIBRARY_PATH', '/opt/ros/humble/opt/rviz_ogre_vendor/lib:/opt/ros/humble/lib/x86_64-linux-gnu:/opt/ros/humble/lib'), ('HOME', '/root'), ('OLDPWD', '/ros2_ws'), ('ROS_PYTHON_VERSION', '3'), ('COLCON_PREFIX_PATH', '/ros2_ws/install'), ('ROS_DISTRO', 'humble'), ('_', '/usr/bin/colcon'), ('ROS_VERSION', '2'), ('TERM', 'xterm'), ('ROS_LOCALHOST_ONLY', '0'), ('QT_X11_NO_MITSHM', '1'), ('PATH', '/opt/ros/humble/bin:/usr/local/sbin:/usr/local/bin:/usr/sbin:/usr/bin:/sbin:/bin'), ('DISPLAY', ':0'), ('LANG', 'C.UTF-8'), ('LS_COLORS', 'rs=0:di=01;34:ln=01;36:mh=00:pi=40;33:so=01;35:do=01;35:bd=40;33;01:cd=40;33;01:or=40;31;01:mi=00:su=37;41:sg=30;43:ca=30;41:tw=30;42:ow=34;42:st=37;44:ex=01;32:*.tar=01;31:*.tgz=01;31:*.arc=01;31:*.arj=01;31:*.taz=01;31:*.lha=01;31:*.lz4=01;31:*.lzh=01;31:*.lzma=01;31:*.tlz=01;31:*.txz=01;31:*.tzo=01;31:*.t7z=01;31:*.zip=01;31:*.z=01;31:*.dz=01;31:*.gz=01;31:*.lrz=01;31:*.lz=01;31:*.lzo=01;31:*.xz=01;31:*.zst=01;31:*.tzst=01;31:*.bz2=01;31:*.bz=01;31:*.tbz=01;31:*.tbz2=01;31:*.tz=01;31:*.deb=01;31:*.rpm=01;31:*.jar=01;31:*.war=01;31:*.ear=01;31:*.sar=01;31:*.rar=01;31:*.alz=01;31:*.ace=01;31:*.zoo=01;31:*.cpio=01;31:*.7z=01;31:*.rz=01;31:*.cab=01;31:*.wim=01;31:*.swm=01;31:*.dwm=01;31:*.esd=01;31:*.jpg=01;35:*.jpeg=01;35:*.mjpg=01;35:*.mjpeg=01;35:*.gif=01;35:*.bmp=01;35:*.pbm=01;35:*.pgm=01;35:*.ppm=01;35:*.tga=01;35:*.xbm=01;35:*.xpm=01;35:*.tif=01;35:*.tiff=01;35:*.png=01;35:*.svg=01;35:*.svgz=01;35:*.mng=01;35:*.pcx=01;35:*.mov=01;35:*.mpg=01;35:*.mpeg=01;35:*.m2v=01;35:*.mkv=01;35:*.webm=01;35:*.webp=01;35:*.ogm=01;35:*.mp4=01;35:*.m4v=01;35:*.mp4v=01;35:*.vob=01;35:*.qt=01;35:*.nuv=01;35:*.wmv=01;35:*.asf=01;35:*.rm=01;35:*.rmvb=01;35:*.flc=01;35:*.avi=01;35:*.fli=01;35:*.flv=01;35:*.gl=01;35:*.dl=01;35:*.xcf=01;35:*.xwd=01;35:*.yuv=01;35:*.cgm=01;35:*.emf=01;35:*.ogv=01;35:*.ogx=01;35:*.aac=00;36:*.au=00;36:*.flac=00;36:*.m4a=00;36:*.mid=00;36:*.midi=00;36:*.mka=00;36:*.mp3=00;36:*.mpc=00;36:*.ogg=00;36:*.ra=00;36:*.wav=00;36:*.oga=00;36:*.opus=00;36:*.spx=00;36:*.xspf=00;36:'), ('AMENT_PREFIX_PATH', '/ros2_ws/install/ur5_pick_place:/opt/ros/humble'), ('PWD', '/ros2_ws/src/UR5_Jazzy_Moveit2_Pick_Place/build/ur5_moveit'), ('LC_ALL', 'C.UTF-8'), ('PYTHONPATH', '/ros2_ws/build/ur5_pick_place:/ros2_ws/install/ur5_pick_place/lib/python3.10/site-packages:/opt/ros/humble/lib/python3.10/site-packages:/opt/ros/humble/local/lib/python3.10/dist-packages'), ('COLCON', '1'), ('CMAKE_PREFIX_PATH', '/ros2_ws/install/ur5_pick_place:/opt/ros/humble')]), 'shell': False}
+[9.585400] (ur5_controller) StdoutLine: {'line': b'-- Install configuration: ""\n'}
+[9.586511] (ur5_controller) StdoutLine: {'line': b'-- Installing: /ros2_ws/src/UR5_Jazzy_Moveit2_Pick_Place/install/ur5_controller/share/ur5_controller/launch\n'}
+[9.587046] (ur5_controller) StdoutLine: {'line': b'-- Installing: /ros2_ws/src/UR5_Jazzy_Moveit2_Pick_Place/install/ur5_controller/share/ur5_controller/launch/controller.launch.py\n'}
+[9.607303] (ur5_description) StdoutLine: {'line': b'-- Install configuration: ""\n'}
+[9.608749] (ur5_description) StdoutLine: {'line': b'-- Installing: /ros2_ws/src/UR5_Jazzy_Moveit2_Pick_Place/install/ur5_description/share/ur5_description/launch\n'}
+[9.609367] (ur5_description) StdoutLine: {'line': b'-- Installing: /ros2_ws/src/UR5_Jazzy_Moveit2_Pick_Place/install/ur5_description/share/ur5_description/launch/rviz.launch.py\n'}
+[9.621137] (ur5_moveit) StdoutLine: {'line': b'-- Install configuration: ""\n'}
+[9.622159] (ur5_moveit) StdoutLine: {'line': b'-- Installing: /ros2_ws/src/UR5_Jazzy_Moveit2_Pick_Place/install/ur5_moveit/share/ur5_moveit/launch\n'}
+[9.623184] (ur5_moveit) StdoutLine: {'line': b'-- Installing: /ros2_ws/src/UR5_Jazzy_Moveit2_Pick_Place/install/ur5_moveit/share/ur5_moveit/launch/simulated_robot.launch.py\n'}
+[9.625582] (ur5_controller) StdoutLine: {'line': b'-- Installing: /ros2_ws/src/UR5_Jazzy_Moveit2_Pick_Place/install/ur5_controller/share/ur5_controller/config\n'}
+[9.626523] (ur5_description) StdoutLine: {'line': b'-- Installing: /ros2_ws/src/UR5_Jazzy_Moveit2_Pick_Place/install/ur5_description/share/ur5_description/launch/gazebo.launch.py\n'}
+[9.627189] (ur5_controller) StdoutLine: {'line': b'-- Installing: /ros2_ws/src/UR5_Jazzy_Moveit2_Pick_Place/install/ur5_controller/share/ur5_controller/config/ros2_controllers.yaml\n'}
+[9.629546] (ur5_description) StdoutLine: {'line': b'-- Installing: /ros2_ws/src/UR5_Jazzy_Moveit2_Pick_Place/install/ur5_description/share/ur5_description/urdf\n'}
+[9.630128] (ur5_description) StdoutLine: {'line': b'-- Installing: /ros2_ws/src/UR5_Jazzy_Moveit2_Pick_Place/install/ur5_description/share/ur5_description/urdf/ur5_robot.urdf.xacro\n'}
+[9.630407] (ur5_moveit) StdoutLine: {'line': b'-- Installing: /ros2_ws/src/UR5_Jazzy_Moveit2_Pick_Place/install/ur5_moveit/share/ur5_moveit/launch/moveit.launch.py\n'}
+[9.631254] (ur5_controller) StdoutLine: {'line': b'-- Installing: /ros2_ws/src/UR5_Jazzy_Moveit2_Pick_Place/install/ur5_controller/share/ament_index/resource_index/package_run_dependencies/ur5_controller\n'}
+[9.631580] (ur5_controller) StdoutLine: {'line': b'-- Installing: /ros2_ws/src/UR5_Jazzy_Moveit2_Pick_Place/install/ur5_controller/share/ament_index/resource_index/parent_prefix_path/ur5_controller\n'}
+[9.632022] (ur5_controller) StdoutLine: {'line': b'-- Installing: /ros2_ws/src/UR5_Jazzy_Moveit2_Pick_Place/install/ur5_controller/share/ur5_controller/environment/ament_prefix_path.sh\n'}
+[9.632458] (ur5_controller) StdoutLine: {'line': b'-- Installing: /ros2_ws/src/UR5_Jazzy_Moveit2_Pick_Place/install/ur5_controller/share/ur5_controller/environment/ament_prefix_path.dsv\n'}
+[9.633187] (ur5_controller) StdoutLine: {'line': b'-- Installing: /ros2_ws/src/UR5_Jazzy_Moveit2_Pick_Place/install/ur5_controller/share/ur5_controller/environment/path.sh\n'}
+[9.633770] (ur5_controller) StdoutLine: {'line': b'-- Installing: /ros2_ws/src/UR5_Jazzy_Moveit2_Pick_Place/install/ur5_controller/share/ur5_controller/environment/path.dsv\n'}
+[9.634578] (ur5_controller) StdoutLine: {'line': b'-- Installing: /ros2_ws/src/UR5_Jazzy_Moveit2_Pick_Place/install/ur5_controller/share/ur5_controller/local_setup.bash\n'}
+[9.635238] (ur5_controller) StdoutLine: {'line': b'-- Installing: /ros2_ws/src/UR5_Jazzy_Moveit2_Pick_Place/install/ur5_controller/share/ur5_controller/local_setup.sh\n'}
+[9.635896] (ur5_controller) StdoutLine: {'line': b'-- Installing: /ros2_ws/src/UR5_Jazzy_Moveit2_Pick_Place/install/ur5_controller/share/ur5_controller/local_setup.zsh\n'}
+[9.636541] (ur5_controller) StdoutLine: {'line': b'-- Installing: /ros2_ws/src/UR5_Jazzy_Moveit2_Pick_Place/install/ur5_controller/share/ur5_controller/local_setup.dsv\n'}
+[9.637211] (ur5_controller) StdoutLine: {'line': b'-- Installing: /ros2_ws/src/UR5_Jazzy_Moveit2_Pick_Place/install/ur5_controller/share/ur5_controller/package.dsv\n'}
+[9.638120] (ur5_controller) StdoutLine: {'line': b'-- Installing: /ros2_ws/src/UR5_Jazzy_Moveit2_Pick_Place/install/ur5_controller/share/ament_index/resource_index/packages/ur5_controller\n'}
+[9.639204] (ur5_controller) StdoutLine: {'line': b'-- Installing: /ros2_ws/src/UR5_Jazzy_Moveit2_Pick_Place/install/ur5_controller/share/ur5_controller/cmake/ur5_controllerConfig.cmake\n'}
+[9.640261] (ur5_controller) StdoutLine: {'line': b'-- Installing: /ros2_ws/src/UR5_Jazzy_Moveit2_Pick_Place/install/ur5_controller/share/ur5_controller/cmake/ur5_controllerConfig-version.cmake\n'}
+[9.641792] (ur5_controller) StdoutLine: {'line': b'-- Installing: /ros2_ws/src/UR5_Jazzy_Moveit2_Pick_Place/install/ur5_controller/share/ur5_controller/package.xml\n'}
+[9.643149] (-) TimerEvent: {}
+[9.646337] (ur5_moveit) StdoutLine: {'line': b'-- Installing: /ros2_ws/src/UR5_Jazzy_Moveit2_Pick_Place/install/ur5_moveit/share/ur5_moveit/config\n'}
+[9.647784] (ur5_moveit) StdoutLine: {'line': b'-- Installing: /ros2_ws/src/UR5_Jazzy_Moveit2_Pick_Place/install/ur5_moveit/share/ur5_moveit/config/ros2_controllers.yaml\n'}
+[9.650345] (ur5_controller) CommandEnded: {'returncode': 0}
+[9.662733] (ur5_description) StdoutLine: {'line': b'-- Installing: /ros2_ws/src/UR5_Jazzy_Moveit2_Pick_Place/install/ur5_description/share/ur5_description/urdf/initial_positions.yaml\n'}
+[9.664615] (ur5_moveit) StdoutLine: {'line': b'-- Installing: /ros2_ws/src/UR5_Jazzy_Moveit2_Pick_Place/install/ur5_moveit/share/ur5_moveit/config/joint_limits.yaml\n'}
+[9.665740] (ur5_description) StdoutLine: {'line': b'-- Installing: /ros2_ws/src/UR5_Jazzy_Moveit2_Pick_Place/install/ur5_description/share/ur5_description/urdf/ur5_robot.gazebo.xacro\n'}
+[9.666101] (ur5_description) StdoutLine: {'line': b'-- Installing: /ros2_ws/src/UR5_Jazzy_Moveit2_Pick_Place/install/ur5_description/share/ur5_description/urdf/ur5_robot.ros2_control.xacro\n'}
+[9.671824] (ur5_moveit) StdoutLine: {'line': b'-- Installing: /ros2_ws/src/UR5_Jazzy_Moveit2_Pick_Place/install/ur5_moveit/share/ur5_moveit/config/ur5_robot.srdf\n'}
+[9.672945] (ur5_moveit) StdoutLine: {'line': b'-- Installing: /ros2_ws/src/UR5_Jazzy_Moveit2_Pick_Place/install/ur5_moveit/share/ur5_moveit/config/ompl_planning.yaml\n'}
+[9.673549] (ur5_description) StdoutLine: {'line': b'-- Installing: /ros2_ws/src/UR5_Jazzy_Moveit2_Pick_Place/install/ur5_description/share/ur5_description/config\n'}
+[9.674019] (ur5_description) StdoutLine: {'line': b'-- Installing: /ros2_ws/src/UR5_Jazzy_Moveit2_Pick_Place/install/ur5_description/share/ur5_description/config/view_config.rviz\n'}
+[9.674428] (ur5_description) StdoutLine: {'line': b'-- Installing: /ros2_ws/src/UR5_Jazzy_Moveit2_Pick_Place/install/ur5_description/share/ur5_description/config/ros2_gz_bridge.yaml\n'}
+[9.674948] (ur5_description) StdoutLine: {'line': b'-- Installing: /ros2_ws/src/UR5_Jazzy_Moveit2_Pick_Place/install/ur5_description/share/ur5_description/worlds\n'}
+[9.675427] (ur5_description) StdoutLine: {'line': b'-- Installing: /ros2_ws/src/UR5_Jazzy_Moveit2_Pick_Place/install/ur5_description/share/ur5_description/worlds/gazebo_world.sdf\n'}
+[9.688526] (ur5_moveit) StdoutLine: {'line': b'-- Installing: /ros2_ws/src/UR5_Jazzy_Moveit2_Pick_Place/install/ur5_moveit/share/ur5_moveit/config/moveit.rviz\n'}
+[9.690631] (ur5_description) StdoutLine: {'line': b'-- Installing: /ros2_ws/src/UR5_Jazzy_Moveit2_Pick_Place/install/ur5_description/share/ur5_description/meshes\n'}
+[9.691208] (ur5_description) StdoutLine: {'line': b'-- Installing: /ros2_ws/src/UR5_Jazzy_Moveit2_Pick_Place/install/ur5_description/share/ur5_description/meshes/visual\n'}
+[9.691488] (ur5_description) StdoutLine: {'line': b'-- Installing: /ros2_ws/src/UR5_Jazzy_Moveit2_Pick_Place/install/ur5_description/share/ur5_description/meshes/visual/rg2\n'}
+[9.691729] (ur5_moveit) StdoutLine: {'line': b'-- Installing: /ros2_ws/src/UR5_Jazzy_Moveit2_Pick_Place/install/ur5_moveit/share/ur5_moveit/config/initial_positions.yaml\n'}
+[9.692121] (ur5_description) StdoutLine: {'line': b'-- Installing: /ros2_ws/src/UR5_Jazzy_Moveit2_Pick_Place/install/ur5_description/share/ur5_description/meshes/visual/rg2/finger_neutral.dae\n'}
+[9.692393] (ur5_moveit) StdoutLine: {'line': b'-- Installing: /ros2_ws/src/UR5_Jazzy_Moveit2_Pick_Place/install/ur5_moveit/share/ur5_moveit/config/kinematics.yaml\n'}
+[9.693160] (ur5_moveit) StdoutLine: {'line': b'-- Installing: /ros2_ws/src/UR5_Jazzy_Moveit2_Pick_Place/install/ur5_moveit/share/ur5_moveit/config/pilz_cartesian_limits.yaml\n'}
+[9.705771] (ur5_moveit) StdoutLine: {'line': b'-- Installing: /ros2_ws/src/UR5_Jazzy_Moveit2_Pick_Place/install/ur5_moveit/share/ur5_moveit/config/moveit_controllers.yaml\n'}
+[9.709366] (ur5_description) StdoutLine: {'line': b'-- Installing: /ros2_ws/src/UR5_Jazzy_Moveit2_Pick_Place/install/ur5_description/share/ur5_description/meshes/visual/rg2/finger.dae\n'}
+[9.718404] (ur5_moveit) StdoutLine: {'line': b'-- Installing: /ros2_ws/src/UR5_Jazzy_Moveit2_Pick_Place/install/ur5_moveit/share/ur5_moveit/config/controller_setting.yaml\n'}
+[9.720632] (ur5_controller) JobEnded: {'identifier': 'ur5_controller', 'rc': 0}
+[9.722349] (ur5_moveit) StdoutLine: {'line': b'-- Installing: /ros2_ws/src/UR5_Jazzy_Moveit2_Pick_Place/install/ur5_moveit/share/ament_index/resource_index/package_run_dependencies/ur5_moveit\n'}
+[9.723355] (ur5_moveit) StdoutLine: {'line': b'-- Installing: /ros2_ws/src/UR5_Jazzy_Moveit2_Pick_Place/install/ur5_moveit/share/ament_index/resource_index/parent_prefix_path/ur5_moveit\n'}
+[9.724112] (ur5_moveit) StdoutLine: {'line': b'-- Installing: /ros2_ws/src/UR5_Jazzy_Moveit2_Pick_Place/install/ur5_moveit/share/ur5_moveit/environment/ament_prefix_path.sh\n'}
+[9.724787] (ur5_moveit) StdoutLine: {'line': b'-- Installing: /ros2_ws/src/UR5_Jazzy_Moveit2_Pick_Place/install/ur5_moveit/share/ur5_moveit/environment/ament_prefix_path.dsv\n'}
+[9.726165] (ur5_moveit) StdoutLine: {'line': b'-- Installing: /ros2_ws/src/UR5_Jazzy_Moveit2_Pick_Place/install/ur5_moveit/share/ur5_moveit/environment/path.sh\n'}
+[9.726750] (ur5_moveit) StdoutLine: {'line': b'-- Installing: /ros2_ws/src/UR5_Jazzy_Moveit2_Pick_Place/install/ur5_moveit/share/ur5_moveit/environment/path.dsv\n'}
+[9.727594] (ur5_moveit) StdoutLine: {'line': b'-- Installing: /ros2_ws/src/UR5_Jazzy_Moveit2_Pick_Place/install/ur5_moveit/share/ur5_moveit/local_setup.bash\n'}
+[9.728362] (ur5_moveit) StdoutLine: {'line': b'-- Installing: /ros2_ws/src/UR5_Jazzy_Moveit2_Pick_Place/install/ur5_moveit/share/ur5_moveit/local_setup.sh\n'}
+[9.729127] (ur5_moveit) StdoutLine: {'line': b'-- Installing: /ros2_ws/src/UR5_Jazzy_Moveit2_Pick_Place/install/ur5_moveit/share/ur5_moveit/local_setup.zsh\n'}
+[9.730134] (ur5_moveit) StdoutLine: {'line': b'-- Installing: /ros2_ws/src/UR5_Jazzy_Moveit2_Pick_Place/install/ur5_moveit/share/ur5_moveit/local_setup.dsv\n'}
+[9.730918] (ur5_moveit) StdoutLine: {'line': b'-- Installing: /ros2_ws/src/UR5_Jazzy_Moveit2_Pick_Place/install/ur5_moveit/share/ur5_moveit/package.dsv\n'}
+[9.731926] (ur5_moveit) StdoutLine: {'line': b'-- Installing: /ros2_ws/src/UR5_Jazzy_Moveit2_Pick_Place/install/ur5_moveit/share/ament_index/resource_index/packages/ur5_moveit\n'}
+[9.732894] (ur5_description) StdoutLine: {'line': b'-- Installing: /ros2_ws/src/UR5_Jazzy_Moveit2_Pick_Place/install/ur5_description/share/ur5_description/meshes/visual/rg2/hand.dae\n'}
+[9.733687] (ur5_moveit) StdoutLine: {'line': b'-- Installing: /ros2_ws/src/UR5_Jazzy_Moveit2_Pick_Place/install/ur5_moveit/share/ur5_moveit/cmake/ur5_moveitConfig.cmake\n'}
+[9.734384] (ur5_moveit) StdoutLine: {'line': b'-- Installing: /ros2_ws/src/UR5_Jazzy_Moveit2_Pick_Place/install/ur5_moveit/share/ur5_moveit/cmake/ur5_moveitConfig-version.cmake\n'}
+[9.735423] (ur5_moveit) StdoutLine: {'line': b'-- Installing: /ros2_ws/src/UR5_Jazzy_Moveit2_Pick_Place/install/ur5_moveit/share/ur5_moveit/package.xml\n'}
+[9.742960] (ur5_moveit) CommandEnded: {'returncode': 0}
+[9.745344] (-) TimerEvent: {}
+[9.752069] (ur5_description) StdoutLine: {'line': b'-- Installing: /ros2_ws/src/UR5_Jazzy_Moveit2_Pick_Place/install/ur5_description/share/ur5_description/meshes/visual/ur5\n'}
+[9.753314] (ur5_description) StdoutLine: {'line': b'-- Installing: /ros2_ws/src/UR5_Jazzy_Moveit2_Pick_Place/install/ur5_description/share/ur5_description/meshes/visual/ur5/forearm.dae\n'}
+[9.793018] (ur5_description) StdoutLine: {'line': b'-- Installing: /ros2_ws/src/UR5_Jazzy_Moveit2_Pick_Place/install/ur5_description/share/ur5_description/meshes/visual/ur5/robotiq_85_finger_tip_link.dae\n'}
+[9.802678] (ur5_moveit) JobEnded: {'identifier': 'ur5_moveit', 'rc': 0}
+[9.804559] (ur5_description) StdoutLine: {'line': b'-- Installing: /ros2_ws/src/UR5_Jazzy_Moveit2_Pick_Place/install/ur5_description/share/ur5_description/meshes/visual/ur5/shoulder.dae\n'}
+[9.827539] (ur5_description) StdoutLine: {'line': b'-- Installing: /ros2_ws/src/UR5_Jazzy_Moveit2_Pick_Place/install/ur5_description/share/ur5_description/meshes/visual/ur5/robotiq_85_base_link.dae\n'}
+[9.845595] (-) TimerEvent: {}
+[9.889551] (ur5_description) StdoutLine: {'line': b'-- Installing: /ros2_ws/src/UR5_Jazzy_Moveit2_Pick_Place/install/ur5_description/share/ur5_description/meshes/visual/ur5/wrist3.dae\n'}
+[9.896639] (ur5_description) StdoutLine: {'line': b'-- Installing: /ros2_ws/src/UR5_Jazzy_Moveit2_Pick_Place/install/ur5_description/share/ur5_description/meshes/visual/ur5/SuctionCup.stl\n'}
+[9.910396] (ur5_description) StdoutLine: {'line': b'-- Installing: /ros2_ws/src/UR5_Jazzy_Moveit2_Pick_Place/install/ur5_description/share/ur5_description/meshes/visual/ur5/robotiq_85_knuckle_link.dae\n'}
+[9.915320] (ur5_description) StdoutLine: {'line': b'-- Installing: /ros2_ws/src/UR5_Jazzy_Moveit2_Pick_Place/install/ur5_description/share/ur5_description/meshes/visual/ur5/wrist1.dae\n'}
+[9.938225] (ur5_description) StdoutLine: {'line': b'-- Installing: /ros2_ws/src/UR5_Jazzy_Moveit2_Pick_Place/install/ur5_description/share/ur5_description/meshes/visual/ur5/upperarm.dae\n'}
+[9.945809] (-) TimerEvent: {}
+[9.994551] (ur5_description) StdoutLine: {'line': b'-- Installing: /ros2_ws/src/UR5_Jazzy_Moveit2_Pick_Place/install/ur5_description/share/ur5_description/meshes/visual/ur5/base.dae\n'}
+[10.023694] (ur5_description) StdoutLine: {'line': b'-- Installing: /ros2_ws/src/UR5_Jazzy_Moveit2_Pick_Place/install/ur5_description/share/ur5_description/meshes/visual/ur5/robotiq_85_inner_knuckle_link.dae\n'}
+[10.036826] (ur5_description) StdoutLine: {'line': b'-- Installing: /ros2_ws/src/UR5_Jazzy_Moveit2_Pick_Place/install/ur5_description/share/ur5_description/meshes/visual/ur5/robotiq_85_finger_link.dae\n'}
+[10.043087] (ur5_description) StdoutLine: {'line': b'-- Installing: /ros2_ws/src/UR5_Jazzy_Moveit2_Pick_Place/install/ur5_description/share/ur5_description/meshes/visual/ur5/wrist2.dae\n'}
+[10.046040] (-) TimerEvent: {}
+[10.066834] (ur5_description) StdoutLine: {'line': b'-- Installing: /ros2_ws/src/UR5_Jazzy_Moveit2_Pick_Place/install/ur5_description/share/ur5_description/meshes/collision\n'}
+[10.067613] (ur5_description) StdoutLine: {'line': b'-- Installing: /ros2_ws/src/UR5_Jazzy_Moveit2_Pick_Place/install/ur5_description/share/ur5_description/meshes/collision/rg2\n'}
+[10.068202] (ur5_description) StdoutLine: {'line': b'-- Installing: /ros2_ws/src/UR5_Jazzy_Moveit2_Pick_Place/install/ur5_description/share/ur5_description/meshes/collision/rg2/finger_neutral.stl\n'}
+[10.081569] (ur5_description) StdoutLine: {'line': b'-- Installing: /ros2_ws/src/UR5_Jazzy_Moveit2_Pick_Place/install/ur5_description/share/ur5_description/meshes/collision/rg2/hand.stl\n'}
+[10.082467] (ur5_description) StdoutLine: {'line': b'-- Installing: /ros2_ws/src/UR5_Jazzy_Moveit2_Pick_Place/install/ur5_description/share/ur5_description/meshes/collision/rg2/finger.stl\n'}
+[10.083339] (ur5_description) StdoutLine: {'line': b'-- Installing: /ros2_ws/src/UR5_Jazzy_Moveit2_Pick_Place/install/ur5_description/share/ur5_description/meshes/collision/ur5\n'}
+[10.084135] (ur5_description) StdoutLine: {'line': b'-- Installing: /ros2_ws/src/UR5_Jazzy_Moveit2_Pick_Place/install/ur5_description/share/ur5_description/meshes/collision/ur5/wrist1.stl\n'}
+[10.095490] (ur5_description) StdoutLine: {'line': b'-- Installing: /ros2_ws/src/UR5_Jazzy_Moveit2_Pick_Place/install/ur5_description/share/ur5_description/meshes/collision/ur5/shoulder.stl\n'}
+[10.096375] (ur5_description) StdoutLine: {'line': b'-- Installing: /ros2_ws/src/UR5_Jazzy_Moveit2_Pick_Place/install/ur5_description/share/ur5_description/meshes/collision/ur5/forearm.stl\n'}
+[10.097354] (ur5_description) StdoutLine: {'line': b'-- Installing: /ros2_ws/src/UR5_Jazzy_Moveit2_Pick_Place/install/ur5_description/share/ur5_description/meshes/collision/ur5/wrist2.stl\n'}
+[10.098436] (ur5_description) StdoutLine: {'line': b'-- Installing: /ros2_ws/src/UR5_Jazzy_Moveit2_Pick_Place/install/ur5_description/share/ur5_description/meshes/collision/ur5/robotiq_85_finger_link.stl\n'}
+[10.111043] (ur5_description) StdoutLine: {'line': b'-- Installing: /ros2_ws/src/UR5_Jazzy_Moveit2_Pick_Place/install/ur5_description/share/ur5_description/meshes/collision/ur5/robotiq_85_inner_knuckle_link.stl\n'}
+[10.126060] (ur5_description) StdoutLine: {'line': b'-- Installing: /ros2_ws/src/UR5_Jazzy_Moveit2_Pick_Place/install/ur5_description/share/ur5_description/meshes/collision/ur5/robotiq_85_base_link.stl\n'}
+[10.146187] (-) TimerEvent: {}
+[10.170654] (ur5_description) StdoutLine: {'line': b'-- Installing: /ros2_ws/src/UR5_Jazzy_Moveit2_Pick_Place/install/ur5_description/share/ur5_description/meshes/collision/ur5/robotiq_85_finger_tip_link.stl\n'}
+[10.173153] (ur5_description) StdoutLine: {'line': b'-- Installing: /ros2_ws/src/UR5_Jazzy_Moveit2_Pick_Place/install/ur5_description/share/ur5_description/meshes/collision/ur5/robotiq_85_knuckle_link.stl\n'}
+[10.184204] (ur5_description) StdoutLine: {'line': b'-- Installing: /ros2_ws/src/UR5_Jazzy_Moveit2_Pick_Place/install/ur5_description/share/ur5_description/meshes/collision/ur5/upperarm.stl\n'}
+[10.185142] (ur5_description) StdoutLine: {'line': b'-- Installing: /ros2_ws/src/UR5_Jazzy_Moveit2_Pick_Place/install/ur5_description/share/ur5_description/meshes/collision/ur5/base.stl\n'}
+[10.192553] (ur5_description) StdoutLine: {'line': b'-- Installing: /ros2_ws/src/UR5_Jazzy_Moveit2_Pick_Place/install/ur5_description/share/ur5_description/meshes/collision/ur5/SuctionCup.stl\n'}
+[10.204782] (ur5_description) StdoutLine: {'line': b'-- Installing: /ros2_ws/src/UR5_Jazzy_Moveit2_Pick_Place/install/ur5_description/share/ur5_description/meshes/collision/ur5/wrist3.stl\n'}
+[10.207089] (ur5_description) StdoutLine: {'line': b'-- Installing: /ros2_ws/src/UR5_Jazzy_Moveit2_Pick_Place/install/ur5_description/share/ament_index/resource_index/package_run_dependencies/ur5_description\n'}
+[10.208693] (ur5_description) StdoutLine: {'line': b'-- Installing: /ros2_ws/src/UR5_Jazzy_Moveit2_Pick_Place/install/ur5_description/share/ament_index/resource_index/parent_prefix_path/ur5_description\n'}
+[10.209838] (ur5_description) StdoutLine: {'line': b'-- Installing: /ros2_ws/src/UR5_Jazzy_Moveit2_Pick_Place/install/ur5_description/share/ur5_description/environment/ament_prefix_path.sh\n'}
+[10.211441] (ur5_description) StdoutLine: {'line': b'-- Installing: /ros2_ws/src/UR5_Jazzy_Moveit2_Pick_Place/install/ur5_description/share/ur5_description/environment/ament_prefix_path.dsv\n'}
+[10.212398] (ur5_description) StdoutLine: {'line': b'-- Installing: /ros2_ws/src/UR5_Jazzy_Moveit2_Pick_Place/install/ur5_description/share/ur5_description/environment/path.sh\n'}
+[10.213487] (ur5_description) StdoutLine: {'line': b'-- Installing: /ros2_ws/src/UR5_Jazzy_Moveit2_Pick_Place/install/ur5_description/share/ur5_description/environment/path.dsv\n'}
+[10.214563] (ur5_description) StdoutLine: {'line': b'-- Installing: /ros2_ws/src/UR5_Jazzy_Moveit2_Pick_Place/install/ur5_description/share/ur5_description/local_setup.bash\n'}
+[10.215336] (ur5_description) StdoutLine: {'line': b'-- Installing: /ros2_ws/src/UR5_Jazzy_Moveit2_Pick_Place/install/ur5_description/share/ur5_description/local_setup.sh\n'}
+[10.216011] (ur5_description) StdoutLine: {'line': b'-- Installing: /ros2_ws/src/UR5_Jazzy_Moveit2_Pick_Place/install/ur5_description/share/ur5_description/local_setup.zsh\n'}
+[10.217079] (ur5_description) StdoutLine: {'line': b'-- Installing: /ros2_ws/src/UR5_Jazzy_Moveit2_Pick_Place/install/ur5_description/share/ur5_description/local_setup.dsv\n'}
+[10.217814] (ur5_description) StdoutLine: {'line': b'-- Installing: /ros2_ws/src/UR5_Jazzy_Moveit2_Pick_Place/install/ur5_description/share/ur5_description/package.dsv\n'}
+[10.218729] (ur5_description) StdoutLine: {'line': b'-- Installing: /ros2_ws/src/UR5_Jazzy_Moveit2_Pick_Place/install/ur5_description/share/ament_index/resource_index/packages/ur5_description\n'}
+[10.219641] (ur5_description) StdoutLine: {'line': b'-- Installing: /ros2_ws/src/UR5_Jazzy_Moveit2_Pick_Place/install/ur5_description/share/ur5_description/cmake/ur5_descriptionConfig.cmake\n'}
+[10.222199] (ur5_description) StdoutLine: {'line': b'-- Installing: /ros2_ws/src/UR5_Jazzy_Moveit2_Pick_Place/install/ur5_description/share/ur5_description/cmake/ur5_descriptionConfig-version.cmake\n'}
+[10.222931] (ur5_description) StdoutLine: {'line': b'-- Installing: /ros2_ws/src/UR5_Jazzy_Moveit2_Pick_Place/install/ur5_description/share/ur5_description/package.xml\n'}
+[10.231917] (ur5_description) CommandEnded: {'returncode': 0}
+[10.248756] (-) TimerEvent: {}
+[10.297681] (ur5_description) JobEnded: {'identifier': 'ur5_description', 'rc': 0}
+[10.300951] (-) EventReactorShutdown: {}

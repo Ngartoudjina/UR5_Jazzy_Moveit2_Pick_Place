@@ -1,0 +1,96 @@
+[0.161s] Invoking command in '/ros2_ws/src/UR5_Jazzy_Moveit2_Pick_Place/build/ur5_description': CMAKE_PREFIX_PATH=/ros2_ws/install/ur5_pick_place:/opt/ros/humble /usr/bin/cmake /ros2_ws/src/UR5_Jazzy_Moveit2_Pick_Place/src/ur5_ws/src/ur5_description -DCMAKE_INSTALL_PREFIX=/ros2_ws/src/UR5_Jazzy_Moveit2_Pick_Place/install/ur5_description
+[3.589s] -- The C compiler identification is GNU 11.4.0
+[4.777s] -- The CXX compiler identification is GNU 11.4.0
+[4.904s] -- Detecting C compiler ABI info
+[5.451s] -- Detecting C compiler ABI info - done
+[5.520s] -- Check for working C compiler: /usr/bin/cc - skipped
+[5.537s] -- Detecting C compile features
+[5.572s] -- Detecting C compile features - done
+[5.653s] -- Detecting CXX compiler ABI info
+[6.138s] -- Detecting CXX compiler ABI info - done
+[6.202s] -- Check for working CXX compiler: /usr/bin/c++ - skipped
+[6.203s] -- Detecting CXX compile features
+[6.206s] -- Detecting CXX compile features - done
+[6.306s] -- Found ament_cmake: 1.3.13 (/opt/ros/humble/share/ament_cmake/cmake)
+[7.387s] -- Found Python3: /usr/bin/python3 (found version "3.10.12") found components: Interpreter 
+[8.451s] -- Found ament_lint_auto: 0.12.15 (/opt/ros/humble/share/ament_lint_auto/cmake)
+[9.133s] -- Added test 'flake8' to check Python code syntax and style conventions
+[9.139s] -- Added test 'lint_cmake' to check CMake code style
+[9.146s] -- Added test 'pep257' to check Python code against some of the docstring style conventions in PEP 257
+[9.164s] -- Added test 'xmllint' to check XML markup files
+[9.183s] -- Configuring done
+[9.202s] -- Generating done
+[9.214s] -- Build files have been written to: /ros2_ws/src/UR5_Jazzy_Moveit2_Pick_Place/build/ur5_description
+[9.249s] Invoked command in '/ros2_ws/src/UR5_Jazzy_Moveit2_Pick_Place/build/ur5_description' returned '0': CMAKE_PREFIX_PATH=/ros2_ws/install/ur5_pick_place:/opt/ros/humble /usr/bin/cmake /ros2_ws/src/UR5_Jazzy_Moveit2_Pick_Place/src/ur5_ws/src/ur5_description -DCMAKE_INSTALL_PREFIX=/ros2_ws/src/UR5_Jazzy_Moveit2_Pick_Place/install/ur5_description
+[9.256s] Invoking command in '/ros2_ws/src/UR5_Jazzy_Moveit2_Pick_Place/build/ur5_description': CMAKE_PREFIX_PATH=/ros2_ws/install/ur5_pick_place:/opt/ros/humble /usr/bin/cmake --build /ros2_ws/src/UR5_Jazzy_Moveit2_Pick_Place/build/ur5_description -- -j4 -l4
+[9.504s] Invoked command in '/ros2_ws/src/UR5_Jazzy_Moveit2_Pick_Place/build/ur5_description' returned '0': CMAKE_PREFIX_PATH=/ros2_ws/install/ur5_pick_place:/opt/ros/humble /usr/bin/cmake --build /ros2_ws/src/UR5_Jazzy_Moveit2_Pick_Place/build/ur5_description -- -j4 -l4
+[9.511s] Invoking command in '/ros2_ws/src/UR5_Jazzy_Moveit2_Pick_Place/build/ur5_description': CMAKE_PREFIX_PATH=/ros2_ws/install/ur5_pick_place:/opt/ros/humble /usr/bin/cmake --install /ros2_ws/src/UR5_Jazzy_Moveit2_Pick_Place/build/ur5_description
+[9.560s] -- Install configuration: ""
+[9.562s] -- Installing: /ros2_ws/src/UR5_Jazzy_Moveit2_Pick_Place/install/ur5_description/share/ur5_description/launch
+[9.562s] -- Installing: /ros2_ws/src/UR5_Jazzy_Moveit2_Pick_Place/install/ur5_description/share/ur5_description/launch/rviz.launch.py
+[9.579s] -- Installing: /ros2_ws/src/UR5_Jazzy_Moveit2_Pick_Place/install/ur5_description/share/ur5_description/launch/gazebo.launch.py
+[9.582s] -- Installing: /ros2_ws/src/UR5_Jazzy_Moveit2_Pick_Place/install/ur5_description/share/ur5_description/urdf
+[9.583s] -- Installing: /ros2_ws/src/UR5_Jazzy_Moveit2_Pick_Place/install/ur5_description/share/ur5_description/urdf/ur5_robot.urdf.xacro
+[9.617s] -- Installing: /ros2_ws/src/UR5_Jazzy_Moveit2_Pick_Place/install/ur5_description/share/ur5_description/urdf/initial_positions.yaml
+[9.618s] -- Installing: /ros2_ws/src/UR5_Jazzy_Moveit2_Pick_Place/install/ur5_description/share/ur5_description/urdf/ur5_robot.gazebo.xacro
+[9.619s] -- Installing: /ros2_ws/src/UR5_Jazzy_Moveit2_Pick_Place/install/ur5_description/share/ur5_description/urdf/ur5_robot.ros2_control.xacro
+[9.626s] -- Installing: /ros2_ws/src/UR5_Jazzy_Moveit2_Pick_Place/install/ur5_description/share/ur5_description/config
+[9.627s] -- Installing: /ros2_ws/src/UR5_Jazzy_Moveit2_Pick_Place/install/ur5_description/share/ur5_description/config/view_config.rviz
+[9.627s] -- Installing: /ros2_ws/src/UR5_Jazzy_Moveit2_Pick_Place/install/ur5_description/share/ur5_description/config/ros2_gz_bridge.yaml
+[9.628s] -- Installing: /ros2_ws/src/UR5_Jazzy_Moveit2_Pick_Place/install/ur5_description/share/ur5_description/worlds
+[9.628s] -- Installing: /ros2_ws/src/UR5_Jazzy_Moveit2_Pick_Place/install/ur5_description/share/ur5_description/worlds/gazebo_world.sdf
+[9.643s] -- Installing: /ros2_ws/src/UR5_Jazzy_Moveit2_Pick_Place/install/ur5_description/share/ur5_description/meshes
+[9.644s] -- Installing: /ros2_ws/src/UR5_Jazzy_Moveit2_Pick_Place/install/ur5_description/share/ur5_description/meshes/visual
+[9.644s] -- Installing: /ros2_ws/src/UR5_Jazzy_Moveit2_Pick_Place/install/ur5_description/share/ur5_description/meshes/visual/rg2
+[9.645s] -- Installing: /ros2_ws/src/UR5_Jazzy_Moveit2_Pick_Place/install/ur5_description/share/ur5_description/meshes/visual/rg2/finger_neutral.dae
+[9.662s] -- Installing: /ros2_ws/src/UR5_Jazzy_Moveit2_Pick_Place/install/ur5_description/share/ur5_description/meshes/visual/rg2/finger.dae
+[9.686s] -- Installing: /ros2_ws/src/UR5_Jazzy_Moveit2_Pick_Place/install/ur5_description/share/ur5_description/meshes/visual/rg2/hand.dae
+[9.706s] -- Installing: /ros2_ws/src/UR5_Jazzy_Moveit2_Pick_Place/install/ur5_description/share/ur5_description/meshes/visual/ur5
+[9.707s] -- Installing: /ros2_ws/src/UR5_Jazzy_Moveit2_Pick_Place/install/ur5_description/share/ur5_description/meshes/visual/ur5/forearm.dae
+[9.746s] -- Installing: /ros2_ws/src/UR5_Jazzy_Moveit2_Pick_Place/install/ur5_description/share/ur5_description/meshes/visual/ur5/robotiq_85_finger_tip_link.dae
+[9.757s] -- Installing: /ros2_ws/src/UR5_Jazzy_Moveit2_Pick_Place/install/ur5_description/share/ur5_description/meshes/visual/ur5/shoulder.dae
+[9.780s] -- Installing: /ros2_ws/src/UR5_Jazzy_Moveit2_Pick_Place/install/ur5_description/share/ur5_description/meshes/visual/ur5/robotiq_85_base_link.dae
+[9.843s] -- Installing: /ros2_ws/src/UR5_Jazzy_Moveit2_Pick_Place/install/ur5_description/share/ur5_description/meshes/visual/ur5/wrist3.dae
+[9.850s] -- Installing: /ros2_ws/src/UR5_Jazzy_Moveit2_Pick_Place/install/ur5_description/share/ur5_description/meshes/visual/ur5/SuctionCup.stl
+[9.863s] -- Installing: /ros2_ws/src/UR5_Jazzy_Moveit2_Pick_Place/install/ur5_description/share/ur5_description/meshes/visual/ur5/robotiq_85_knuckle_link.dae
+[9.868s] -- Installing: /ros2_ws/src/UR5_Jazzy_Moveit2_Pick_Place/install/ur5_description/share/ur5_description/meshes/visual/ur5/wrist1.dae
+[9.891s] -- Installing: /ros2_ws/src/UR5_Jazzy_Moveit2_Pick_Place/install/ur5_description/share/ur5_description/meshes/visual/ur5/upperarm.dae
+[9.948s] -- Installing: /ros2_ws/src/UR5_Jazzy_Moveit2_Pick_Place/install/ur5_description/share/ur5_description/meshes/visual/ur5/base.dae
+[9.977s] -- Installing: /ros2_ws/src/UR5_Jazzy_Moveit2_Pick_Place/install/ur5_description/share/ur5_description/meshes/visual/ur5/robotiq_85_inner_knuckle_link.dae
+[9.990s] -- Installing: /ros2_ws/src/UR5_Jazzy_Moveit2_Pick_Place/install/ur5_description/share/ur5_description/meshes/visual/ur5/robotiq_85_finger_link.dae
+[9.996s] -- Installing: /ros2_ws/src/UR5_Jazzy_Moveit2_Pick_Place/install/ur5_description/share/ur5_description/meshes/visual/ur5/wrist2.dae
+[10.020s] -- Installing: /ros2_ws/src/UR5_Jazzy_Moveit2_Pick_Place/install/ur5_description/share/ur5_description/meshes/collision
+[10.021s] -- Installing: /ros2_ws/src/UR5_Jazzy_Moveit2_Pick_Place/install/ur5_description/share/ur5_description/meshes/collision/rg2
+[10.021s] -- Installing: /ros2_ws/src/UR5_Jazzy_Moveit2_Pick_Place/install/ur5_description/share/ur5_description/meshes/collision/rg2/finger_neutral.stl
+[10.034s] -- Installing: /ros2_ws/src/UR5_Jazzy_Moveit2_Pick_Place/install/ur5_description/share/ur5_description/meshes/collision/rg2/hand.stl
+[10.035s] -- Installing: /ros2_ws/src/UR5_Jazzy_Moveit2_Pick_Place/install/ur5_description/share/ur5_description/meshes/collision/rg2/finger.stl
+[10.036s] -- Installing: /ros2_ws/src/UR5_Jazzy_Moveit2_Pick_Place/install/ur5_description/share/ur5_description/meshes/collision/ur5
+[10.037s] -- Installing: /ros2_ws/src/UR5_Jazzy_Moveit2_Pick_Place/install/ur5_description/share/ur5_description/meshes/collision/ur5/wrist1.stl
+[10.048s] -- Installing: /ros2_ws/src/UR5_Jazzy_Moveit2_Pick_Place/install/ur5_description/share/ur5_description/meshes/collision/ur5/shoulder.stl
+[10.049s] -- Installing: /ros2_ws/src/UR5_Jazzy_Moveit2_Pick_Place/install/ur5_description/share/ur5_description/meshes/collision/ur5/forearm.stl
+[10.050s] -- Installing: /ros2_ws/src/UR5_Jazzy_Moveit2_Pick_Place/install/ur5_description/share/ur5_description/meshes/collision/ur5/wrist2.stl
+[10.051s] -- Installing: /ros2_ws/src/UR5_Jazzy_Moveit2_Pick_Place/install/ur5_description/share/ur5_description/meshes/collision/ur5/robotiq_85_finger_link.stl
+[10.064s] -- Installing: /ros2_ws/src/UR5_Jazzy_Moveit2_Pick_Place/install/ur5_description/share/ur5_description/meshes/collision/ur5/robotiq_85_inner_knuckle_link.stl
+[10.079s] -- Installing: /ros2_ws/src/UR5_Jazzy_Moveit2_Pick_Place/install/ur5_description/share/ur5_description/meshes/collision/ur5/robotiq_85_base_link.stl
+[10.123s] -- Installing: /ros2_ws/src/UR5_Jazzy_Moveit2_Pick_Place/install/ur5_description/share/ur5_description/meshes/collision/ur5/robotiq_85_finger_tip_link.stl
+[10.126s] -- Installing: /ros2_ws/src/UR5_Jazzy_Moveit2_Pick_Place/install/ur5_description/share/ur5_description/meshes/collision/ur5/robotiq_85_knuckle_link.stl
+[10.137s] -- Installing: /ros2_ws/src/UR5_Jazzy_Moveit2_Pick_Place/install/ur5_description/share/ur5_description/meshes/collision/ur5/upperarm.stl
+[10.138s] -- Installing: /ros2_ws/src/UR5_Jazzy_Moveit2_Pick_Place/install/ur5_description/share/ur5_description/meshes/collision/ur5/base.stl
+[10.145s] -- Installing: /ros2_ws/src/UR5_Jazzy_Moveit2_Pick_Place/install/ur5_description/share/ur5_description/meshes/collision/ur5/SuctionCup.stl
+[10.158s] -- Installing: /ros2_ws/src/UR5_Jazzy_Moveit2_Pick_Place/install/ur5_description/share/ur5_description/meshes/collision/ur5/wrist3.stl
+[10.160s] -- Installing: /ros2_ws/src/UR5_Jazzy_Moveit2_Pick_Place/install/ur5_description/share/ament_index/resource_index/package_run_dependencies/ur5_description
+[10.162s] -- Installing: /ros2_ws/src/UR5_Jazzy_Moveit2_Pick_Place/install/ur5_description/share/ament_index/resource_index/parent_prefix_path/ur5_description
+[10.163s] -- Installing: /ros2_ws/src/UR5_Jazzy_Moveit2_Pick_Place/install/ur5_description/share/ur5_description/environment/ament_prefix_path.sh
+[10.164s] -- Installing: /ros2_ws/src/UR5_Jazzy_Moveit2_Pick_Place/install/ur5_description/share/ur5_description/environment/ament_prefix_path.dsv
+[10.165s] -- Installing: /ros2_ws/src/UR5_Jazzy_Moveit2_Pick_Place/install/ur5_description/share/ur5_description/environment/path.sh
+[10.167s] -- Installing: /ros2_ws/src/UR5_Jazzy_Moveit2_Pick_Place/install/ur5_description/share/ur5_description/environment/path.dsv
+[10.167s] -- Installing: /ros2_ws/src/UR5_Jazzy_Moveit2_Pick_Place/install/ur5_description/share/ur5_description/local_setup.bash
+[10.168s] -- Installing: /ros2_ws/src/UR5_Jazzy_Moveit2_Pick_Place/install/ur5_description/share/ur5_description/local_setup.sh
+[10.169s] -- Installing: /ros2_ws/src/UR5_Jazzy_Moveit2_Pick_Place/install/ur5_description/share/ur5_description/local_setup.zsh
+[10.170s] -- Installing: /ros2_ws/src/UR5_Jazzy_Moveit2_Pick_Place/install/ur5_description/share/ur5_description/local_setup.dsv
+[10.171s] -- Installing: /ros2_ws/src/UR5_Jazzy_Moveit2_Pick_Place/install/ur5_description/share/ur5_description/package.dsv
+[10.171s] -- Installing: /ros2_ws/src/UR5_Jazzy_Moveit2_Pick_Place/install/ur5_description/share/ament_index/resource_index/packages/ur5_description
+[10.172s] -- Installing: /ros2_ws/src/UR5_Jazzy_Moveit2_Pick_Place/install/ur5_description/share/ur5_description/cmake/ur5_descriptionConfig.cmake
+[10.175s] -- Installing: /ros2_ws/src/UR5_Jazzy_Moveit2_Pick_Place/install/ur5_description/share/ur5_description/cmake/ur5_descriptionConfig-version.cmake
+[10.176s] -- Installing: /ros2_ws/src/UR5_Jazzy_Moveit2_Pick_Place/install/ur5_description/share/ur5_description/package.xml
+[10.185s] Invoked command in '/ros2_ws/src/UR5_Jazzy_Moveit2_Pick_Place/build/ur5_description' returned '0': CMAKE_PREFIX_PATH=/ros2_ws/install/ur5_pick_place:/opt/ros/humble /usr/bin/cmake --install /ros2_ws/src/UR5_Jazzy_Moveit2_Pick_Place/build/ur5_description

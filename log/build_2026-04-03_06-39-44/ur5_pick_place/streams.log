@@ -1,0 +1,36 @@
+[3.611s] Invoking command in '/ros2_ws/src/UR5_Jazzy_Moveit2_Pick_Place/src/ur5_pick_place': PYTHONPATH=/ros2_ws/src/UR5_Jazzy_Moveit2_Pick_Place/build/ur5_pick_place/prefix_override:/usr/lib/python3/dist-packages/colcon_core/task/python/colcon_distutils_commands:/ros2_ws/src/UR5_Jazzy_Moveit2_Pick_Place/install/ur5_pick_place/lib/python3.10/site-packages:${PYTHONPATH} /usr/bin/python3 -W ignore:setup.py install is deprecated -W ignore:easy_install command is deprecated setup.py egg_info --egg-base ../../build/ur5_pick_place build --build-base /ros2_ws/src/UR5_Jazzy_Moveit2_Pick_Place/build/ur5_pick_place/build install --record /ros2_ws/src/UR5_Jazzy_Moveit2_Pick_Place/build/ur5_pick_place/install.log --single-version-externally-managed install_data
+[4.996s] running egg_info
+[5.001s] writing ../../build/ur5_pick_place/ur5_pick_place.egg-info/PKG-INFO
+[5.030s] writing dependency_links to ../../build/ur5_pick_place/ur5_pick_place.egg-info/dependency_links.txt
+[5.034s] writing entry points to ../../build/ur5_pick_place/ur5_pick_place.egg-info/entry_points.txt
+[5.038s] writing requirements to ../../build/ur5_pick_place/ur5_pick_place.egg-info/requires.txt
+[5.042s] writing top-level names to ../../build/ur5_pick_place/ur5_pick_place.egg-info/top_level.txt
+[5.047s] reading manifest file '../../build/ur5_pick_place/ur5_pick_place.egg-info/SOURCES.txt'
+[5.078s] writing manifest file '../../build/ur5_pick_place/ur5_pick_place.egg-info/SOURCES.txt'
+[5.083s] running build
+[5.097s] running build_py
+[5.107s] copying ur5_pick_place/test_gripper.py -> /ros2_ws/src/UR5_Jazzy_Moveit2_Pick_Place/build/ur5_pick_place/build/lib/ur5_pick_place
+[5.117s] copying ur5_pick_place/pick_place_node.py -> /ros2_ws/src/UR5_Jazzy_Moveit2_Pick_Place/build/ur5_pick_place/build/lib/ur5_pick_place
+[5.142s] copying ur5_pick_place/test_joints.py -> /ros2_ws/src/UR5_Jazzy_Moveit2_Pick_Place/build/ur5_pick_place/build/lib/ur5_pick_place
+[5.166s] running install
+[5.182s] running install_lib
+[5.198s] copying /ros2_ws/src/UR5_Jazzy_Moveit2_Pick_Place/build/ur5_pick_place/build/lib/ur5_pick_place/test_gripper.py -> /ros2_ws/src/UR5_Jazzy_Moveit2_Pick_Place/install/ur5_pick_place/lib/python3.10/site-packages/ur5_pick_place
+[5.208s] copying /ros2_ws/src/UR5_Jazzy_Moveit2_Pick_Place/build/ur5_pick_place/build/lib/ur5_pick_place/pick_place_node.py -> /ros2_ws/src/UR5_Jazzy_Moveit2_Pick_Place/install/ur5_pick_place/lib/python3.10/site-packages/ur5_pick_place
+[5.217s] copying /ros2_ws/src/UR5_Jazzy_Moveit2_Pick_Place/build/ur5_pick_place/build/lib/ur5_pick_place/test_joints.py -> /ros2_ws/src/UR5_Jazzy_Moveit2_Pick_Place/install/ur5_pick_place/lib/python3.10/site-packages/ur5_pick_place
+[5.230s] byte-compiling /ros2_ws/src/UR5_Jazzy_Moveit2_Pick_Place/install/ur5_pick_place/lib/python3.10/site-packages/ur5_pick_place/test_gripper.py to test_gripper.cpython-310.pyc
+[5.235s] byte-compiling /ros2_ws/src/UR5_Jazzy_Moveit2_Pick_Place/install/ur5_pick_place/lib/python3.10/site-packages/ur5_pick_place/pick_place_node.py to pick_place_node.cpython-310.pyc
+[5.241s] Sorry: IndentationError: expected an indented block after function definition on line 54 (test_gripper.py, line 55)
+[5.300s] byte-compiling /ros2_ws/src/UR5_Jazzy_Moveit2_Pick_Place/install/ur5_pick_place/lib/python3.10/site-packages/ur5_pick_place/test_joints.py to test_joints.cpython-310.pyc
+[5.301s] running install_data
+[5.301s] running install_egg_info
+[5.317s] Copying ../../build/ur5_pick_place/ur5_pick_place.egg-info to /ros2_ws/src/UR5_Jazzy_Moveit2_Pick_Place/install/ur5_pick_place/lib/python3.10/site-packages/ur5_pick_place-0.2.0-py3.10.egg-info
+[5.348s] running install_scripts
+[5.481s] Installing add_object script to /ros2_ws/src/UR5_Jazzy_Moveit2_Pick_Place/install/ur5_pick_place/lib/ur5_pick_place
+[5.498s] Installing fake_object_pose script to /ros2_ws/src/UR5_Jazzy_Moveit2_Pick_Place/install/ur5_pick_place/lib/ur5_pick_place
+[5.499s] Installing joint_state_pub script to /ros2_ws/src/UR5_Jazzy_Moveit2_Pick_Place/install/ur5_pick_place/lib/ur5_pick_place
+[5.500s] Installing pick_place_node script to /ros2_ws/src/UR5_Jazzy_Moveit2_Pick_Place/install/ur5_pick_place/lib/ur5_pick_place
+[5.501s] Installing pose_sender script to /ros2_ws/src/UR5_Jazzy_Moveit2_Pick_Place/install/ur5_pick_place/lib/ur5_pick_place
+[5.501s] Installing test_gripper script to /ros2_ws/src/UR5_Jazzy_Moveit2_Pick_Place/install/ur5_pick_place/lib/ur5_pick_place
+[5.502s] Installing test_joints script to /ros2_ws/src/UR5_Jazzy_Moveit2_Pick_Place/install/ur5_pick_place/lib/ur5_pick_place
+[5.514s] writing list of installed files to '/ros2_ws/src/UR5_Jazzy_Moveit2_Pick_Place/build/ur5_pick_place/install.log'
+[5.621s] Invoked command in '/ros2_ws/src/UR5_Jazzy_Moveit2_Pick_Place/src/ur5_pick_place' returned '0': PYTHONPATH=/ros2_ws/src/UR5_Jazzy_Moveit2_Pick_Place/build/ur5_pick_place/prefix_override:/usr/lib/python3/dist-packages/colcon_core/task/python/colcon_distutils_commands:/ros2_ws/src/UR5_Jazzy_Moveit2_Pick_Place/install/ur5_pick_place/lib/python3.10/site-packages:${PYTHONPATH} /usr/bin/python3 -W ignore:setup.py install is deprecated -W ignore:easy_install command is deprecated setup.py egg_info --egg-base ../../build/ur5_pick_place build --build-base /ros2_ws/src/UR5_Jazzy_Moveit2_Pick_Place/build/ur5_pick_place/build install --record /ros2_ws/src/UR5_Jazzy_Moveit2_Pick_Place/build/ur5_pick_place/install.log --single-version-externally-managed install_data

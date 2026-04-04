@@ -1,16 +1,14 @@
 #!/usr/bin/env python3
 """
-pick_place_node.py  —  Enhanced UR5 Pick & Place with Robotiq 85 Gripper
+pick_place_node.py — UR5 Pick & Place avec cinématique inverse automatique
 =========================================================================
-Improvements over original pose_sender.py:
-  1. Full approach → grasp → retreat pipeline (Cartesian + joint moves)
-  2. Real Robotiq 85 gripper actuation via /gripper_action (GripperCommand)
-  3. Object pose-driven pick position (reads /object_pose topic)
-  4. Collision object attached/detached correctly to robotiq_85_base_link
-  5. Robust error handling with per-stage recovery
-  6. Compatible with ROS 2 Humble + MoveIt2
+La position de l'objet (lue sur /object_pose) est convertie automatiquement
+en angles articulaires via le service /compute_ik de MoveIt2.
 
-Author : enhanced for Ngartoudjina/UR5_Jazzy_Moveit2_Pick_Place
+Pipeline :
+  1. Lire la pose 3D de l'objet (x, y, z) depuis /object_pose
+  2. Appeler compute_ik pour trouver les angles joints correspondants
+  3. Planifier et exécuter la séquence pick & place
 """
 
 import time
@@ -19,53 +17,23 @@ import rclpy
 from rclpy.node import Node
 from rclpy.action import ActionClient
 
-from geometry_msgs.msg import PoseStamped, Pose, Point, Quaternion
-from sensor_msgs.msg import JointState
+from geometry_msgs.msg import PoseStamped, Pose
 from control_msgs.action import GripperCommand
 from moveit_msgs.action import MoveGroup
 from moveit_msgs.msg import (
-    Constraints, JointConstraint, PositionConstraint, OrientationConstraint,
-    AttachedCollisionObject, CollisionObject, BoundingVolume,
+    Constraints, JointConstraint,
+    AttachedCollisionObject, CollisionObject,
     MoveItErrorCodes, RobotState,
+    PositionIKRequest,
 )
-from moveit_msgs.srv import ApplyPlanningScene, GetPlanningScene
+from moveit_msgs.srv import ApplyPlanningScene, GetPositionIK
 from shape_msgs.msg import SolidPrimitive
 
 SUCCESS = MoveItErrorCodes.SUCCESS
 
-# ──────────────────────────────────────────────────────────────────────────────
-# Gripper constants  (Robotiq 85 — position in radians, 0=open, 0.8=closed)
-# ──────────────────────────────────────────────────────────────────────────────
 GRIPPER_OPEN   = 0.0
-GRIPPER_CLOSED = 0.72   # ~85% closed — tweak per object size
-GRIPPER_EFFORT = 40.0   # Newtons
-
-# ──────────────────────────────────────────────────────────────────────────────
-# Named joint positions  (radians)
-# shoulder_pan | shoulder_lift | elbow | wrist_1 | wrist_2 | wrist_3
-# ──────────────────────────────────────────────────────────────────────────────
-POSITIONS = {
-    # Safe resting pose — shoulder_pan=0 (different from start pos 0.5)
-    'home':       [ 0.00, -1.57,  1.57, -1.57, -1.57,  0.00],
-
-    # Above pick zone
-    'pre_pick':   [ 0.00, -1.10,  1.30, -1.77, -1.57,  0.00],
-
-    # At object level
-    'grasp':      [ 0.00, -0.85,  1.55, -2.27, -1.57,  0.00],
-
-    # Lift after grasp
-    'lift':       [ 0.00, -1.10,  1.30, -1.77, -1.57,  0.00],
-
-    # Transit to place zone
-    'pre_place':  [ 1.57, -1.10,  1.30, -1.77, -1.57,  0.00],
-
-    # Descend at place zone
-    'place':      [ 1.57, -0.85,  1.55, -2.27, -1.57,  0.00],
-
-    # Retreat after placing
-    'retreat':    [ 1.57, -1.10,  1.30, -1.77, -1.57,  0.00],
-}
+GRIPPER_CLOSED = 0.72
+GRIPPER_EFFORT = 40.0
 
 ARM_JOINT_NAMES = [
     'shoulder_pan_joint',
@@ -76,97 +44,132 @@ ARM_JOINT_NAMES = [
     'wrist_3_joint',
 ]
 
+# Position HOME fixe (bras replié, position sûre)
+HOME = [0.00, -1.57, 1.57, -1.57, -1.57, 0.00]
 
-# ──────────────────────────────────────────────────────────────────────────────
+# Position de depot (fixe, pas besoin d'IK)
+PLACE_JOINTS    = [1.57, -0.85, 1.55, -2.27, -1.57, 0.00]
+PREPLACE_JOINTS = [1.57, -1.10, 1.30, -1.77, -1.57, 0.00]
+RETREAT_JOINTS  = [1.57, -1.10, 1.30, -1.77, -1.57, 0.00]
+
+
 class PickPlaceNode(Node):
-    """Full pick & place pipeline for UR5 + Robotiq 85."""
+    """Pick & Place avec IK automatique pour le UR5 + Robotiq 85."""
 
     def __init__(self):
         super().__init__('pick_place_node')
 
-        # ── tuning parameters ──────────────────────────────────────────────
         self.declare_parameter('velocity_scale',     0.25)
         self.declare_parameter('acceleration_scale', 0.25)
         self.declare_parameter('planning_time',      30.0)
         self.declare_parameter('planning_attempts',  30)
         self.declare_parameter('joint_tolerance',    0.05)
+        self.declare_parameter('pre_pick_height',    0.15)
+        self.declare_parameter('grasp_height',       0.02)
 
-        self.vel   = self.get_parameter('velocity_scale').value
-        self.acc   = self.get_parameter('acceleration_scale').value
-        self.ptime = self.get_parameter('planning_time').value
-        self.patt  = self.get_parameter('planning_attempts').value
-        self.jtol  = self.get_parameter('joint_tolerance').value
+        self.vel        = self.get_parameter('velocity_scale').value
+        self.acc        = self.get_parameter('acceleration_scale').value
+        self.ptime      = self.get_parameter('planning_time').value
+        self.patt       = self.get_parameter('planning_attempts').value
+        self.jtol       = self.get_parameter('joint_tolerance').value
+        self.pre_height = self.get_parameter('pre_pick_height').value
+        self.grasp_h    = self.get_parameter('grasp_height').value
 
-        # ── MoveGroup action client ────────────────────────────────────────
+        # MoveGroup
         self.move_client = ActionClient(self, MoveGroup, '/move_action')
         self.get_logger().info('Waiting for /move_action …')
         self.move_client.wait_for_server()
         self.get_logger().info('Connected to /move_action ✅')
 
-        # ── Gripper action client (GripperCommand) ─────────────────────────
+        # Service IK
+        self.ik_client = self.create_client(GetPositionIK, '/compute_ik')
+        self.get_logger().info('Waiting for /compute_ik …')
+        self.ik_client.wait_for_service()
+        self.get_logger().info('Connected to /compute_ik ✅')
+
+        # Gripper
         self.gripper_client = ActionClient(
             self, GripperCommand, '/robotiq_85_gripper_controller/gripper_cmd')
-        self.get_logger().info('Waiting for gripper action server …')
         if self.gripper_client.wait_for_server(timeout_sec=5.0):
-            self.get_logger().info('Connected to gripper ✅')
             self.has_gripper = True
+            self.get_logger().info('Connected to gripper ✅')
         else:
-            self.get_logger().warn(
-                '⚠️  Gripper action server not found — '
-                'gripper moves will be SIMULATED (attach/detach only).')
             self.has_gripper = False
+            self.get_logger().warn('⚠️  Gripper simulé (attach/detach only)')
 
-        # ── Planning scene services ────────────────────────────────────────
-        self.scene_apply = self.create_client(
+        # Planning scene
+        self.scene_client = self.create_client(
             ApplyPlanningScene, '/apply_planning_scene')
-        self.scene_apply.wait_for_service()
+        self.scene_client.wait_for_service()
 
-        # ── Object pose subscriber ─────────────────────────────────────────
-        self.object_pose: PoseStamped | None = None
+        # Object pose
+        self.object_pose = None
         self.create_subscription(
-            PoseStamped, '/object_pose', self._object_pose_cb, 10)
+            PoseStamped, '/object_pose', self._object_cb, 10)
 
-        self.get_logger().info('PickPlaceNode ready.')
+        self.get_logger().info('PickPlaceNode prêt ✅')
 
-    # ── callbacks ─────────────────────────────────────────────────────────────
-    def _object_pose_cb(self, msg: PoseStamped):
+    # ── Callback objet ────────────────────────────────────────────────────────
+    def _object_cb(self, msg):
         self.object_pose = msg
 
-    # ── gripper ───────────────────────────────────────────────────────────────
-    def _gripper_move(self, position: float, effort: float = GRIPPER_EFFORT,
-                      label: str = '') -> bool:
-        if not self.has_gripper:
-            self.get_logger().info(f'[simulated] gripper → {position:.2f}  {label}')
-            time.sleep(0.5)
-            return True
+    # ── Cinématique inverse ────────────────────────────────────────────────────
+    def compute_ik(self, x, y, z, qx=0.0, qy=0.707, qz=0.0, qw=0.707,
+                   timeout=5.0):
+        """
+        Calcule les angles articulaires pour atteindre la pose (x, y, z).
+        Orientation par défaut : outil pointant vers le bas (qy=0.707, qw=0.707).
+        Retourne une liste de 6 angles en radians, ou None si impossible.
+        """
+        req = GetPositionIK.Request()
+        ik_req = PositionIKRequest()
 
-        goal = GripperCommand.Goal()
-        goal.command.position = position
-        goal.command.max_effort = effort
+        ik_req.group_name = 'ur5_arm'
+        ik_req.avoid_collisions = True
+        ik_req.timeout.sec = int(timeout)
+        ik_req.timeout.nanosec = 0
 
-        fut = self.gripper_client.send_goal_async(goal)
-        rclpy.spin_until_future_complete(self, fut, timeout_sec=5.0)
-        gh = fut.result()
-        if not gh or not gh.accepted:
-            self.get_logger().error(f'Gripper goal rejected  {label}')
-            return False
+        target = PoseStamped()
+        target.header.frame_id = 'world'
+        target.header.stamp    = self.get_clock().now().to_msg()
+        target.pose.position.x = float(x)
+        target.pose.position.y = float(y)
+        target.pose.position.z = float(z)
+        target.pose.orientation.x = float(qx)
+        target.pose.orientation.y = float(qy)
+        target.pose.orientation.z = float(qz)
+        target.pose.orientation.w = float(qw)
 
-        res_fut = gh.get_result_async()
-        rclpy.spin_until_future_complete(self, res_fut, timeout_sec=8.0)
-        result = res_fut.result()
-        ok = result is not None and not result.result.stalled
+        ik_req.pose_stamped = target
+        req.ik_request = ik_req
+
+        fut = self.ik_client.call_async(req)
+        rclpy.spin_until_future_complete(self, fut, timeout_sec=timeout + 2.0)
+
+        if not fut.result():
+            self.get_logger().error('IK service timeout')
+            return None
+
+        resp = fut.result()
+        if resp.error_code.val != SUCCESS:
+            self.get_logger().error(
+                f'IK failed — code={resp.error_code.val} '
+                f'pour pose ({x:.3f}, {y:.3f}, {z:.3f})')
+            return None
+
+        # Extraire les angles dans l'ordre des joints du bras
+        joint_map = dict(zip(
+            resp.solution.joint_state.name,
+            resp.solution.joint_state.position
+        ))
+        joints = [joint_map.get(n, 0.0) for n in ARM_JOINT_NAMES]
         self.get_logger().info(
-            f'{"✅" if ok else "⚠️ "} Gripper {label}  pos={position:.2f}')
-        return ok
+            f'IK ✅ pour ({x:.3f},{y:.3f},{z:.3f}) → '
+            f'[{", ".join(f"{j:.2f}" for j in joints)}]')
+        return joints
 
-    def open_gripper(self) -> bool:
-        return self._gripper_move(GRIPPER_OPEN,   label='OPEN  🟢')
-
-    def close_gripper(self) -> bool:
-        return self._gripper_move(GRIPPER_CLOSED, label='CLOSE 🔴')
-
-    # ── arm motion ────────────────────────────────────────────────────────────
-    def _build_joint_goal(self, positions, tol: float | None = None) -> MoveGroup.Goal:
+    # ── Mouvement articulaire ─────────────────────────────────────────────────
+    def _build_goal(self, positions, tol=None):
         tol = tol or self.jtol
         goal = MoveGroup.Goal()
         req  = goal.request
@@ -178,8 +181,6 @@ class PickPlaceNode(Node):
         req.pipeline_id = 'ompl'
         req.planner_id  = 'RRTConnectkConfigDefault'
         req.start_state.is_diff = True
-        req.allowed_planning_time = float(self.ptime)
-
 
         c = Constraints()
         for name, pos in zip(ARM_JOINT_NAMES, positions):
@@ -193,264 +194,229 @@ class PickPlaceNode(Node):
         req.goal_constraints = [c]
         return goal
 
-    def _send_and_wait(self, goal, timeout: float = 60.0) -> int:
+    def _send_and_wait(self, goal, timeout=90.0):
         fut = self.move_client.send_goal_async(goal)
         rclpy.spin_until_future_complete(self, fut, timeout_sec=timeout)
         gh = fut.result()
         if not gh or not gh.accepted:
             return -1
-        res_fut = gh.get_result_async()
-        rclpy.spin_until_future_complete(self, res_fut, timeout_sec=timeout)
-        result = res_fut.result()
-        if result is None:
-            return -2
-        return result.result.error_code.val
+        rf = gh.get_result_async()
+        rclpy.spin_until_future_complete(self, rf, timeout_sec=timeout)
+        r = rf.result()
+        return r.result.error_code.val if r else -2
 
-    def move_joints(self, key_or_positions, label: str = '',
-                    retries: int = 3) -> bool:
-        """Move to a named pose (str key) or a raw list of joint angles."""
-        positions = (POSITIONS[key_or_positions]
-                     if isinstance(key_or_positions, str)
-                     else key_or_positions)
-        label = label or (key_or_positions
-                          if isinstance(key_or_positions, str) else 'MOVE')
+    def move_to(self, positions, label='', retries=3) -> bool:
         self.get_logger().info(
-            f'➡️  {label}  '
-            f'[{", ".join(f"{p:.2f}" for p in positions)}]')
-
-        planning_times = [self.ptime, 45.0, 60.0]
-        planning_atts  = [self.patt,  40,    50  ]
-
+            f'➡️  {label}  [{", ".join(f"{p:.2f}" for p in positions)}]')
+        times = [self.ptime, 45.0, 60.0]
+        atts  = [self.patt,  40,    50  ]
         for attempt in range(retries):
-            goal = self._build_joint_goal(positions)
-            goal.request.allowed_planning_time = planning_times[
-                min(attempt, len(planning_times)-1)]
-            goal.request.num_planning_attempts = planning_atts[
-                min(attempt, len(planning_atts)-1)]
-
+            goal = self._build_goal(positions)
+            goal.request.allowed_planning_time = times[min(attempt, 2)]
+            goal.request.num_planning_attempts = atts[min(attempt, 2)]
             code = self._send_and_wait(goal)
             if code == SUCCESS:
                 self.get_logger().info(f'   ✅ {label}')
                 return True
-            self.get_logger().warn(
-                f'   retry {attempt+1}/{retries}  code={code}')
-
-        self.get_logger().error(f'❌ Failed: {label}')
+            self.get_logger().warn(f'   retry {attempt+1}/{retries}  code={code}')
+        self.get_logger().error(f'❌ {label} échoué')
         return False
 
-    # ── planning scene ────────────────────────────────────────────────────────
-    def _apply_scene(self, scene_diff) -> bool:
-        req = ApplyPlanningScene.Request()
-        req.scene = scene_diff
-        req.scene.is_diff = True
-        fut = self.scene_apply.call_async(req)
+    # ── Gripper ───────────────────────────────────────────────────────────────
+    def open_gripper(self):
+        if not self.has_gripper:
+            self.get_logger().info('[sim] Gripper OPEN 🟢')
+            return True
+        goal = GripperCommand.Goal()
+        goal.command.position   = GRIPPER_OPEN
+        goal.command.max_effort = GRIPPER_EFFORT
+        fut = self.gripper_client.send_goal_async(goal)
         rclpy.spin_until_future_complete(self, fut, timeout_sec=5.0)
-        ok = bool(fut.result() and fut.result().success)
-        return ok
+        return True
 
-    def add_collision_box(self,
-                          box_id: str = 'target_box',
-                          position: tuple = (0.35, 0.0, 0.05),
-                          size: tuple = (0.05, 0.05, 0.10),
-                          frame: str = 'world') -> bool:
-        """Add (or refresh) a box-shaped collision object in the scene."""
-        from moveit_msgs.msg import PlanningScene as PS
+    def close_gripper(self):
+        if not self.has_gripper:
+            self.get_logger().info('[sim] Gripper CLOSE 🔴')
+            return True
+        goal = GripperCommand.Goal()
+        goal.command.position   = GRIPPER_CLOSED
+        goal.command.max_effort = GRIPPER_EFFORT
+        fut = self.gripper_client.send_goal_async(goal)
+        rclpy.spin_until_future_complete(self, fut, timeout_sec=5.0)
+        return True
 
+    # ── Planning scene ────────────────────────────────────────────────────────
+    def _apply(self, scene):
+        req = ApplyPlanningScene.Request()
+        req.scene = scene
+        req.scene.is_diff = True
+        fut = self.scene_client.call_async(req)
+        rclpy.spin_until_future_complete(self, fut, timeout_sec=5.0)
+        return bool(fut.result() and fut.result().success)
+
+    def add_box(self, box_id, position, size=(0.05, 0.05, 0.10)):
+        from moveit_msgs.msg import PlanningScene
         co = CollisionObject()
         co.id = box_id
-        co.header.frame_id = frame
-        co.header.stamp = self.get_clock().now().to_msg()
-
+        co.header.frame_id = 'world'
+        co.header.stamp    = self.get_clock().now().to_msg()
         prim = SolidPrimitive()
-        prim.type = SolidPrimitive.BOX
+        prim.type       = SolidPrimitive.BOX
         prim.dimensions = list(size)
-
         pose = Pose()
-        pose.position.x = float(position[0])
-        pose.position.y = float(position[1])
-        pose.position.z = float(position[2])
+        pose.position.x    = float(position[0])
+        pose.position.y    = float(position[1])
+        pose.position.z    = float(position[2])
         pose.orientation.w = 1.0
-
         co.primitives.append(prim)
         co.primitive_poses.append(pose)
         co.operation = CollisionObject.ADD
-
-        scene = PS()
-        scene.world.collision_objects.append(co)
-
-        ok = self._apply_scene(scene)
+        ps = PlanningScene()
+        ps.world.collision_objects.append(co)
+        ok = self._apply(ps)
         self.get_logger().info(
-            f'{"📦 Box added" if ok else "❌ Failed to add box"} '
-            f'"{box_id}" at {position}')
+            f'{"📦" if ok else "❌"} Box "{box_id}" @ {position}')
         return ok
 
-    def attach_object(self, box_id: str = 'target_box') -> bool:
-        """Attach collision object to the gripper link after grasping."""
-        from moveit_msgs.msg import PlanningScene as PS
-
+    def attach_box(self, box_id):
+        from moveit_msgs.msg import PlanningScene
         aco = AttachedCollisionObject()
-        aco.link_name = 'robotiq_85_base_link'   # attach to gripper base
-        aco.object.id = box_id
+        aco.link_name        = 'robotiq_85_base_link'
+        aco.object.id        = box_id
         aco.object.operation = CollisionObject.ADD
-        # Allow the object to touch these gripper links while held
         aco.touch_links = [
             'robotiq_85_base_link',
-            'robotiq_85_left_knuckle_link',
-            'robotiq_85_right_knuckle_link',
-            'robotiq_85_left_finger_link',
-            'robotiq_85_right_finger_link',
-            'robotiq_85_left_inner_knuckle_link',
-            'robotiq_85_right_inner_knuckle_link',
-            'robotiq_85_left_finger_tip_link',
-            'robotiq_85_right_finger_tip_link',
+            'robotiq_85_left_finger_link', 'robotiq_85_right_finger_link',
+            'robotiq_85_left_finger_tip_link', 'robotiq_85_right_finger_tip_link',
         ]
-
-        scene = type('PS', (), {})()  # minimal scene object
-        from moveit_msgs.msg import PlanningScene as MPS
-        ps = MPS()
+        ps = PlanningScene()
         ps.robot_state.attached_collision_objects.append(aco)
-
-        ok = self._apply_scene(ps)
-        self.get_logger().info(
-            f'{"📎 Attached" if ok else "❌ Failed to attach"} "{box_id}"')
+        ok = self._apply(ps)
+        self.get_logger().info(f'{"📎" if ok else "❌"} Attached "{box_id}"')
         return ok
 
-    def detach_object(self, box_id: str = 'target_box') -> bool:
-        """Detach collision object from the gripper after placing."""
-        from moveit_msgs.msg import PlanningScene as MPS
-
+    def detach_box(self, box_id):
+        from moveit_msgs.msg import PlanningScene
         aco = AttachedCollisionObject()
-        aco.link_name = 'robotiq_85_base_link'
-        aco.object.id = box_id
+        aco.link_name        = 'robotiq_85_base_link'
+        aco.object.id        = box_id
         aco.object.operation = CollisionObject.REMOVE
-
-        ps = MPS()
-        ps.robot_state.attached_collision_objects.append(aco)
-
-        # Also remove the object from the world scene
         co = CollisionObject()
-        co.id = box_id
+        co.id        = box_id
         co.operation = CollisionObject.REMOVE
+        ps = PlanningScene()
+        ps.robot_state.attached_collision_objects.append(aco)
         ps.world.collision_objects.append(co)
-
-        ok = self._apply_scene(ps)
-        self.get_logger().info(
-            f'{"🧷 Detached" if ok else "❌ Failed to detach"} "{box_id}"')
+        ok = self._apply(ps)
+        self.get_logger().info(f'{"🧷" if ok else "❌"} Detached "{box_id}"')
         return ok
 
-    # ── object pose helper ────────────────────────────────────────────────────
-    def wait_for_object(self, timeout: float = 10.0) -> bool:
-        self.get_logger().info(f'Waiting for /object_pose (timeout={timeout}s)…')
-        t0 = time.time()
-        while rclpy.ok() and self.object_pose is None:
-            rclpy.spin_once(self, timeout_sec=0.1)
-            if time.time() - t0 > timeout:
-                self.get_logger().warn('No object pose received — using defaults.')
-                return False
-        self.get_logger().info(
-            f'Object at '
-            f'({self.object_pose.pose.position.x:.3f}, '
-            f'{self.object_pose.pose.position.y:.3f}, '
-            f'{self.object_pose.pose.position.z:.3f})')
-        return True
-
-    # ── main sequence ─────────────────────────────────────────────────────────
+    # ── Séquence principale ───────────────────────────────────────────────────
     def run(self) -> bool:
-        """
-        Execute full pick & place sequence:
-          HOME → open gripper → add collision object
-          → PRE_PICK → GRASP → close gripper → attach
-          → LIFT → PRE_PLACE → PLACE → open gripper → detach
-          → RETREAT → HOME
-        """
         log = self.get_logger()
         log.info('=' * 55)
-        log.info(' UR5 Pick & Place — Enhanced Pipeline')
+        log.info(' UR5 Pick & Place — IK automatique')
         log.info('=' * 55)
 
-        # Wait for object detection (non-blocking if no camera)
-        self.wait_for_object(timeout=5.0)
+        # Attendre la pose de l'objet
+        log.info('Attente de /object_pose …')
+        t0 = time.time()
+        while rclpy.ok() and self.object_pose is None and time.time()-t0 < 10.0:
+            rclpy.spin_once(self, timeout_sec=0.1)
 
-        # ── Stage 0: Setup ────────────────────────────────────────────────
-        log.info('\n[0/8] Setup — gripper open + add collision object')
+        # Position de l'objet
+        if self.object_pose:
+            ox = self.object_pose.pose.position.x
+            oy = self.object_pose.pose.position.y
+            oz = self.object_pose.pose.position.z
+            log.info(f'📍 Objet détecté à ({ox:.3f}, {oy:.3f}, {oz:.3f})')
+        else:
+            ox, oy, oz = 0.40, 0.00, 0.05
+            log.warn(f'⚠️  Fallback position ({ox}, {oy}, {oz})')
+
+        # ── Calcul IK automatique ─────────────────────────────────────────
+        log.info('\n📐 Calcul cinématique inverse …')
+
+        # Orientation outil vers le bas : qy=0.707, qw=0.707
+        qx, qy, qz, qw = 0.0, 0.707, 0.0, 0.707
+
+        pre_pick_joints = self.compute_ik(ox, oy, oz + self.pre_height,
+                                          qx, qy, qz, qw)
+        grasp_joints    = self.compute_ik(ox, oy, oz + self.grasp_h,
+                                          qx, qy, qz, qw)
+
+        if pre_pick_joints is None or grasp_joints is None:
+            log.error('❌ IK impossible pour la position de l\'objet.')
+            log.error('   Vérifiez que l\'objet est dans l\'espace de travail du UR5.')
+            return False
+
+        # ── Stage 0 : Setup ───────────────────────────────────────────────
+        log.info('\n[0/8] Setup')
         self.open_gripper()
-        time.sleep(0.3)
-        self.add_collision_box(
-            box_id='target_box',
-            position=(0.50, 0.20, 0.05),
-            size=(0.05, 0.05, 0.10),
-        )
+        self.add_box('target_box', (ox, oy, oz))
 
-        # ── Stage 1: HOME ─────────────────────────────────────────────────
-        log.info('\n[1/8] Moving to HOME')
-        if not self.move_joints('home', label='HOME'):
-            log.error('Abort: could not reach HOME.')
+        # ── Stage 1 : HOME ────────────────────────────────────────────────
+        log.info('\n[1/8] HOME')
+        if not self.move_to(HOME, 'HOME'):
             return False
         time.sleep(0.5)
 
-        # ── Stage 2: PRE_PICK ─────────────────────────────────────────────
-        log.info('\n[2/8] Moving to PRE_PICK (above object)')
-        if not self.move_joints('pre_pick', label='PRE-PICK'):
-            log.error('Abort: could not reach PRE-PICK.')
+        # ── Stage 2 : PRE-PICK (IK calculé) ──────────────────────────────
+        log.info(f'\n[2/8] PRE-PICK (IK) — au-dessus de ({ox:.2f},{oy:.2f})')
+        if not self.move_to(pre_pick_joints, 'PRE-PICK'):
             return False
         time.sleep(0.4)
 
-        # ── Stage 3: GRASP (descend onto object) ──────────────────────────
-        log.info('\n[3/8] Descending to GRASP pose')
-        if not self.move_joints('grasp', label='GRASP DESCENT'):
-            log.error('Abort: could not reach GRASP pose.')
+        # ── Stage 3 : GRASP (IK calculé) ─────────────────────────────────
+        log.info(f'\n[3/8] DESCEND (IK) — vers ({ox:.2f},{oy:.2f},{oz:.2f})')
+        if not self.move_to(grasp_joints, 'GRASP'):
             return False
         time.sleep(0.3)
 
-        # ── Stage 4: Close gripper + attach object ────────────────────────
-        log.info('\n[4/8] Closing gripper & attaching object')
+        # ── Stage 4 : Fermer gripper + attacher ───────────────────────────
+        log.info('\n[4/8] GRASP + ATTACH')
         self.close_gripper()
         time.sleep(0.5)
-        self.attach_object('target_box')
+        self.attach_box('target_box')
         time.sleep(0.3)
 
-        # ── Stage 5: LIFT ─────────────────────────────────────────────────
-        log.info('\n[5/8] LIFT — raising object')
-        if not self.move_joints('lift', label='LIFT'):
-            log.error('Abort: could not LIFT.')
+        # ── Stage 5 : LIFT (retour PRE-PICK) ─────────────────────────────
+        log.info('\n[5/8] LIFT')
+        if not self.move_to(pre_pick_joints, 'LIFT'):
             self.open_gripper()
-            self.detach_object('target_box')
+            self.detach_box('target_box')
             return False
         time.sleep(0.4)
 
-        # ── Stage 6: PRE_PLACE ────────────────────────────────────────────
-        log.info('\n[6/8] Swinging to PRE_PLACE (above drop zone)')
-        if not self.move_joints('pre_place', label='PRE-PLACE'):
-            log.error('Abort: could not reach PRE-PLACE.')
+        # ── Stage 6 : PRE-PLACE ───────────────────────────────────────────
+        log.info('\n[6/8] PRE-PLACE')
+        if not self.move_to(PREPLACE_JOINTS, 'PRE-PLACE'):
             self.open_gripper()
-            self.detach_object('target_box')
+            self.detach_box('target_box')
             return False
         time.sleep(0.4)
 
-        # ── Stage 7: PLACE (descend to drop zone) ─────────────────────────
-        log.info('\n[7/8] Descending to PLACE pose')
-        if not self.move_joints('place', label='PLACE DESCENT'):
-            log.error('Abort: could not reach PLACE pose.')
+        # ── Stage 7 : PLACE ───────────────────────────────────────────────
+        log.info('\n[7/8] PLACE')
+        if not self.move_to(PLACE_JOINTS, 'PLACE'):
             self.open_gripper()
-            self.detach_object('target_box')
+            self.detach_box('target_box')
             return False
         time.sleep(0.3)
 
-        # ── Stage 8: Open gripper + detach ────────────────────────────────
-        log.info('\n[8/8] Opening gripper & releasing object')
+        # ── Stage 8 : Ouvrir gripper + détacher ───────────────────────────
+        log.info('\n[8/8] RELEASE')
         self.open_gripper()
         time.sleep(0.4)
-        self.detach_object('target_box')
+        self.detach_box('target_box')
         time.sleep(0.3)
 
-        # ── Retreat ───────────────────────────────────────────────────────
+        # ── Retreat + HOME ────────────────────────────────────────────────
         log.info('\n[+] RETREAT')
-        self.move_joints('retreat', label='RETREAT')
+        self.move_to(RETREAT_JOINTS, 'RETREAT')
         time.sleep(0.3)
-
-        # ── Return HOME ───────────────────────────────────────────────────
-        log.info('\n[+] Return HOME')
-        self.move_joints('home', label='HOME (final)')
+        log.info('\n[+] HOME final')
+        self.move_to(HOME, 'HOME final')
 
         log.info('\n' + '=' * 55)
         log.info(' ✅  Pick & Place COMPLETE!')
@@ -458,16 +424,15 @@ class PickPlaceNode(Node):
         return True
 
 
-# ── entry point ───────────────────────────────────────────────────────────
 def main(args=None):
     rclpy.init(args=args)
     node = PickPlaceNode()
     try:
         success = node.run()
         if not success:
-            node.get_logger().error('Pick & Place sequence failed.')
+            node.get_logger().error('Séquence échouée.')
     except KeyboardInterrupt:
-        node.get_logger().info('Interrupted by user.')
+        node.get_logger().info('Arrêté par l\'utilisateur.')
     finally:
         node.destroy_node()
         rclpy.shutdown()

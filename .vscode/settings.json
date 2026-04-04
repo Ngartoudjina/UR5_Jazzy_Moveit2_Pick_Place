@@ -1,0 +1,11 @@
+{
+    "ROS2.distro": "jazzy",
+    "python.autoComplete.extraPaths": [
+        "/home/beingar/ros2_humble_ws/UR5_Jazzy_Moveit2_Pick_Place/install/ur5_pick_place/lib/python3.10/site-packages",
+        "/opt/ros/jazzy/lib/python3.12/site-packages"
+    ],
+    "python.analysis.extraPaths": [
+        "/home/beingar/ros2_humble_ws/UR5_Jazzy_Moveit2_Pick_Place/install/ur5_pick_place/lib/python3.10/site-packages",
+        "/opt/ros/jazzy/lib/python3.12/site-packages"
+    ]
+}

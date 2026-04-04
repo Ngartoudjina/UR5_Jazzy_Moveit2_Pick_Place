@@ -1,18 +1,15 @@
-# This config file is used by ros2_control
 controller_manager:
   ros__parameters:
-    update_rate: 100  # Hz
+    update_rate: 100
+
+    joint_state_broadcaster:
+      type: joint_state_broadcaster/JointStateBroadcaster
 
     ur5_arm_controller:
       type: joint_trajectory_controller/JointTrajectoryController
 
-
     hand_controller:
       type: position_controllers/GripperActionController
-
-
-    joint_state_broadcaster:
-      type: joint_state_broadcaster/JointStateBroadcaster
 
 ur5_arm_controller:
   ros__parameters:
@@ -29,6 +26,11 @@ ur5_arm_controller:
       - position
       - velocity
     allow_nonzero_velocity_at_trajectory_end: true
+
 hand_controller:
   ros__parameters:
     joint: robotiq_85_left_knuckle_joint
+    action_monitor_rate: 20.0
+    allow_stalling: false
+    stall_velocity_threshold: 0.001
+    stall_timeout: 1.0
