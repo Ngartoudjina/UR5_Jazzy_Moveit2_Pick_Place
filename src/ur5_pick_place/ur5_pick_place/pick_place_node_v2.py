@@ -3,64 +3,19 @@
 
 import sys
 import rclpy
-from trajectory_msgs.msg import JointTrajectory, JointTrajectoryPoint
 from ur5_pick_place.base_pick_place import PickPlaceBase
 from ur5_pick_place.config_loader import ConfigLoader
-from ur5_pick_place.ik_solver import JOINT_NAMES
+
 
 class PickPlaceNode(PickPlaceBase):
-    """Main pick and place execution node using Analytical IK."""
+    """Main pick and place execution node using Analytical IK Solver."""
 
     def __init__(self):
-        super().__init__("pick_place_node")
-        # Publisher pour envoyer les commandes au contrôleur de trajectoire
-        self.joint_pub = self.create_publisher(
-            JointTrajectory, 
-            '/joint_trajectory_controller/joint_trajectory', 
-            10
-        )
-        self.logger.info("PickPlaceNode initialized with Analytical IK Solver")
-
-    def move_to_position(self, pos_config) -> bool:
-        """Helper to solve IK and publish trajectory."""
-        # Extraction des coordonnées du config_loader
-        x = pos_config['x']
-        y = pos_config['y']
-        z = pos_config['z']
-        # Utilisation de l'orientation par défaut (pince vers le bas) 
-        # ou celle du YAML si elle existe
-        qx = pos_config.get('qx', 0.0)
-        qy = pos_config.get('qy', 0.707)
-        qz = pos_config.get('qz', 0.0)
-        qw = pos_config.get('qw', 0.707)
-
-        # Calcul IK
-        ik_res = self.solver.solve(x, y, z, qx, qy, qz, qw)
-        
-        if not ik_res:
-            self.logger.error(f"IK Solver failed for position: {x, y, z}")
-            return False
-
-        # Création du message de trajectoire
-        msg = JointTrajectory()
-        msg.joint_names = JOINT_NAMES
-        
-        point = JointTrajectoryPoint()
-        point.positions = ik_res['joints']
-        point.time_from_start.sec = 2  # Temps de déplacement (ajustable)
-        
-        msg.points.append(point)
-        self.joint_pub.publish(msg)
-        
-        # Petit délai pour laisser le robot bouger (ou attendre le feedback des joint_states)
-        self.logger.info(f"Moving to: x={x}, y={y}, z={z}")
-        rclpy.spin_once(self, timeout_sec=2.5) 
-        return True
+        super().__init__("pick_place_node_v2")
+        self.logger.info("PickPlaceNode v2 initialized with Analytical IK Solver")
 
     def run_sequence(self) -> bool:
         """Execute 8-stage pick and place sequence."""
-        # Le reste de ta logique run_sequence demeure IDENTIQUE 
-        # car elle appelle self.move_to_position
         try:
             # Stage 0: Setup
             if not self.execute_stage("[0/8] SETUP", self._stage_setup).success: return False
@@ -133,9 +88,8 @@ def main(args=None):
     rclpy.init(args=args)
     node = PickPlaceNode()
     try:
-        # Note: Dans ton code, tu lances node.run(). 
-        # Assure-toi que PickPlaceBase.run() appelle run_sequence()
-        success = node.run_sequence()
+        # Call run() to properly initialize gripper and execute sequence
+        success = node.run()
         exit_code = 0 if success else 1
     except KeyboardInterrupt:
         exit_code = 1

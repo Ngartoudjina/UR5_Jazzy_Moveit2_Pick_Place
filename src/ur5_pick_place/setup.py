@@ -12,7 +12,7 @@ setup(
         ('share/' + package_name, ['package.xml']),
         # Config files in share directory (accessible by installed package)
         ('share/' + package_name + '/config',
-            ['ur5_pick_place/scene_config.yaml']),
+            ['ur5_pick_place/scene_config.yaml', 'config/ur5_pick_place_config.yaml']),
     ],
     install_requires=['setuptools'],
     zip_safe=True,
@@ -46,6 +46,7 @@ setup(
             'moveit_diagnostics = ur5_pick_place.moveit_system_diagnostics:main',
             'pick_place_v3 = ur5_pick_place.pick_place_moveit2_v3:main',
             'test_scene_initialization = ur5_pick_place.test_scene_initialization:main',
+            'test_corrections = ur5_pick_place.test_corrections:main',
             'pick_place_hybrid = ur5_pick_place.pick_place_hybrid:main',
         ],
     },

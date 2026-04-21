@@ -1,6 +1,7 @@
 #!/usr/bin/env python3
 """Gripper abstraction layer for UR5 gripper control."""
 
+import asyncio
 import time
 from abc import ABC, abstractmethod
 from dataclasses import dataclass
@@ -50,24 +51,38 @@ class SimulatedGripperController(AbstractGripperController):
         self.logger.info("SimulatedGripperController initialized")
 
     def async_open(self) -> bool:
-        """Simulate opening gripper."""
+        """Simulate opening gripper (non-blocking)."""
         profile = GripperProfile(position=0.0, effort=0.0, duration_sec=1.5)
         return self.async_grasp(profile)
 
     def async_close(self) -> bool:
-        """Simulate closing gripper."""
+        """Simulate closing gripper (non-blocking)."""
         profile = GripperProfile(position=0.72, effort=135.0, duration_sec=2.0)
         return self.async_grasp(profile)
 
     def async_grasp(self, profile: GripperProfile) -> bool:
-        """Simulate gripper motion."""
-        self.logger.info(f"[SIM] Gripper command: pos={profile.position:.2f}")
+        """Simulate gripper motion WITHOUT BLOCKING.
+        
+        Uses a callback-based approach instead of time.sleep to avoid
+        blocking the ROS2 event loop and preventing joint_states updates.
+        """
+        self.logger.info(f"[SIM] Gripper command: pos={profile.position:.2f}, duration={profile.duration_sec}s")
         
         try:
-            time.sleep(profile.duration_sec)
-            self.current_position = profile.position
-            self.logger.info(f"[SIM] Gripper motion completed")
+            # Schedule the completion asynchronously using a timer
+            def _complete_motion():
+                self.current_position = profile.position
+                self.logger.info(f"[SIM] Gripper motion completed: pos={profile.position:.2f}")
+            
+            # Use a ROS2 timer to simulate motion without blocking
+            timer = self.node.create_timer(
+                profile.duration_sec,
+                _complete_motion,
+                clock=self.node.get_clock()
+            )
+            
             return True
+            
         except Exception as e:
             self.logger.error(f"Simulated gripper failed: {e}")
             return False

@@ -12,7 +12,7 @@ a2 = -0.425
 a3 = -0.39225
 d4 = 0.10915
 d5 = 0.09465
-d6 = 0.0823 + 0.13  # d6 + longueur physique approximative de la pince 
+d6 = 0.0823 
 
 JOINT_NAMES = ["shoulder_pan_joint", "shoulder_lift_joint", "elbow_joint",
                "wrist_1_joint", "wrist_2_joint", "wrist_3_joint"]

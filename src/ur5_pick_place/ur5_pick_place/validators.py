@@ -38,13 +38,30 @@ class JointValidator:
 
         violations = []
         for i, (angle, (min_limit, max_limit)) in enumerate(zip(angles, JointValidator.JOINT_LIMITS)):
-            normalized = math.atan2(math.sin(angle), math.cos(angle))
+            # For joints with ±π limits, normalize to [-π, π]
+            # For joints with ±2π limits, only normalize if value exceeds bounds
+            if abs(max_limit - min_limit) == 2 * math.pi:
+                # ±2π case: allow full rotation, but check actual value
+                normalized = math.atan2(math.sin(angle), math.cos(angle))
+            else:
+                # ±π case: normalize and validate
+                normalized = math.atan2(math.sin(angle), math.cos(angle))
             
+            # Check if normalized angle actually respects the limits
             if normalized < min_limit or normalized > max_limit:
-                violations.append(f"{JointValidator.JOINT_NAMES[i]}: {math.degrees(normalized):.1f}°")
+                # Also check unreduced angle in case it's legitimately out of range
+                if angle < min_limit or angle > max_limit:
+                    violations.append(
+                        f"{JointValidator.JOINT_NAMES[i]}: {math.degrees(normalized):.1f}° "
+                        f"(limits: {math.degrees(min_limit):.1f}° to {math.degrees(max_limit):.1f}°)"
+                    )
 
         if violations:
-            return ValidationResult(False, f"Joint limits violated ({len(violations)} joints)")
+            return ValidationResult(
+                False, 
+                f"Joint limits violated ({len(violations)} joints)",
+                details="; ".join(violations)
+            )
 
         return ValidationResult(True, "All joints within limits")
 

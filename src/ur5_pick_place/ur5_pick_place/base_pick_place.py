@@ -3,14 +3,16 @@
 
 from abc import ABC, abstractmethod
 from dataclasses import dataclass
-from typing import List, Optional, Callable
+from typing import List, Optional, Callable, Union, Dict
 import time
 import rclpy
 from rclpy.node import Node
+from trajectory_msgs.msg import JointTrajectory, JointTrajectoryPoint
 
 from ur5_pick_place.config_loader import ConfigLoader, JointPosition
 from ur5_pick_place.gripper_controller import AbstractGripperController, GripperControllerFactory
 from ur5_pick_place.validators import SafetyValidator
+from ur5_pick_place.ik_solver import UR5IKSolver, JOINT_NAMES
 
 
 @dataclass
@@ -39,9 +41,24 @@ class PickPlaceBase(Node, ABC):
             self.logger.error(f"Failed to load configuration: {e}")
             raise
 
+        # Initialize IK Solver
+        try:
+            self.solver = UR5IKSolver(self)
+            self.logger.info("IK Solver initialized")
+        except Exception as e:
+            self.logger.error(f"Failed to initialize IK Solver: {e}")
+            raise
+
         # Initialize gripper controller
         self.gripper: Optional[AbstractGripperController] = None
         self.gripper_ready = False
+
+        # Trajectory publisher for direct joint control
+        self.joint_pub = self.create_publisher(
+            JointTrajectory,
+            '/joint_trajectory_controller/joint_trajectory',
+            10
+        )
 
         # Execution state
         self.stages_executed: List[StageResult] = []
@@ -57,19 +74,61 @@ class PickPlaceBase(Node, ABC):
             self.logger.error(f"Failed to initialize gripper: {e}")
             return False
 
-    def move_to_position(self, position: JointPosition, retries: int = 3) -> bool:
-        """Move robot to named position."""
+    def move_to_position(self, position: Union[JointPosition, Dict], retries: int = 3) -> bool:
+        """Move robot to position. Accepts both JointPosition and dict(x,y,z)."""
+        
         for attempt in range(retries):
             try:
-                # Validate before moving
-                validation = SafetyValidator.pre_flight_check(position.angles)
-                if not validation.passed:
-                    self.logger.error(f"Safety validation failed: {validation.message}")
+                # Handle both JointPosition and dict input
+                if isinstance(position, dict):
+                    # Cartesian input: x, y, z → solve IK
+                    x = position.get('x', 0.0)
+                    y = position.get('y', 0.0)
+                    z = position.get('z', 0.0)
+                    qx = position.get('qx', 0.0)
+                    qy = position.get('qy', 0.707)
+                    qz = position.get('qz', 0.0)
+                    qw = position.get('qw', 0.707)
+                    
+                    ik_result = self.solver.solve(x, y, z, qx, qy, qz, qw)
+                    if not ik_result:
+                        self.logger.error(f"IK failed for x={x}, y={y}, z={z}")
+                        return False
+                    
+                    joint_angles = ik_result['joints']
+                    pos_name = f"x={x:.3f}, y={y:.3f}, z={z:.3f}"
+                    
+                elif isinstance(position, JointPosition):
+                    # Direct joint angles
+                    joint_angles = position.angles
+                    pos_name = position.name
+                else:
+                    self.logger.error(f"Invalid position type: {type(position)}")
                     return False
 
-                self.logger.info(f"Moving to position '{position.name}' (attempt {attempt+1}/{retries})")
-                time.sleep(0.5)
-                self.logger.info(f"Movement to '{position.name}' completed")
+                # Validate before moving
+                validation = SafetyValidator.pre_flight_check(joint_angles)
+                if not validation.passed:
+                    self.logger.error(f"Safety validation failed: {validation.message}")
+                    continue
+
+                # Publish trajectory
+                msg = JointTrajectory()
+                msg.joint_names = JOINT_NAMES
+                msg.header.stamp = self.get_clock().now().to_msg()
+                
+                point = JointTrajectoryPoint()
+                point.positions = joint_angles
+                point.time_from_start.sec = 2
+                msg.points.append(point)
+                
+                self.logger.info(f"Moving to '{pos_name}' (attempt {attempt+1}/{retries})")
+                self.joint_pub.publish(msg)
+                
+                # Wait for trajectory to complete (rough estimate)
+                rclpy.spin_once(self, timeout_sec=2.5)
+                
+                self.logger.info(f"Movement to '{pos_name}' completed")
                 return True
                 
             except Exception as e:

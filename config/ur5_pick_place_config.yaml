@@ -1,7 +1,7 @@
 # UR5 Pick & Place Configuration (v2.0)
 robot:
   name: ur5_with_rg2
-  group_name: manipulator
+  group_name: ur5_arm
   base_frame: world
   end_effector_frame: tool0
 
