@@ -1,0 +1,26 @@
+<?xml version="1.0"?>
+<robot xmlns:xacro="http://www.ros.org/wiki/xacro" name="ur5_robot">
+    <xacro:property name="PI" value="3.14159274"/>
+  <gazebo>
+    <plugin
+        filename="gz_ros2_control-system"
+        name="gz_ros2_control::GazeboSimROS2ControlPlugin">
+        <parameters>$(find ur5_controller)/config/ros2_controllers.yaml</parameters>
+    </plugin>
+  </gazebo>
+
+   <gazebo reference="robotiq_85_left_finger_tip_link">
+    <kp>1000000.0</kp>
+    <kd>1.0</kd>
+    <mu1>1.0</mu1>
+    <mu2>1.0</mu2>
+    <minDepth>0.001</minDepth>
+  </gazebo>
+  <gazebo reference="robotiq_85_right_finger_tip_link">
+    <kp>1000000.0</kp>
+    <kd>1.0</kd>
+    <mu1>1.0</mu1>
+    <mu2>1.0</mu2>
+    <minDepth>0.001</minDepth>
+  </gazebo>
+</robot>

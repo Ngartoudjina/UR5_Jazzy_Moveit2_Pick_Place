@@ -1,0 +1,72 @@
+# UR5 Pick & Place Configuration (v2.0)
+robot:
+  name: ur5_with_rg2
+  group_name: ur5_arm
+  base_frame: world
+  end_effector_frame: tool0
+
+planning:
+  pipeline_id: ompl
+  planner_id: RRTConnect
+  planning_time: 15.0
+  planning_attempts: 20
+  velocity_scaling_factor: 0.25
+  acceleration_scaling_factor: 0.25
+
+gripper:
+  enabled: true
+  action_namespace: /robotiq_85_gripper_controller/gripper_cmd
+  timeout: 5.0
+  profiles:
+    open:
+      position: 0.0
+      effort: 0.0
+      duration_sec: 1.5
+    medium_grasp:
+      position: 0.6
+      effort: 100.0
+      duration_sec: 2.0
+    heavy_grasp:
+      position: 0.72
+      effort: 135.0
+      duration_sec: 2.5
+
+named_positions:
+  home:
+    joints: [0.0, -1.5708, 1.5708, -1.5708, -1.5708, 0.0]
+    description: "Safe resting position"
+  pre_pick:
+    joints: [0.5236, -1.3963, 1.5708, -1.1781, -1.5708, 0.5236]
+    description: "Hover above object"
+  grasp:
+    joints: [0.5236, -1.0472, 1.5708, -1.5708, -1.5708, 0.5236]
+    description: "At object level"
+  lift:
+    joints: [0.5236, -1.5708, 1.5708, -1.5708, -1.5708, 0.5236]
+    description: "Lifted position"
+  pre_place:
+    joints: [-1.0472, -1.3963, 1.5708, -1.1781, -1.5708, -1.0472]
+    description: "Above drop zone"
+  place:
+    joints: [-1.0472, -1.0472, 1.5708, -1.5708, -1.5708, -1.0472]
+    description: "At drop level"
+  retreat:
+    joints: [-1.0472, -1.5708, 1.5708, -1.5708, -1.5708, -1.0472]
+    description: "Safe retreat"
+
+collision_object:
+  id: target_box
+  frame_id: world
+  position: {x: 0.50, y: 0.20, z: 0.05}
+  size: {x: 0.05, y: 0.05, z: 0.10}
+  attachment_link: robotiq_85_base_link
+
+safety:
+  validate_joint_limits: true
+  validate_ik_solution: true
+  validate_collision: true
+  workspace:
+    reach_min: 0.2
+    reach_max: 1.3
+    height_min: 0.0
+    height_max: 1.5
