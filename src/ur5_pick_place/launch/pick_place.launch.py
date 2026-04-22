@@ -61,7 +61,7 @@ def generate_launch_description():
     )
 
     # Delay pick_place_node by 2 s to let fake_object_pose start publishing
-    delayed_pick_place = TimerAction(period=2.0, actions=[pick_place])
+    delayed_pick_place = TimerAction(period=10.0, actions=[pick_place])
 
     return LaunchDescription([
         use_fake_pose_arg,

@@ -19,7 +19,7 @@ moveit_simple_controller_manager:
 
   hand_controller:
     type: GripperCommand
-    action_ns: gripper_cmd
+    action_ns: gripper_action
     default: true
     joints:
       - robotiq_85_left_knuckle_joint

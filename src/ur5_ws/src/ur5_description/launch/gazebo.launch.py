@@ -29,7 +29,7 @@ def generate_launch_description():
     
     world_arg = DeclareLaunchArgument(
         'world', 
-        default_value='diff_drive.sdf', # Default to a world that exists or just leave empty
+        default_value=os.path.join(ur5_description, 'worlds', 'gazebo_world.sdf'),
         description='Gz sim World file'
     )
     

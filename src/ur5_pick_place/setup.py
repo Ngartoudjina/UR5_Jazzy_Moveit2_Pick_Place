@@ -48,6 +48,7 @@ setup(
             'test_scene_initialization = ur5_pick_place.test_scene_initialization:main',
             'test_corrections = ur5_pick_place.test_corrections:main',
             'pick_place_hybrid = ur5_pick_place.pick_place_hybrid:main',
+            'pick_place_node_v2 = ur5_pick_place.pick_place_node_v2:main'
         ],
     },
 )

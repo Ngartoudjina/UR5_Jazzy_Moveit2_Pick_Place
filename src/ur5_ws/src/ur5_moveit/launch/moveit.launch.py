@@ -32,13 +32,6 @@ def generate_launch_description():
         value_type=str
     )
 
-    # ── robot_state_publisher ─────────────────────────────────────────────────
-    robot_state_publisher = Node(
-        package="robot_state_publisher",
-        executable="robot_state_publisher",
-        parameters=[{"robot_description": robot_description, "use_sim_time": False}]
-    )
-
     # ── ros2_control node (mock hardware) ────────────────────────────────────
     ros2_control_node = Node(
         package="controller_manager",
@@ -125,7 +118,6 @@ def generate_launch_description():
     )
 
     return LaunchDescription([
-        robot_state_publisher,
         ros2_control_node,
         delayed_controllers,
         move_group_node,

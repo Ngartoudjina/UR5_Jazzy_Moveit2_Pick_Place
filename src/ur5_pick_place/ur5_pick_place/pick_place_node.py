@@ -89,7 +89,7 @@ class PickPlaceNode(Node):
 
         # Gripper
         self.gripper_client = ActionClient(
-            self, GripperCommand, '/robotiq_85_gripper_controller/gripper_cmd')
+            self, GripperCommand, '/hand_controller/gripper_cmd')
         if self.gripper_client.wait_for_server(timeout_sec=5.0):
             self.has_gripper = True
             self.get_logger().info('Connected to gripper ✅')
