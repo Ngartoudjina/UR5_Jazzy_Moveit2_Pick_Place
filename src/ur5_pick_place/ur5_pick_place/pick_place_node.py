@@ -128,6 +128,12 @@ class PickPlaceNode(Node):
         ik_req.avoid_collisions = True
         ik_req.timeout.sec = int(timeout)
         ik_req.timeout.nanosec = 0
+        # Seed : partir de la position HOME pour guider le solveur
+        from sensor_msgs.msg import JointState
+        seed = RobotState()
+        seed.joint_state.name = ARM_JOINT_NAMES
+        seed.joint_state.position = [0.00, -1.57, 1.57, -1.57, -1.57, 0.00]
+        ik_req.robot_state = seed
 
         target = PoseStamped()
         target.header.frame_id = 'world'
@@ -190,7 +196,7 @@ class PickPlaceNode(Node):
 
         # 4. Correction CRUCIALE : On ne fait plus de "diff"
         # On définit l'état de départ comme étant "maintenant"
-        req.start_state.is_diff = False 
+        req.start_state.is_diff = True
         
         # On peut laisser l'état vide si on utilise move_group_interface, 
         # mais ici on remplit les contraintes cibles
