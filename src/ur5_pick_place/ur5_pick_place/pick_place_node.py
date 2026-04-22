@@ -180,12 +180,6 @@ class PickPlaceNode(Node):
         req = goal.request
         req.group_name = 'ur5_arm'
         
-        # 1. Récupérer l'heure actuelle
-        now = self.get_clock().now()
-        
-        # 2. Sécurité temporelle : on demande de commencer dans 0.2s
-        # Cela évite le "Time between points 0 and 1 is not strictly increasing"
-        req.workspace_parameters.header.stamp = (now + rclpy.duration.Duration(seconds=0.2)).to_msg()
         req.workspace_parameters.header.frame_id = 'world'
 
         # 3. Paramètres de planification
