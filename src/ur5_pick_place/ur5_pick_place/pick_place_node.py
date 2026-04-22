@@ -45,7 +45,7 @@ ARM_JOINT_NAMES = [
 ]
 
 # Position HOME fixe (bras replié, position sûre)
-HOME = [0.00, -1.57, 1.57, -1.57, -1.57, 0.00]
+HOME = [0.50, -1.57, 1.57, -1.57, -1.57, 0.00]
 
 # Position de depot (fixe, pas besoin d'IK)
 PLACE_JOINTS    = [1.57, -0.85, 1.55, -2.27, -1.57, 0.00]
@@ -132,7 +132,7 @@ class PickPlaceNode(Node):
         from sensor_msgs.msg import JointState
         seed = RobotState()
         seed.joint_state.name = ARM_JOINT_NAMES
-        seed.joint_state.position = [0.00, -1.57, 1.57, -1.57, -1.57, 0.00]
+        seed.joint_state.position = [0.50, -1.57, 1.57, -1.57, -1.57, 0.00]
         ik_req.robot_state = seed
 
         target = PoseStamped()

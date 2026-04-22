@@ -37,7 +37,8 @@ def generate_launch_description():
         package="controller_manager",
         executable="ros2_control_node",
         parameters=[
-            {"robot_description": robot_description},
+            {"robot_description": robot_description,
+            "use_sim_time": False},
             controllers_yaml,
         ],
         output="screen",
@@ -86,7 +87,7 @@ def generate_launch_description():
         parameters=[
             moveit_config.to_dict(),
             ompl_planning,
-            {"use_sim_time": True},
+            {"use_sim_time": False},
             {"publish_robot_description_semantic": True},
             {"trajectory_execution.allowed_execution_duration_scaling": 10.0},
             {"trajectory_execution.allowed_goal_duration_margin": 5.0},
