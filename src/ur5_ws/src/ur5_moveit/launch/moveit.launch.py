@@ -86,7 +86,7 @@ def generate_launch_description():
         parameters=[
             moveit_config.to_dict(),
             ompl_planning,
-            {"use_sim_time": False},
+            {"use_sim_time": True},
             {"publish_robot_description_semantic": True},
             {"trajectory_execution.allowed_execution_duration_scaling": 10.0},
             {"trajectory_execution.allowed_goal_duration_margin": 5.0},
