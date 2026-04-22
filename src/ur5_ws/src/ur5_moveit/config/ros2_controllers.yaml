@@ -1,7 +1,16 @@
 controller_manager:
   ros__parameters:
     update_rate: 100
-    use_sim_time: false
+    use_sim_time: true
+
+    joint_state_broadcaster:
+      type: joint_state_broadcaster/JointStateBroadcaster
+
+    ur5_arm_controller:
+      type: joint_trajectory_controller/JointTrajectoryController
+
+    hand_controller:
+      type: position_controllers/GripperActionController
 
 joint_state_broadcaster:
   ros__parameters: {}
@@ -21,10 +30,9 @@ ur5_arm_controller:
       - position
       - velocity
     allow_nonzero_velocity_at_trajectory_end: true
-    
-    goal_time: 1.0
     constraints:
       stopped_velocity_tolerance: 0.01
+      goal_time: 1.0
       shoulder_pan_joint: { trajectory: 0.2, goal: 0.1 }
       shoulder_lift_joint: { trajectory: 0.2, goal: 0.1 }
       elbow_joint: { trajectory: 0.2, goal: 0.1 }
@@ -39,4 +47,3 @@ hand_controller:
     allow_stalling: false
     stall_velocity_threshold: 0.001
     stall_timeout: 1.0
-

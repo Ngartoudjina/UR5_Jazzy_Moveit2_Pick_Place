@@ -13,6 +13,10 @@ setup(
         # Config files in share directory (accessible by installed package)
         ('share/' + package_name + '/config',
             ['ur5_pick_place/scene_config.yaml', 'config/ur5_pick_place_config.yaml']),
+        ('share/' + package_name + '/launch',
+            ['launch/pick_place.launch.py',
+             'launch/pick_place_v2.launch.py',
+             'launch/pick_place_moveit2.launch.py']),
     ],
     install_requires=['setuptools'],
     zip_safe=True,
