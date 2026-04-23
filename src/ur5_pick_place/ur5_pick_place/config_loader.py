@@ -40,28 +40,48 @@ class ConfigLoader:
 
     @classmethod
     def load_from_file(cls, config_path: str) -> bool:
-        """Load configuration from YAML file."""
-        # Support both absolute and relative paths
+        """Load configuration from YAML file.
+
+        CORRECTION : chemins portables, sans référence à ~/ros2_humble_ws/.
+        Ordre de recherche :
+          1. Chemin absolu ou relatif au répertoire courant
+          2. À côté du fichier config_loader.py (développement)
+          3. Share space ROS2 install (ament-agnostique)
+          4. Variable d'environnement ROS_PACKAGE_PATH / AMENT_PREFIX_PATH
+        """
         if not os.path.isabs(config_path):
-            # Try multiple locations for relative paths
             possible_paths = [
                 config_path,
                 os.path.join(os.getcwd(), config_path),
-                os.path.join(os.path.dirname(__file__), '..', '..', 'config', os.path.basename(config_path)),
-                os.path.expanduser(f"~/ros2_humble_ws/UR5_Jazzy_Moveit2_Pick_Place/src/ur5_pick_place/{config_path}"),
-                os.path.expanduser(f"~/ros2_humble_ws/UR5_Jazzy_Moveit2_Pick_Place/install/ur5_pick_place/share/ur5_pick_place/{config_path}"),
+                # Même dossier que ce fichier → src/ur5_pick_place/...
+                os.path.join(os.path.dirname(__file__), '..', '..', 'config',
+                             os.path.basename(config_path)),
+                os.path.join(os.path.dirname(__file__), '..', '..', 'ur5_pick_place',
+                             os.path.basename(config_path)),
+                # ROS2 install space (distro-agnostique)
+                os.path.join(
+                    os.environ.get('AMENT_PREFIX_PATH', '').split(':')[0],
+                    'share', 'ur5_pick_place', os.path.basename(config_path)
+                ),
+                os.path.join(
+                    os.environ.get('AMENT_PREFIX_PATH', '').split(':')[0],
+                    'share', 'ur5_pick_place', 'config', os.path.basename(config_path)
+                ),
             ]
-            
+
             found_path = None
             for path in possible_paths:
-                if os.path.exists(path):
-                    found_path = path
+                if path and os.path.exists(os.path.normpath(path)):
+                    found_path = os.path.normpath(path)
                     break
-            
+
             if found_path:
                 config_path = found_path
             else:
-                raise FileNotFoundError(f"Config file not found: {config_path}\nTried: {possible_paths}")
+                raise FileNotFoundError(
+                    f"Config file not found: {config_path}\nSearched:\n"
+                    + "\n".join(f"  - {p}" for p in possible_paths if p)
+                )
         
         if not os.path.exists(config_path):
             raise FileNotFoundError(f"Config file not found: {config_path}")

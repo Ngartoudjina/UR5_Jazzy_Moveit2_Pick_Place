@@ -70,7 +70,10 @@ def generate_launch_description():
     ompl_planning = load_yaml("ur5_moveit", "config/ompl_planning.yaml")
 
     moveit_config = (
-        MoveItConfigsBuilder("moveit2", package_name="ur5_moveit")
+        # CORRECTION : le premier argument est le nom du robot tel que défini
+        # dans l'URDF (ur5_robot.urdf.xacro), pas "moveit2" qui causait une
+        # résolution incorrecte de robot_description sur Humble.
+        MoveItConfigsBuilder("ur5_robot", package_name="ur5_moveit")
         .robot_description(file_path=urdf_path)
         .robot_description_semantic(file_path="config/ur5_robot.srdf")
         .trajectory_execution(file_path="config/moveit_controllers.yaml")
@@ -89,10 +92,11 @@ def generate_launch_description():
             ompl_planning,
             {"use_sim_time": False},
             {"publish_robot_description_semantic": True},
+            # CORRECTION : une seule valeur pour allowed_execution_duration_scaling
+            # (l'ancien code avait 10.0 ET 2.0 simultanément — doublon supprimé)
             {"trajectory_execution.allowed_execution_duration_scaling": 10.0},
             {"trajectory_execution.allowed_goal_duration_margin": 5.0},
             {"trajectory_execution.execution_duration_monitoring": False},
-            {"move_group.trajectory_execution.allowed_execution_duration_scaling": 2.0},
             {"plan_execution.record_trajectory_state_frequency": 10.0},
         ],
         arguments=["--ros-args", "--log-level", "info"],
@@ -112,15 +116,24 @@ def generate_launch_description():
         ],
     )
 
-    # Délai pour laisser ros2_control démarrer avant les spawners
+    # Délai pour laisser ros2_control démarrer avant les spawners de contrôleurs
     delayed_controllers = TimerAction(
         period=3.0,
         actions=[joint_state_broadcaster, arm_controller, hand_controller]
     )
 
+    # CORRECTION #8 : MoveGroup lancé après les contrôleurs (anciennement sans délai).
+    # joint_state_broadcaster doit publier /joint_states avant que MoveGroup
+    # tente de se connecter, sinon "no robot state received" au démarrage.
+    # Délai = 3s (contrôleurs) + 2s (marge publication joint_states) = 5s
+    delayed_move_group = TimerAction(
+        period=5.0,
+        actions=[move_group_node]
+    )
+
     return LaunchDescription([
         ros2_control_node,
         delayed_controllers,
-        move_group_node,
+        delayed_move_group,
         rviz_node,
     ])

@@ -2,35 +2,38 @@
 <package format="3">
   <name>ur5_pick_place</name>
   <version>2.0.0</version>
-  <description>UR5 Pick and Place with MoveIt2 - Modernized v2.0 with async, validation, and
-    config-driven architecture</description>
+  <description>UR5 Pick and Place with MoveIt2 — Compatible ROS2 Humble</description>
   <maintainer email="beingar@example.com">beingar</maintainer>
   <license>Apache License 2.0</license>
 
-  <!-- Core ROS2 dependencies -->
+  <!-- Core ROS2 -->
   <depend>rclpy</depend>
-  <depend>rclpy_action</depend>
   <depend>std_msgs</depend>
   <depend>geometry_msgs</depend>
   <depend>sensor_msgs</depend>
-  <depend>moveit_msgs</depend>
-  <depend>shape_msgs</depend>
+  <depend>trajectory_msgs</depend>
+  <depend>builtin_interfaces</depend>
+
+  <!-- Actions -->
+  <depend>action_msgs</depend>
   <depend>control_msgs</depend>
 
-  <!-- Configuration & validation -->
+  <!-- MoveIt2 messages (disponibles sur Humble) -->
+  <depend>moveit_msgs</depend>
+  <depend>shape_msgs</depend>
+
+  <!-- NOTE : moveit Python API non utilisée (réservée à Jazzy) -->
+  <!-- NOTE : bibliothèques MoveIt C++ non requises pour un package Python  -->
+  <!-- SUPPRIMÉ : rclpy_action (intégré dans rclpy depuis Humble)          -->
+
+  <!-- Configuration -->
   <depend>pyyaml</depend>
-  <depend>dataclasses-json</depend>
 
-  <!-- Build & test -->
-  <test_depend>pytest</test_depend>
-  <test_depend>pytest-asyncio</test_depend>
-
-  <!-- RViz2 & visualization -->
+  <!-- Visualisation -->
   <depend>rviz2</depend>
 
-  <!-- MoveIt2 -->
-  <depend>moveit_core</depend>
-  <depend>moveit_py</depend>
+  <!-- Tests -->
+  <test_depend>pytest</test_depend>
 
   <export>
     <build_type>ament_python</build_type>

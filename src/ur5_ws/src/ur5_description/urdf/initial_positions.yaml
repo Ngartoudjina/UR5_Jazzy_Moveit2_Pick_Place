@@ -1,8 +1,15 @@
+# Default initial positions for ur5_robot's ros2_control fake system
+# CORRECTION : shoulder_pan_joint aligné à 0.0 pour cohérence avec :
+#   - pick_place_node.py HOME = [0.0, -1.5708, ...]
+#   - pose_sender.py     HOME = [0.0, -1.57, ...]
+#   - scene_config.yaml  pose ready = [0.0, -0.1041, ...]
+# L'ancienne valeur 0.5 (shoulder_pan) était incohérente avec les autres fichiers.
+
 initial_positions:
-  shoulder_pan_joint: 0.5
-  shoulder_lift_joint: -1.57
-  elbow_joint: 1.57
-  wrist_1_joint: -1.57
-  wrist_2_joint: -1.57
-  wrist_3_joint: 0.0
+  shoulder_pan_joint:   0.0
+  shoulder_lift_joint: -1.5708
+  elbow_joint:          1.5708
+  wrist_1_joint:       -1.5708
+  wrist_2_joint:       -1.5708
+  wrist_3_joint:        0.0
   robotiq_85_left_knuckle_joint: 0.0

@@ -48,7 +48,6 @@ setup(
             'pick_place_moveit2 = ur5_pick_place.pick_place_moveit2:main',
             'pick_place_ros2control = ur5_pick_place.pick_place_ros2control:main',
             'moveit_diagnostics = ur5_pick_place.moveit_system_diagnostics:main',
-            'pick_place_v3 = ur5_pick_place.pick_place_moveit2_v3:main',
             'test_scene_initialization = ur5_pick_place.test_scene_initialization:main',
             'test_corrections = ur5_pick_place.test_corrections:main',
             'pick_place_hybrid = ur5_pick_place.pick_place_hybrid:main',

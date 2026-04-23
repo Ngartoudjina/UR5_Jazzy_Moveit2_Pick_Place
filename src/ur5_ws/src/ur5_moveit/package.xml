@@ -3,11 +3,28 @@
 <package format="3">
   <name>ur5_moveit</name>
   <version>0.0.0</version>
-  <description>UR5 ROS2 Jazzy package</description>
+  <description>UR5 MoveIt2 configuration — Compatible ROS2 Humble</description>
   <maintainer email="nithishreddy2004@gmail.com">nithish</maintainer>
   <license>Apache License 2.0</license>
 
   <buildtool_depend>ament_cmake</buildtool_depend>
+
+  <!-- MoveIt2 launch utilities (disponibles sur Humble) -->
+  <exec_depend>moveit_ros_move_group</exec_depend>
+  <exec_depend>moveit_configs_utils</exec_depend>
+  <exec_depend>moveit_ros_planning_interface</exec_depend>
+
+  <!-- ros2_control -->
+  <exec_depend>ros2_control</exec_depend>
+  <exec_depend>ros2_controllers</exec_depend>
+  <exec_depend>controller_manager</exec_depend>
+
+  <!-- Kinematics -->
+  <exec_depend>kdl_kinematics_plugin</exec_depend>
+
+  <!-- RViz -->
+  <exec_depend>rviz2</exec_depend>
+  <exec_depend>moveit_rviz_plugin</exec_depend>
 
   <test_depend>ament_lint_auto</test_depend>
   <test_depend>ament_lint_common</test_depend>

@@ -62,27 +62,33 @@ class SimulatedGripperController(AbstractGripperController):
 
     def async_grasp(self, profile: GripperProfile) -> bool:
         """Simulate gripper motion WITHOUT BLOCKING.
-        
-        Uses a callback-based approach instead of time.sleep to avoid
-        blocking the ROS2 event loop and preventing joint_states updates.
+
+        CORRECTION : le timer est maintenant annulé après la première exécution.
+        L'ancien code créait un timer périodique (jamais annulé) qui rappelait
+        _complete_motion() indéfiniment toutes les profile.duration_sec secondes.
         """
         self.logger.info(f"[SIM] Gripper command: pos={profile.position:.2f}, duration={profile.duration_sec}s")
-        
+
         try:
-            # Schedule the completion asynchronously using a timer
+            # Référence partagée pour permettre l'auto-destruction du timer
+            timer_holder: list = [None]
+
             def _complete_motion():
                 self.current_position = profile.position
                 self.logger.info(f"[SIM] Gripper motion completed: pos={profile.position:.2f}")
-            
-            # Use a ROS2 timer to simulate motion without blocking
-            timer = self.node.create_timer(
+                # Annulation one-shot : détruire le timer après la première exécution
+                if timer_holder[0] is not None:
+                    timer_holder[0].cancel()
+                    timer_holder[0].destroy()
+                    timer_holder[0] = None
+
+            timer_holder[0] = self.node.create_timer(
                 profile.duration_sec,
                 _complete_motion,
                 clock=self.node.get_clock()
             )
-            
             return True
-            
+
         except Exception as e:
             self.logger.error(f"Simulated gripper failed: {e}")
             return False

@@ -9,6 +9,14 @@ Pipeline :
   1. Lire la pose 3D de l'objet (x, y, z) depuis /object_pose
   2. Appeler compute_ik pour trouver les angles joints correspondants
   3. Planifier et exécuter la séquence pick & place
+
+CORRECTIONS APPLIQUÉES :
+  - Quaternion corrigé : qx=1.0 qy=0 qz=0 qw=0 → outil pointant vers le bas (-Z)
+    (l'ancien qy=0.707 qw=0.707 pointait l'outil en +X, pas vers le bas)
+  - HOME unifié avec initial_positions.yaml et pose_sender.py :
+    [0.0, -1.5708, 1.5708, -1.5708, -1.5708, 0.0]
+  - PREPLACE_JOINTS != RETREAT_JOINTS (étape de retrait rendue utile)
+  - Exécuteur MultiThreadedExecutor pour éviter le deadlock spin_until_future_complete
 """
 
 import time
@@ -44,13 +52,16 @@ ARM_JOINT_NAMES = [
     'wrist_3_joint',
 ]
 
-# Position HOME fixe (bras replié, position sûre)
-HOME = [0.50, -1.57, 1.57, -1.57, -1.57, 0.00]
+# ── SOURCE UNIQUE DE VÉRITÉ pour les positions nommées ──────────────────────
+# HOME unifié avec initial_positions.yaml, pose_sender.py et le SRDF "ready"
+# shoulder_pan=0.0 (≠ ancienne valeur 0.50 dans pick_place_node, incohérente)
+HOME = [0.0, -1.5708, 1.5708, -1.5708, -1.5708, 0.0]
 
-# Position de depot (fixe, pas besoin d'IK)
-PLACE_JOINTS    = [1.57, -0.85, 1.55, -2.27, -1.57, 0.00]
-PREPLACE_JOINTS = [1.57, -1.10, 1.30, -1.77, -1.57, 0.00]
-RETREAT_JOINTS  = [1.57, -1.10, 1.30, -1.77, -1.57, 0.00]
+# Position de dépôt (fixe, pas besoin d'IK)
+PLACE_JOINTS    = [1.57,  -0.85, 1.55, -2.27, -1.57, 0.00]
+PREPLACE_JOINTS = [1.57,  -1.10, 1.30, -1.77, -1.57, 0.00]
+# RETREAT_JOINTS distinct de PREPLACE_JOINTS pour un retrait réel
+RETREAT_JOINTS  = [1.57,  -1.30, 1.10, -1.57, -1.57, 0.00]
 
 
 class PickPlaceNode(Node):
@@ -114,11 +125,18 @@ class PickPlaceNode(Node):
         self.object_pose = msg
 
     # ── Cinématique inverse ────────────────────────────────────────────────────
-    def compute_ik(self, x, y, z, qx=0.0, qy=0.707, qz=0.0, qw=0.707,
+    def compute_ik(self, x, y, z,
+                   qx=1.0, qy=0.0, qz=0.0, qw=0.0,
                    timeout=5.0):
         """
         Calcule les angles articulaires pour atteindre la pose (x, y, z).
-        Orientation par défaut : outil pointant vers le bas (qy=0.707, qw=0.707).
+
+        Orientation par défaut : outil pointant vers le bas.
+        Quaternion correct : qx=1.0, qy=0, qz=0, qw=0
+            → rotation de 180° autour de X → axe Z outil pointe en -Z monde
+            (CORRECTION : l'ancien qy=0.707, qw=0.707 faisait pointer l'outil
+             en +X monde — comportement de saisie latérale, pas verticale)
+
         Retourne une liste de 6 angles en radians, ou None si impossible.
         """
         req = GetPositionIK.Request()
@@ -128,11 +146,11 @@ class PickPlaceNode(Node):
         ik_req.avoid_collisions = True
         ik_req.timeout.sec = int(timeout)
         ik_req.timeout.nanosec = 0
-        # Seed : partir de la position HOME pour guider le solveur
+        # Seed : partir de HOME pour guider le solveur
         from sensor_msgs.msg import JointState
         seed = RobotState()
         seed.joint_state.name = ARM_JOINT_NAMES
-        seed.joint_state.position = [0.50, -1.57, 1.57, -1.57, -1.57, 0.00]
+        seed.joint_state.position = list(HOME)
         ik_req.robot_state = seed
 
         target = PoseStamped()
@@ -360,8 +378,10 @@ class PickPlaceNode(Node):
         # ── Calcul IK automatique ─────────────────────────────────────────
         log.info('\n📐 Calcul cinématique inverse …')
 
-        # Orientation outil vers le bas : qy=0.707, qw=0.707
-        qx, qy, qz, qw = 0.0, 0.707, 0.0, 0.707
+        # Orientation outil vers le bas : rotation 180° autour de X
+        # qx=1.0, qy=0, qz=0, qw=0  →  axe Z outil pointe en -Z monde (vers le sol)
+        # CORRIGÉ : l'ancien qy=0.707 qw=0.707 pointait l'outil en +X (saisie latérale)
+        qx, qy, qz, qw = 1.0, 0.0, 0.0, 0.0
 
         pre_pick_joints = self.compute_ik(ox, oy, oz + self.pre_height,
                                           qx, qy, qz, qw)

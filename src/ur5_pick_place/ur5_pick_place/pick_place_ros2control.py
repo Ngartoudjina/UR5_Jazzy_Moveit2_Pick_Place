@@ -412,9 +412,11 @@ def main(args=None):
         os.path.expandvars('$ROS_INSTALL_DIR/share/ur5_pick_place/scene_config.yaml'),
         os.path.expandvars('$COLCON_PREFIX_PATH/share/ur5_pick_place/scene_config.yaml'),
         
-        # 4. Workspace paths
-        os.path.expandvars('~/ros2_humble_ws/src/ur5_pick_place/ur5_pick_place/scene_config.yaml'),
-        os.path.expandvars('~/ros2_humble_ws/install/ur5_pick_place/share/ur5_pick_place/scene_config.yaml'),
+        # 4. Workspace paths (CORRECTION : chemins portables via AMENT_PREFIX_PATH)
+        os.path.join(os.environ.get('AMENT_PREFIX_PATH', '').split(':')[0],
+                     'share', 'ur5_pick_place', 'scene_config.yaml'),
+        os.path.join(os.environ.get('AMENT_PREFIX_PATH', '').split(':')[0],
+                     'share', 'ur5_pick_place', 'config', 'scene_config.yaml'),
         
         # 5. Current working directory
         'scene_config.yaml',

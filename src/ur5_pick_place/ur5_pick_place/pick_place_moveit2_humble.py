@@ -76,7 +76,7 @@ class PickPlaceMoveIt2Humble(Node):
             '/ros2_ws/build/ur5_pick_place/ur5_pick_place/scene_config.yaml',
             '/ros2_ws/install/ur5_pick_place/share/ur5_pick_place/scene_config.yaml',
             '/ros2_ws/install/ur5_pick_place/share/ur5_pick_place/config/scene_config.yaml',
-            os.path.expanduser('~/ros2_humble_ws/src/ur5_pick_place/ur5_pick_place/scene_config.yaml'),
+            os.path.join(os.environ.get('AMENT_PREFIX_PATH', '').split(':')[0], 'share', 'ur5_pick_place', 'scene_config.yaml'),  # CORRIGÉ : portable
         ]
         
         for path_pattern in possible_paths:

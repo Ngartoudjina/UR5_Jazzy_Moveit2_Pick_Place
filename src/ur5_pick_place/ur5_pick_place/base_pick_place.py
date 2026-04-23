@@ -1,203 +1,239 @@
 #!/usr/bin/env python3
-"""Base class for UR5 pick and place operations."""
+"""
+base_pick_place.py — Classe de base pour le pick & place UR5.
 
-from abc import ABC, abstractmethod
-from dataclasses import dataclass
-from typing import List, Optional, Callable, Union, Dict
+CORRECTIONS APPLIQUÉES :
+  - Utilisation d'un ActionClient FollowJointTrajectory (au lieu d'un publisher topic)
+  - Attente réelle de la fin de trajectoire via get_result_async()
+  - Durée de trajectoire calculée dynamiquement selon l'amplitude angulaire
+  - Nom de contrôleur aligné avec ros2_controllers.yaml : /ur5_arm_controller
+"""
+
+import math
 import time
+from typing import Union, Dict, Optional
+
 import rclpy
 from rclpy.node import Node
+from rclpy.action import ActionClient
+from rclpy.duration import Duration
+
 from trajectory_msgs.msg import JointTrajectory, JointTrajectoryPoint
+from control_msgs.action import FollowJointTrajectory
+from builtin_interfaces.msg import Duration as RosDuration
 
 from ur5_pick_place.config_loader import ConfigLoader, JointPosition
-from ur5_pick_place.gripper_controller import AbstractGripperController, GripperControllerFactory
-from ur5_pick_place.validators import SafetyValidator
-from ur5_pick_place.ik_solver import UR5IKSolver, JOINT_NAMES
+from ur5_pick_place.validators import JointValidator, ValidationResult
+
+JOINT_NAMES = [
+    'shoulder_pan_joint', 'shoulder_lift_joint', 'elbow_joint',
+    'wrist_1_joint', 'wrist_2_joint', 'wrist_3_joint'
+]
+
+# Vitesse angulaire maximale de sécurité (rad/s) — 50% de la limite UR5
+MAX_JOINT_VELOCITY = 1.0  # rad/s
 
 
-@dataclass
-class StageResult:
-    """Result of a single stage execution."""
-    stage_name: str
-    success: bool
-    duration_sec: float = 0.0
+def compute_trajectory_duration(current_angles, target_angles, max_vel=MAX_JOINT_VELOCITY) -> float:
+    """Calcule la durée minimale de trajectoire selon l'amplitude max."""
+    if not current_angles:
+        return 3.0
+    max_delta = max(abs(t - c) for t, c in zip(target_angles, current_angles))
+    duration = max_delta / max_vel
+    return max(duration, 1.5)  # minimum 1.5 secondes
 
 
-class PickPlaceBase(Node, ABC):
-    """Base class for all pick and place operations."""
+class BasePickPlace(Node):
+    """
+    Classe de base pour orchestrer les stages du pick & place.
 
-    def __init__(self, node_name: str):
-        """Initialize base pick place node."""
+    Utilise un ActionClient FollowJointTrajectory pour envoyer les trajectoires
+    avec confirmation de fin d'exécution (pas de publisher topic aveugle).
+    """
+
+    # Nom du contrôleur tel que défini dans ros2_controllers.yaml
+    ARM_CONTROLLER_ACTION = '/ur5_arm_controller/follow_joint_trajectory'
+
+    def __init__(self, node_name: str = 'base_pick_place'):
         super().__init__(node_name)
-        
-        self.logger = self.get_logger()
-        
-        # Load configuration
-        try:
-            self.config = ConfigLoader()
-            ConfigLoader.load_from_file('config/ur5_pick_place_config.yaml')
-            self.logger.info("Configuration loaded")
-        except Exception as e:
-            self.logger.error(f"Failed to load configuration: {e}")
-            raise
 
-        # Initialize IK Solver
-        try:
-            self.solver = UR5IKSolver(self)
-            self.logger.info("IK Solver initialized")
-        except Exception as e:
-            self.logger.error(f"Failed to initialize IK Solver: {e}")
-            raise
-
-        # Initialize gripper controller
-        self.gripper: Optional[AbstractGripperController] = None
-        self.gripper_ready = False
-
-        # Trajectory publisher for direct joint control
-        self.joint_pub = self.create_publisher(
-            JointTrajectory,
-            '/joint_trajectory_controller/joint_trajectory',
-            10
+        # --- ActionClient bras (corrigé : plus de publisher topic) ---
+        self._arm_client = ActionClient(
+            self,
+            FollowJointTrajectory,
+            self.ARM_CONTROLLER_ACTION
         )
 
-        # Execution state
-        self.stages_executed: List[StageResult] = []
+        # État courant des joints (mis à jour via /joint_states si besoin)
+        self._current_joints = [0.0] * 6
 
-    def _initialize_gripper(self) -> bool:
-        """Initialize gripper controller."""
+        # Chargement configuration
         try:
-            self.gripper = GripperControllerFactory.create_simulated(self)
-            self.gripper_ready = True
-            self.logger.info("Gripper controller initialized")
-            return True
+            ConfigLoader.load_from_file('config/ur5_pick_place_config.yaml')
+            self.config = ConfigLoader()
         except Exception as e:
-            self.logger.error(f"Failed to initialize gripper: {e}")
+            self.get_logger().warn(f"Config non chargée: {e} — utilisation des valeurs par défaut")
+            self.config = None
+
+        self.get_logger().info(f"[BasePickPlace] Initialisé — ActionClient: {self.ARM_CONTROLLER_ACTION}")
+
+    # ──────────────────────────────────────────────────────────────────────────
+    #  Interface publique
+    # ──────────────────────────────────────────────────────────────────────────
+
+    def move_to_position(
+        self,
+        position: Union[JointPosition, Dict, list],
+        retries: int = 3,
+        timeout_per_try: float = 30.0
+    ) -> bool:
+        """
+        Déplace le bras vers une position articulaire.
+
+        Attend la confirmation de fin de trajectoire avant de retourner.
+
+        Args:
+            position: JointPosition, liste de 6 angles (rad), ou dict cartésien
+            retries: Nombre de tentatives en cas d'échec
+            timeout_per_try: Timeout (s) par tentative
+
+        Returns:
+            True si le mouvement s'est terminé avec succès
+        """
+        # Résolution de la position en liste d'angles
+        angles = self._resolve_angles(position)
+        if angles is None:
+            self.get_logger().error("Impossible de résoudre les angles pour la position donnée")
             return False
 
-    def move_to_position(self, position: Union[JointPosition, Dict], retries: int = 3) -> bool:
-        """Move robot to position. Accepts both JointPosition and dict(x,y,z)."""
-        
-        for attempt in range(retries):
-            try:
-                # Handle both JointPosition and dict input
-                if isinstance(position, dict):
-                    # Cartesian input: x, y, z → solve IK
-                    x = position.get('x', 0.0)
-                    y = position.get('y', 0.0)
-                    z = position.get('z', 0.0)
-                    qx = position.get('qx', 0.0)
-                    qy = position.get('qy', 0.707)
-                    qz = position.get('qz', 0.0)
-                    qw = position.get('qw', 0.707)
-                    
-                    ik_result = self.solver.solve(x, y, z, qx, qy, qz, qw)
-                    if not ik_result:
-                        self.logger.error(f"IK failed for x={x}, y={y}, z={z}")
-                        return False
-                    
-                    joint_angles = ik_result['joints']
-                    pos_name = f"x={x:.3f}, y={y:.3f}, z={z:.3f}"
-                    
-                elif isinstance(position, JointPosition):
-                    # Direct joint angles
-                    joint_angles = position.angles
-                    pos_name = position.name
-                else:
-                    self.logger.error(f"Invalid position type: {type(position)}")
-                    return False
+        # Validation des angles
+        validation: ValidationResult = JointValidator.validate_angles(angles)
+        if not validation.valid:
+            self.get_logger().error(f"Angles invalides : {validation.message}")
+            return False
 
-                # Validate before moving
-                validation = SafetyValidator.pre_flight_check(joint_angles)
-                if not validation.passed:
-                    self.logger.error(f"Safety validation failed: {validation.message}")
-                    continue
+        # Calcul de la durée dynamique
+        duration_sec = compute_trajectory_duration(self._current_joints, angles)
 
-                # Publish trajectory
-                msg = JointTrajectory()
-                msg.joint_names = JOINT_NAMES
-                msg.header.stamp = self.get_clock().now().to_msg()
-                
-                point = JointTrajectoryPoint()
-                point.positions = joint_angles
-                point.time_from_start.sec = 2
-                msg.points.append(point)
-                
-                self.logger.info(f"Moving to '{pos_name}' (attempt {attempt+1}/{retries})")
-                self.joint_pub.publish(msg)
-                
-                # Wait for trajectory to complete (rough estimate)
-                rclpy.spin_once(self, timeout_sec=2.5)
-                
-                self.logger.info(f"Movement to '{pos_name}' completed")
+        pos_name = getattr(position, 'name', 'position') if not isinstance(position, (list, dict)) else 'position'
+
+        for attempt in range(1, retries + 1):
+            self.get_logger().info(
+                f"[{pos_name}] Tentative {attempt}/{retries} — durée prévue: {duration_sec:.1f}s"
+            )
+
+            success = self._send_trajectory_and_wait(angles, duration_sec, timeout_per_try)
+            if success:
+                self._current_joints = angles.copy()
+                self.get_logger().info(f"✅ [{pos_name}] Mouvement terminé avec succès")
                 return True
-                
-            except Exception as e:
-                self.logger.error(f"Error during movement: {e}")
-                time.sleep(1.0)
+            else:
+                self.get_logger().warn(f"⚠️  [{pos_name}] Tentative {attempt} échouée")
+                time.sleep(0.5)
 
+        self.get_logger().error(f"❌ [{pos_name}] Échec après {retries} tentatives")
         return False
 
-    def execute_stage(self, stage_name: str, stage_fn: Callable) -> StageResult:
-        """Execute a stage and track execution time."""
-        try:
-            start_time = time.time()
-            
-            self.logger.info(f"\nExecuting: {stage_name}")
-            
-            success = stage_fn()
-            
-            duration = time.time() - start_time
-            
-            result = StageResult(
-                stage_name=stage_name,
-                success=success,
-                duration_sec=duration
-            )
-            
-            if success:
-                self.logger.info(f"✓ {stage_name} completed in {duration:.2f}s")
-            else:
-                self.logger.error(f"✗ {stage_name} FAILED")
-            
-            self.stages_executed.append(result)
-            return result
+    def wait_for_arm_controller(self, timeout_sec: float = 10.0) -> bool:
+        """Attend que le serveur d'action du bras soit disponible."""
+        self.get_logger().info("En attente du contrôleur bras...")
+        ready = self._arm_client.wait_for_server(timeout_sec=timeout_sec)
+        if ready:
+            self.get_logger().info("✅ Contrôleur bras disponible")
+        else:
+            self.get_logger().error(f"❌ Contrôleur bras non disponible après {timeout_sec}s")
+        return ready
 
-        except Exception as e:
-            self.logger.error(f"✗ {stage_name} EXCEPTION: {e}")
-            return StageResult(stage_name=stage_name, success=False, duration_sec=0.0)
+    # ──────────────────────────────────────────────────────────────────────────
+    #  Méthodes internes
+    # ──────────────────────────────────────────────────────────────────────────
 
-    @abstractmethod
-    def run_sequence(self) -> bool:
-        """Abstract method: implement specific sequence steps."""
-        pass
+    def _send_trajectory_and_wait(
+        self,
+        angles: list,
+        duration_sec: float,
+        timeout_sec: float
+    ) -> bool:
+        """
+        Envoie une trajectoire via ActionClient et ATTEND la fin réelle.
 
-    def run(self) -> bool:
-        """Main execution orchestrator."""
-        try:
-            self.logger.info("Starting pick and place sequence")
+        Contrairement à l'ancienne implémentation (publisher topic + spin_once),
+        cette méthode utilise le mécanisme action ROS2 pour obtenir un résultat.
+        """
+        # Construction du message de trajectoire
+        trajectory = JointTrajectory()
+        trajectory.joint_names = JOINT_NAMES
 
-            if not self._initialize_gripper():
-                return False
+        point = JointTrajectoryPoint()
+        point.positions = [float(a) for a in angles]
+        point.velocities = [0.0] * 6
+        point.accelerations = [0.0] * 6
 
-            success = self.run_sequence()
-            self._print_execution_summary(success)
-            return success
+        secs = int(duration_sec)
+        nanosecs = int((duration_sec - secs) * 1e9)
+        point.time_from_start = RosDuration(sec=secs, nanosec=nanosecs)
+        trajectory.points = [point]
 
-        except Exception as e:
-            self.logger.error(f"Fatal error: {e}")
+        # Construction du goal
+        goal = FollowJointTrajectory.Goal()
+        goal.trajectory = trajectory
+
+        # Envoi du goal
+        if not self._arm_client.server_is_ready():
+            self.get_logger().error("ActionServer non disponible !")
             return False
 
-    def _print_execution_summary(self, success: bool):
-        """Print execution summary."""
-        self.logger.info(f"\n{'='*60}")
-        self.logger.info(f"EXECUTION SUMMARY - {'SUCCESS ✓' if success else 'FAILED ✗'}")
-        self.logger.info(f"{'='*60}")
-        
-        total_time = sum(s.duration_sec for s in self.stages_executed)
-        self.logger.info(f"Total execution time: {total_time:.2f}s")
-        
-        for stage in self.stages_executed:
-            status = "✓" if stage.success else "✗"
-            self.logger.info(f"{status} {stage.stage_name:<40} {stage.duration_sec:>7.2f}s")
-        
-        self.logger.info(f"{'='*60}\n")
+        send_future = self._arm_client.send_goal_async(goal)
+        rclpy.spin_until_future_complete(self, send_future, timeout_sec=10.0)
+
+        if not send_future.done():
+            self.get_logger().error("Timeout lors de l'envoi du goal")
+            return False
+
+        goal_handle = send_future.result()
+        if goal_handle is None or not goal_handle.accepted:
+            self.get_logger().error("Goal rejeté par le contrôleur !")
+            return False
+
+        # Attente du résultat avec timeout dynamique
+        result_future = goal_handle.get_result_async()
+        actual_timeout = duration_sec + 5.0  # marge de 5s
+        rclpy.spin_until_future_complete(self, result_future, timeout_sec=actual_timeout)
+
+        if not result_future.done():
+            self.get_logger().error(f"Timeout d'exécution après {actual_timeout:.1f}s")
+            return False
+
+        result = result_future.result()
+        if result is None:
+            self.get_logger().error("Résultat nul reçu du contrôleur")
+            return False
+
+        error_code = result.result.error_code
+        if error_code == FollowJointTrajectory.Result.SUCCESSFUL:
+            return True
+        else:
+            self.get_logger().error(f"Erreur contrôleur : error_code={error_code}")
+            return False
+
+    def _resolve_angles(self, position) -> Optional[list]:
+        """Convertit position (JointPosition, list, dict) en liste de 6 angles."""
+        if isinstance(position, list):
+            if len(position) == 6:
+                return [float(a) for a in position]
+            self.get_logger().error(f"Liste doit avoir 6 éléments, reçu {len(position)}")
+            return None
+
+        if isinstance(position, JointPosition):
+            return [float(a) for a in position.angles]
+
+        if isinstance(position, dict) and 'joints' in position:
+            return [float(a) for a in position['joints']]
+
+        if isinstance(position, dict) and 'x' in position:
+            # Cartésien → IK (à implémenter dans les sous-classes)
+            self.get_logger().warn("IK cartésien non implémenté dans BasePickPlace")
+            return None
+
+        self.get_logger().error(f"Type de position non supporté : {type(position)}")
+        return None

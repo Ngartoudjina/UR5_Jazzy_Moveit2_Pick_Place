@@ -1,15 +1,17 @@
 #!/usr/bin/env python3
 """
 ================================================================================
-pick_place_moveit2.py - Humble Compatible (No MoveItPy Dependency)
+pick_place_moveit2.py - FollowJointTrajectory direct (ROS2 Jazzy compatible)
 ================================================================================
 
-Version for ROS2 Humble which uses:
-1. ros2_control FollowJointTrajectory action
-2. Configuration-based joint positions
-3. NO dependency on moveit_py (not available in Humble)
+Approche : ros2_control FollowJointTrajectory action directe.
+Compatible ROS2 Humble ET Jazzy (pas de dépendance moveit_py).
 
-✅ Works directly with ros2_control for reliable motion!
+CORRECTIONS APPLIQUÉES :
+  - En-tête corrigé (n'est plus "Humble only")
+  - Chemins scene_config.yaml portables (sans ~/ros2_humble_ws/)
+  - _initialize_scene() attend la confirmation ApplyPlanningScene
+  - Logs "Humble Mode" remplacés par des logs neutres
 ================================================================================
 """
 
@@ -72,26 +74,32 @@ class PickPlaceMoveIt2(Node):
         self.get_logger().info("✅ Pick & Place Node Initialized")
     
     def _load_config(self):
-        """Load scene_config.yaml"""
+        """Load scene_config.yaml — chemins portables (sans ros2_humble_ws)."""
         possible_paths = [
             os.path.join(os.path.dirname(__file__), 'scene_config.yaml'),
-            '/ros2_ws/build/ur5_pick_place/ur5_pick_place/scene_config.yaml',
-            '/ros2_ws/install/ur5_pick_place/share/ur5_pick_place/scene_config.yaml',
-            '/ros2_ws/install/ur5_pick_place/share/ur5_pick_place/config/scene_config.yaml',
-            os.path.expanduser('~/ros2_humble_ws/src/ur5_pick_place/ur5_pick_place/scene_config.yaml'),
+            os.path.join(os.path.dirname(__file__), '..', 'config', 'scene_config.yaml'),
+            os.path.join(
+                os.environ.get('AMENT_PREFIX_PATH', '').split(':')[0],
+                'share', 'ur5_pick_place', 'scene_config.yaml'
+            ),
+            os.path.join(
+                os.environ.get('AMENT_PREFIX_PATH', '').split(':')[0],
+                'share', 'ur5_pick_place', 'config', 'scene_config.yaml'
+            ),
         ]
-        
+
         for path in possible_paths:
+            path = os.path.normpath(path)
             if os.path.exists(path):
                 try:
                     with open(path) as f:
                         cfg = yaml.safe_load(f)
-                        self.get_logger().info(f"✓ Config loaded from: {path}")
+                        self.get_logger().info(f"✓ Config chargée depuis : {path}")
                         return cfg
                 except Exception as e:
-                    self.get_logger().warn(f"Failed to load from {path}: {e}")
-        
-        self.get_logger().warn("⚠️ Config file not found, using defaults")
+                    self.get_logger().warn(f"Echec lecture {path}: {e}")
+
+        self.get_logger().warn("⚠️ scene_config.yaml introuvable — valeurs par défaut")
         return {}
     
     def _load_positions(self):
@@ -129,98 +137,66 @@ class PickPlaceMoveIt2(Node):
         return positions
     
     def _initialize_scene(self):
-        """Initialize MoveIt2 scene with table and pick object"""
+        """Initialize MoveIt2 scene with table and pick object.
+
+        CORRECTION : appels call_async() avec spin_until_future_complete()
+        pour attendre la confirmation avant de continuer.
+        """
         try:
-            # Wait for ApplyPlanningScene service
             if not self.scene_client.wait_for_service(timeout_sec=5.0):
-                self.get_logger().warn("⚠️ ApplyPlanningScene service not available - scene objects not added")
+                self.get_logger().warn("⚠️ ApplyPlanningScene non disponible — scène non initialisée")
                 return
-            
+
             scene_cfg = self.config.get('scene', {})
-            
-            # ═════════════════════════════════════════════════════════════
-            # ADD TABLE TO SCENE
-            # ═════════════════════════════════════════════════════════════
-            table_cfg = scene_cfg.get('table', {})
-            if table_cfg:
-                table = CollisionObject()
-                table.id = 'table'
-                table.header.frame_id = 'world'
-                
-                table_size = table_cfg.get('size', {})
-                table_pos = table_cfg.get('position', {})
-                
-                primitive_table = SolidPrimitive()
-                primitive_table.type = SolidPrimitive.BOX
-                primitive_table.dimensions = [
-                    float(table_size.get('x', 0.8)),
-                    float(table_size.get('y', 0.8)),
-                    float(table_size.get('z', 0.05))
+
+            for obj_key, obj_id, defaults in [
+                ('table',       'table',       {'pos': (0.65, 0.0, -0.025), 'size': (0.8, 0.8, 0.05)}),
+                ('pick_object', 'pick_object', {'pos': (0.5,  0.1,  0.05),  'size': (0.05,0.05,0.10)}),
+            ]:
+                cfg = scene_cfg.get(obj_key, {})
+                pos = cfg.get('position', {})
+                sz  = cfg.get('size', {})
+
+                co = CollisionObject()
+                co.id = obj_id
+                co.header.frame_id = 'world'
+                co.header.stamp = self.get_clock().now().to_msg()
+
+                prim = SolidPrimitive()
+                prim.type = SolidPrimitive.BOX
+                prim.dimensions = [
+                    float(sz.get('x', defaults['size'][0])),
+                    float(sz.get('y', defaults['size'][1])),
+                    float(sz.get('z', defaults['size'][2])),
                 ]
-                
-                pose_table = Pose()
-                pose_table.position.x = float(table_pos.get('x', 0.5))
-                pose_table.position.y = float(table_pos.get('y', 0.0))
-                pose_table.position.z = float(table_pos.get('z', 0.0))
-                pose_table.orientation.w = 1.0
-                
-                table.primitives.append(primitive_table)
-                table.primitive_poses.append(pose_table)
-                table.operation = CollisionObject.ADD
-                
+
+                pose = Pose()
+                pose.position.x = float(pos.get('x', defaults['pos'][0]))
+                pose.position.y = float(pos.get('y', defaults['pos'][1]))
+                pose.position.z = float(pos.get('z', defaults['pos'][2]))
+                pose.orientation.w = 1.0
+
+                co.primitives.append(prim)
+                co.primitive_poses.append(pose)
+                co.operation = CollisionObject.ADD
+
                 req = ApplyPlanningScene.Request()
-                req.scene.world.collision_objects.append(table)
+                req.scene.world.collision_objects.append(co)
                 req.scene.is_diff = True
-                
-                self.scene_client.call_async(req)
-                self.get_logger().info(
-                    f"📋 TABLE added at ({pose_table.position.x:.2f}, {pose_table.position.y:.2f}, {pose_table.position.z:.2f})"
-                )
-            
-            # ═════════════════════════════════════════════════════════════
-            # ADD PICK OBJECT TO SCENE
-            # ═════════════════════════════════════════════════════════════
-            obj_cfg = scene_cfg.get('pick_object', {})
-            if obj_cfg:
-                obj = CollisionObject()
-                obj.id = 'pick_object'
-                obj.header.frame_id = 'world'
-                
-                obj_size = obj_cfg.get('size', {})
-                obj_pos = obj_cfg.get('position', {})
-                
-                primitive_obj = SolidPrimitive()
-                primitive_obj.type = SolidPrimitive.BOX
-                primitive_obj.dimensions = [
-                    float(obj_size.get('x', 0.05)),
-                    float(obj_size.get('y', 0.05)),
-                    float(obj_size.get('z', 0.10))
-                ]
-                
-                pose_obj = Pose()
-                pose_obj.position.x = float(obj_pos.get('x', 0.5))
-                pose_obj.position.y = float(obj_pos.get('y', 0.1))
-                pose_obj.position.z = float(obj_pos.get('z', 0.05))
-                pose_obj.orientation.w = 1.0
-                
-                obj.primitives.append(primitive_obj)
-                obj.primitive_poses.append(pose_obj)
-                obj.operation = CollisionObject.ADD
-                
-                req = ApplyPlanningScene.Request()
-                req.scene.world.collision_objects.append(obj)
-                req.scene.is_diff = True
-                
-                self.scene_client.call_async(req)
-                self.get_logger().info(
-                    f"📦 OBJECT added at ({pose_obj.position.x:.2f}, {pose_obj.position.y:.2f}, {pose_obj.position.z:.2f})"
-                )
-            
-            # Small delay to ensure objects are added
-            time.sleep(0.5)
-            
+
+                future = self.scene_client.call_async(req)
+                rclpy.spin_until_future_complete(self, future, timeout_sec=5.0)
+
+                if future.done() and future.result() and future.result().success:
+                    self.get_logger().info(
+                        f"✅ '{obj_id}' @ ({pose.position.x:.2f},"
+                        f" {pose.position.y:.2f}, {pose.position.z:.2f})"
+                    )
+                else:
+                    self.get_logger().warn(f"⚠️ '{obj_id}' non confirmé par ApplyPlanningScene")
+
         except Exception as e:
-            self.get_logger().warn(f"⚠️ Failed to initialize scene: {e}")
+            self.get_logger().warn(f"⚠️ Echec initialisation scène : {e}")
     
     def _create_trajectory(self, joint_positions, duration=3.0):
         """Create a JointTrajectory for ros2_control"""
@@ -295,7 +271,7 @@ class PickPlaceMoveIt2(Node):
     
     def run_pick_place(self):
         """Run complete pick-place sequence"""
-        self.get_logger().info("\n========== DÉMARRAGE PICK & PLACE (Humble Mode) ==========\n")
+        self.get_logger().info("\n========== DÉMARRAGE PICK & PLACE ==========\n")
         
         try:
             # Sequence of moves
