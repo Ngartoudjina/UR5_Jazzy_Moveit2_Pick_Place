@@ -1,22 +1,19 @@
 """
 pick_place.launch.py
 ====================
-Launches the complete UR5 pick & place pipeline:
-  1. fake_object_pose  — publishes a simulated object location on /object_pose
-  2. pick_place_node   — executes the enhanced pick & place sequence
+Lance le pipeline complet UR5 pick & place :
+  1. fake_object_pose  — publie une position simulée sur /object_pose
+  2. pick_place_node   — exécute la séquence pick & place
 
-Usage:
+Ce launch file NE lance PAS moveit.launch.py (ros2_control + move_group + RViz).
+Lancer d'abord dans un terminal séparé :
+  ros2 launch ur5_moveit moveit.launch.py
+Attendre le message "Move group ready" avant de lancer ce fichier.
+
+Usage :
   ros2 launch ur5_pick_place pick_place.launch.py
-
-Optional args:
-  use_fake_pose:=true|false   (default true  — set false when using real camera)
-  velocity_scale:=0.25        (arm speed 0.0–1.0)
-  acceleration_scale:=0.25    (arm acceleration 0.0–1.0)
-
-CORRECTION [QUALITÉ 3.3] : délai TimerAction 10s → 5s
-  L'ancien délai de 10s était incohérent avec le commentaire (qui disait 2s).
-  5s est suffisant pour que fake_object_pose publie au moins 2 messages
-  avant que pick_place_node démarre sa boucle d'attente de 10s.
+  ros2 launch ur5_pick_place pick_place.launch.py use_fake_pose:=false  # caméra réelle
+  ros2 launch ur5_pick_place pick_place.launch.py velocity_scale:=0.3
 """
 
 from launch import LaunchDescription
@@ -28,20 +25,23 @@ from launch_ros.actions import Node
 
 def generate_launch_description():
 
-    # ── declare arguments ──────────────────────────────────────────────────
+    # ── Arguments ─────────────────────────────────────────────────────────────
     use_fake_pose_arg = DeclareLaunchArgument(
         'use_fake_pose', default_value='true',
-        description='Publish a simulated /object_pose (true) or rely on camera (false)')
+        description='Publier /object_pose simulé (true) ou utiliser la caméra (false)')
 
     velocity_arg = DeclareLaunchArgument(
-        'velocity_scale', default_value='0.25',
-        description='MoveIt velocity scaling factor (0.0 – 1.0)')
+        'velocity_scale', default_value='0.15',
+        description='Facteur de vitesse MoveIt2 (0.0 – 1.0). '
+                    '0.15 recommandé pour les tests avec mock_components.')
 
     acceleration_arg = DeclareLaunchArgument(
-        'acceleration_scale', default_value='0.25',
-        description='MoveIt acceleration scaling factor (0.0 – 1.0)')
+        'acceleration_scale', default_value='0.10',
+        description='Facteur d\'accélération MoveIt2 (0.0 – 1.0)')
 
-    # ── fake object pose publisher ─────────────────────────────────────────
+    # ── fake_object_pose ──────────────────────────────────────────────────────
+    # Publie /object_pose à 0.5 Hz (toutes les 2s) — pose statique, pas besoin de plus.
+    # Position alignée avec scene_config.yaml : x=0.50, y=0.10, z=0.05
     fake_pose_node = Node(
         package='ur5_pick_place',
         executable='fake_object_pose',
@@ -50,10 +50,7 @@ def generate_launch_description():
         condition=IfCondition(LaunchConfiguration('use_fake_pose')),
     )
 
-    # ── pick & place node (delayed 5s so fake_object_pose starts publishing) ──
-    # [FIX 3.3] délai corrigé : 10s → 5s
-    # fake_object_pose publie à ~1 Hz → 5s = ~5 messages avant que
-    # pick_place_node démarre sa boucle d'attente de 10s.
+    # ── pick_place_node ───────────────────────────────────────────────────────
     pick_place = Node(
         package='ur5_pick_place',
         executable='pick_place_node',
@@ -65,10 +62,16 @@ def generate_launch_description():
             'planning_time':      30.0,
             'planning_attempts':  30,
             'joint_tolerance':    0.05,
+            'pre_pick_height':    0.20,
+            'grasp_height':       0.0823,  # offset géométrique wrist_3 → base gripper
         }],
     )
 
-    delayed_pick_place = TimerAction(period=5.0, actions=[pick_place])  # [FIX 3.3] était: 10.0
+    # Délai 5s : laisse fake_object_pose publier au moins 2 messages avant que
+    # pick_place_node démarre sa boucle d'attente de 10s.
+    # Si moveit.launch.py n'est pas encore prêt, pick_place_node attendra sur
+    # /move_action et /compute_ik — pas de race condition.
+    delayed_pick_place = TimerAction(period=5.0, actions=[pick_place])
 
     return LaunchDescription([
         use_fake_pose_arg,
