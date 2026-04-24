@@ -1,3 +1,12 @@
+# ros2_controllers.yaml
+# CORRECTION [BUG 2.4] : goal_time: 1.0 → 5.0
+#
+# La contrainte goal_time définit la tolérance (en secondes) entre le temps
+# d'arrivée prévu et réel de la trajectoire. Avec mock_components (pas de
+# physique réelle), le timing dépend entièrement du CPU et peut dépasser 1.0s
+# en charge normale → JointTrajectoryController annulait la trajectoire avec
+# GOAL_TOLERANCE_VIOLATED → MoveIt2 rapportait ABORTED aléatoirement.
+
 controller_manager:
   ros__parameters:
     update_rate: 100
@@ -32,13 +41,13 @@ ur5_arm_controller:
     allow_nonzero_velocity_at_trajectory_end: true
     constraints:
       stopped_velocity_tolerance: 0.01
-      goal_time: 1.0
-      shoulder_pan_joint: { trajectory: 0.2, goal: 0.1 }
+      goal_time: 5.0   # [FIX 2.4] était: 1.0 → ABORTED aléatoires sous charge CPU
+      shoulder_pan_joint:  { trajectory: 0.2, goal: 0.1 }
       shoulder_lift_joint: { trajectory: 0.2, goal: 0.1 }
-      elbow_joint: { trajectory: 0.2, goal: 0.1 }
-      wrist_1_joint: { trajectory: 0.2, goal: 0.1 }
-      wrist_2_joint: { trajectory: 0.2, goal: 0.1 }
-      wrist_3_joint: { trajectory: 0.2, goal: 0.1 }
+      elbow_joint:         { trajectory: 0.2, goal: 0.1 }
+      wrist_1_joint:       { trajectory: 0.2, goal: 0.1 }
+      wrist_2_joint:       { trajectory: 0.2, goal: 0.1 }
+      wrist_3_joint:       { trajectory: 0.2, goal: 0.1 }
 
 hand_controller:
   ros__parameters:

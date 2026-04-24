@@ -12,6 +12,11 @@ Optional args:
   use_fake_pose:=true|false   (default true  — set false when using real camera)
   velocity_scale:=0.25        (arm speed 0.0–1.0)
   acceleration_scale:=0.25    (arm acceleration 0.0–1.0)
+
+CORRECTION [QUALITÉ 3.3] : délai TimerAction 10s → 5s
+  L'ancien délai de 10s était incohérent avec le commentaire (qui disait 2s).
+  5s est suffisant pour que fake_object_pose publie au moins 2 messages
+  avant que pick_place_node démarre sa boucle d'attente de 10s.
 """
 
 from launch import LaunchDescription
@@ -45,7 +50,10 @@ def generate_launch_description():
         condition=IfCondition(LaunchConfiguration('use_fake_pose')),
     )
 
-    # ── pick & place node (delayed 2 s so MoveIt is ready) ────────────────
+    # ── pick & place node (delayed 5s so fake_object_pose starts publishing) ──
+    # [FIX 3.3] délai corrigé : 10s → 5s
+    # fake_object_pose publie à ~1 Hz → 5s = ~5 messages avant que
+    # pick_place_node démarre sa boucle d'attente de 10s.
     pick_place = Node(
         package='ur5_pick_place',
         executable='pick_place_node',
@@ -60,8 +68,7 @@ def generate_launch_description():
         }],
     )
 
-    # Delay pick_place_node by 2 s to let fake_object_pose start publishing
-    delayed_pick_place = TimerAction(period=10.0, actions=[pick_place])
+    delayed_pick_place = TimerAction(period=5.0, actions=[pick_place])  # [FIX 3.3] était: 10.0
 
     return LaunchDescription([
         use_fake_pose_arg,

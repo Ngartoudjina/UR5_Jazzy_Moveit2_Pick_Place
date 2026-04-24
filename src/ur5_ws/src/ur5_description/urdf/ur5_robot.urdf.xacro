@@ -453,6 +453,22 @@
 
   <xacro:arg name="initial_positions_file" default="initial_positions.yaml" />
 
+    <!--
+      [FIX 3.1] TCP tool0 — point de contrôle outil (Tool Center Point)
+      Positionné à 0.16m de wrist_3_link sur l'axe Z outil, ce qui correspond
+      à l'offset total du gripper Robotiq 85 :
+        - 0.082m  : joint wrist_3 → robotiq_85_base_link (origin Y projeté en Z)
+        - ~0.078m : base gripper → centre de préhension des doigts
+      Sans ce frame, compute_cartesian_path() et l'IK utilisent wrist_3_link
+      par défaut, introduisant un décalage de 16cm sur la position outil.
+    -->
+    <link name="tool0"/>
+    <joint name="wrist_3_link-tool0" type="fixed">
+      <parent link="wrist_3_link"/>
+      <child link="tool0"/>
+      <origin xyz="0 0 0.16" rpy="0 0 0"/>
+    </joint>
+
     <xacro:include filename="ur5_robot.ros2_control.xacro" />
     <xacro:include filename="ur5_robot.gazebo.xacro" />
 

@@ -1,3 +1,14 @@
+# ompl_planning.yaml
+# CORRECTIONS :
+#   [BUG 2.5] range: 0.2 → 0.0 (calibrage automatique OMPL)
+#             RRTConnect avec range=0.2 rad utilisait un pas fixe trop grand
+#             en configuration singulière → pas de chemin ou trajectoires saccadées.
+#             range=0.0 délègue le calibrage automatique à OMPL.
+#   [QUALITÉ 3.4] start_state_max_bounds_error: 0.5 → 0.1
+#             La valeur 0.5 rad était trop permissive : MoveIt2 acceptait un
+#             état de départ décalé de 0.5 rad/joint sans signaler d'erreur.
+#             Réduit à 0.1 rad pour détecter plus tôt les désynchronisations.
+
 planning_plugin: ompl_interface/OMPLPlanner
 
 request_adapters: >-
@@ -17,7 +28,7 @@ ur5_arm:
 planner_configs:
   RRTConnectkConfigDefault:
     type: geometric::RRTConnect
-    range: 0.2
+    range: 0.0   # [FIX 2.5] était: 0.2 → calibrage automatique OMPL (recommandé)
 
-start_state_max_bounds_error: 0.5
+start_state_max_bounds_error: 0.1   # [FIX 3.4] était: 0.5 → détection désync plus tôt
 jiggle_fraction: 0.05

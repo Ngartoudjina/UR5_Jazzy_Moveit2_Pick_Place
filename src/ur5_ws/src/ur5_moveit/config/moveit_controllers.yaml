@@ -1,3 +1,16 @@
+# moveit_controllers.yaml
+# CORRECTION [BUG 1.1] : action_ns: gripper_action → gripper_cmd
+#
+# MoveItSimpleControllerManager construit le topic de l'action gripper en
+# concaténant le nom du contrôleur et le champ action_ns :
+#   → /hand_controller/<action_ns>
+#
+# GripperActionController (ros2_control) expose son action sur :
+#   → /hand_controller/gripper_cmd
+#
+# L'ancienne valeur "gripper_action" donnait /hand_controller/gripper_action
+# qui n'existe pas → has_gripper = False silencieux → saisie jamais réelle.
+
 moveit_controller_manager: moveit_simple_controller_manager/MoveItSimpleControllerManager
 
 moveit_simple_controller_manager:
@@ -19,7 +32,7 @@ moveit_simple_controller_manager:
 
   hand_controller:
     type: GripperCommand
-    action_ns: gripper_action
+    action_ns: gripper_cmd   # [FIX 1.1] était: gripper_action
     default: true
     joints:
       - robotiq_85_left_knuckle_joint
