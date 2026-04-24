@@ -75,8 +75,8 @@ class PickPlaceNode(Node):
         self.declare_parameter('planning_time',      30.0)
         self.declare_parameter('planning_attempts',  30)
         self.declare_parameter('joint_tolerance',    0.05)
-        self.declare_parameter('pre_pick_height',    0.15)
-        self.declare_parameter('grasp_height',       0.02)
+        self.declare_parameter('pre_pick_height',    0.20)
+        self.declare_parameter('grasp_height',       0.10)
 
         self.vel        = self.get_parameter('velocity_scale').value
         self.acc        = self.get_parameter('acceleration_scale').value
@@ -372,7 +372,7 @@ class PickPlaceNode(Node):
             oz = self.object_pose.pose.position.z
             log.info(f'📍 Objet détecté à ({ox:.3f}, {oy:.3f}, {oz:.3f})')
         else:
-            ox, oy, oz = 0.40, 0.00, 0.05
+            ox, oy, oz = 0.50, 0.10, 0.15
             log.warn(f'⚠️  Fallback position ({ox}, {oy}, {oz})')
 
         # ── Calcul IK automatique ─────────────────────────────────────────

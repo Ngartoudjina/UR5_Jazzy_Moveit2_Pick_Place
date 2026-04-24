@@ -48,10 +48,12 @@ def generate_launch_description():
             name='pick_place_node',
             output='screen',
             parameters=[{
-                'velocity_scale': 0.15,
-                'acceleration_scale': 0.10,
-                'planning_time': 15.0,
-                'planning_attempts': 10,
+                'velocity_scale':      0.15,
+                'acceleration_scale':  0.10,
+                'planning_time':       15.0,
+                'planning_attempts':   10,
+                'pre_pick_height':     0.20,   # ← ajouté
+                'grasp_height':        0.10,   # ← ajouté (était 0.02)
             }]
         )]
     )
