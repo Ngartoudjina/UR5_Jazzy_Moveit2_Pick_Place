@@ -63,7 +63,7 @@ def generate_launch_description():
             'planning_attempts':  30,
             'joint_tolerance':    0.05,
             'pre_pick_height':    0.20,
-            'grasp_height':       0.0823,  # offset géométrique wrist_3 → base gripper
+            'grasp_height': 0.130,  # offset géométrique wrist_3 → base gripper
         }],
     )
 

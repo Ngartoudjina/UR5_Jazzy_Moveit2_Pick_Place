@@ -42,7 +42,9 @@ setup(
             # ── Diagnostic & debug ───────────────────────────────────
             'moveit_diagnostics     = ur5_pick_place.moveit_system_diagnostics:main',
             'moveit_cartesian_demo  = ur5_pick_place.moveit_cartesian_demo:main',
-            'ik_solver              = ur5_pick_place.ik_solver:main',
+            
+            # ── Contrôle gestuel ─────────────────────────────────────
+            'hand_arm_controller   = ur5_pick_place.hand_arm_controller:main',
 
             # ── Tests ────────────────────────────────────────────────
             'test_gripper           = ur5_pick_place.test_gripper:main',

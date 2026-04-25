@@ -247,9 +247,9 @@ class PickPlaceNode(Node):
         req.allowed_planning_time             = planning_time or self.ptime
         req.max_velocity_scaling_factor       = self.vel
         req.max_acceleration_scaling_factor   = self.acc
-        # is_diff=True : utiliser l'état courant du robot comme départ.
-        # Ne jamais spécifier l'état de départ manuellement — il serait désynchronisé
-        # avec l'état réel publié par joint_state_broadcaster.
+        # Spécifier l'état de départ explicitement par nom pour éviter
+        # le bug d'ordre des joints dans /joint_states (wrist_1/2/3 permutés).
+        # is_diff=False + noms explicites = robuste à l'ordre du topic.
         req.start_state.is_diff = True
 
         c = Constraints()
