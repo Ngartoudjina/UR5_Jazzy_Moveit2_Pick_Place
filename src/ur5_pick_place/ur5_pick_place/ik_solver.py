@@ -171,6 +171,7 @@ class RobustUR5IKSolver(UR5IKSolver):
             all_solutions.append(result['joints'])
         
         # Seeds aléatoires dans les limites articulaires
+        real_joints = list(self.current_joints)  # sauvegarder la position réelle
         for _ in range(num_seeds - 1):
             seed = [
                 np.random.uniform(lo, hi)
@@ -181,8 +182,8 @@ class RobustUR5IKSolver(UR5IKSolver):
             if result:
                 all_solutions.append(result['joints'])
         
-        # Remettre la seed à la position actuelle
-        self.current_joints = self.current_joints
+        # Restaurer la position réelle (l'ancienne ligne était un no-op)
+        self.current_joints = real_joints
         
         if not all_solutions:
             return None

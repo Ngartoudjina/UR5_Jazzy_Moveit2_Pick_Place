@@ -99,11 +99,12 @@ class PickPlaceNode(Node):
         self.declare_parameter('planning_attempts',  30)
         self.declare_parameter('joint_tolerance',    0.05)
         self.declare_parameter('pre_pick_height',    0.20)
-        # [C2] grasp_height = offset wrist_3 → base gripper = 0.0823 m
-        # L'axe de saisie du Robotiq 85 est X_wrist3 dans la config bras-vertical.
+        # grasp_height = d6 (0.0823m) + longueur doigts Robotiq 85 (≈ 0.050m)
+        # d6 = offset wrist_3 → base gripper (frame tool0)
+        # 0.050m = longueur utile des doigts jusqu'au point de contact
         # wrist_3_z_cible = oz_objet + grasp_height
-        # = oz + 0.0823 (amène la base du gripper juste au-dessus du centre objet)
-        self.declare_parameter('grasp_height',       0.0823)
+        # → le point de contact des doigts arrive exactement au centre de l'objet
+        self.declare_parameter('grasp_height',       0.130)
 
         self.vel        = self.get_parameter('velocity_scale').value
         self.acc        = self.get_parameter('acceleration_scale').value

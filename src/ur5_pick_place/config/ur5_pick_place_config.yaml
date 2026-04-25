@@ -15,7 +15,7 @@ planning:
 
 gripper:
   enabled: true
-  action_namespace: /robotiq_85_gripper_controller/gripper_cmd
+  action_namespace: /hand_controller/gripper_cmd
   timeout: 5.0
   profiles:
     open:

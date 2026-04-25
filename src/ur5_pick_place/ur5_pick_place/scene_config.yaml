@@ -37,7 +37,7 @@ pick_place:
   # Poses joints [pan, lift, elbow, wrist1, wrist2, wrist3] en radians
   # UNE seule source de vérité — home_joints supprimé (doublon incohérent)
   poses:
-    HOME:           [ 0.0,  -0.1041,  1.4232,  0.2430,  4.6863,  1.6315]
+    HOME: [0.0, -1.5708, 1.5708, -1.5708, -1.5708, 0.0]
     APPROCHE_PICK:  [ 0.2,  -1.3000,  1.0000, -1.5000, -1.5700,  0.0000]
     PICK:           [ 0.2,  -1.4500,  1.1500, -1.7500, -1.5700,  0.0000]
     LIFT:           [ 0.2,  -1.2000,  1.0000, -1.5000, -1.5700,  0.0000]

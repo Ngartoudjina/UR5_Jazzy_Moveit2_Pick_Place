@@ -108,7 +108,7 @@ class BasePickPlace(Node):
 
         # Validation des angles
         validation: ValidationResult = JointValidator.validate_angles(angles)
-        if not validation.valid:
+        if not validation.passed:
             self.get_logger().error(f"Angles invalides : {validation.message}")
             return False
 
