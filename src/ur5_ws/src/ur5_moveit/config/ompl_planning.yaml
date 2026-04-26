@@ -1,13 +1,15 @@
 planning_plugin: ompl_interface/OMPLPlanner
 
+# Sur ROS2 Humble, l'adaptateur de temps est un request_adapter (pas response_adapter)
 request_adapters: >-
   default_planner_request_adapters/ResolveConstraintFrames
   default_planner_request_adapters/FixWorkspaceBounds
   default_planner_request_adapters/FixStartStateBounds
   default_planner_request_adapters/FixStartStateCollision
-
-response_adapters: >-
   default_planner_request_adapters/AddTimeOptimalParameterization
+
+start_state_max_bounds_error: 0.1
+jiggle_fraction: 0.05
 
 ur5_arm:
   default_planner_config: RRTConnectkConfigDefault
@@ -18,18 +20,8 @@ ur5_arm:
 planner_configs:
   RRTConnectkConfigDefault:
     type: geometric::RRTConnect
-    # range: 0.0 → OMPL calibre automatiquement le pas selon l'espace de config.
-    # Une valeur fixe (ex. 0.2 rad) est trop grande près des singularités du UR5
-    # et provoque des trajectoires saccadées ou des échecs de planification.
     range: 0.0
-
   RRTkConfigDefault:
     type: geometric::RRT
     range: 0.0
     goal_bias: 0.05
-
-# start_state_max_bounds_error : tolérance (rad) sur l'état de départ.
-# 0.5 était excessif — permettait un désalignement de 28° sans signaler d'erreur.
-# 0.1 rad (~6°) détecte les vraies désynchronisations tout en restant permissif.
-start_state_max_bounds_error: 0.1
-jiggle_fraction: 0.05

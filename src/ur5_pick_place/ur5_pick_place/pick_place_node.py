@@ -8,7 +8,7 @@ Pipeline :
   3. Exécuter la séquence pick & place complète (8 étapes)
 
 CORRECTIONS APPLIQUÉES :
-  [C1] Quaternion IK corrigé : qy=-0.7071, qw=0.7071
+  [C1] Quaternion IK corrigé : qy=0.7071, qw=0.7071
        → rotation -90° autour Y_world → X_wrist3 = -Z_world (saisie vers le bas)
        L'ancien qx=1.0, qw=0.0 (180° autour X) était géométriquement faux pour
        cette configuration de bras.
@@ -121,6 +121,10 @@ class PickPlaceNode(Node):
         self.get_logger().info('Connected to /move_action ✅')
 
         # IK service
+        # Lecture robuste /joint_states par nom — insensible à l'ordre du topic
+        self._current_joints = {n: 0.0 for n in ARM_JOINT_NAMES}
+        self.create_subscription(JointState, '/joint_states', self._js_cb, 10)
+
         self.ik_client = self.create_client(GetPositionIK, '/compute_ik')
         self.get_logger().info('Waiting for /compute_ik …')
         self.ik_client.wait_for_service()
@@ -154,12 +158,12 @@ class PickPlaceNode(Node):
 
     # ── IK ────────────────────────────────────────────────────────────────────
     def compute_ik(self, x, y, z,
-                   qx=0.0, qy=-0.7071, qz=0.0, qw=0.7071,
+                   qx=0.0, qy=0.7071, qz=0.0, qw=0.7071,
                    seed=None, timeout=5.0):
         """
         Calcule les angles articulaires pour atteindre la pose (x, y, z).
 
-        [C1] Orientation par défaut : qy=-0.7071, qw=0.7071
+        [C1] Orientation par défaut : qy=0.7071, qw=0.7071
              = rotation -90° autour Y_world
              → X_wrist3 pointe dans -Z_world (vers le sol)
              → Axe de saisie du Robotiq 85 orienté verticalement vers le bas ✓
@@ -184,6 +188,22 @@ class PickPlaceNode(Node):
         rs.joint_state.name     = ARM_JOINT_NAMES
         rs.joint_state.position = list(seed)
         ik_req.robot_state = rs
+
+        # Contraindre KDL à rester proche de la seed (évite les configs "bras retourné")
+        # Sans contraintes, KDL explore tout l'espace et trouve des solutions à 6+ rad
+        from moveit_msgs.msg import JointConstraint, Constraints
+        constraints = Constraints()
+        seed_list = list(seed)
+        tol = 2.5  # ±2.5 rad autour de la seed — large mais évite les retournements
+        for joint_name, seed_val in zip(ARM_JOINT_NAMES, seed_list):
+            jc = JointConstraint()
+            jc.joint_name = joint_name
+            jc.position = seed_val
+            jc.tolerance_above = tol
+            jc.tolerance_below = tol
+            jc.weight = 1.0
+            constraints.joint_constraints.append(jc)
+        ik_req.constraints = constraints
 
         target = PoseStamped()
         target.header.frame_id    = 'world'
@@ -236,6 +256,13 @@ class PickPlaceNode(Node):
         return None
 
     # ── Goal builder ──────────────────────────────────────────────────────────
+
+    def _js_cb(self, msg):
+        """Stocke les positions joints par nom — robuste à l'ordre du topic."""
+        for name, pos in zip(msg.name, msg.position):
+            if name in self._current_joints:
+                self._current_joints[name] = pos
+
     def _build_goal(self, positions, tol=None, planning_time=None):
         tol = tol or self.jtol
         goal = MoveGroup.Goal()
@@ -250,7 +277,12 @@ class PickPlaceNode(Node):
         # Spécifier l'état de départ explicitement par nom pour éviter
         # le bug d'ordre des joints dans /joint_states (wrist_1/2/3 permutés).
         # is_diff=False + noms explicites = robuste à l'ordre du topic.
-        req.start_state.is_diff = True
+        # start_state explicite par nom — robuste à l'ordre de /joint_states
+        req.start_state.is_diff = False
+        req.start_state.joint_state.name = list(ARM_JOINT_NAMES)
+        req.start_state.joint_state.position = [
+            self._current_joints.get(n, 0.0) for n in ARM_JOINT_NAMES
+        ]
 
         c = Constraints()
         for name, pos in zip(ARM_JOINT_NAMES, positions):
@@ -392,6 +424,8 @@ class PickPlaceNode(Node):
         aco.object.operation = CollisionObject.ADD
         aco.touch_links  = [
             'wrist_3_link',
+            'wrist_2_link',
+            'wrist_1_link',
             'robotiq_85_base_link',
             'robotiq_85_left_knuckle_link',  'robotiq_85_right_knuckle_link',
             'robotiq_85_left_finger_link',   'robotiq_85_right_finger_link',
@@ -433,6 +467,17 @@ class PickPlaceNode(Node):
         log.info(' UR5 Pick & Place — IK automatique')
         log.info('=' * 60)
 
+        # Attendre que /joint_states soit reçu au moins une fois
+        log.info('Attente de /joint_states …')
+        deadline = self.get_clock().now().nanoseconds + 5_000_000_000
+        while any(v == 0.0 for v in self._current_joints.values()):
+            rclpy.spin_once(self, timeout_sec=0.1)
+            if self.get_clock().now().nanoseconds > deadline:
+                log.warn('⚠️  /joint_states non reçu — utilisation des valeurs HOME par défaut')
+                self._current_joints = dict(zip(ARM_JOINT_NAMES, HOME))
+                break
+        log.info(f'Joints actuels : {[round(v,2) for v in self._current_joints.values()]}')
+
         # ── Attente pose objet ────────────────────────────────────────────
         # [C4] time.sleep() obligatoire ici : rclpy.spin_once(self) est interdit
         # quand le node tourne dans un MultiThreadedExecutor. Les callbacks sont
@@ -453,7 +498,7 @@ class PickPlaceNode(Node):
 
         # ── Calcul IK ─────────────────────────────────────────────────────
         log.info('\n📐 Calcul cinématique inverse …')
-        # [C1] qy=-0.7071, qw=0.7071 : rotation -90° autour Y_world
+        # [C1] qy=0.7071, qw=0.7071 : rotation -90° autour Y_world
         # → X_wrist3 = -Z_world → axe de saisie Robotiq 85 vers le sol ✓
 
         pre_pick_joints = self.compute_ik_robust(
@@ -470,7 +515,7 @@ class PickPlaceNode(Node):
         # [C6] Table dans la scène : obstacle critique pour éviter les trajectoires
         # traversant la surface. Aligné avec scene_config.yaml.
         self.add_box('table',      (0.65, 0.0,  -0.025), size=(0.8, 0.8, 0.05))
-        self.add_box('target_box', (ox,   oy,    oz),    size=(0.05, 0.05, 0.10))
+        self.add_box('target_box', (ox,   oy,    oz),    size=(0.05, 0.05, 0.05))
         time.sleep(0.3)
 
         # ── [1/8] HOME ────────────────────────────────────────────────────
