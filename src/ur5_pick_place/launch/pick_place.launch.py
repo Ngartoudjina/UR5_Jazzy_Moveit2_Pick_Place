@@ -62,8 +62,11 @@ def generate_launch_description():
             'planning_time':      30.0,
             'planning_attempts':  30,
             'joint_tolerance':    0.05,
-            'pre_pick_height':    0.20,
-            'grasp_height': 0.130,  # offset géométrique wrist_3 → base gripper
+            # Hauteur de tool0 (TCP gripper) au-dessus du centre de l'objet :
+            #   pre_pick : 20 cm de marge avant la descente
+            #   grasp    : 0  → TCP exactement au centre de l'objet (saisie)
+            'pre_pick_height': 0.20,
+            'grasp_height':    0.0,
         }],
     )
 

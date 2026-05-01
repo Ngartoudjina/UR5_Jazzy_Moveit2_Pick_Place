@@ -1,6 +1,8 @@
 planning_plugin: ompl_interface/OMPLPlanner
 
-# Sur ROS2 Humble, l'adaptateur de temps est un request_adapter (pas response_adapter)
+# Sur ROS2 Humble, AddTimeOptimalParameterization fonctionne en request_adapter.
+# Pas de smoother dédié — c'est l'adaptateur de temps qui produit le profil
+# vitesse/accel respectant joint_limits.yaml et les scaling factors.
 request_adapters: >-
   default_planner_request_adapters/ResolveConstraintFrames
   default_planner_request_adapters/FixWorkspaceBounds
@@ -8,20 +10,45 @@ request_adapters: >-
   default_planner_request_adapters/FixStartStateCollision
   default_planner_request_adapters/AddTimeOptimalParameterization
 
-start_state_max_bounds_error: 0.1
-jiggle_fraction: 0.05
+start_state_max_bounds_error: 0.05
+jiggle_fraction: 0.02
 
 ur5_arm:
   default_planner_config: RRTConnectkConfigDefault
   planner_configs:
     - RRTConnectkConfigDefault
-    - RRTkConfigDefault
+    - BiTRRTkConfigDefault
+    - LBKPIECEkConfigDefault
+    - RRTstarkConfigDefault
+  # Détection de collision plus fine — évite les sauts à travers obstacles minces
+  longest_valid_segment_fraction: 0.005
+  # Projection joint-space pour les planners qui exploitent une projection
+  projection_evaluator: joints(shoulder_pan_joint,shoulder_lift_joint)
 
 planner_configs:
   RRTConnectkConfigDefault:
     type: geometric::RRTConnect
+    # range > 0 limite l'extension d'arbre par étape — produit des trajectoires
+    # plus régulières (moins de "longs sauts") au prix d'un peu de calcul.
+    range: 0.4
+
+  BiTRRTkConfigDefault:
+    type: geometric::BiTRRT
     range: 0.0
-  RRTkConfigDefault:
-    type: geometric::RRT
+    temp_change_factor: 0.1
+    init_temperature: 100.0
+    frontier_threshold: 0.0
+    frontier_node_ratio: 0.1
+    cost_threshold: 1.0e+300
+
+  LBKPIECEkConfigDefault:
+    type: geometric::LBKPIECE
+    range: 0.0
+    border_fraction: 0.9
+    min_valid_path_fraction: 0.5
+
+  RRTstarkConfigDefault:
+    type: geometric::RRTstar
     range: 0.0
     goal_bias: 0.05
+    delay_collision_checking: 1
